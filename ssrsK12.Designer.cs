@@ -63,6 +63,8 @@
             this.vCinc_GPS1 = new VCI_Forms_LIB.VCinc_GPS();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // vCinc_uc5
@@ -283,7 +285,7 @@
             // cb_uniqueOn
             // 
             this.cb_uniqueOn.AutoSize = true;
-            this.cb_uniqueOn.Location = new System.Drawing.Point(1901, 69);
+            this.cb_uniqueOn.Location = new System.Drawing.Point(1907, 69);
             this.cb_uniqueOn.Margin = new System.Windows.Forms.Padding(6);
             this.cb_uniqueOn.Name = "cb_uniqueOn";
             this.cb_uniqueOn.Size = new System.Drawing.Size(292, 29);
@@ -296,7 +298,7 @@
             this.tb_CAN_Bus_View.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tb_CAN_Bus_View.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_CAN_Bus_View.ForeColor = System.Drawing.Color.Lime;
-            this.tb_CAN_Bus_View.Location = new System.Drawing.Point(1890, 110);
+            this.tb_CAN_Bus_View.Location = new System.Drawing.Point(1896, 110);
             this.tb_CAN_Bus_View.Margin = new System.Windows.Forms.Padding(6);
             this.tb_CAN_Bus_View.Multiline = true;
             this.tb_CAN_Bus_View.Name = "tb_CAN_Bus_View";
@@ -308,7 +310,7 @@
             // 
             // btn_RunStop
             // 
-            this.btn_RunStop.Location = new System.Drawing.Point(2356, 18);
+            this.btn_RunStop.Location = new System.Drawing.Point(2362, 18);
             this.btn_RunStop.Margin = new System.Windows.Forms.Padding(6);
             this.btn_RunStop.Name = "btn_RunStop";
             this.btn_RunStop.Size = new System.Drawing.Size(150, 44);
@@ -318,7 +320,7 @@
             // 
             // lbl_OnScreenCount
             // 
-            this.lbl_OnScreenCount.Location = new System.Drawing.Point(2042, 27);
+            this.lbl_OnScreenCount.Location = new System.Drawing.Point(2048, 27);
             this.lbl_OnScreenCount.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_OnScreenCount.Name = "lbl_OnScreenCount";
             this.lbl_OnScreenCount.Size = new System.Drawing.Size(140, 27);
@@ -328,7 +330,7 @@
             // 
             // lbl_onBus
             // 
-            this.lbl_onBus.Location = new System.Drawing.Point(1882, 27);
+            this.lbl_onBus.Location = new System.Drawing.Point(1888, 27);
             this.lbl_onBus.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl_onBus.Name = "lbl_onBus";
             this.lbl_onBus.Size = new System.Drawing.Size(140, 27);
@@ -338,7 +340,7 @@
             // 
             // btn_Validate
             // 
-            this.btn_Validate.Location = new System.Drawing.Point(2194, 18);
+            this.btn_Validate.Location = new System.Drawing.Point(2200, 18);
             this.btn_Validate.Margin = new System.Windows.Forms.Padding(6);
             this.btn_Validate.Name = "btn_Validate";
             this.btn_Validate.Size = new System.Drawing.Size(150, 44);
@@ -731,7 +733,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(609, 1118);
+            this.label1.Location = new System.Drawing.Point(614, 1067);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 25);
             this.label1.TabIndex = 229;
@@ -740,17 +742,37 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(614, 1171);
+            this.label2.Location = new System.Drawing.Point(614, 1118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 25);
             this.label2.TabIndex = 230;
             this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(59, 1107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 25);
+            this.label3.TabIndex = 231;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(59, 1168);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 25);
+            this.label4.TabIndex = 232;
+            this.label4.Text = "label4";
             // 
             // ssrsK12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2556, 1584);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.vCinc_GPS1);
@@ -830,5 +852,7 @@
         private VCI_Forms_LIB.VCinc_GPS vCinc_GPS1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

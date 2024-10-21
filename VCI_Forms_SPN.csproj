@@ -82,6 +82,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C3iForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C3iForm.Designer.cs">
+      <DependentUpon>C3iForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     <Compile Include="_GLobalz\KvsrManager.cs" />
     <Compile Include="_GLobalz\TaskExtensions.cs" />
     <Compile Include="_Managers\PGN_MANAGER.cs" />
+    <EmbeddedResource Include="C3iForm.resx">
+      <DependentUpon>C3iForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

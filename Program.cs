@@ -16,7 +16,7 @@ namespace VCI_Forms_SPN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ssrsK12());
+            Application.Run(new C3iForm());
         }
     }
 }

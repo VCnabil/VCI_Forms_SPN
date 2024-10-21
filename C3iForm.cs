@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ using VCI_Forms_SPN._Managers;
 
 namespace VCI_Forms_SPN
 {
-    public partial class ssrsK12 : Form
+    public partial class C3iForm : Form
     {
         #region TemplateVariavles
         PGN_MANAGER _myPGNManager;
@@ -26,7 +27,7 @@ namespace VCI_Forms_SPN
         bool _isOnCanBus;
         Dictionary<string, string> uniqueMessages = new Dictionary<string, string>();
         #endregion
-        public ssrsK12()
+        public C3iForm()
         {
             InitializeComponent();
             #region TemplateInitialize
@@ -42,17 +43,12 @@ namespace VCI_Forms_SPN
             tempTimer.Start();
             messageBuffer = new StringBuilder();
             messageQueue = new Queue<string>(MaxMessages);
-           
-            #endregion
 
+            #endregion
         }
         #region TemplateFunctions
         private void TempTimer_Tick(object sender, EventArgs e)
         {
-           //vCinc_GPS1.SetShipLocation(42.111, -85.22);
-            vCinc_GPS1.UPDATE_CAN_DATA();
-            label3.Text = string.Join(",", vCinc_GPS1.Get_PGNdata_CMDCOORDINATES_09F8017F()); //Get_PGNdata_Heading_09F1127F
-            label4.Text = string.Join(",", vCinc_GPS1.Get_PGNdata_Heading_09F1127F());
             _isOnCanBus = KvsrManager.Instance.GetIsOnBus();
             if (_isOnCanBus)
             {
@@ -70,15 +66,7 @@ namespace VCI_Forms_SPN
             if (_OScreenCount == 0) { return; }
             if (_myPGNManager != null)
             {
-                string _shiplatlon = "";
-                _shiplatlon = vCinc_GPS1.Get_ShipLocation_LAT() + " " + vCinc_GPS1.Get_ShipLocation_LON();
-                label1.Text = _shiplatlon;
-
-                string _purpleLatlon = "";
-                _purpleLatlon = vCinc_GPS1.Get_purpleDot_LAT() + " " + vCinc_GPS1.Get_purpleDot_LON();
-                label2.Text = _purpleLatlon;
-                
-            
+              
                 _myPGNManager.LoadByteArraysForGroups();
                 var pgnByteArrays = _myPGNManager.GetPgnByteArrays();
                 foreach (var entry in pgnByteArrays.Values)
@@ -86,8 +74,6 @@ namespace VCI_Forms_SPN
                     int pgn = entry.pgn;
                     byte[] data = entry.data;
                     KvsrManager.Instance.SendPGN_withStatus(1, pgn, data);
-
-
                 }
             }
             else
@@ -174,7 +160,7 @@ namespace VCI_Forms_SPN
         {
             if (!_isOnCanBus)
             {
-                
+
                 KvsrManager.Instance.Init();
                 KvsrManager.Instance.OnMessageReceived += KvsrManager_OnMessageReceived;
             }
@@ -187,14 +173,14 @@ namespace VCI_Forms_SPN
         #endregion
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if (_isOnCanBus) { 
-            
-             KvsrManager.Instance.Close();
-             KvsrManager.Instance.OnMessageReceived -= KvsrManager_OnMessageReceived;
+            if (_isOnCanBus)
+            {
+
+                KvsrManager.Instance.Close();
+                KvsrManager.Instance.OnMessageReceived -= KvsrManager_OnMessageReceived;
             }
             base.OnFormClosing(e);
             Debug.WriteLine("[DEBUG] CAN manager closed and resources cleaned up.");
         }
-
     }
 }

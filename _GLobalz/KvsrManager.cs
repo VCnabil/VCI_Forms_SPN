@@ -21,7 +21,7 @@ namespace VCI_Forms_SPN._GLobalz
         private bool _isOnBus2 = false;
         private int errorsCnt = 0;
         private string _errormessage = "";
-        private bool dualChannel = false;
+        //private bool dualChannel = false;
 
         public delegate void MessageReceivedHandler(string message);
         public event MessageReceivedHandler OnMessageReceived;
@@ -34,7 +34,8 @@ namespace VCI_Forms_SPN._GLobalz
 
         public string GetErrorMessage() => _errormessage;
 
-        public bool GetIsOnBus() => dualChannel ? (_isOnBus1 && _isOnBus2) : _isOnBus1;
+       public bool GetIsOnBus() =>  _isOnBus1;
+       
 
         private KvsrManager()
         {
@@ -46,11 +47,11 @@ namespace VCI_Forms_SPN._GLobalz
             _channelsFound = 0;
         }
 
-        public void Init(bool useDualChannel)
+        public void Init( )
         {
-            dualChannel = useDualChannel;
+         //   dualChannel = useDualChannel;
 
-            if (_isOnBus1 || (dualChannel && _isOnBus2))
+            if (_isOnBus1  )
             {
                 errorsCnt++;
                 _errormessage = "Already on bus " + errorsCnt.ToString();
@@ -78,16 +79,16 @@ namespace VCI_Forms_SPN._GLobalz
 
             InitChannel(0, ref handle1, ref _isOnBus1);
 
-            if (dualChannel)
-            {
-                if (numberOfChannels < 2)
-                {
-                    errorsCnt++;
-                    _errormessage = "Dual channel setup requires at least 2 physical channels" + errorsCnt.ToString();
-                    return;
-                }
-                InitChannel(1, ref handle2, ref _isOnBus2);
-            }
+            //if (dualChannel)
+            //{
+            //    if (numberOfChannels < 2)
+            //    {
+            //        errorsCnt++;
+            //        _errormessage = "Dual channel setup requires at least 2 physical channels" + errorsCnt.ToString();
+            //        return;
+            //    }
+            //    InitChannel(1, ref handle2, ref _isOnBus2);
+            //}
         }
         private void InitChannel(int channelIndex, ref int handle, ref bool isOnBus)
         {
@@ -214,10 +215,10 @@ namespace VCI_Forms_SPN._GLobalz
             }
 
             CloseChannel(ref handle1, ref _isOnBus1);
-            if (dualChannel)
-            {
-                CloseChannel(ref handle2, ref _isOnBus2);
-            }
+            //if (dualChannel)
+            //{
+            //    CloseChannel(ref handle2, ref _isOnBus2);
+            //}
         }
 
         private void CloseChannel(ref int handle, ref bool isOnBus)
