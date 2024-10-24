@@ -42,8 +42,28 @@ namespace VCI_Forms_SPN
             tempTimer.Start();
             messageBuffer = new StringBuilder();
             messageQueue = new Queue<string>(MaxMessages);
-           
+
             #endregion
+
+            textBox1.TextChanged += TextBox1_TextChanged;
+
+        }
+
+        double _unity_shiplat = 0;
+        double _unity_shiplon = 0;
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            string _strInpiut = textBox1.Text;
+            //the inpu looks like " 42.0121,-12.005" stre them in doubles 
+            string[] _strArray = _strInpiut.Split(',');
+            if (_strArray.Length == 2)
+            {
+                _unity_shiplat = Convert.ToDouble(_strArray[0]);
+                _unity_shiplon = Convert.ToDouble(_strArray[1]);
+                vCinc_GPS1.SetShipLocation(_unity_shiplat, _unity_shiplon);
+            }
+            label5.Text = _unity_shiplat.ToString() + " " + _unity_shiplon.ToString();
+
 
         }
         #region TemplateFunctions
@@ -97,7 +117,7 @@ namespace VCI_Forms_SPN
         }
         private void KvsrManager_OnMessageReceived(string message)
         {
-            Debug.WriteLine($"[DEBUG] received: {message}");
+           // Debug.WriteLine($"[DEBUG] received: {message}");
             string id = message.Substring(3, 8); // "ID=18EA0028" extracts the part between 'ID=' and ','
 
             string _uniquePgns = "";
