@@ -144,7 +144,6 @@ namespace VCI_Forms_SPN
             //PVCC,1,0,0,0,0,0,0,0*07
             //NMEA_HEADER, Intsteer_Enable, Autocal_CMD, Set1_Set2_Mode, Position_Capture_Request,0 ,0 ,0 ,0  * checksum
 
-
             lbl_Intsteer_Enable.Text = _Intsteer_Enable.ToString();
             lbl_Autocal_CMD.Text = _Autocal_CMD.ToString();
             lbl_Set1_Set2_Mode.Text = _Set1_Set2_Mode.ToString();
@@ -175,7 +174,6 @@ namespace VCI_Forms_SPN
 
                 if (_Autocal_CMD == 11)
                 {
-
                     lbl_Command.Text = "init autocal";
                 }
                 else if (_Autocal_CMD == 22)
@@ -190,6 +188,9 @@ namespace VCI_Forms_SPN
                 {
                     lbl_Command.Text = "pos cap req acked";
                 }
+                else {
+                    lbl_Command.Text = "autocal Off";
+                }
             }
             else
             {
@@ -197,8 +198,117 @@ namespace VCI_Forms_SPN
             }
         }
 
-
         private async void looptimer_Tick(object sender, EventArgs e)
+        {
+            if (!_doAutosend || !isPortOpen) return;
+
+            try
+            {
+                if (chkToggleImplementation.Checked)
+                {
+                    await RunImplementation1();
+                }
+                else
+                {
+                    await RunImplementation2();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error sending auto data: " + ex.Message);
+            }
+        }
+
+        private async Task RunImplementation1()
+        {
+            await Task.Run(() =>
+            {
+                int XMIT_1_PortNoz_Scaled = ucXMIT_PortNoz_Scaled.Value;
+                int XMIT_2_StbdNoz_Scaled = ucXMIT_StbdNoz_Scaled.Value;
+                int XMIT_3_PortBkt_Scaled = ucXMIT_PortBkt_Scaled.Value;
+                int XMIT_4_StbdBkt_Scaled = ucXMIT_StbdBkt_Scaled.Value;
+                int XMIT_5_PortTab_Scaled = ucXMIT_PortTab_Scaled.Value;
+                int XMIT_6_StbdTab_Scaled = ucXMIT_StbdTab_Scaled.Value;
+                int XMIT_7_SensorFaultError = ucXMIT_SensorFaultError.Value;
+                int XMIT_8_NonFollowError = ucXMIT_NonFollowError.Value;
+                int XMIT_9_CmdFaultError_STA1 = ucXMIT_CmdFaultError_STA1.Value;
+                int XMIT_10CmdFaultError_STA2 = ucXMIT_CmdFaultError_STA2.Value;
+                int XMIT_11CmdFaultError_STA3 = ucXMIT_CmdFaultError_STA3.Value;
+                int XMIT_12Autocal_TrimRoll_Error = ucXMIT_Autocal_TrimRoll_Error.Value;
+                int XMIT_13Dockmode_Interlock_Error = ucXMIT_Dockmode_Interlock_Error.Value;
+                int XMIT_14_Status_CT = uc_MODE.Value;
+                int XMIT_15StopRequest = 0;
+                int XMIT_16 = ucXMIT_16.Value;
+                int XMIT_17 = ucXMIT_17.Value;
+                int XMIT_18CANFault = ucXMIT_CANFault.Value;
+
+                string messageWithoutChecksum = $"$PVCI," +
+                $"{XMIT_1_PortNoz_Scaled}," +
+                $"{XMIT_2_StbdNoz_Scaled}," +
+                $"{XMIT_3_PortBkt_Scaled}," +
+                $"{XMIT_4_StbdBkt_Scaled}," +
+                $"{XMIT_5_PortTab_Scaled}," +
+                $"{XMIT_6_StbdTab_Scaled}," +
+                $"{XMIT_7_SensorFaultError}," +
+                $"{XMIT_8_NonFollowError}," +
+                $"{XMIT_9_CmdFaultError_STA1}," +
+                $"{XMIT_10CmdFaultError_STA2}," +
+                $"{XMIT_11CmdFaultError_STA3}," +
+                $"{XMIT_12Autocal_TrimRoll_Error}," +
+                $"{XMIT_13Dockmode_Interlock_Error}," +
+                $"{XMIT_14_Status_CT}," +
+                $"{XMIT_15StopRequest}," +
+                $"{XMIT_16}," +
+                $"{XMIT_17}," +
+                $"{XMIT_18CANFault}";
+
+                string checksum = CalculateChecksum(messageWithoutChecksum);
+                string fullMessage = $"{messageWithoutChecksum}*{checksum}\r";
+                serialPort.Write(fullMessage);
+                Invoke(new Action(() =>
+                {
+                    textBoxSend.Clear();
+                    textBoxSend.AppendText(fullMessage);
+                }));
+            });
+        }
+
+        private async Task RunImplementation2()
+        {
+            await Task.Run(() =>
+            {
+                int XMIT_0_Insteer = uc0Cantrak_Intsteer_Enable.Value;
+                int XMIT_1_CalCommand = uc1CT_Autocal_Flag.Value;
+                int XMIT_2_Set12Mode = uc2CT_Set1_Set2_Mode.Value;
+                int XMIT_3__Set12Flag = uc3CT_Set1_Set2_Flag.Value;
+                int XMIT_4_z = 0;
+                int XMIT_5_z = 0;
+                int XMIT_6_z = 0;
+                int XMIT_7_z = 0;
+               // int XMIT_8_z = 0;
+
+                string messageWithoutChecksum = $"$PVCC," +
+                $"{XMIT_0_Insteer}," +
+                $"{XMIT_1_CalCommand}," +
+                $"{XMIT_2_Set12Mode}," +
+                $"{XMIT_3__Set12Flag}," +
+                $"{XMIT_4_z}," +
+                $"{XMIT_5_z}," +
+                $"{XMIT_6_z}," +
+                $"{XMIT_7_z}";
+
+                string checksum = CalculateChecksum(messageWithoutChecksum);
+                string fullMessage = $"{messageWithoutChecksum}*{checksum}\r";
+                serialPort.Write(fullMessage);
+                Invoke(new Action(() =>
+                {
+                    textBoxSend.Clear();
+                    textBoxSend.AppendText(fullMessage);
+                }));
+            });
+        }
+
+        private async void looptimer_Tick1(object sender, EventArgs e)
         {
             if (!_doAutosend || !isPortOpen) return;
 
@@ -274,6 +384,53 @@ namespace VCI_Forms_SPN
                     {
                         textBoxSend.Clear();
                         textBoxSend.AppendText(fullMessage); 
+                    }));
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error sending auto data: " + ex.Message);
+            }
+        }
+        private async void looptimer_Tick2(object sender, EventArgs e)
+        {
+            if (!_doAutosend || !isPortOpen) return;
+
+            try
+            {
+                // Run the data sending on a separate thread to avoid blocking the UI
+                await Task.Run(() =>
+                {
+                    int XMIT_0_Insteer = uc0Cantrak_Intsteer_Enable.Value;
+                    int XMIT_1_CalCommand = uc1CT_Autocal_Flag.Value;
+                    int XMIT_2_Set12Mode = uc2CT_Set1_Set2_Mode.Value;
+                    int XMIT_3__Set12Flag = uc3CT_Set1_Set2_Flag.Value;
+                    int XMIT_4_z = 0;
+                    int XMIT_5_z = 0;
+                    int XMIT_6_z = 0;
+                    int XMIT_7_z = 0;
+
+
+
+                    string messageWithoutChecksum = $"$PVCC," +
+                    $"{XMIT_0_Insteer}," +
+                    $"{XMIT_1_CalCommand}," +
+                    $"{XMIT_2_Set12Mode}," +
+                    $"{XMIT_3__Set12Flag}," +
+                    $"{XMIT_4_z}," +
+                    $"{XMIT_5_z}," +
+                    $"{XMIT_6_z}," +
+                    $"{XMIT_7_z},";
+
+
+
+                    string checksum = CalculateChecksum(messageWithoutChecksum);
+                    string fullMessage = $"{messageWithoutChecksum}*{checksum}\r";
+                    serialPort.Write(fullMessage);
+                    Invoke(new Action(() =>
+                    {
+                        textBoxSend.Clear();
+                        textBoxSend.AppendText(fullMessage);
                     }));
                 });
             }

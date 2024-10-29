@@ -62,6 +62,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_Command = new System.Windows.Forms.Label();
+            this.uc0Cantrak_Intsteer_Enable = new VCI_Forms_LIB.VCinc_uc();
+            this.uc1CT_Autocal_Flag = new VCI_Forms_LIB.VCinc_uc();
+            this.uc2CT_Set1_Set2_Mode = new VCI_Forms_LIB.VCinc_uc();
+            this.uc3CT_Set1_Set2_Flag = new VCI_Forms_LIB.VCinc_uc();
+            this.chkToggleImplementation = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numupdown_sendrate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,9 +82,9 @@
             // 
             // buttonSend
             // 
-            this.buttonSend.Location = new System.Drawing.Point(1454, 612);
+            this.buttonSend.Location = new System.Drawing.Point(1779, 612);
             this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(767, 38);
+            this.buttonSend.Size = new System.Drawing.Size(442, 38);
             this.buttonSend.TabIndex = 28;
             this.buttonSend.Text = "send1";
             this.buttonSend.UseVisualStyleBackColor = true;
@@ -253,7 +258,7 @@
             this.textBoxReceive.Location = new System.Drawing.Point(1454, 693);
             this.textBoxReceive.Multiline = true;
             this.textBoxReceive.Name = "textBoxReceive";
-            this.textBoxReceive.Size = new System.Drawing.Size(767, 286);
+            this.textBoxReceive.Size = new System.Drawing.Size(767, 265);
             this.textBoxReceive.TabIndex = 26;
             this.textBoxReceive.Text = "ergregewg";
             // 
@@ -537,7 +542,7 @@
             // lbl_Intsteer_Enable
             // 
             this.lbl_Intsteer_Enable.AutoSize = true;
-            this.lbl_Intsteer_Enable.Location = new System.Drawing.Point(1416, 9);
+            this.lbl_Intsteer_Enable.Location = new System.Drawing.Point(821, 571);
             this.lbl_Intsteer_Enable.Name = "lbl_Intsteer_Enable";
             this.lbl_Intsteer_Enable.Size = new System.Drawing.Size(162, 25);
             this.lbl_Intsteer_Enable.TabIndex = 49;
@@ -546,7 +551,7 @@
             // lbl_Autocal_CMD
             // 
             this.lbl_Autocal_CMD.AutoSize = true;
-            this.lbl_Autocal_CMD.Location = new System.Drawing.Point(1416, 34);
+            this.lbl_Autocal_CMD.Location = new System.Drawing.Point(821, 596);
             this.lbl_Autocal_CMD.Name = "lbl_Autocal_CMD";
             this.lbl_Autocal_CMD.Size = new System.Drawing.Size(144, 25);
             this.lbl_Autocal_CMD.TabIndex = 50;
@@ -555,7 +560,7 @@
             // lbl_Set1_Set2_Mode
             // 
             this.lbl_Set1_Set2_Mode.AutoSize = true;
-            this.lbl_Set1_Set2_Mode.Location = new System.Drawing.Point(1416, 59);
+            this.lbl_Set1_Set2_Mode.Location = new System.Drawing.Point(821, 621);
             this.lbl_Set1_Set2_Mode.Name = "lbl_Set1_Set2_Mode";
             this.lbl_Set1_Set2_Mode.Size = new System.Drawing.Size(178, 25);
             this.lbl_Set1_Set2_Mode.TabIndex = 51;
@@ -564,7 +569,7 @@
             // lbl_Position_Capture_Request
             // 
             this.lbl_Position_Capture_Request.AutoSize = true;
-            this.lbl_Position_Capture_Request.Location = new System.Drawing.Point(1416, 84);
+            this.lbl_Position_Capture_Request.Location = new System.Drawing.Point(821, 646);
             this.lbl_Position_Capture_Request.Name = "lbl_Position_Capture_Request";
             this.lbl_Position_Capture_Request.Size = new System.Drawing.Size(269, 25);
             this.lbl_Position_Capture_Request.TabIndex = 52;
@@ -573,7 +578,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1243, 9);
+            this.label1.Location = new System.Drawing.Point(648, 571);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 25);
             this.label1.TabIndex = 53;
@@ -582,7 +587,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1243, 34);
+            this.label2.Location = new System.Drawing.Point(648, 596);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 25);
             this.label2.TabIndex = 54;
@@ -591,7 +596,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1243, 59);
+            this.label3.Location = new System.Drawing.Point(648, 621);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(154, 25);
             this.label3.TabIndex = 55;
@@ -600,7 +605,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1243, 84);
+            this.label4.Location = new System.Drawing.Point(648, 646);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(163, 25);
             this.label4.TabIndex = 56;
@@ -609,17 +614,116 @@
             // lbl_Command
             // 
             this.lbl_Command.AutoSize = true;
-            this.lbl_Command.Location = new System.Drawing.Point(1624, 34);
+            this.lbl_Command.Location = new System.Drawing.Point(1029, 596);
             this.lbl_Command.Name = "lbl_Command";
             this.lbl_Command.Size = new System.Drawing.Size(52, 25);
             this.lbl_Command.TabIndex = 57;
             this.lbl_Command.Text = "cmd";
+            // 
+            // uc0Cantrak_Intsteer_Enable
+            // 
+            this.uc0Cantrak_Intsteer_Enable.Address = "00";
+            this.uc0Cantrak_Intsteer_Enable.BackColor = System.Drawing.Color.MediumPurple;
+            this.uc0Cantrak_Intsteer_Enable.Bit0Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit1Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit2Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit3Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit4Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit5Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit6Title = "";
+            this.uc0Cantrak_Intsteer_Enable.Bit7Title = "";
+            this.uc0Cantrak_Intsteer_Enable.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.uc0Cantrak_Intsteer_Enable.Location = new System.Drawing.Point(648, 693);
+            this.uc0Cantrak_Intsteer_Enable.Margin = new System.Windows.Forms.Padding(0);
+            this.uc0Cantrak_Intsteer_Enable.Name = "uc0Cantrak_Intsteer_Enable";
+            this.uc0Cantrak_Intsteer_Enable.PGN = "0000";
+            this.uc0Cantrak_Intsteer_Enable.Size = new System.Drawing.Size(200, 260);
+            this.uc0Cantrak_Intsteer_Enable.SPNName = "Y0";
+            this.uc0Cantrak_Intsteer_Enable.TabIndex = 58;
+            // 
+            // uc1CT_Autocal_Flag
+            // 
+            this.uc1CT_Autocal_Flag.Address = "00";
+            this.uc1CT_Autocal_Flag.BackColor = System.Drawing.Color.MediumPurple;
+            this.uc1CT_Autocal_Flag.Bit0Title = " ";
+            this.uc1CT_Autocal_Flag.Bit1Title = " ";
+            this.uc1CT_Autocal_Flag.Bit2Title = " ";
+            this.uc1CT_Autocal_Flag.Bit3Title = " ";
+            this.uc1CT_Autocal_Flag.Bit4Title = " ";
+            this.uc1CT_Autocal_Flag.Bit5Title = " ";
+            this.uc1CT_Autocal_Flag.Bit6Title = "";
+            this.uc1CT_Autocal_Flag.Bit7Title = "";
+            this.uc1CT_Autocal_Flag.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.uc1CT_Autocal_Flag.Location = new System.Drawing.Point(848, 693);
+            this.uc1CT_Autocal_Flag.Margin = new System.Windows.Forms.Padding(0);
+            this.uc1CT_Autocal_Flag.Name = "uc1CT_Autocal_Flag";
+            this.uc1CT_Autocal_Flag.PGN = "0000";
+            this.uc1CT_Autocal_Flag.Size = new System.Drawing.Size(200, 260);
+            this.uc1CT_Autocal_Flag.SPNName = "Autocal_Flag";
+            this.uc1CT_Autocal_Flag.TabIndex = 59;
+            // 
+            // uc2CT_Set1_Set2_Mode
+            // 
+            this.uc2CT_Set1_Set2_Mode.Address = "00";
+            this.uc2CT_Set1_Set2_Mode.BackColor = System.Drawing.Color.MediumPurple;
+            this.uc2CT_Set1_Set2_Mode.Bit0Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit1Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit2Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit3Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit4Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit5Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit6Title = "";
+            this.uc2CT_Set1_Set2_Mode.Bit7Title = "";
+            this.uc2CT_Set1_Set2_Mode.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.uc2CT_Set1_Set2_Mode.Location = new System.Drawing.Point(1048, 693);
+            this.uc2CT_Set1_Set2_Mode.Margin = new System.Windows.Forms.Padding(0);
+            this.uc2CT_Set1_Set2_Mode.Name = "uc2CT_Set1_Set2_Mode";
+            this.uc2CT_Set1_Set2_Mode.PGN = "0000";
+            this.uc2CT_Set1_Set2_Mode.Size = new System.Drawing.Size(200, 260);
+            this.uc2CT_Set1_Set2_Mode.SPNName = "Y0";
+            this.uc2CT_Set1_Set2_Mode.TabIndex = 60;
+            // 
+            // uc3CT_Set1_Set2_Flag
+            // 
+            this.uc3CT_Set1_Set2_Flag.Address = "00";
+            this.uc3CT_Set1_Set2_Flag.BackColor = System.Drawing.Color.MediumPurple;
+            this.uc3CT_Set1_Set2_Flag.Bit0Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit1Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit2Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit3Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit4Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit5Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit6Title = "";
+            this.uc3CT_Set1_Set2_Flag.Bit7Title = "";
+            this.uc3CT_Set1_Set2_Flag.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.uc3CT_Set1_Set2_Flag.Location = new System.Drawing.Point(1248, 693);
+            this.uc3CT_Set1_Set2_Flag.Margin = new System.Windows.Forms.Padding(0);
+            this.uc3CT_Set1_Set2_Flag.Name = "uc3CT_Set1_Set2_Flag";
+            this.uc3CT_Set1_Set2_Flag.PGN = "0000";
+            this.uc3CT_Set1_Set2_Flag.Size = new System.Drawing.Size(200, 260);
+            this.uc3CT_Set1_Set2_Flag.SPNName = "Y0";
+            this.uc3CT_Set1_Set2_Flag.TabIndex = 61;
+            // 
+            // chkToggleImplementation
+            // 
+            this.chkToggleImplementation.AutoSize = true;
+            this.chkToggleImplementation.Location = new System.Drawing.Point(1454, 617);
+            this.chkToggleImplementation.Name = "chkToggleImplementation";
+            this.chkToggleImplementation.Size = new System.Drawing.Size(156, 29);
+            this.chkToggleImplementation.TabIndex = 62;
+            this.chkToggleImplementation.Text = "Write to C3i";
+            this.chkToggleImplementation.UseVisualStyleBackColor = true;
             // 
             // Serial_C3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2231, 991);
+            this.Controls.Add(this.chkToggleImplementation);
+            this.Controls.Add(this.uc3CT_Set1_Set2_Flag);
+            this.Controls.Add(this.uc2CT_Set1_Set2_Mode);
+            this.Controls.Add(this.uc1CT_Autocal_Flag);
+            this.Controls.Add(this.uc0Cantrak_Intsteer_Enable);
             this.Controls.Add(this.lbl_Command);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -699,5 +803,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_Command;
+        private VCI_Forms_LIB.VCinc_uc uc0Cantrak_Intsteer_Enable;
+        private VCI_Forms_LIB.VCinc_uc uc1CT_Autocal_Flag;
+        private VCI_Forms_LIB.VCinc_uc uc2CT_Set1_Set2_Mode;
+        private VCI_Forms_LIB.VCinc_uc uc3CT_Set1_Set2_Flag;
+        private System.Windows.Forms.CheckBox chkToggleImplementation;
     }
 }
