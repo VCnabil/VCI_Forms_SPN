@@ -64,7 +64,7 @@ namespace VCI_Forms_SPN._GLobalz
         #endregion
         public void INIT_CON_LABJACK()
         {
-            if (isOnBus) return;
+           // if (!isOnBus) return;
 
             LJM.OpenS("ANY", "ANY", "ANY", ref handle);
             LJM.GetHandleInfo(handle, ref devType, ref conType, ref serNum, ref ipAddr, ref port, ref maxBytesPerMB);

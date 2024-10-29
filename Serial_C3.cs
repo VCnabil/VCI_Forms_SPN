@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
@@ -35,7 +36,9 @@ namespace VCI_Forms_SPN
             buttonSend.Click += buttonSend_Click;
             this.FormClosing += SerialForm_FormClosing;
             checkBox_autosend.CheckedChanged += checkBox_autosend_CheckedChanged;
-            
+            checkBox_autosend.Checked = true;
+            _doAutosend = checkBox_autosend.Checked;
+
 
             // Initial Timer Interval
             looptimer.Interval = (int)numupdown_sendrate.Value;
@@ -97,53 +100,9 @@ namespace VCI_Forms_SPN
             {
                 try
                 {
-                    //$PVCI,999,999,778,999,0,0,13,2,14,0,0,0,0,3,0,0,65*24 <----here is a real example of message 
-                    //      pBu,sBu,pNo,sNo,0, 0,,13,2,14,0,0,0,0,3,0,0,65 
 
-                    // Simulated values for the other parameters
-                    //int portNoz = 999;
-                    //int stbdNoz = 999;
-                    //int portBucket = 888;
-                    //int stbdBucket = 777;
-                    //int _UNUSED_portTAB = 0;
-                    //int _UNUSED_stbdTAB = 0;
-                    //int XMIT_SensorFaultError = 13;
-                    //int XMIT_NonFollowError = 2;
-                    //int XMIT_CmdFaultError_STA1 =14;
-                    //int XMIT_CmdFaultError_STA2 = 0;
-                    //int XMIT_CmdFaultError_STA3 = 0;
-                    //int XMIT_Autocal_TrimRoll_Error = 0;
-                    //int XMIT_Dockmode_Interlock_Error = 3;
-                    //int cXMIT_StopRequest = 0;
-                    //int cXMIT_Status_CT = 0;
-                    //int XMIT_CANFault = 0;
-             
-
-                    int XMIT_PortNoz_Scaled = ucXMIT_PortNoz_Scaled.Value;
-                    int XMIT_StbdNoz_Scaled = ucXMIT_StbdNoz_Scaled.Value;
-                    int XMIT_PortBkt_Scaled = ucXMIT_PortBkt_Scaled.Value;
-                    int XMIT_StbdBkt_Scaled = ucXMIT_StbdBkt_Scaled.Value;
-                    int _UNUSED_portTAB = 0;
-                    int _UNUSED_stbdTAB = 0;
-                    int XMIT_SensorFaultError = ucXMIT_SensorFaultError.Value;
-                    int XMIT_NonFollowError = ucXMIT_NonFollowError.Value;
-                    int XMIT_CmdFaultError_STA1 = ucXMIT_CmdFaultError_STA1.Value;
-                    int XMIT_CmdFaultError_STA2 = ucXMIT_CmdFaultError_STA2.Value;
-                    int XMIT_CmdFaultError_STA3 = ucXMIT_CmdFaultError_STA3.Value;
-                    int XMIT_Autocal_TrimRoll_Error = ucXMIT_Autocal_TrimRoll_Error.Value;
-                    int XMIT_Dockmode_Interlock_Error = ucXMIT_Dockmode_Interlock_Error.Value;
-                    int cXMIT_StopRequest = 0;
-                    int cXMIT_Status_CT = 0;
-                    int XMIT_CANFault = ucXMIT_CANFault.Value;
-
-                    string messageWithoutChecksum = $"$PVCI,{XMIT_PortBkt_Scaled},{XMIT_StbdBkt_Scaled},{XMIT_PortNoz_Scaled},{XMIT_StbdNoz_Scaled},{_UNUSED_portTAB},{_UNUSED_stbdTAB},{XMIT_SensorFaultError},{XMIT_NonFollowError},{XMIT_CmdFaultError_STA1},{XMIT_CmdFaultError_STA2},{XMIT_CmdFaultError_STA3},{XMIT_Autocal_TrimRoll_Error},{XMIT_Dockmode_Interlock_Error},{cXMIT_StopRequest},{cXMIT_Status_CT},{XMIT_CANFault}";
-
-                    string checksum = CalculateChecksum(messageWithoutChecksum);
-                    string fullMessage = $"{messageWithoutChecksum}*{checksum}\r\n";
-
-                    serialPort.Write(fullMessage);
-                    textBoxSend.Clear();
-                    textBoxSend.AppendText(fullMessage);
+                    string onetimemessage = textBoxSend.Text;
+                    serialPort.Write(onetimemessage);
                 }
                 catch (Exception ex)
                 {
@@ -163,6 +122,7 @@ namespace VCI_Forms_SPN
                 Invoke(new Action(() =>
                 {
                     textBoxReceive.AppendText(message);
+                    decodeSerialMessage(message);
                 }));
             }
             catch (Exception ex)
@@ -174,6 +134,70 @@ namespace VCI_Forms_SPN
             }
         }
 
+
+        int _Intsteer_Enable = 0;
+        int _Autocal_CMD = 0;
+        int _Set1_Set2_Mode = 0;
+        int _Position_Capture_Request = 0;
+        void decodeSerialMessage1(string msg) {
+
+            //PVCC,1,0,0,0,0,0,0,0*07
+            //NMEA_HEADER, Intsteer_Enable, Autocal_CMD, Set1_Set2_Mode, Position_Capture_Request,0 ,0 ,0 ,0  * checksum
+
+
+            lbl_Intsteer_Enable.Text = _Intsteer_Enable.ToString();
+            lbl_Autocal_CMD.Text = _Autocal_CMD.ToString();
+            lbl_Set1_Set2_Mode.Text = _Set1_Set2_Mode.ToString();
+            lbl_Position_Capture_Request.Text = _Position_Capture_Request.ToString();
+        }
+
+        void decodeSerialMessage(string msg)
+        {
+            int checksumIndex = msg.IndexOf('*');
+            if (checksumIndex != -1)
+            {
+                msg = msg.Substring(0, checksumIndex); 
+            }
+            string[] parts = msg.Split(',');
+            if (parts.Length >= 5 && parts[0] == "$PVCC")
+            {
+                
+                int.TryParse(parts[1], out _Intsteer_Enable);
+                int.TryParse(parts[2], out _Autocal_CMD);
+                int.TryParse(parts[3], out _Set1_Set2_Mode);
+                int.TryParse(parts[4], out _Position_Capture_Request);
+
+                lbl_Intsteer_Enable.Text = _Intsteer_Enable.ToString();
+                lbl_Autocal_CMD.Text = _Autocal_CMD.ToString();
+                lbl_Set1_Set2_Mode.Text = _Set1_Set2_Mode.ToString();
+                lbl_Position_Capture_Request.Text = _Position_Capture_Request.ToString();
+                Debug.WriteLine("OK.");
+
+                if (_Autocal_CMD == 11)
+                {
+
+                    lbl_Command.Text = "init autocal";
+                }
+                else if (_Autocal_CMD == 22)
+                {
+                    lbl_Command.Text = "finish autocal";
+                }
+                else if (_Autocal_CMD == 33)
+                {
+                    lbl_Command.Text = "abort autocal";
+                }
+                else if (_Autocal_CMD == 66 || _Autocal_CMD == 88)
+                {
+                    lbl_Command.Text = "pos cap req acked";
+                }
+            }
+            else
+            {
+               Debug.WriteLine("Invalid message format received.");
+            }
+        }
+
+
         private async void looptimer_Tick(object sender, EventArgs e)
         {
             if (!_doAutosend || !isPortOpen) return;
@@ -183,28 +207,68 @@ namespace VCI_Forms_SPN
                 // Run the data sending on a separate thread to avoid blocking the UI
                 await Task.Run(() =>
                 {
-                    int XMIT_PortNoz_Scaled = ucXMIT_PortNoz_Scaled.Value;
-                    int XMIT_StbdNoz_Scaled = ucXMIT_StbdNoz_Scaled.Value;
-                    int XMIT_PortBkt_Scaled = ucXMIT_PortBkt_Scaled.Value;
-                    int XMIT_StbdBkt_Scaled = ucXMIT_StbdBkt_Scaled.Value;
-                    int _UNUSED_portTAB = 0;
-                    int _UNUSED_stbdTAB = 0;
-                    int XMIT_SensorFaultError = ucXMIT_SensorFaultError.Value;
-                    int XMIT_NonFollowError = ucXMIT_NonFollowError.Value;
-                    int XMIT_CmdFaultError_STA1 = ucXMIT_CmdFaultError_STA1.Value;
-                    int XMIT_CmdFaultError_STA2 = ucXMIT_CmdFaultError_STA2.Value;
-                    int XMIT_CmdFaultError_STA3 = ucXMIT_CmdFaultError_STA3.Value;
-                    int XMIT_Autocal_TrimRoll_Error = ucXMIT_Autocal_TrimRoll_Error.Value;
-                    int XMIT_Dockmode_Interlock_Error = ucXMIT_Dockmode_Interlock_Error.Value;
-                    int cXMIT_StopRequest = 0;
-                    int cXMIT_Status_CT = 0;
-                    int XMIT_CANFault = ucXMIT_CANFault.Value;
-                
+                    //1
+                    int XMIT_1_PortNoz_Scaled = ucXMIT_PortNoz_Scaled.Value;
+                    //2
+                    int XMIT_2_StbdNoz_Scaled = ucXMIT_StbdNoz_Scaled.Value;
+                    //3
+                    int XMIT_3_PortBkt_Scaled = ucXMIT_PortBkt_Scaled.Value;
+                    //4
+                    int XMIT_4_StbdBkt_Scaled = ucXMIT_StbdBkt_Scaled.Value;
+                    //5
+                    int XMIT_5_PortTab_Scaled = ucXMIT_PortTab_Scaled.Value;
+                    //6
+                    int XMIT_6_StbdTab_Scaled = ucXMIT_StbdTab_Scaled.Value;
 
-                    string messageWithoutChecksum = $"$PVCI,{XMIT_PortBkt_Scaled},{XMIT_StbdBkt_Scaled},{XMIT_PortNoz_Scaled},{XMIT_StbdNoz_Scaled},{_UNUSED_portTAB},{_UNUSED_stbdTAB},{XMIT_SensorFaultError},{XMIT_NonFollowError},{XMIT_CmdFaultError_STA1},{XMIT_CmdFaultError_STA2},{XMIT_CmdFaultError_STA3},{XMIT_Autocal_TrimRoll_Error},{XMIT_Dockmode_Interlock_Error},{cXMIT_StopRequest},{cXMIT_Status_CT},{XMIT_CANFault}";
+                    //faults
 
+                    //7
+                    int XMIT_7_SensorFaultError = ucXMIT_SensorFaultError.Value;
+                    //8
+                    int XMIT_8_NonFollowError = ucXMIT_NonFollowError.Value;
+                    //9
+                    int XMIT_9_CmdFaultError_STA1 = ucXMIT_CmdFaultError_STA1.Value;
+                    //10
+                    int XMIT_10CmdFaultError_STA2 = ucXMIT_CmdFaultError_STA2.Value;
+                    //11
+                    int XMIT_11CmdFaultError_STA3 = ucXMIT_CmdFaultError_STA3.Value;
+                    //12
+                    int XMIT_12Autocal_TrimRoll_Error = ucXMIT_Autocal_TrimRoll_Error.Value;  
+                    //13
+                    int XMIT_13Dockmode_Interlock_Error =  ucXMIT_Dockmode_Interlock_Error.Value;
+                    //14
+                    int XMIT_14_Status_CT = uc_MODE.Value;
+                    //15
+                    int XMIT_15StopRequest =  0;
+               
+                    int XMIT_16 = ucXMIT_16.Value;
+                    //17
+                    int XMIT_17 = ucXMIT_17.Value;
+                    int XMIT_18CANFault = ucXMIT_CANFault.Value;
+                   // string messageWithoutChecksum = $"$PVCI,{XMIT_PortBkt_Scaled},{XMIT_StbdBkt_Scaled},{XMIT_PortNoz_Scaled},{XMIT_StbdNoz_Scaled},{XMIT_PortTab_Scaled},{XMIT_StbdTab_Scaled},{XMIT_SensorFaultError},{XMIT_NonFollowError},{XMIT_CmdFaultError_STA1},{XMIT_CmdFaultError_STA2},{XMIT_CmdFaultError_STA3},{XMIT_Autocal_TrimRoll_Error},{XMIT_Dockmode_Interlock_Error},{cXMIT_Status_CT},{cXMIT_StopRequest},{XMIT_CANFault}";
+                    string messageWithoutChecksum = $"$PVCI," +
+                    $"{XMIT_1_PortNoz_Scaled}," +
+                    $"{XMIT_2_StbdNoz_Scaled}," +
+                    $"{XMIT_3_PortBkt_Scaled}," +
+                    $"{XMIT_4_StbdBkt_Scaled}," +
+                    $"{XMIT_5_PortTab_Scaled}," +
+                    $"{XMIT_6_StbdTab_Scaled}," +
+                    $"{XMIT_7_SensorFaultError}," +
+                    $"{XMIT_8_NonFollowError}," +
+                    $"{XMIT_9_CmdFaultError_STA1}," +
+                    $"{XMIT_10CmdFaultError_STA2}," +
+                    $"{XMIT_11CmdFaultError_STA3}," +
+                    $"{XMIT_12Autocal_TrimRoll_Error}," +
+                    $"{XMIT_13Dockmode_Interlock_Error}," +
+                    $"{XMIT_14_Status_CT}," +
+                    $"{XMIT_15StopRequest}," +
+                    $"{XMIT_16}," +
+                    $"{XMIT_17}," +
+                    $"{XMIT_18CANFault}";
+
+           
                     string checksum = CalculateChecksum(messageWithoutChecksum);
-                    string fullMessage = $"{messageWithoutChecksum}*{checksum}\n";
+                    string fullMessage = $"{messageWithoutChecksum}*{checksum}\r";
                     serialPort.Write(fullMessage);
                     Invoke(new Action(() =>
                     {
@@ -243,6 +307,10 @@ namespace VCI_Forms_SPN
             }
         }
 
+        private void Serial_C3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

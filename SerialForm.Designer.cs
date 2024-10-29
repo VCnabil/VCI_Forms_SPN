@@ -66,14 +66,14 @@
             // comboBoxPorts
             // 
             this.comboBoxPorts.FormattingEnabled = true;
-            this.comboBoxPorts.Location = new System.Drawing.Point(819, 124);
+            this.comboBoxPorts.Location = new System.Drawing.Point(1118, 12);
             this.comboBoxPorts.Name = "comboBoxPorts";
-            this.comboBoxPorts.Size = new System.Drawing.Size(263, 33);
+            this.comboBoxPorts.Size = new System.Drawing.Size(171, 33);
             this.comboBoxPorts.TabIndex = 0;
             // 
             // buttonStartStop
             // 
-            this.buttonStartStop.Location = new System.Drawing.Point(1100, 124);
+            this.buttonStartStop.Location = new System.Drawing.Point(1295, 12);
             this.buttonStartStop.Name = "buttonStartStop";
             this.buttonStartStop.Size = new System.Drawing.Size(151, 33);
             this.buttonStartStop.TabIndex = 1;
@@ -82,31 +82,31 @@
             // 
             // textBoxReceive
             // 
-            this.textBoxReceive.Location = new System.Drawing.Point(985, 238);
+            this.textBoxReceive.Location = new System.Drawing.Point(935, 129);
             this.textBoxReceive.Multiline = true;
             this.textBoxReceive.Name = "textBoxReceive";
-            this.textBoxReceive.Size = new System.Drawing.Size(626, 534);
+            this.textBoxReceive.Size = new System.Drawing.Size(676, 197);
             this.textBoxReceive.TabIndex = 2;
             // 
             // textBoxSend
             // 
-            this.textBoxSend.Location = new System.Drawing.Point(812, 170);
+            this.textBoxSend.Location = new System.Drawing.Point(935, 92);
             this.textBoxSend.Name = "textBoxSend";
-            this.textBoxSend.Size = new System.Drawing.Size(705, 31);
+            this.textBoxSend.Size = new System.Drawing.Size(670, 31);
             this.textBoxSend.TabIndex = 3;
             // 
             // buttonSend
             // 
-            this.buttonSend.Location = new System.Drawing.Point(1274, 122);
+            this.buttonSend.Location = new System.Drawing.Point(1059, 47);
             this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(185, 39);
+            this.buttonSend.Size = new System.Drawing.Size(552, 39);
             this.buttonSend.TabIndex = 4;
             this.buttonSend.Text = "buttonSend";
             this.buttonSend.UseVisualStyleBackColor = true;
             // 
             // numericUpDownPortBucket
             // 
-            this.numericUpDownPortBucket.Location = new System.Drawing.Point(67, 200);
+            this.numericUpDownPortBucket.Location = new System.Drawing.Point(11, 14);
             this.numericUpDownPortBucket.Maximum = new decimal(new int[] {
             999,
             0,
@@ -118,7 +118,7 @@
             // 
             // numericUpDownPortNoz
             // 
-            this.numericUpDownPortNoz.Location = new System.Drawing.Point(210, 200);
+            this.numericUpDownPortNoz.Location = new System.Drawing.Point(154, 14);
             this.numericUpDownPortNoz.Maximum = new decimal(new int[] {
             999,
             0,
@@ -130,7 +130,7 @@
             // 
             // numericUpDownPortInterceptor
             // 
-            this.numericUpDownPortInterceptor.Location = new System.Drawing.Point(374, 200);
+            this.numericUpDownPortInterceptor.Location = new System.Drawing.Point(318, 14);
             this.numericUpDownPortInterceptor.Maximum = new decimal(new int[] {
             999,
             0,
@@ -142,7 +142,7 @@
             // 
             // numericUpDownStbdInterceptor
             // 
-            this.numericUpDownStbdInterceptor.Location = new System.Drawing.Point(374, 252);
+            this.numericUpDownStbdInterceptor.Location = new System.Drawing.Point(318, 66);
             this.numericUpDownStbdInterceptor.Maximum = new decimal(new int[] {
             999,
             0,
@@ -154,7 +154,7 @@
             // 
             // numericUpDownStbdNoz
             // 
-            this.numericUpDownStbdNoz.Location = new System.Drawing.Point(210, 252);
+            this.numericUpDownStbdNoz.Location = new System.Drawing.Point(154, 66);
             this.numericUpDownStbdNoz.Maximum = new decimal(new int[] {
             999,
             0,
@@ -166,7 +166,7 @@
             // 
             // numericUpDownStbdBucket
             // 
-            this.numericUpDownStbdBucket.Location = new System.Drawing.Point(67, 252);
+            this.numericUpDownStbdBucket.Location = new System.Drawing.Point(11, 66);
             this.numericUpDownStbdBucket.Maximum = new decimal(new int[] {
             999,
             0,
@@ -179,7 +179,7 @@
             // checkBox_autosend
             // 
             this.checkBox_autosend.AutoSize = true;
-            this.checkBox_autosend.Location = new System.Drawing.Point(1465, 127);
+            this.checkBox_autosend.Location = new System.Drawing.Point(1461, 12);
             this.checkBox_autosend.Name = "checkBox_autosend";
             this.checkBox_autosend.Size = new System.Drawing.Size(150, 29);
             this.checkBox_autosend.TabIndex = 23;
@@ -188,7 +188,7 @@
             // 
             // numupdown_sendrate
             // 
-            this.numupdown_sendrate.Location = new System.Drawing.Point(597, 211);
+            this.numupdown_sendrate.Location = new System.Drawing.Point(935, 47);
             this.numupdown_sendrate.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -205,7 +205,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(12, 371);
+            this.trackBar1.Location = new System.Drawing.Point(1, 129);
             this.trackBar1.Maximum = 999;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(300, 90);
@@ -213,7 +213,7 @@
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(12, 467);
+            this.trackBar2.Location = new System.Drawing.Point(1, 225);
             this.trackBar2.Maximum = 999;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(300, 90);
@@ -221,7 +221,7 @@
             // 
             // trackBar3
             // 
-            this.trackBar3.Location = new System.Drawing.Point(318, 371);
+            this.trackBar3.Location = new System.Drawing.Point(307, 129);
             this.trackBar3.Maximum = 999;
             this.trackBar3.Name = "trackBar3";
             this.trackBar3.Size = new System.Drawing.Size(300, 90);
@@ -229,7 +229,7 @@
             // 
             // trackBar4
             // 
-            this.trackBar4.Location = new System.Drawing.Point(318, 478);
+            this.trackBar4.Location = new System.Drawing.Point(307, 236);
             this.trackBar4.Maximum = 999;
             this.trackBar4.Name = "trackBar4";
             this.trackBar4.Size = new System.Drawing.Size(300, 90);
@@ -237,7 +237,7 @@
             // 
             // trackBar5
             // 
-            this.trackBar5.Location = new System.Drawing.Point(618, 371);
+            this.trackBar5.Location = new System.Drawing.Point(607, 129);
             this.trackBar5.Maximum = 999;
             this.trackBar5.Name = "trackBar5";
             this.trackBar5.Size = new System.Drawing.Size(300, 90);
@@ -245,7 +245,7 @@
             // 
             // trackBar6
             // 
-            this.trackBar6.Location = new System.Drawing.Point(618, 478);
+            this.trackBar6.Location = new System.Drawing.Point(607, 236);
             this.trackBar6.Maximum = 999;
             this.trackBar6.Name = "trackBar6";
             this.trackBar6.Size = new System.Drawing.Size(300, 90);
@@ -254,7 +254,7 @@
             // checkBox_pingPong
             // 
             this.checkBox_pingPong.AutoSize = true;
-            this.checkBox_pingPong.Location = new System.Drawing.Point(979, 12);
+            this.checkBox_pingPong.Location = new System.Drawing.Point(935, 12);
             this.checkBox_pingPong.Name = "checkBox_pingPong";
             this.checkBox_pingPong.Size = new System.Drawing.Size(133, 29);
             this.checkBox_pingPong.TabIndex = 31;
@@ -265,7 +265,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1623, 784);
+            this.ClientSize = new System.Drawing.Size(1623, 335);
             this.Controls.Add(this.checkBox_pingPong);
             this.Controls.Add(this.trackBar5);
             this.Controls.Add(this.trackBar6);
