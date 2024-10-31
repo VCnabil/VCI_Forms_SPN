@@ -149,7 +149,7 @@ namespace VCI_Forms_SPN._GLobalz
 
         private void CanEventCallback(int handle, IntPtr context, int notifyEvent)
         {
-            Debug.WriteLine($"[DEBUG] CanEventCallback triggered with handle: {handle}, event: {notifyEvent}");
+          //  Debug.WriteLine($"[DEBUG] CanEventCallback triggered with handle: {handle}, event: {notifyEvent}");
 
             if (notifyEvent == Canlib.canNOTIFY_RX)
             {
@@ -178,7 +178,7 @@ namespace VCI_Forms_SPN._GLobalz
                 // string message = $"ID={id}, DLC={dlc}, Data={BitConverter.ToString(msg, 0, dlc)}, Timestamp={timestamp}";
                 string message = $"ID={hexId}, DLC={dlc}, Data={BitConverter.ToString(msg, 0, dlc)}, Timestamp={timestamp}";
 
-                Debug.WriteLine($"[DEBUG] Asynchronous CAN message received: {message}");
+               // Debug.WriteLine($"[DEBUG] Asynchronous CAN message received: {message}");
                 OnMessageReceived?.Invoke(message);
             }
             else

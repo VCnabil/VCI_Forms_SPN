@@ -182,23 +182,23 @@ namespace VCI_Forms_SPN._Managers
         private void Init_onscreenGPS(Form form)
         {
             // Look for VCinc_GPS, only take the first one if found
-            //foreach (Control control in form.Controls)
-            //{
-            //    if (control is VCinc_GPS gpsControl)
-            //    {
-            //        _foundGPSonform++;
-            //        // Gather data bytes from the GPS control
-            //        byte[] headingData = gpsControl.Get_PGNdata_Heading_09F1127F();
-            //        byte[] combinedXiEtaData = gpsControl.Get_PGNdata_combined_Xi_eta_18FF6729();
-            //        byte[] cmdCoordinatesData = gpsControl.Get_PGNdata_CMDCOORDINATES_09F8017F();
+            foreach (Control control in form.Controls)
+            {
+                if (control is VCinc_GPS gpsControl)
+                {
+                    _foundGPSonform++;
+                    // Gather data bytes from the GPS control
+                    byte[] headingData = gpsControl.Get_PGNdata_Heading_09F1127F();
+                    byte[] combinedXiEtaData = gpsControl.Get_PGNdata_combined_Xi_eta_18FF6729();
+                    byte[] cmdCoordinatesData = gpsControl.Get_PGNdata_CMDCOORDINATES_09F8017F();
 
-            //        // Add the data to _pgnByteArrays with appropriate PGNs
-            //        _pgnByteArrays["09F1127F"] = (0x09F1127F, headingData);
-            //        _pgnByteArrays["18FF6729"] = (0x09FF6729, combinedXiEtaData);
-            //        _pgnByteArrays["09F8017F"] = (0x09F8017F, cmdCoordinatesData);
-            //        break;
-            //    }
-            //}
+                    // Add the data to _pgnByteArrays with appropriate PGNs
+                    _pgnByteArrays["09F1127F"] = (0x09F1127F, headingData);
+                    _pgnByteArrays["18FF6729"] = (0x09FF6729, combinedXiEtaData);
+                    _pgnByteArrays["09F8017F"] = (0x09F8017F, cmdCoordinatesData);
+                    break;
+                }
+            }
 
             if (_foundGPSonform == 0)
             {

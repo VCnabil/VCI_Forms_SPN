@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using VCI_Forms_LIB;
 using VCI_Forms_SPN._GLobalz;
 using VCI_Forms_SPN._Managers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VCI_Forms_SPN
 {
@@ -42,11 +43,17 @@ namespace VCI_Forms_SPN
             tempTimer.Start();
             messageBuffer = new StringBuilder();
             messageQueue = new Queue<string>(MaxMessages);
+            trackBar1.ValueChanged += TrackBar1_ValueChanged;
 
             #endregion
 
             textBox1.TextChanged += TextBox1_TextChanged;
 
+        }
+
+        private void TrackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            vCinc_GPS1.SetShipHeading(trackBar1.Value); 
         }
 
         double _unity_shiplat = 0;
@@ -63,16 +70,14 @@ namespace VCI_Forms_SPN
                 vCinc_GPS1.SetShipLocation(_unity_shiplat, _unity_shiplon);
             }
             label5.Text = _unity_shiplat.ToString() + " " + _unity_shiplon.ToString();
-
-
         }
         #region TemplateFunctions
         private void TempTimer_Tick(object sender, EventArgs e)
         {
            //vCinc_GPS1.SetShipLocation(42.111, -85.22);
-            vCinc_GPS1.UPDATE_CAN_DATA();
-            label3.Text = string.Join(",", vCinc_GPS1.Get_PGNdata_CMDCOORDINATES_09F8017F()); //Get_PGNdata_Heading_09F1127F
-            label4.Text = string.Join(",", vCinc_GPS1.Get_PGNdata_Heading_09F1127F());
+            //vCinc_GPS1.UPDATE_CAN_DATA();
+           // label3.Text = string.Join(",", vCinc_GPS1.Get_PGNdata_CMDCOORDINATES_09F8017F()); //Get_PGNdata_Heading_09F1127F
+           // label4.Text = string.Join(",", vCinc_GPS1.Get_PGNdata_Heading_09F1127F());
             _isOnCanBus = KvsrManager.Instance.GetIsOnBus();
             if (_isOnCanBus)
             {
@@ -90,22 +95,32 @@ namespace VCI_Forms_SPN
             if (_OScreenCount == 0) { return; }
             if (_myPGNManager != null)
             {
-                string _shiplatlon = "";
-                _shiplatlon = vCinc_GPS1.Get_ShipLocation_LAT() + " " + vCinc_GPS1.Get_ShipLocation_LON();
-                label1.Text = _shiplatlon;
+                //string _shiplatlon = "";
+                //_shiplatlon = vCinc_GPS1.Get_ShipLocation_LAT() + " " + vCinc_GPS1.Get_ShipLocation_LON();
+                //label1.Text = _shiplatlon;
 
-                string _purpleLatlon = "";
-                _purpleLatlon = vCinc_GPS1.Get_purpleDot_LAT() + " " + vCinc_GPS1.Get_purpleDot_LON();
-                label2.Text = _purpleLatlon;
+                //string _purpleLatlon = "";
+                //_purpleLatlon = vCinc_GPS1.Get_purpleDot_LAT() + " " + vCinc_GPS1.Get_purpleDot_LON();
+                //label2.Text = _purpleLatlon;
                 
             
                 _myPGNManager.LoadByteArraysForGroups();
                 var pgnByteArrays = _myPGNManager.GetPgnByteArrays();
                 foreach (var entry in pgnByteArrays.Values)
                 {
+                   
                     int pgn = entry.pgn;
+                    if (pgn == 0x09F8017F)
+                    {
+                       // Debug.WriteLine("foundone");
+                        KvsrManager.Instance.SendPGN_withStatus(1, pgn, vCinc_GPS1.Get_PGNdata_CMDCOORDINATES_09F8017F()); 
+                    }
+                    else { 
+                    
+                    
                     byte[] data = entry.data;
                     KvsrManager.Instance.SendPGN_withStatus(1, pgn, data);
+                    }
 
 
                 }
