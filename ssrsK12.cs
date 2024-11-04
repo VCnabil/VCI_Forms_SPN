@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO.Pipes;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,8 @@ using VCI_Forms_LIB;
 using VCI_Forms_SPN._GLobalz;
 using VCI_Forms_SPN._Managers;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Newtonsoft.Json;
+using VCI_Forms_SPN._BackEndDataOBJs;
 
 namespace VCI_Forms_SPN
 {
@@ -27,6 +31,15 @@ namespace VCI_Forms_SPN
         bool _isOnCanBus;
         Dictionary<string, string> uniqueMessages = new Dictionary<string, string>();
         #endregion
+        double _unity_shiplat = 0;
+        double _unity_shiplon = 0;
+        double _unity_shipHeading = 0;
+        private PipeManager _pipeManager;
+        private bool _pipeIsOpen = false;
+        double _myJET_ANG = 0;
+        double _myTHRUST = 0;
+        double _myWPlat = 0;
+        double _myWPlon = 0;
         public ssrsK12()
         {
             InitializeComponent();
@@ -47,37 +60,185 @@ namespace VCI_Forms_SPN
 
             #endregion
 
-            textBox1.TextChanged += TextBox1_TextChanged;
+            tb_InitLatlon.TextChanged += TextBox1_TextChanged;
+
+
+            trackBar_thrust.ValueChanged += trackBar_Thrust_ValueChanged;
+            trackBar_PropulsionAngle.ValueChanged += trackBar_JetAngle_ValueChanged;
+
+            _pipeManager = new PipeManager();
+            _pipeManager.OnMessageReceived += PipeManager_OnMessageReceived;
+
+            // Configure the single button for opening and closing the pipe
+            btn_PipeToggle.Click += Btn_PipeToggle_Click;
+            UpdateButtonState();
+            btn_setLatLonToUnity.Click += Btn_setLatLonToUnity_Click;
 
         }
+        private async void trackBar_Thrust_ValueChanged(object sender, EventArgs e)
+        {
+            _myTHRUST = trackBar_thrust.Value;
+
+            int THRUST_0_255 = (int)_myTHRUST * 255 / 100;
+            vCinc_uc23.Value = THRUST_0_255;
+            vCinc_uc24.Value = THRUST_0_255;
+            await SendThrustAndAngles();
+        }
+        private async  void trackBar_JetAngle_ValueChanged(object sender, EventArgs e)
+        {
+            _myJET_ANG = trackBar_PropulsionAngle.Value;
+
+            int JET_ANG_0_255 = (int)_myJET_ANG * 255 / 100;
+            vCinc_uc20.Value = JET_ANG_0_255;
+            vCinc_uc21.Value = JET_ANG_0_255;
+            await SendThrustAndAngles();
+        }
+        // Event handler for setting the initial latitude and longitude to Unity
+        private void Btn_setLatLonToUnity_Click(object sender, EventArgs e)
+        {
+            // Read the latitude and longitude from the textbox
+            string latLonText = tb_InitLatlon.Text;
+            string[] parts = latLonText.Split(',');
+
+            if (parts.Length == 2)
+            {
+                if (double.TryParse(parts[0], out double lat) && double.TryParse(parts[1], out double lon))
+                {
+                    // Create the ShipCommands object
+                    var shipCommands = new ShipCommands
+                    {
+                        ResetCoordinatesLat = lat,
+                        ResetCoordinatesLon = lon
+                    };
+
+                    // Serialize to JSON
+                    string jsonMessage = JsonConvert.SerializeObject(shipCommands);
+
+                    // Send the JSON message to Unity
+                    _ = _pipeManager.SendMessageAsync(jsonMessage);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid latitude or longitude format. Please enter valid numbers.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter the latitude and longitude in the format: lat,lon", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+        private void PipeManager_OnMessageReceived(string message)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => PipeManager_OnMessageReceived(message)));
+                return;
+            }
+
+            try
+            {
+                // Deserialize and update only if data has changed significantly
+                ShipStatus shipStatus = JsonConvert.DeserializeObject<ShipStatus>(message);
+                if (shipStatus != null &&
+                    (_unity_shiplat != shipStatus.ActualLat ||
+                     _unity_shiplon != shipStatus.ActualLon ||
+                     _unity_shipHeading != shipStatus.ShipHeading))
+                {
+                    _unity_shiplat = shipStatus.ActualLat;
+                    _unity_shiplon = shipStatus.ActualLon;
+                    _unity_shipHeading = shipStatus.ShipHeading;
+
+                    // Update GPS values
+                    vCinc_GPS1.SetShipLocationAndHeading(_unity_shiplat, _unity_shiplon, _unity_shipHeading);
+                }
+            }
+            catch (JsonSerializationException ex)
+            {
+                Debug.WriteLine($"[DEBUG] Error deserializing JSON: {ex.Message}");
+            }
+        }
+
+
+        // Event handler for toggling the pipe connection
+        private async void Btn_PipeToggle_Click(object sender, EventArgs e)
+        {
+            if (_pipeIsOpen)
+            {
+                // Close the pipe
+                _pipeManager.StopPipeServer();
+                _pipeIsOpen = false;
+            }
+            else
+            {
+                // Open the pipe
+                await _pipeManager.StartPipeServer();
+                _pipeIsOpen = true;
+            }
+            UpdateButtonState();
+        }
+
+        // Updates the button state based on the pipe connection status
+        private void UpdateButtonState()
+        {
+            if (_pipeIsOpen)
+            {
+                btn_PipeToggle.Text = "Close Pipe";
+                btn_PipeToggle.BackColor = Color.Green;
+            }
+            else
+            {
+                btn_PipeToggle.Text = "Open Pipe";
+                btn_PipeToggle.BackColor = Color.Red;
+            }
+        }
+
 
         private void TrackBar1_ValueChanged(object sender, EventArgs e)
         {
-            vCinc_GPS1.SetShipHeading(trackBar1.Value); 
+            if (_pipeIsOpen)
+            {
+                //do nothing, we re sending the heading as part of the unity pipe message
+            }
+            else
+            {
+                // Update the ship heading in the GPS control
+                vCinc_GPS1.SetShipHeading(trackBar1.Value);
+            }
         }
 
-        double _unity_shiplat = 0;
-        double _unity_shiplon = 0;
+   
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            string _strInpiut = textBox1.Text;
-            //the inpu looks like " 42.0121,-12.005" stre them in doubles 
+            string _strInpiut = tb_InitLatlon.Text;
+            //the inpu looks like " 42.0121,-12.005"   
             string[] _strArray = _strInpiut.Split(',');
             if (_strArray.Length == 2)
             {
                 _unity_shiplat = Convert.ToDouble(_strArray[0]);
                 _unity_shiplon = Convert.ToDouble(_strArray[1]);
-                vCinc_GPS1.SetShipLocation(_unity_shiplat, _unity_shiplon);
+                if (!_pipeIsOpen)
+                {
+                    vCinc_GPS1.SetShipLocation(_unity_shiplat, _unity_shiplon);
+                }
+            }
+           //if piped, we dont send this to gps , we send unity pipe message
+            if (!_pipeIsOpen)
+            {
+                label5.ForeColor = Color.Black;
+            }
+            else
+            {
+                label5.ForeColor = Color.Red;
             }
             label5.Text = _unity_shiplat.ToString() + " " + _unity_shiplon.ToString();
         }
         #region TemplateFunctions
         private void TempTimer_Tick(object sender, EventArgs e)
         {
-           //vCinc_GPS1.SetShipLocation(42.111, -85.22);
-            //vCinc_GPS1.UPDATE_CAN_DATA();
-           // label3.Text = string.Join(",", vCinc_GPS1.Get_PGNdata_CMDCOORDINATES_09F8017F()); //Get_PGNdata_Heading_09F1127F
-           // label4.Text = string.Join(",", vCinc_GPS1.Get_PGNdata_Heading_09F1127F());
+        
             _isOnCanBus = KvsrManager.Instance.GetIsOnBus();
             if (_isOnCanBus)
             {
@@ -91,19 +252,17 @@ namespace VCI_Forms_SPN
                 lbl_onBus.ForeColor = Color.White;
                 lbl_onBus.Text = "OFF BUS";
             }
+
+
+            _myWPlat = vCinc_GPS1.Get_purpleDot_LAT();
+            _myWPlon = vCinc_GPS1.Get_purpleDot_LON();
+
             if (!_isOnCanBus) { return; }
             if (_OScreenCount == 0) { return; }
             if (_myPGNManager != null)
             {
-                //string _shiplatlon = "";
-                //_shiplatlon = vCinc_GPS1.Get_ShipLocation_LAT() + " " + vCinc_GPS1.Get_ShipLocation_LON();
-                //label1.Text = _shiplatlon;
-
-                //string _purpleLatlon = "";
-                //_purpleLatlon = vCinc_GPS1.Get_purpleDot_LAT() + " " + vCinc_GPS1.Get_purpleDot_LON();
-                //label2.Text = _purpleLatlon;
                 
-            
+       
                 _myPGNManager.LoadByteArraysForGroups();
                 var pgnByteArrays = _myPGNManager.GetPgnByteArrays();
                 foreach (var entry in pgnByteArrays.Values)
@@ -121,15 +280,29 @@ namespace VCI_Forms_SPN
                     byte[] data = entry.data;
                     KvsrManager.Instance.SendPGN_withStatus(1, pgn, data);
                     }
-
-
                 }
             }
             else
             {
                 Debug.WriteLine("[DEBUG] PGN Manager is not initialized");
             }
+     
         }
+        private async Task SendThrustAndAngles()
+        {
+            var thrustAndAngles = new
+            {
+                Thrust = _myTHRUST,
+                Jet1Angle = _myJET_ANG,
+                Jet2Angle = _myJET_ANG,
+                WaypointLat = _myWPlat,
+                WaypointLon = _myWPlon
+            };
+
+            string message = JsonConvert.SerializeObject(thrustAndAngles);
+            await _pipeManager.SendMessageAsync(message);
+        }
+
         private void KvsrManager_OnMessageReceived(string message)
         {
            // Debug.WriteLine($"[DEBUG] received: {message}");
@@ -222,6 +395,10 @@ namespace VCI_Forms_SPN
         #endregion
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            if (_pipeIsOpen)
+            {
+                _pipeManager.StopPipeServer();
+            }
             if (_isOnCanBus) { 
             
              KvsrManager.Instance.Close();

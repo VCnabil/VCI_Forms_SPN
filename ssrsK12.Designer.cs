@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_InitLatlon = new System.Windows.Forms.TextBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,7 +71,13 @@
             this.vCinc_uc1 = new VCI_Forms_LIB.VCinc_uc();
             this.cb_holdPos = new System.Windows.Forms.CheckBox();
             this.cb_holdHeading = new System.Windows.Forms.CheckBox();
+            this.btn_PipeToggle = new System.Windows.Forms.Button();
+            this.btn_setLatLonToUnity = new System.Windows.Forms.Button();
+            this.trackBar_PropulsionAngle = new System.Windows.Forms.TrackBar();
+            this.trackBar_thrust = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_PropulsionAngle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_thrust)).BeginInit();
             this.SuspendLayout();
             // 
             // cb_uniqueOn
@@ -90,13 +96,13 @@
             this.tb_CAN_Bus_View.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tb_CAN_Bus_View.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_CAN_Bus_View.ForeColor = System.Drawing.Color.Lime;
-            this.tb_CAN_Bus_View.Location = new System.Drawing.Point(1896, 110);
+            this.tb_CAN_Bus_View.Location = new System.Drawing.Point(1896, 125);
             this.tb_CAN_Bus_View.Margin = new System.Windows.Forms.Padding(6);
             this.tb_CAN_Bus_View.Multiline = true;
             this.tb_CAN_Bus_View.Name = "tb_CAN_Bus_View";
             this.tb_CAN_Bus_View.ReadOnly = true;
             this.tb_CAN_Bus_View.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_CAN_Bus_View.Size = new System.Drawing.Size(659, 1459);
+            this.tb_CAN_Bus_View.Size = new System.Drawing.Size(659, 1444);
             this.tb_CAN_Bus_View.TabIndex = 210;
             this.tb_CAN_Bus_View.Text = ": Console Bkg.green  -c -0 ";
             // 
@@ -176,13 +182,13 @@
             this.label4.TabIndex = 232;
             this.label4.Text = "label4";
             // 
-            // textBox1
+            // tb_InitLatlon
             // 
-            this.textBox1.Location = new System.Drawing.Point(1456, 373);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(329, 31);
-            this.textBox1.TabIndex = 233;
-            this.textBox1.Text = "12.0123,-33.1337";
+            this.tb_InitLatlon.Location = new System.Drawing.Point(1456, 373);
+            this.tb_InitLatlon.Name = "tb_InitLatlon";
+            this.tb_InitLatlon.Size = new System.Drawing.Size(329, 31);
+            this.tb_InitLatlon.TabIndex = 233;
+            this.tb_InitLatlon.Text = "12.0123,-33.1337";
             // 
             // trackBar1
             // 
@@ -398,7 +404,7 @@
             this.vCinc_uc17.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_uc17.Location = new System.Drawing.Point(1409, 538);
             this.vCinc_uc17.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc17.MaxValue = 65535;
+            this.vCinc_uc17.MaxValue = 70000;
             this.vCinc_uc17.Name = "vCinc_uc17";
             this.vCinc_uc17.NumberOfBytes = 2;
             this.vCinc_uc17.PGN = "FF66";
@@ -424,14 +430,14 @@
             this.vCinc_uc16.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_uc16.Location = new System.Drawing.Point(1209, 538);
             this.vCinc_uc16.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc16.MaxValue = 65535;
+            this.vCinc_uc16.MaxValue = 360;
             this.vCinc_uc16.Name = "vCinc_uc16";
             this.vCinc_uc16.NumberOfBytes = 2;
             this.vCinc_uc16.PGN = "FF66";
             this.vCinc_uc16.Size = new System.Drawing.Size(200, 260);
             this.vCinc_uc16.SPNName = "Helm";
             this.vCinc_uc16.TabIndex = 219;
-            this.vCinc_uc16.Value = 500;
+            this.vCinc_uc16.Value = 360;
             // 
             // vCinc_uc15
             // 
@@ -450,7 +456,7 @@
             this.vCinc_uc15.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_uc15.Location = new System.Drawing.Point(1009, 538);
             this.vCinc_uc15.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc15.MaxValue = 65535;
+            this.vCinc_uc15.MaxValue = 1000;
             this.vCinc_uc15.Name = "vCinc_uc15";
             this.vCinc_uc15.NumberOfBytes = 2;
             this.vCinc_uc15.PGN = "FF65";
@@ -827,17 +833,62 @@
             this.cb_holdHeading.Text = "holdrot";
             this.cb_holdHeading.UseVisualStyleBackColor = true;
             // 
+            // btn_PipeToggle
+            // 
+            this.btn_PipeToggle.Location = new System.Drawing.Point(2200, 69);
+            this.btn_PipeToggle.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_PipeToggle.Name = "btn_PipeToggle";
+            this.btn_PipeToggle.Size = new System.Drawing.Size(150, 44);
+            this.btn_PipeToggle.TabIndex = 239;
+            this.btn_PipeToggle.Text = "pipe";
+            this.btn_PipeToggle.UseVisualStyleBackColor = true;
+            // 
+            // btn_setLatLonToUnity
+            // 
+            this.btn_setLatLonToUnity.Location = new System.Drawing.Point(2362, 69);
+            this.btn_setLatLonToUnity.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_setLatLonToUnity.Name = "btn_setLatLonToUnity";
+            this.btn_setLatLonToUnity.Size = new System.Drawing.Size(150, 44);
+            this.btn_setLatLonToUnity.TabIndex = 240;
+            this.btn_setLatLonToUnity.Text = "set loc";
+            this.btn_setLatLonToUnity.UseVisualStyleBackColor = true;
+            // 
+            // trackBar_PropulsionAngle
+            // 
+            this.trackBar_PropulsionAngle.Location = new System.Drawing.Point(1209, 1079);
+            this.trackBar_PropulsionAngle.Margin = new System.Windows.Forms.Padding(2);
+            this.trackBar_PropulsionAngle.Maximum = 100;
+            this.trackBar_PropulsionAngle.Name = "trackBar_PropulsionAngle";
+            this.trackBar_PropulsionAngle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.trackBar_PropulsionAngle.Size = new System.Drawing.Size(244, 90);
+            this.trackBar_PropulsionAngle.TabIndex = 284;
+            this.trackBar_PropulsionAngle.Value = 50;
+            // 
+            // trackBar_thrust
+            // 
+            this.trackBar_thrust.Location = new System.Drawing.Point(1474, 1067);
+            this.trackBar_thrust.Margin = new System.Windows.Forms.Padding(2);
+            this.trackBar_thrust.Maximum = 100;
+            this.trackBar_thrust.Name = "trackBar_thrust";
+            this.trackBar_thrust.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar_thrust.Size = new System.Drawing.Size(90, 259);
+            this.trackBar_thrust.TabIndex = 283;
+            // 
             // ssrsK12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2556, 1584);
+            this.Controls.Add(this.trackBar_PropulsionAngle);
+            this.Controls.Add(this.trackBar_thrust);
+            this.Controls.Add(this.btn_setLatLonToUnity);
+            this.Controls.Add(this.btn_PipeToggle);
             this.Controls.Add(this.cb_holdHeading);
             this.Controls.Add(this.cb_holdPos);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_InitLatlon);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -878,6 +929,8 @@
             this.Name = "ssrsK12";
             this.Text = "ssrsK12";
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_PropulsionAngle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_thrust)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -922,11 +975,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_InitLatlon;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox cb_holdPos;
         private System.Windows.Forms.CheckBox cb_holdHeading;
+        private System.Windows.Forms.Button btn_PipeToggle;
+        private System.Windows.Forms.Button btn_setLatLonToUnity;
+        private System.Windows.Forms.TrackBar trackBar_PropulsionAngle;
+        private System.Windows.Forms.TrackBar trackBar_thrust;
     }
 }
