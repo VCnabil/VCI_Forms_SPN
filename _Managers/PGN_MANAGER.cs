@@ -194,7 +194,7 @@ namespace VCI_Forms_SPN._Managers
 
                     // Add the data to _pgnByteArrays with appropriate PGNs
                     _pgnByteArrays["09F1127F"] = (0x09F1127F, headingData);
-                    _pgnByteArrays["18FF6729"] = (0x09FF6729, combinedXiEtaData);
+                    _pgnByteArrays["18FF6729"] = (0x18FF6729, combinedXiEtaData);
                     _pgnByteArrays["09F8017F"] = (0x09F8017F, cmdCoordinatesData);
                     break;
                 }

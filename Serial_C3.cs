@@ -210,7 +210,14 @@ namespace VCI_Forms_SPN
                 }
                 else
                 {
+                    if (cb_c3iConfig.Checked)
+                    {
+                        await RunImplementation3();
+                    }
+                    else { 
+                    
                     await RunImplementation2();
+                    }
                 }
             }
             catch (Exception ex)
@@ -272,6 +279,8 @@ namespace VCI_Forms_SPN
                 }));
             });
         }
+        //sending a sample string 
+        // $PVCI,0,0,500,500,0,0,7,0,14,0,0,0,0,3,0,0,65,2*0C
 
         private async Task RunImplementation2()
         {
@@ -307,6 +316,29 @@ namespace VCI_Forms_SPN
                 }));
             });
         }
+
+        //implementation3 sends "$config,1" 
+        private async Task RunImplementation3()
+        {
+            await Task.Run(() =>
+            {
+                int XMIT_0_Config = vCinc_Config.Value;
+
+                // int XMIT_8_z = 0;
+
+                string messageWithoutChecksum = $"$config," +$"{XMIT_0_Config}";
+
+               
+                string fullMessage = $"{messageWithoutChecksum}\r";
+                serialPort.Write(fullMessage);
+                Invoke(new Action(() =>
+                {
+                    textBoxSend.Clear();
+                    textBoxSend.AppendText(fullMessage);
+                }));
+            });
+        }
+
 
         private async void looptimer_Tick1(object sender, EventArgs e)
         {

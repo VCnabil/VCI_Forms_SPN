@@ -67,6 +67,8 @@
             this.uc2CT_Set1_Set2_Mode = new VCI_Forms_LIB.VCinc_uc();
             this.uc3CT_Set1_Set2_Flag = new VCI_Forms_LIB.VCinc_uc();
             this.chkToggleImplementation = new System.Windows.Forms.CheckBox();
+            this.cb_c3iConfig = new System.Windows.Forms.CheckBox();
+            this.vCinc_Config = new VCI_Forms_LIB.VCinc_uc();
             ((System.ComponentModel.ISupportInitialize)(this.numupdown_sendrate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -714,11 +716,44 @@
             this.chkToggleImplementation.Text = "Write to C3i";
             this.chkToggleImplementation.UseVisualStyleBackColor = true;
             // 
+            // cb_c3iConfig
+            // 
+            this.cb_c3iConfig.AutoSize = true;
+            this.cb_c3iConfig.Location = new System.Drawing.Point(116, 695);
+            this.cb_c3iConfig.Name = "cb_c3iConfig";
+            this.cb_c3iConfig.Size = new System.Drawing.Size(224, 29);
+            this.cb_c3iConfig.TabIndex = 63;
+            this.cb_c3iConfig.Text = "Write to C3i Config";
+            this.cb_c3iConfig.UseVisualStyleBackColor = true;
+            // 
+            // vCinc_Config
+            // 
+            this.vCinc_Config.Address = "00";
+            this.vCinc_Config.BackColor = System.Drawing.Color.MediumPurple;
+            this.vCinc_Config.Bit0Title = " ";
+            this.vCinc_Config.Bit1Title = " ";
+            this.vCinc_Config.Bit2Title = " ";
+            this.vCinc_Config.Bit3Title = " ";
+            this.vCinc_Config.Bit4Title = " ";
+            this.vCinc_Config.Bit5Title = " ";
+            this.vCinc_Config.Bit6Title = "";
+            this.vCinc_Config.Bit7Title = "";
+            this.vCinc_Config.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_Config.Location = new System.Drawing.Point(84, 727);
+            this.vCinc_Config.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_Config.Name = "vCinc_Config";
+            this.vCinc_Config.PGN = "0000";
+            this.vCinc_Config.Size = new System.Drawing.Size(200, 260);
+            this.vCinc_Config.SPNName = "Y0";
+            this.vCinc_Config.TabIndex = 64;
+            // 
             // Serial_C3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2231, 991);
+            this.Controls.Add(this.vCinc_Config);
+            this.Controls.Add(this.cb_c3iConfig);
             this.Controls.Add(this.chkToggleImplementation);
             this.Controls.Add(this.uc3CT_Set1_Set2_Flag);
             this.Controls.Add(this.uc2CT_Set1_Set2_Mode);
@@ -808,5 +843,7 @@
         private VCI_Forms_LIB.VCinc_uc uc2CT_Set1_Set2_Mode;
         private VCI_Forms_LIB.VCinc_uc uc3CT_Set1_Set2_Flag;
         private System.Windows.Forms.CheckBox chkToggleImplementation;
+        private System.Windows.Forms.CheckBox cb_c3iConfig;
+        private VCI_Forms_LIB.VCinc_uc vCinc_Config;
     }
 }

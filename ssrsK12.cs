@@ -36,10 +36,11 @@ namespace VCI_Forms_SPN
         double _unity_shipHeading = 0;
         private PipeManager _pipeManager;
         private bool _pipeIsOpen = false;
-        double _myJET_ANG = 0;
+        double _myJET_ANG = 50;
         double _myTHRUST = 0;
         double _myWPlat = 0;
         double _myWPlon = 0;
+        private Timer pipeTimer;
         public ssrsK12()
         {
             InitializeComponent();
@@ -59,7 +60,9 @@ namespace VCI_Forms_SPN
             trackBar1.ValueChanged += TrackBar1_ValueChanged;
 
             #endregion
-
+            pipeTimer = new Timer();
+            pipeTimer.Interval = 200; // Set the desired interval
+            pipeTimer.Tick += PipeTimer_Tick;
             tb_InitLatlon.TextChanged += TextBox1_TextChanged;
 
 
@@ -75,47 +78,57 @@ namespace VCI_Forms_SPN
             btn_setLatLonToUnity.Click += Btn_setLatLonToUnity_Click;
 
         }
-        private async void trackBar_Thrust_ValueChanged(object sender, EventArgs e)
+        private void trackBar_Thrust_ValueChanged(object sender, EventArgs e)
         {
             _myTHRUST = trackBar_thrust.Value;
-
             int THRUST_0_255 = (int)_myTHRUST * 255 / 100;
             vCinc_uc23.Value = THRUST_0_255;
             vCinc_uc24.Value = THRUST_0_255;
-            await SendThrustAndAngles();
         }
-        private async  void trackBar_JetAngle_ValueChanged(object sender, EventArgs e)
+        private void trackBar_JetAngle_ValueChanged(object sender, EventArgs e)
         {
             _myJET_ANG = trackBar_PropulsionAngle.Value;
-
             int JET_ANG_0_255 = (int)_myJET_ANG * 255 / 100;
             vCinc_uc20.Value = JET_ANG_0_255;
             vCinc_uc21.Value = JET_ANG_0_255;
-            await SendThrustAndAngles();
         }
-        // Event handler for setting the initial latitude and longitude to Unity
         private void Btn_setLatLonToUnity_Click(object sender, EventArgs e)
         {
             // Read the latitude and longitude from the textbox
             string latLonText = tb_InitLatlon.Text;
             string[] parts = latLonText.Split(',');
-
             if (parts.Length == 2)
             {
                 if (double.TryParse(parts[0], out double lat) && double.TryParse(parts[1], out double lon))
                 {
+
+                    vCinc_GPS1.SetShipLocationAndHeading(lat, lon, 0);
                     // Create the ShipCommands object
                     var shipCommands = new ShipCommands
                     {
                         ResetCoordinatesLat = lat,
                         ResetCoordinatesLon = lon
                     };
-
                     // Serialize to JSON
                     string jsonMessage = JsonConvert.SerializeObject(shipCommands);
-
                     // Send the JSON message to Unity
                     _ = _pipeManager.SendMessageAsync(jsonMessage);
+
+                    vCinc_uc18.Value = 1;
+                    Timer timer = new Timer
+                    {
+                        Interval = 1500 // 1.5 seconds
+                    };
+                    timer.Tick += (s, args) =>
+                    {
+                        vCinc_uc18.Value = 0;
+                        timer.Stop(); // Stop the timer
+                        timer.Dispose(); // Dispose the timer
+                    };
+                    timer.Start();
+
+
+
                 }
                 else
                 {
@@ -127,7 +140,24 @@ namespace VCI_Forms_SPN
                 MessageBox.Show("Please enter the latitude and longitude in the format: lat,lon", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private async void PipeTimer_Tick(object sender, EventArgs e)
+        {
+            // Update the waypoint latitude and longitude
+            _myWPlat = vCinc_GPS1.Get_purpleDot_LAT();
+            _myWPlon = vCinc_GPS1.Get_purpleDot_LON();
 
+            var dataToSend = new
+            {
+                Thrust = _myTHRUST,
+                Jet1Angle = _myJET_ANG,
+                Jet2Angle = _myJET_ANG,
+                WaypointLat = _myWPlat,
+                WaypointLon = _myWPlon
+            };
+
+            string message = JsonConvert.SerializeObject(dataToSend);
+            await _pipeManager.SendMessageAsync(message);
+        }
 
 
         private void PipeManager_OnMessageReceived(string message)
@@ -141,6 +171,7 @@ namespace VCI_Forms_SPN
             try
             {
                 // Deserialize and update only if data has changed significantly
+
                 ShipStatus shipStatus = JsonConvert.DeserializeObject<ShipStatus>(message);
                 if (shipStatus != null &&
                     (_unity_shiplat != shipStatus.ActualLat ||
@@ -154,6 +185,7 @@ namespace VCI_Forms_SPN
                     // Update GPS values
                     vCinc_GPS1.SetShipLocationAndHeading(_unity_shiplat, _unity_shiplon, _unity_shipHeading);
                 }
+
             }
             catch (JsonSerializationException ex)
             {
@@ -170,12 +202,14 @@ namespace VCI_Forms_SPN
                 // Close the pipe
                 _pipeManager.StopPipeServer();
                 _pipeIsOpen = false;
+                pipeTimer.Stop(); // Stop the timer
             }
             else
             {
                 // Open the pipe
                 await _pipeManager.StartPipeServer();
                 _pipeIsOpen = true;
+                pipeTimer.Start(); // Start the timer
             }
             UpdateButtonState();
         }
@@ -195,36 +229,22 @@ namespace VCI_Forms_SPN
             }
         }
 
-
-        private void TrackBar1_ValueChanged(object sender, EventArgs e)
-        {
-            if (_pipeIsOpen)
-            {
-                //do nothing, we re sending the heading as part of the unity pipe message
-            }
-            else
-            {
-                // Update the ship heading in the GPS control
-                vCinc_GPS1.SetShipHeading(trackBar1.Value);
-            }
-        }
-
-   
-        private void TextBox1_TextChanged(object sender, EventArgs e)
+        void UpdateTheGPS_withLocalControlValues()
         {
             string _strInpiut = tb_InitLatlon.Text;
             //the inpu looks like " 42.0121,-12.005"   
             string[] _strArray = _strInpiut.Split(',');
             if (_strArray.Length == 2)
             {
-                _unity_shiplat = Convert.ToDouble(_strArray[0]);
-                _unity_shiplon = Convert.ToDouble(_strArray[1]);
                 if (!_pipeIsOpen)
                 {
-                    vCinc_GPS1.SetShipLocation(_unity_shiplat, _unity_shiplon);
+                    _unity_shiplat = Convert.ToDouble(_strArray[0]);
+                    _unity_shiplon = Convert.ToDouble(_strArray[1]);
+                    _unity_shipHeading = trackBar1.Value;
+                    vCinc_GPS1.SetShipLocationAndHeading(_unity_shiplat, _unity_shiplon, _unity_shipHeading);
                 }
             }
-           //if piped, we dont send this to gps , we send unity pipe message
+            //if piped, we dont send this to gps , we send unity pipe message
             if (!_pipeIsOpen)
             {
                 label5.ForeColor = Color.Black;
@@ -234,6 +254,17 @@ namespace VCI_Forms_SPN
                 label5.ForeColor = Color.Red;
             }
             label5.Text = _unity_shiplat.ToString() + " " + _unity_shiplon.ToString();
+        }
+        private void TrackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateTheGPS_withLocalControlValues();
+        }
+
+ 
+   
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            UpdateTheGPS_withLocalControlValues();
         }
         #region TemplateFunctions
         private void TempTimer_Tick(object sender, EventArgs e)
@@ -288,20 +319,20 @@ namespace VCI_Forms_SPN
             }
      
         }
-        private async Task SendThrustAndAngles()
-        {
-            var thrustAndAngles = new
-            {
-                Thrust = _myTHRUST,
-                Jet1Angle = _myJET_ANG,
-                Jet2Angle = _myJET_ANG,
-                WaypointLat = _myWPlat,
-                WaypointLon = _myWPlon
-            };
+        //private async Task SendThrustAndAngles()
+        //{
+        //    var thrustAndAngles = new
+        //    {
+        //        Thrust = _myTHRUST,
+        //        Jet1Angle = _myJET_ANG,
+        //        Jet2Angle = _myJET_ANG,
+        //        WaypointLat = _myWPlat,
+        //        WaypointLon = _myWPlon
+        //    };
 
-            string message = JsonConvert.SerializeObject(thrustAndAngles);
-            await _pipeManager.SendMessageAsync(message);
-        }
+        //    string message = JsonConvert.SerializeObject(thrustAndAngles);
+        //    await _pipeManager.SendMessageAsync(message);
+        //}
 
         private void KvsrManager_OnMessageReceived(string message)
         {
@@ -398,6 +429,7 @@ namespace VCI_Forms_SPN
             if (_pipeIsOpen)
             {
                 _pipeManager.StopPipeServer();
+                pipeTimer.Stop(); // Stop the pipeTimer
             }
             if (_isOnCanBus) { 
             
