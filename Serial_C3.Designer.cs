@@ -32,27 +32,10 @@
             this.buttonSend = new System.Windows.Forms.Button();
             this.buttonStartStop = new System.Windows.Forms.Button();
             this.numupdown_sendrate = new System.Windows.Forms.NumericUpDown();
-            this.ucXMIT_SensorFaultError = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_NonFollowError = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_CmdFaultError_STA1 = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_CmdFaultError_STA2 = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_CmdFaultError_STA3 = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_Autocal_TrimRoll_Error = new VCI_Forms_LIB.VCinc_uc();
             this.comboBoxPorts = new System.Windows.Forms.ComboBox();
             this.textBoxReceive = new System.Windows.Forms.TextBox();
             this.textBoxSend = new System.Windows.Forms.TextBox();
-            this.ucXMIT_Dockmode_Interlock_Error = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_CANFault = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_PortNoz_Scaled = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_StbdNoz_Scaled = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_PortBkt_Scaled = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_StbdBkt_Scaled = new VCI_Forms_LIB.VCinc_uc();
             this.btnLabjack = new System.Windows.Forms.Button();
-            this.ucXMIT_StbdTab_Scaled = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_PortTab_Scaled = new VCI_Forms_LIB.VCinc_uc();
-            this.uc_MODE = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_16 = new VCI_Forms_LIB.VCinc_uc();
-            this.ucXMIT_17 = new VCI_Forms_LIB.VCinc_uc();
             this.lbl_Intsteer_Enable = new System.Windows.Forms.Label();
             this.lbl_Autocal_CMD = new System.Windows.Forms.Label();
             this.lbl_Set1_Set2_Mode = new System.Windows.Forms.Label();
@@ -62,13 +45,30 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_Command = new System.Windows.Forms.Label();
-            this.uc0Cantrak_Intsteer_Enable = new VCI_Forms_LIB.VCinc_uc();
-            this.uc1CT_Autocal_Flag = new VCI_Forms_LIB.VCinc_uc();
-            this.uc2CT_Set1_Set2_Mode = new VCI_Forms_LIB.VCinc_uc();
-            this.uc3CT_Set1_Set2_Flag = new VCI_Forms_LIB.VCinc_uc();
             this.chkToggleImplementation = new System.Windows.Forms.CheckBox();
             this.cb_c3iConfig = new System.Windows.Forms.CheckBox();
             this.vCinc_Config = new VCI_Forms_LIB.VCinc_uc();
+            this.uc3CT_Set1_Set2_Flag = new VCI_Forms_LIB.VCinc_uc();
+            this.uc2CT_Set1_Set2_Mode = new VCI_Forms_LIB.VCinc_uc();
+            this.uc1CT_Autocal_Flag = new VCI_Forms_LIB.VCinc_uc();
+            this.uc0Cantrak_Intsteer_Enable = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_17 = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_16 = new VCI_Forms_LIB.VCinc_uc();
+            this.uc_MODE = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_StbdTab_Scaled = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_PortTab_Scaled = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_StbdBkt_Scaled = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_PortBkt_Scaled = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_StbdNoz_Scaled = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_PortNoz_Scaled = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_CANFault = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_Dockmode_Interlock_Error = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_Autocal_TrimRoll_Error = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_CmdFaultError_STA3 = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_CmdFaultError_STA2 = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_CmdFaultError_STA1 = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_NonFollowError = new VCI_Forms_LIB.VCinc_uc();
+            this.ucXMIT_SensorFaultError = new VCI_Forms_LIB.VCinc_uc();
             ((System.ComponentModel.ISupportInitialize)(this.numupdown_sendrate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,134 +117,6 @@
             0,
             0});
             // 
-            // ucXMIT_SensorFaultError
-            // 
-            this.ucXMIT_SensorFaultError.Address = "00";
-            this.ucXMIT_SensorFaultError.BackColor = System.Drawing.Color.Linen;
-            this.ucXMIT_SensorFaultError.Bit0Title = "bBkt2_Fault";
-            this.ucXMIT_SensorFaultError.Bit1Title = "bBkt1_Fault";
-            this.ucXMIT_SensorFaultError.Bit2Title = "bNoz2_Fault";
-            this.ucXMIT_SensorFaultError.Bit3Title = "bNoz1_Fault";
-            this.ucXMIT_SensorFaultError.Bit4Title = "bTab2_Fault";
-            this.ucXMIT_SensorFaultError.Bit5Title = "bTab1_Fault";
-            this.ucXMIT_SensorFaultError.Bit6Title = "";
-            this.ucXMIT_SensorFaultError.Bit7Title = "";
-            this.ucXMIT_SensorFaultError.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_SensorFaultError.Location = new System.Drawing.Point(9, 297);
-            this.ucXMIT_SensorFaultError.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_SensorFaultError.Name = "ucXMIT_SensorFaultError";
-            this.ucXMIT_SensorFaultError.PGN = "0000";
-            this.ucXMIT_SensorFaultError.Size = new System.Drawing.Size(191, 260);
-            this.ucXMIT_SensorFaultError.SPNName = "XMIT_SensorFaultError";
-            this.ucXMIT_SensorFaultError.TabIndex = 31;
-            this.ucXMIT_SensorFaultError.Value = 15;
-            // 
-            // ucXMIT_NonFollowError
-            // 
-            this.ucXMIT_NonFollowError.Address = "00";
-            this.ucXMIT_NonFollowError.BackColor = System.Drawing.Color.Linen;
-            this.ucXMIT_NonFollowError.Bit0Title = "bStbdBktNFU_Fault";
-            this.ucXMIT_NonFollowError.Bit1Title = "bPortBktNFU_Fault";
-            this.ucXMIT_NonFollowError.Bit2Title = "bStbdNozNFU_Fault";
-            this.ucXMIT_NonFollowError.Bit3Title = "bPortNozNFU_Fault";
-            this.ucXMIT_NonFollowError.Bit4Title = "bStbdTabNFU_Fault";
-            this.ucXMIT_NonFollowError.Bit5Title = "bPortTabNFU_Fault";
-            this.ucXMIT_NonFollowError.Bit6Title = "";
-            this.ucXMIT_NonFollowError.Bit7Title = "";
-            this.ucXMIT_NonFollowError.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_NonFollowError.Location = new System.Drawing.Point(200, 297);
-            this.ucXMIT_NonFollowError.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_NonFollowError.Name = "ucXMIT_NonFollowError";
-            this.ucXMIT_NonFollowError.PGN = "0000";
-            this.ucXMIT_NonFollowError.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_NonFollowError.SPNName = "XMIT_NonFollowError";
-            this.ucXMIT_NonFollowError.TabIndex = 32;
-            // 
-            // ucXMIT_CmdFaultError_STA1
-            // 
-            this.ucXMIT_CmdFaultError_STA1.Address = "00";
-            this.ucXMIT_CmdFaultError_STA1.BackColor = System.Drawing.Color.Linen;
-            this.ucXMIT_CmdFaultError_STA1.Bit0Title = "bIdle1_Fault";
-            this.ucXMIT_CmdFaultError_STA1.Bit1Title = "bHelm1_Fault";
-            this.ucXMIT_CmdFaultError_STA1.Bit2Title = "bSLev1_Fault";
-            this.ucXMIT_CmdFaultError_STA1.Bit3Title = "bPLev1_Fault";
-            this.ucXMIT_CmdFaultError_STA1.Bit4Title = "bJoyY1_Fault";
-            this.ucXMIT_CmdFaultError_STA1.Bit5Title = "bJoyX1_Fault";
-            this.ucXMIT_CmdFaultError_STA1.Bit6Title = "";
-            this.ucXMIT_CmdFaultError_STA1.Bit7Title = "";
-            this.ucXMIT_CmdFaultError_STA1.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_CmdFaultError_STA1.Location = new System.Drawing.Point(403, 297);
-            this.ucXMIT_CmdFaultError_STA1.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_CmdFaultError_STA1.Name = "ucXMIT_CmdFaultError_STA1";
-            this.ucXMIT_CmdFaultError_STA1.PGN = "0000";
-            this.ucXMIT_CmdFaultError_STA1.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_CmdFaultError_STA1.SPNName = "XMIT_CmdFaultError_STA1";
-            this.ucXMIT_CmdFaultError_STA1.TabIndex = 33;
-            this.ucXMIT_CmdFaultError_STA1.Value = 14;
-            // 
-            // ucXMIT_CmdFaultError_STA2
-            // 
-            this.ucXMIT_CmdFaultError_STA2.Address = "00";
-            this.ucXMIT_CmdFaultError_STA2.BackColor = System.Drawing.Color.Linen;
-            this.ucXMIT_CmdFaultError_STA2.Bit0Title = "bIdle2_Fault";
-            this.ucXMIT_CmdFaultError_STA2.Bit1Title = "bHelm2_Fault";
-            this.ucXMIT_CmdFaultError_STA2.Bit2Title = "bSLev2_Fault";
-            this.ucXMIT_CmdFaultError_STA2.Bit3Title = "bPLev2_Fault";
-            this.ucXMIT_CmdFaultError_STA2.Bit4Title = "bJoyY2_Fault";
-            this.ucXMIT_CmdFaultError_STA2.Bit5Title = "bJoyX2_Fault";
-            this.ucXMIT_CmdFaultError_STA2.Bit6Title = "";
-            this.ucXMIT_CmdFaultError_STA2.Bit7Title = "";
-            this.ucXMIT_CmdFaultError_STA2.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_CmdFaultError_STA2.Location = new System.Drawing.Point(604, 297);
-            this.ucXMIT_CmdFaultError_STA2.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_CmdFaultError_STA2.Name = "ucXMIT_CmdFaultError_STA2";
-            this.ucXMIT_CmdFaultError_STA2.PGN = "0000";
-            this.ucXMIT_CmdFaultError_STA2.Size = new System.Drawing.Size(199, 260);
-            this.ucXMIT_CmdFaultError_STA2.SPNName = "XMIT_CmdFaultError_STA2";
-            this.ucXMIT_CmdFaultError_STA2.TabIndex = 34;
-            // 
-            // ucXMIT_CmdFaultError_STA3
-            // 
-            this.ucXMIT_CmdFaultError_STA3.Address = "00";
-            this.ucXMIT_CmdFaultError_STA3.BackColor = System.Drawing.Color.Linen;
-            this.ucXMIT_CmdFaultError_STA3.Bit0Title = "bIdle3_Fault";
-            this.ucXMIT_CmdFaultError_STA3.Bit1Title = "bHelm3_Fault";
-            this.ucXMIT_CmdFaultError_STA3.Bit2Title = "bSLev2_Fault";
-            this.ucXMIT_CmdFaultError_STA3.Bit3Title = "bJoyYX3_Fault";
-            this.ucXMIT_CmdFaultError_STA3.Bit4Title = "bJoyY3_Fault";
-            this.ucXMIT_CmdFaultError_STA3.Bit5Title = "bJoyX3_Fault";
-            this.ucXMIT_CmdFaultError_STA3.Bit6Title = "";
-            this.ucXMIT_CmdFaultError_STA3.Bit7Title = "";
-            this.ucXMIT_CmdFaultError_STA3.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_CmdFaultError_STA3.Location = new System.Drawing.Point(812, 297);
-            this.ucXMIT_CmdFaultError_STA3.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_CmdFaultError_STA3.Name = "ucXMIT_CmdFaultError_STA3";
-            this.ucXMIT_CmdFaultError_STA3.PGN = "0000";
-            this.ucXMIT_CmdFaultError_STA3.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_CmdFaultError_STA3.SPNName = "XMIT_CmdFaultError_STA3";
-            this.ucXMIT_CmdFaultError_STA3.TabIndex = 35;
-            // 
-            // ucXMIT_Autocal_TrimRoll_Error
-            // 
-            this.ucXMIT_Autocal_TrimRoll_Error.Address = "00";
-            this.ucXMIT_Autocal_TrimRoll_Error.BackColor = System.Drawing.Color.Linen;
-            this.ucXMIT_Autocal_TrimRoll_Error.Bit0Title = "bTrim1_Fault";
-            this.ucXMIT_Autocal_TrimRoll_Error.Bit1Title = "bRoll1_Fault";
-            this.ucXMIT_Autocal_TrimRoll_Error.Bit2Title = "bAutocal_Fault";
-            this.ucXMIT_Autocal_TrimRoll_Error.Bit3Title = "bAP_OOR_Fault";
-            this.ucXMIT_Autocal_TrimRoll_Error.Bit4Title = "bTrim2_Fault";
-            this.ucXMIT_Autocal_TrimRoll_Error.Bit5Title = "bRoll2_Fault";
-            this.ucXMIT_Autocal_TrimRoll_Error.Bit6Title = "";
-            this.ucXMIT_Autocal_TrimRoll_Error.Bit7Title = "";
-            this.ucXMIT_Autocal_TrimRoll_Error.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_Autocal_TrimRoll_Error.Location = new System.Drawing.Point(1012, 297);
-            this.ucXMIT_Autocal_TrimRoll_Error.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_Autocal_TrimRoll_Error.Name = "ucXMIT_Autocal_TrimRoll_Error";
-            this.ucXMIT_Autocal_TrimRoll_Error.PGN = "0000";
-            this.ucXMIT_Autocal_TrimRoll_Error.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_Autocal_TrimRoll_Error.SPNName = "XMIT_Autocal_TrimRoll_Error";
-            this.ucXMIT_Autocal_TrimRoll_Error.TabIndex = 36;
-            // 
             // comboBoxPorts
             // 
             this.comboBoxPorts.FormattingEnabled = true;
@@ -271,153 +143,6 @@
             this.textBoxSend.Size = new System.Drawing.Size(762, 31);
             this.textBoxSend.TabIndex = 27;
             // 
-            // ucXMIT_Dockmode_Interlock_Error
-            // 
-            this.ucXMIT_Dockmode_Interlock_Error.Address = "00";
-            this.ucXMIT_Dockmode_Interlock_Error.BackColor = System.Drawing.Color.Linen;
-            this.ucXMIT_Dockmode_Interlock_Error.Bit0Title = "bDockmodeInhibit";
-            this.ucXMIT_Dockmode_Interlock_Error.Bit1Title = "whi eith clutch ingaed";
-            this.ucXMIT_Dockmode_Interlock_Error.Bit2Title = "bInboardClutchInterlock";
-            this.ucXMIT_Dockmode_Interlock_Error.Bit3Title = "";
-            this.ucXMIT_Dockmode_Interlock_Error.Bit4Title = "";
-            this.ucXMIT_Dockmode_Interlock_Error.Bit5Title = "";
-            this.ucXMIT_Dockmode_Interlock_Error.Bit6Title = "";
-            this.ucXMIT_Dockmode_Interlock_Error.Bit7Title = "";
-            this.ucXMIT_Dockmode_Interlock_Error.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_Dockmode_Interlock_Error.Location = new System.Drawing.Point(1212, 297);
-            this.ucXMIT_Dockmode_Interlock_Error.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_Dockmode_Interlock_Error.Name = "ucXMIT_Dockmode_Interlock_Error";
-            this.ucXMIT_Dockmode_Interlock_Error.PGN = "0000";
-            this.ucXMIT_Dockmode_Interlock_Error.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_Dockmode_Interlock_Error.SPNName = "XMIT_Dockmode_Interlock_Error";
-            this.ucXMIT_Dockmode_Interlock_Error.TabIndex = 37;
-            // 
-            // ucXMIT_CANFault
-            // 
-            this.ucXMIT_CANFault.Address = "00";
-            this.ucXMIT_CANFault.BackColor = System.Drawing.Color.Linen;
-            this.ucXMIT_CANFault.Bit0Title = "bCAN2_Fault";
-            this.ucXMIT_CANFault.Bit1Title = "option1";
-            this.ucXMIT_CANFault.Bit2Title = "option2";
-            this.ucXMIT_CANFault.Bit3Title = "op3";
-            this.ucXMIT_CANFault.Bit4Title = "bStation3_CAN_FAULT";
-            this.ucXMIT_CANFault.Bit5Title = "";
-            this.ucXMIT_CANFault.Bit6Title = "";
-            this.ucXMIT_CANFault.Bit7Title = "";
-            this.ucXMIT_CANFault.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_CANFault.Location = new System.Drawing.Point(2021, 297);
-            this.ucXMIT_CANFault.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_CANFault.Name = "ucXMIT_CANFault";
-            this.ucXMIT_CANFault.PGN = "0000";
-            this.ucXMIT_CANFault.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_CANFault.SPNName = "XMIT_CANFault";
-            this.ucXMIT_CANFault.TabIndex = 38;
-            this.ucXMIT_CANFault.Value = 2;
-            // 
-            // ucXMIT_PortNoz_Scaled
-            // 
-            this.ucXMIT_PortNoz_Scaled.Address = "00";
-            this.ucXMIT_PortNoz_Scaled.BackColor = System.Drawing.Color.LightCyan;
-            this.ucXMIT_PortNoz_Scaled.Bit0Title = "";
-            this.ucXMIT_PortNoz_Scaled.Bit1Title = "";
-            this.ucXMIT_PortNoz_Scaled.Bit2Title = "";
-            this.ucXMIT_PortNoz_Scaled.Bit3Title = "";
-            this.ucXMIT_PortNoz_Scaled.Bit4Title = "";
-            this.ucXMIT_PortNoz_Scaled.Bit5Title = "";
-            this.ucXMIT_PortNoz_Scaled.Bit6Title = "";
-            this.ucXMIT_PortNoz_Scaled.Bit7Title = "";
-            this.ucXMIT_PortNoz_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
-            this.ucXMIT_PortNoz_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_PortNoz_Scaled.Location = new System.Drawing.Point(9, 9);
-            this.ucXMIT_PortNoz_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_PortNoz_Scaled.MaxValue = 1000;
-            this.ucXMIT_PortNoz_Scaled.Name = "ucXMIT_PortNoz_Scaled";
-            this.ucXMIT_PortNoz_Scaled.NumberOfBytes = 2;
-            this.ucXMIT_PortNoz_Scaled.PGN = "0000";
-            this.ucXMIT_PortNoz_Scaled.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_PortNoz_Scaled.SPNName = "XMIT_PortNoz_Scaled";
-            this.ucXMIT_PortNoz_Scaled.TabIndex = 39;
-            this.ucXMIT_PortNoz_Scaled.Value = 500;
-            // 
-            // ucXMIT_StbdNoz_Scaled
-            // 
-            this.ucXMIT_StbdNoz_Scaled.Address = "00";
-            this.ucXMIT_StbdNoz_Scaled.BackColor = System.Drawing.Color.LightPink;
-            this.ucXMIT_StbdNoz_Scaled.Bit0Title = "";
-            this.ucXMIT_StbdNoz_Scaled.Bit1Title = "";
-            this.ucXMIT_StbdNoz_Scaled.Bit2Title = "";
-            this.ucXMIT_StbdNoz_Scaled.Bit3Title = "";
-            this.ucXMIT_StbdNoz_Scaled.Bit4Title = "";
-            this.ucXMIT_StbdNoz_Scaled.Bit5Title = "";
-            this.ucXMIT_StbdNoz_Scaled.Bit6Title = "";
-            this.ucXMIT_StbdNoz_Scaled.Bit7Title = "";
-            this.ucXMIT_StbdNoz_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
-            this.ucXMIT_StbdNoz_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_StbdNoz_Scaled.Location = new System.Drawing.Point(209, 9);
-            this.ucXMIT_StbdNoz_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_StbdNoz_Scaled.MaxValue = 1000;
-            this.ucXMIT_StbdNoz_Scaled.Name = "ucXMIT_StbdNoz_Scaled";
-            this.ucXMIT_StbdNoz_Scaled.NumberOfBytes = 2;
-            this.ucXMIT_StbdNoz_Scaled.PGN = "0000";
-            this.ucXMIT_StbdNoz_Scaled.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_StbdNoz_Scaled.SPNName = "XMIT_StbdNoz_Scaled";
-            this.ucXMIT_StbdNoz_Scaled.TabIndex = 40;
-            this.ucXMIT_StbdNoz_Scaled.Value = 500;
-            // 
-            // ucXMIT_PortBkt_Scaled
-            // 
-            this.ucXMIT_PortBkt_Scaled.Address = "00";
-            this.ucXMIT_PortBkt_Scaled.BackColor = System.Drawing.Color.LightCyan;
-            this.ucXMIT_PortBkt_Scaled.Bit0Title = "";
-            this.ucXMIT_PortBkt_Scaled.Bit1Title = "";
-            this.ucXMIT_PortBkt_Scaled.Bit2Title = "";
-            this.ucXMIT_PortBkt_Scaled.Bit3Title = "";
-            this.ucXMIT_PortBkt_Scaled.Bit4Title = "";
-            this.ucXMIT_PortBkt_Scaled.Bit5Title = "";
-            this.ucXMIT_PortBkt_Scaled.Bit6Title = "";
-            this.ucXMIT_PortBkt_Scaled.Bit7Title = "";
-            this.ucXMIT_PortBkt_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Gauge;
-            this.ucXMIT_PortBkt_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_PortBkt_Scaled.Location = new System.Drawing.Point(409, 9);
-            this.ucXMIT_PortBkt_Scaled.m_ticks = 6;
-            this.ucXMIT_PortBkt_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_PortBkt_Scaled.MaxValue = 1000;
-            this.ucXMIT_PortBkt_Scaled.Name = "ucXMIT_PortBkt_Scaled";
-            this.ucXMIT_PortBkt_Scaled.NumberOfBytes = 2;
-            this.ucXMIT_PortBkt_Scaled.PGN = "0000";
-            this.ucXMIT_PortBkt_Scaled.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_PortBkt_Scaled.SPNName = "XMIT_PortBkt_Scaled";
-            this.ucXMIT_PortBkt_Scaled.TabIndex = 41;
-            this.ucXMIT_PortBkt_Scaled.Value = 500;
-            // 
-            // ucXMIT_StbdBkt_Scaled
-            // 
-            this.ucXMIT_StbdBkt_Scaled.Address = "00";
-            this.ucXMIT_StbdBkt_Scaled.BackColor = System.Drawing.Color.LightPink;
-            this.ucXMIT_StbdBkt_Scaled.Bit0Title = "";
-            this.ucXMIT_StbdBkt_Scaled.Bit1Title = "";
-            this.ucXMIT_StbdBkt_Scaled.Bit2Title = "";
-            this.ucXMIT_StbdBkt_Scaled.Bit3Title = "";
-            this.ucXMIT_StbdBkt_Scaled.Bit4Title = "";
-            this.ucXMIT_StbdBkt_Scaled.Bit5Title = "";
-            this.ucXMIT_StbdBkt_Scaled.Bit6Title = "";
-            this.ucXMIT_StbdBkt_Scaled.Bit7Title = "";
-            this.ucXMIT_StbdBkt_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Gauge;
-            this.ucXMIT_StbdBkt_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_StbdBkt_Scaled.G_EndAngle = 48;
-            this.ucXMIT_StbdBkt_Scaled.G_StartAngle = 315;
-            this.ucXMIT_StbdBkt_Scaled.Location = new System.Drawing.Point(610, 9);
-            this.ucXMIT_StbdBkt_Scaled.m_ticks = 6;
-            this.ucXMIT_StbdBkt_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_StbdBkt_Scaled.MaxValue = 1000;
-            this.ucXMIT_StbdBkt_Scaled.Name = "ucXMIT_StbdBkt_Scaled";
-            this.ucXMIT_StbdBkt_Scaled.NumberOfBytes = 2;
-            this.ucXMIT_StbdBkt_Scaled.PGN = "0000";
-            this.ucXMIT_StbdBkt_Scaled.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_StbdBkt_Scaled.SPNName = "XMIT_StbdBkt_Scaled";
-            this.ucXMIT_StbdBkt_Scaled.TabIndex = 42;
-            this.ucXMIT_StbdBkt_Scaled.Value = 500;
-            // 
             // btnLabjack
             // 
             this.btnLabjack.Location = new System.Drawing.Point(1455, 571);
@@ -426,120 +151,6 @@
             this.btnLabjack.TabIndex = 43;
             this.btnLabjack.Text = "Sim I/O";
             this.btnLabjack.UseVisualStyleBackColor = true;
-            // 
-            // ucXMIT_StbdTab_Scaled
-            // 
-            this.ucXMIT_StbdTab_Scaled.Address = "00";
-            this.ucXMIT_StbdTab_Scaled.BackColor = System.Drawing.Color.LightPink;
-            this.ucXMIT_StbdTab_Scaled.Bit0Title = "";
-            this.ucXMIT_StbdTab_Scaled.Bit1Title = "";
-            this.ucXMIT_StbdTab_Scaled.Bit2Title = "";
-            this.ucXMIT_StbdTab_Scaled.Bit3Title = "";
-            this.ucXMIT_StbdTab_Scaled.Bit4Title = "";
-            this.ucXMIT_StbdTab_Scaled.Bit5Title = "";
-            this.ucXMIT_StbdTab_Scaled.Bit6Title = "";
-            this.ucXMIT_StbdTab_Scaled.Bit7Title = "";
-            this.ucXMIT_StbdTab_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
-            this.ucXMIT_StbdTab_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_StbdTab_Scaled.Location = new System.Drawing.Point(1010, 9);
-            this.ucXMIT_StbdTab_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_StbdTab_Scaled.MaxValue = 1000;
-            this.ucXMIT_StbdTab_Scaled.Name = "ucXMIT_StbdTab_Scaled";
-            this.ucXMIT_StbdTab_Scaled.NumberOfBytes = 2;
-            this.ucXMIT_StbdTab_Scaled.PGN = "0000";
-            this.ucXMIT_StbdTab_Scaled.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_StbdTab_Scaled.SPNName = "XMIT_StbdTab_Scaled";
-            this.ucXMIT_StbdTab_Scaled.TabIndex = 45;
-            this.ucXMIT_StbdTab_Scaled.Value = 10;
-            // 
-            // ucXMIT_PortTab_Scaled
-            // 
-            this.ucXMIT_PortTab_Scaled.Address = "00";
-            this.ucXMIT_PortTab_Scaled.BackColor = System.Drawing.Color.LightCyan;
-            this.ucXMIT_PortTab_Scaled.Bit0Title = "";
-            this.ucXMIT_PortTab_Scaled.Bit1Title = "";
-            this.ucXMIT_PortTab_Scaled.Bit2Title = "";
-            this.ucXMIT_PortTab_Scaled.Bit3Title = "";
-            this.ucXMIT_PortTab_Scaled.Bit4Title = "";
-            this.ucXMIT_PortTab_Scaled.Bit5Title = "";
-            this.ucXMIT_PortTab_Scaled.Bit6Title = "";
-            this.ucXMIT_PortTab_Scaled.Bit7Title = "";
-            this.ucXMIT_PortTab_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
-            this.ucXMIT_PortTab_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_PortTab_Scaled.Location = new System.Drawing.Point(810, 9);
-            this.ucXMIT_PortTab_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_PortTab_Scaled.MaxValue = 1000;
-            this.ucXMIT_PortTab_Scaled.Name = "ucXMIT_PortTab_Scaled";
-            this.ucXMIT_PortTab_Scaled.NumberOfBytes = 2;
-            this.ucXMIT_PortTab_Scaled.PGN = "0000";
-            this.ucXMIT_PortTab_Scaled.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_PortTab_Scaled.SPNName = "XMIT_PortTab_Scaled";
-            this.ucXMIT_PortTab_Scaled.TabIndex = 44;
-            this.ucXMIT_PortTab_Scaled.Value = 10;
-            // 
-            // uc_MODE
-            // 
-            this.uc_MODE.Address = "00";
-            this.uc_MODE.BackColor = System.Drawing.Color.Linen;
-            this.uc_MODE.Bit0Title = "";
-            this.uc_MODE.Bit1Title = "";
-            this.uc_MODE.Bit2Title = "";
-            this.uc_MODE.Bit3Title = "";
-            this.uc_MODE.Bit4Title = "";
-            this.uc_MODE.Bit5Title = "";
-            this.uc_MODE.Bit6Title = "";
-            this.uc_MODE.Bit7Title = "";
-            this.uc_MODE.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.uc_MODE.Location = new System.Drawing.Point(1421, 297);
-            this.uc_MODE.Margin = new System.Windows.Forms.Padding(0);
-            this.uc_MODE.Name = "uc_MODE";
-            this.uc_MODE.PGN = "0000";
-            this.uc_MODE.Size = new System.Drawing.Size(200, 260);
-            this.uc_MODE.TabIndex = 46;
-            this.uc_MODE.Value = 3;
-            // 
-            // ucXMIT_16
-            // 
-            this.ucXMIT_16.Address = "00";
-            this.ucXMIT_16.BackColor = System.Drawing.Color.Linen;
-            this.ucXMIT_16.Bit0Title = " ";
-            this.ucXMIT_16.Bit1Title = " ";
-            this.ucXMIT_16.Bit2Title = " ";
-            this.ucXMIT_16.Bit3Title = " ";
-            this.ucXMIT_16.Bit4Title = " ";
-            this.ucXMIT_16.Bit5Title = " ";
-            this.ucXMIT_16.Bit6Title = "";
-            this.ucXMIT_16.Bit7Title = "";
-            this.ucXMIT_16.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_16.Location = new System.Drawing.Point(1621, 297);
-            this.ucXMIT_16.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_16.Name = "ucXMIT_16";
-            this.ucXMIT_16.PGN = "0000";
-            this.ucXMIT_16.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_16.SPNName = "x16";
-            this.ucXMIT_16.TabIndex = 47;
-            // 
-            // ucXMIT_17
-            // 
-            this.ucXMIT_17.Address = "00";
-            this.ucXMIT_17.BackColor = System.Drawing.Color.Linen;
-            this.ucXMIT_17.Bit0Title = " ";
-            this.ucXMIT_17.Bit1Title = " ";
-            this.ucXMIT_17.Bit2Title = " ";
-            this.ucXMIT_17.Bit3Title = " ";
-            this.ucXMIT_17.Bit4Title = " ";
-            this.ucXMIT_17.Bit5Title = " ";
-            this.ucXMIT_17.Bit6Title = "";
-            this.ucXMIT_17.Bit7Title = "";
-            this.ucXMIT_17.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.ucXMIT_17.Location = new System.Drawing.Point(1821, 297);
-            this.ucXMIT_17.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_17.Name = "ucXMIT_17";
-            this.ucXMIT_17.PGN = "0000";
-            this.ucXMIT_17.Size = new System.Drawing.Size(200, 260);
-            this.ucXMIT_17.SPNName = "xmi17";
-            this.ucXMIT_17.TabIndex = 48;
-            this.ucXMIT_17.Value = 65;
             // 
             // lbl_Intsteer_Enable
             // 
@@ -622,90 +233,6 @@
             this.lbl_Command.TabIndex = 57;
             this.lbl_Command.Text = "cmd";
             // 
-            // uc0Cantrak_Intsteer_Enable
-            // 
-            this.uc0Cantrak_Intsteer_Enable.Address = "00";
-            this.uc0Cantrak_Intsteer_Enable.BackColor = System.Drawing.Color.MediumPurple;
-            this.uc0Cantrak_Intsteer_Enable.Bit0Title = " ";
-            this.uc0Cantrak_Intsteer_Enable.Bit1Title = " ";
-            this.uc0Cantrak_Intsteer_Enable.Bit2Title = " ";
-            this.uc0Cantrak_Intsteer_Enable.Bit3Title = " ";
-            this.uc0Cantrak_Intsteer_Enable.Bit4Title = " ";
-            this.uc0Cantrak_Intsteer_Enable.Bit5Title = " ";
-            this.uc0Cantrak_Intsteer_Enable.Bit6Title = "";
-            this.uc0Cantrak_Intsteer_Enable.Bit7Title = "";
-            this.uc0Cantrak_Intsteer_Enable.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.uc0Cantrak_Intsteer_Enable.Location = new System.Drawing.Point(648, 693);
-            this.uc0Cantrak_Intsteer_Enable.Margin = new System.Windows.Forms.Padding(0);
-            this.uc0Cantrak_Intsteer_Enable.Name = "uc0Cantrak_Intsteer_Enable";
-            this.uc0Cantrak_Intsteer_Enable.PGN = "0000";
-            this.uc0Cantrak_Intsteer_Enable.Size = new System.Drawing.Size(200, 260);
-            this.uc0Cantrak_Intsteer_Enable.SPNName = "Y0";
-            this.uc0Cantrak_Intsteer_Enable.TabIndex = 58;
-            // 
-            // uc1CT_Autocal_Flag
-            // 
-            this.uc1CT_Autocal_Flag.Address = "00";
-            this.uc1CT_Autocal_Flag.BackColor = System.Drawing.Color.MediumPurple;
-            this.uc1CT_Autocal_Flag.Bit0Title = " ";
-            this.uc1CT_Autocal_Flag.Bit1Title = " ";
-            this.uc1CT_Autocal_Flag.Bit2Title = " ";
-            this.uc1CT_Autocal_Flag.Bit3Title = " ";
-            this.uc1CT_Autocal_Flag.Bit4Title = " ";
-            this.uc1CT_Autocal_Flag.Bit5Title = " ";
-            this.uc1CT_Autocal_Flag.Bit6Title = "";
-            this.uc1CT_Autocal_Flag.Bit7Title = "";
-            this.uc1CT_Autocal_Flag.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.uc1CT_Autocal_Flag.Location = new System.Drawing.Point(848, 693);
-            this.uc1CT_Autocal_Flag.Margin = new System.Windows.Forms.Padding(0);
-            this.uc1CT_Autocal_Flag.Name = "uc1CT_Autocal_Flag";
-            this.uc1CT_Autocal_Flag.PGN = "0000";
-            this.uc1CT_Autocal_Flag.Size = new System.Drawing.Size(200, 260);
-            this.uc1CT_Autocal_Flag.SPNName = "Autocal_Flag";
-            this.uc1CT_Autocal_Flag.TabIndex = 59;
-            // 
-            // uc2CT_Set1_Set2_Mode
-            // 
-            this.uc2CT_Set1_Set2_Mode.Address = "00";
-            this.uc2CT_Set1_Set2_Mode.BackColor = System.Drawing.Color.MediumPurple;
-            this.uc2CT_Set1_Set2_Mode.Bit0Title = " ";
-            this.uc2CT_Set1_Set2_Mode.Bit1Title = " ";
-            this.uc2CT_Set1_Set2_Mode.Bit2Title = " ";
-            this.uc2CT_Set1_Set2_Mode.Bit3Title = " ";
-            this.uc2CT_Set1_Set2_Mode.Bit4Title = " ";
-            this.uc2CT_Set1_Set2_Mode.Bit5Title = " ";
-            this.uc2CT_Set1_Set2_Mode.Bit6Title = "";
-            this.uc2CT_Set1_Set2_Mode.Bit7Title = "";
-            this.uc2CT_Set1_Set2_Mode.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.uc2CT_Set1_Set2_Mode.Location = new System.Drawing.Point(1048, 693);
-            this.uc2CT_Set1_Set2_Mode.Margin = new System.Windows.Forms.Padding(0);
-            this.uc2CT_Set1_Set2_Mode.Name = "uc2CT_Set1_Set2_Mode";
-            this.uc2CT_Set1_Set2_Mode.PGN = "0000";
-            this.uc2CT_Set1_Set2_Mode.Size = new System.Drawing.Size(200, 260);
-            this.uc2CT_Set1_Set2_Mode.SPNName = "Y0";
-            this.uc2CT_Set1_Set2_Mode.TabIndex = 60;
-            // 
-            // uc3CT_Set1_Set2_Flag
-            // 
-            this.uc3CT_Set1_Set2_Flag.Address = "00";
-            this.uc3CT_Set1_Set2_Flag.BackColor = System.Drawing.Color.MediumPurple;
-            this.uc3CT_Set1_Set2_Flag.Bit0Title = " ";
-            this.uc3CT_Set1_Set2_Flag.Bit1Title = " ";
-            this.uc3CT_Set1_Set2_Flag.Bit2Title = " ";
-            this.uc3CT_Set1_Set2_Flag.Bit3Title = " ";
-            this.uc3CT_Set1_Set2_Flag.Bit4Title = " ";
-            this.uc3CT_Set1_Set2_Flag.Bit5Title = " ";
-            this.uc3CT_Set1_Set2_Flag.Bit6Title = "";
-            this.uc3CT_Set1_Set2_Flag.Bit7Title = "";
-            this.uc3CT_Set1_Set2_Flag.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.uc3CT_Set1_Set2_Flag.Location = new System.Drawing.Point(1248, 693);
-            this.uc3CT_Set1_Set2_Flag.Margin = new System.Windows.Forms.Padding(0);
-            this.uc3CT_Set1_Set2_Flag.Name = "uc3CT_Set1_Set2_Flag";
-            this.uc3CT_Set1_Set2_Flag.PGN = "0000";
-            this.uc3CT_Set1_Set2_Flag.Size = new System.Drawing.Size(200, 260);
-            this.uc3CT_Set1_Set2_Flag.SPNName = "Y0";
-            this.uc3CT_Set1_Set2_Flag.TabIndex = 61;
-            // 
             // chkToggleImplementation
             // 
             this.chkToggleImplementation.AutoSize = true;
@@ -746,6 +273,479 @@
             this.vCinc_Config.Size = new System.Drawing.Size(200, 260);
             this.vCinc_Config.SPNName = "Y0";
             this.vCinc_Config.TabIndex = 64;
+            // 
+            // uc3CT_Set1_Set2_Flag
+            // 
+            this.uc3CT_Set1_Set2_Flag.Address = "00";
+            this.uc3CT_Set1_Set2_Flag.BackColor = System.Drawing.Color.MediumPurple;
+            this.uc3CT_Set1_Set2_Flag.Bit0Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit1Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit2Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit3Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit4Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit5Title = " ";
+            this.uc3CT_Set1_Set2_Flag.Bit6Title = "";
+            this.uc3CT_Set1_Set2_Flag.Bit7Title = "";
+            this.uc3CT_Set1_Set2_Flag.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.uc3CT_Set1_Set2_Flag.Location = new System.Drawing.Point(1248, 693);
+            this.uc3CT_Set1_Set2_Flag.Margin = new System.Windows.Forms.Padding(0);
+            this.uc3CT_Set1_Set2_Flag.Name = "uc3CT_Set1_Set2_Flag";
+            this.uc3CT_Set1_Set2_Flag.PGN = "0000";
+            this.uc3CT_Set1_Set2_Flag.Size = new System.Drawing.Size(200, 260);
+            this.uc3CT_Set1_Set2_Flag.SPNName = "Y0";
+            this.uc3CT_Set1_Set2_Flag.TabIndex = 61;
+            // 
+            // uc2CT_Set1_Set2_Mode
+            // 
+            this.uc2CT_Set1_Set2_Mode.Address = "00";
+            this.uc2CT_Set1_Set2_Mode.BackColor = System.Drawing.Color.MediumPurple;
+            this.uc2CT_Set1_Set2_Mode.Bit0Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit1Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit2Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit3Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit4Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit5Title = " ";
+            this.uc2CT_Set1_Set2_Mode.Bit6Title = "";
+            this.uc2CT_Set1_Set2_Mode.Bit7Title = "";
+            this.uc2CT_Set1_Set2_Mode.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.uc2CT_Set1_Set2_Mode.Location = new System.Drawing.Point(1048, 693);
+            this.uc2CT_Set1_Set2_Mode.Margin = new System.Windows.Forms.Padding(0);
+            this.uc2CT_Set1_Set2_Mode.Name = "uc2CT_Set1_Set2_Mode";
+            this.uc2CT_Set1_Set2_Mode.PGN = "0000";
+            this.uc2CT_Set1_Set2_Mode.Size = new System.Drawing.Size(200, 260);
+            this.uc2CT_Set1_Set2_Mode.SPNName = "Y0";
+            this.uc2CT_Set1_Set2_Mode.TabIndex = 60;
+            // 
+            // uc1CT_Autocal_Flag
+            // 
+            this.uc1CT_Autocal_Flag.Address = "00";
+            this.uc1CT_Autocal_Flag.BackColor = System.Drawing.Color.MediumPurple;
+            this.uc1CT_Autocal_Flag.Bit0Title = " ";
+            this.uc1CT_Autocal_Flag.Bit1Title = " ";
+            this.uc1CT_Autocal_Flag.Bit2Title = " ";
+            this.uc1CT_Autocal_Flag.Bit3Title = " ";
+            this.uc1CT_Autocal_Flag.Bit4Title = " ";
+            this.uc1CT_Autocal_Flag.Bit5Title = " ";
+            this.uc1CT_Autocal_Flag.Bit6Title = "";
+            this.uc1CT_Autocal_Flag.Bit7Title = "";
+            this.uc1CT_Autocal_Flag.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.uc1CT_Autocal_Flag.Location = new System.Drawing.Point(848, 693);
+            this.uc1CT_Autocal_Flag.Margin = new System.Windows.Forms.Padding(0);
+            this.uc1CT_Autocal_Flag.Name = "uc1CT_Autocal_Flag";
+            this.uc1CT_Autocal_Flag.PGN = "0000";
+            this.uc1CT_Autocal_Flag.Size = new System.Drawing.Size(200, 260);
+            this.uc1CT_Autocal_Flag.SPNName = "Autocal_Flag";
+            this.uc1CT_Autocal_Flag.TabIndex = 59;
+            // 
+            // uc0Cantrak_Intsteer_Enable
+            // 
+            this.uc0Cantrak_Intsteer_Enable.Address = "00";
+            this.uc0Cantrak_Intsteer_Enable.BackColor = System.Drawing.Color.MediumPurple;
+            this.uc0Cantrak_Intsteer_Enable.Bit0Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit1Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit2Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit3Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit4Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit5Title = " ";
+            this.uc0Cantrak_Intsteer_Enable.Bit6Title = "";
+            this.uc0Cantrak_Intsteer_Enable.Bit7Title = "";
+            this.uc0Cantrak_Intsteer_Enable.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.uc0Cantrak_Intsteer_Enable.Location = new System.Drawing.Point(648, 693);
+            this.uc0Cantrak_Intsteer_Enable.Margin = new System.Windows.Forms.Padding(0);
+            this.uc0Cantrak_Intsteer_Enable.Name = "uc0Cantrak_Intsteer_Enable";
+            this.uc0Cantrak_Intsteer_Enable.PGN = "0000";
+            this.uc0Cantrak_Intsteer_Enable.Size = new System.Drawing.Size(200, 260);
+            this.uc0Cantrak_Intsteer_Enable.SPNName = "Y0";
+            this.uc0Cantrak_Intsteer_Enable.TabIndex = 58;
+            // 
+            // ucXMIT_17
+            // 
+            this.ucXMIT_17.Address = "00";
+            this.ucXMIT_17.BackColor = System.Drawing.Color.Linen;
+            this.ucXMIT_17.Bit0Title = " ";
+            this.ucXMIT_17.Bit1Title = " ";
+            this.ucXMIT_17.Bit2Title = " ";
+            this.ucXMIT_17.Bit3Title = " ";
+            this.ucXMIT_17.Bit4Title = " ";
+            this.ucXMIT_17.Bit5Title = " ";
+            this.ucXMIT_17.Bit6Title = "";
+            this.ucXMIT_17.Bit7Title = "";
+            this.ucXMIT_17.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_17.Location = new System.Drawing.Point(1821, 297);
+            this.ucXMIT_17.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_17.Name = "ucXMIT_17";
+            this.ucXMIT_17.PGN = "0000";
+            this.ucXMIT_17.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_17.SPNName = "xmi17";
+            this.ucXMIT_17.TabIndex = 48;
+            this.ucXMIT_17.Value = 65;
+            // 
+            // ucXMIT_16
+            // 
+            this.ucXMIT_16.Address = "00";
+            this.ucXMIT_16.BackColor = System.Drawing.Color.Linen;
+            this.ucXMIT_16.Bit0Title = " ";
+            this.ucXMIT_16.Bit1Title = " ";
+            this.ucXMIT_16.Bit2Title = " ";
+            this.ucXMIT_16.Bit3Title = " ";
+            this.ucXMIT_16.Bit4Title = " ";
+            this.ucXMIT_16.Bit5Title = " ";
+            this.ucXMIT_16.Bit6Title = "";
+            this.ucXMIT_16.Bit7Title = "";
+            this.ucXMIT_16.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_16.Location = new System.Drawing.Point(1621, 297);
+            this.ucXMIT_16.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_16.Name = "ucXMIT_16";
+            this.ucXMIT_16.PGN = "0000";
+            this.ucXMIT_16.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_16.SPNName = "x16";
+            this.ucXMIT_16.TabIndex = 47;
+            // 
+            // uc_MODE
+            // 
+            this.uc_MODE.Address = "00";
+            this.uc_MODE.BackColor = System.Drawing.Color.Linen;
+            this.uc_MODE.Bit0Title = "";
+            this.uc_MODE.Bit1Title = "";
+            this.uc_MODE.Bit2Title = "";
+            this.uc_MODE.Bit3Title = "";
+            this.uc_MODE.Bit4Title = "";
+            this.uc_MODE.Bit5Title = "";
+            this.uc_MODE.Bit6Title = "";
+            this.uc_MODE.Bit7Title = "";
+            this.uc_MODE.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.uc_MODE.Location = new System.Drawing.Point(1421, 297);
+            this.uc_MODE.Margin = new System.Windows.Forms.Padding(0);
+            this.uc_MODE.Name = "uc_MODE";
+            this.uc_MODE.PGN = "0000";
+            this.uc_MODE.Size = new System.Drawing.Size(200, 260);
+            this.uc_MODE.TabIndex = 46;
+            this.uc_MODE.Value = 3;
+            // 
+            // ucXMIT_StbdTab_Scaled
+            // 
+            this.ucXMIT_StbdTab_Scaled.Address = "00";
+            this.ucXMIT_StbdTab_Scaled.BackColor = System.Drawing.Color.LightPink;
+            this.ucXMIT_StbdTab_Scaled.Bit0Title = "";
+            this.ucXMIT_StbdTab_Scaled.Bit1Title = "";
+            this.ucXMIT_StbdTab_Scaled.Bit2Title = "";
+            this.ucXMIT_StbdTab_Scaled.Bit3Title = "";
+            this.ucXMIT_StbdTab_Scaled.Bit4Title = "";
+            this.ucXMIT_StbdTab_Scaled.Bit5Title = "";
+            this.ucXMIT_StbdTab_Scaled.Bit6Title = "";
+            this.ucXMIT_StbdTab_Scaled.Bit7Title = "";
+            this.ucXMIT_StbdTab_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.ucXMIT_StbdTab_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_StbdTab_Scaled.Location = new System.Drawing.Point(1010, 9);
+            this.ucXMIT_StbdTab_Scaled.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_StbdTab_Scaled.MaxValue = 999;
+            this.ucXMIT_StbdTab_Scaled.Name = "ucXMIT_StbdTab_Scaled";
+            this.ucXMIT_StbdTab_Scaled.NumberOfBytes = 2;
+            this.ucXMIT_StbdTab_Scaled.PGN = "0000";
+            this.ucXMIT_StbdTab_Scaled.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_StbdTab_Scaled.SPNName = "XMIT_StbdTab_Scaled";
+            this.ucXMIT_StbdTab_Scaled.TabIndex = 45;
+            this.ucXMIT_StbdTab_Scaled.Value = 10;
+            // 
+            // ucXMIT_PortTab_Scaled
+            // 
+            this.ucXMIT_PortTab_Scaled.Address = "00";
+            this.ucXMIT_PortTab_Scaled.BackColor = System.Drawing.Color.LightCyan;
+            this.ucXMIT_PortTab_Scaled.Bit0Title = "";
+            this.ucXMIT_PortTab_Scaled.Bit1Title = "";
+            this.ucXMIT_PortTab_Scaled.Bit2Title = "";
+            this.ucXMIT_PortTab_Scaled.Bit3Title = "";
+            this.ucXMIT_PortTab_Scaled.Bit4Title = "";
+            this.ucXMIT_PortTab_Scaled.Bit5Title = "";
+            this.ucXMIT_PortTab_Scaled.Bit6Title = "";
+            this.ucXMIT_PortTab_Scaled.Bit7Title = "";
+            this.ucXMIT_PortTab_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.ucXMIT_PortTab_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_PortTab_Scaled.Location = new System.Drawing.Point(810, 9);
+            this.ucXMIT_PortTab_Scaled.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_PortTab_Scaled.MaxValue = 999;
+            this.ucXMIT_PortTab_Scaled.Name = "ucXMIT_PortTab_Scaled";
+            this.ucXMIT_PortTab_Scaled.NumberOfBytes = 2;
+            this.ucXMIT_PortTab_Scaled.PGN = "0000";
+            this.ucXMIT_PortTab_Scaled.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_PortTab_Scaled.SPNName = "XMIT_PortTab_Scaled";
+            this.ucXMIT_PortTab_Scaled.TabIndex = 44;
+            this.ucXMIT_PortTab_Scaled.Value = 10;
+            // 
+            // ucXMIT_StbdBkt_Scaled
+            // 
+            this.ucXMIT_StbdBkt_Scaled.Address = "00";
+            this.ucXMIT_StbdBkt_Scaled.BackColor = System.Drawing.Color.LightPink;
+            this.ucXMIT_StbdBkt_Scaled.Bit0Title = "";
+            this.ucXMIT_StbdBkt_Scaled.Bit1Title = "";
+            this.ucXMIT_StbdBkt_Scaled.Bit2Title = "";
+            this.ucXMIT_StbdBkt_Scaled.Bit3Title = "";
+            this.ucXMIT_StbdBkt_Scaled.Bit4Title = "";
+            this.ucXMIT_StbdBkt_Scaled.Bit5Title = "";
+            this.ucXMIT_StbdBkt_Scaled.Bit6Title = "";
+            this.ucXMIT_StbdBkt_Scaled.Bit7Title = "";
+            this.ucXMIT_StbdBkt_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Gauge;
+            this.ucXMIT_StbdBkt_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_StbdBkt_Scaled.G_EndAngle = 48;
+            this.ucXMIT_StbdBkt_Scaled.G_StartAngle = 315;
+            this.ucXMIT_StbdBkt_Scaled.Location = new System.Drawing.Point(610, 9);
+            this.ucXMIT_StbdBkt_Scaled.m_ticks = 6;
+            this.ucXMIT_StbdBkt_Scaled.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_StbdBkt_Scaled.MaxValue = 999;
+            this.ucXMIT_StbdBkt_Scaled.Name = "ucXMIT_StbdBkt_Scaled";
+            this.ucXMIT_StbdBkt_Scaled.NumberOfBytes = 2;
+            this.ucXMIT_StbdBkt_Scaled.PGN = "0000";
+            this.ucXMIT_StbdBkt_Scaled.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_StbdBkt_Scaled.SPNName = "XMIT_StbdBkt_Scaled";
+            this.ucXMIT_StbdBkt_Scaled.TabIndex = 42;
+            this.ucXMIT_StbdBkt_Scaled.Value = 500;
+            // 
+            // ucXMIT_PortBkt_Scaled
+            // 
+            this.ucXMIT_PortBkt_Scaled.Address = "00";
+            this.ucXMIT_PortBkt_Scaled.BackColor = System.Drawing.Color.LightCyan;
+            this.ucXMIT_PortBkt_Scaled.Bit0Title = "";
+            this.ucXMIT_PortBkt_Scaled.Bit1Title = "";
+            this.ucXMIT_PortBkt_Scaled.Bit2Title = "";
+            this.ucXMIT_PortBkt_Scaled.Bit3Title = "";
+            this.ucXMIT_PortBkt_Scaled.Bit4Title = "";
+            this.ucXMIT_PortBkt_Scaled.Bit5Title = "";
+            this.ucXMIT_PortBkt_Scaled.Bit6Title = "";
+            this.ucXMIT_PortBkt_Scaled.Bit7Title = "";
+            this.ucXMIT_PortBkt_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Gauge;
+            this.ucXMIT_PortBkt_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_PortBkt_Scaled.Location = new System.Drawing.Point(409, 9);
+            this.ucXMIT_PortBkt_Scaled.m_ticks = 6;
+            this.ucXMIT_PortBkt_Scaled.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_PortBkt_Scaled.MaxValue = 999;
+            this.ucXMIT_PortBkt_Scaled.Name = "ucXMIT_PortBkt_Scaled";
+            this.ucXMIT_PortBkt_Scaled.NumberOfBytes = 2;
+            this.ucXMIT_PortBkt_Scaled.PGN = "0000";
+            this.ucXMIT_PortBkt_Scaled.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_PortBkt_Scaled.SPNName = "XMIT_PortBkt_Scaled";
+            this.ucXMIT_PortBkt_Scaled.TabIndex = 41;
+            this.ucXMIT_PortBkt_Scaled.Value = 500;
+            // 
+            // ucXMIT_StbdNoz_Scaled
+            // 
+            this.ucXMIT_StbdNoz_Scaled.Address = "00";
+            this.ucXMIT_StbdNoz_Scaled.BackColor = System.Drawing.Color.LightPink;
+            this.ucXMIT_StbdNoz_Scaled.Bit0Title = "";
+            this.ucXMIT_StbdNoz_Scaled.Bit1Title = "";
+            this.ucXMIT_StbdNoz_Scaled.Bit2Title = "";
+            this.ucXMIT_StbdNoz_Scaled.Bit3Title = "";
+            this.ucXMIT_StbdNoz_Scaled.Bit4Title = "";
+            this.ucXMIT_StbdNoz_Scaled.Bit5Title = "";
+            this.ucXMIT_StbdNoz_Scaled.Bit6Title = "";
+            this.ucXMIT_StbdNoz_Scaled.Bit7Title = "";
+            this.ucXMIT_StbdNoz_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.ucXMIT_StbdNoz_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_StbdNoz_Scaled.Location = new System.Drawing.Point(209, 9);
+            this.ucXMIT_StbdNoz_Scaled.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_StbdNoz_Scaled.MaxValue = 999;
+            this.ucXMIT_StbdNoz_Scaled.Name = "ucXMIT_StbdNoz_Scaled";
+            this.ucXMIT_StbdNoz_Scaled.NumberOfBytes = 2;
+            this.ucXMIT_StbdNoz_Scaled.PGN = "0000";
+            this.ucXMIT_StbdNoz_Scaled.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_StbdNoz_Scaled.SPNName = "XMIT_StbdNoz_Scaled";
+            this.ucXMIT_StbdNoz_Scaled.TabIndex = 40;
+            this.ucXMIT_StbdNoz_Scaled.Value = 500;
+            // 
+            // ucXMIT_PortNoz_Scaled
+            // 
+            this.ucXMIT_PortNoz_Scaled.Address = "00";
+            this.ucXMIT_PortNoz_Scaled.BackColor = System.Drawing.Color.LightCyan;
+            this.ucXMIT_PortNoz_Scaled.Bit0Title = "";
+            this.ucXMIT_PortNoz_Scaled.Bit1Title = "";
+            this.ucXMIT_PortNoz_Scaled.Bit2Title = "";
+            this.ucXMIT_PortNoz_Scaled.Bit3Title = "";
+            this.ucXMIT_PortNoz_Scaled.Bit4Title = "";
+            this.ucXMIT_PortNoz_Scaled.Bit5Title = "";
+            this.ucXMIT_PortNoz_Scaled.Bit6Title = "";
+            this.ucXMIT_PortNoz_Scaled.Bit7Title = "";
+            this.ucXMIT_PortNoz_Scaled.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.ucXMIT_PortNoz_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_PortNoz_Scaled.Location = new System.Drawing.Point(9, 9);
+            this.ucXMIT_PortNoz_Scaled.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_PortNoz_Scaled.MaxValue = 999;
+            this.ucXMIT_PortNoz_Scaled.Name = "ucXMIT_PortNoz_Scaled";
+            this.ucXMIT_PortNoz_Scaled.NumberOfBytes = 2;
+            this.ucXMIT_PortNoz_Scaled.PGN = "0000";
+            this.ucXMIT_PortNoz_Scaled.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_PortNoz_Scaled.SPNName = "XMIT_PortNoz_Scaled";
+            this.ucXMIT_PortNoz_Scaled.TabIndex = 39;
+            this.ucXMIT_PortNoz_Scaled.Value = 500;
+            // 
+            // ucXMIT_CANFault
+            // 
+            this.ucXMIT_CANFault.Address = "00";
+            this.ucXMIT_CANFault.BackColor = System.Drawing.Color.Linen;
+            this.ucXMIT_CANFault.Bit0Title = "bCAN2_Fault";
+            this.ucXMIT_CANFault.Bit1Title = "option1";
+            this.ucXMIT_CANFault.Bit2Title = "option2";
+            this.ucXMIT_CANFault.Bit3Title = "op3";
+            this.ucXMIT_CANFault.Bit4Title = "bStation3_CAN_FAULT";
+            this.ucXMIT_CANFault.Bit5Title = "";
+            this.ucXMIT_CANFault.Bit6Title = "";
+            this.ucXMIT_CANFault.Bit7Title = "";
+            this.ucXMIT_CANFault.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_CANFault.Location = new System.Drawing.Point(2021, 297);
+            this.ucXMIT_CANFault.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_CANFault.Name = "ucXMIT_CANFault";
+            this.ucXMIT_CANFault.PGN = "0000";
+            this.ucXMIT_CANFault.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_CANFault.SPNName = "XMIT_CANFault";
+            this.ucXMIT_CANFault.TabIndex = 38;
+            this.ucXMIT_CANFault.Value = 2;
+            // 
+            // ucXMIT_Dockmode_Interlock_Error
+            // 
+            this.ucXMIT_Dockmode_Interlock_Error.Address = "00";
+            this.ucXMIT_Dockmode_Interlock_Error.BackColor = System.Drawing.Color.Linen;
+            this.ucXMIT_Dockmode_Interlock_Error.Bit0Title = "bDockmodeInhibit";
+            this.ucXMIT_Dockmode_Interlock_Error.Bit1Title = "whi eith clutch ingaed";
+            this.ucXMIT_Dockmode_Interlock_Error.Bit2Title = "bInboardClutchInterlock";
+            this.ucXMIT_Dockmode_Interlock_Error.Bit3Title = "";
+            this.ucXMIT_Dockmode_Interlock_Error.Bit4Title = "";
+            this.ucXMIT_Dockmode_Interlock_Error.Bit5Title = "";
+            this.ucXMIT_Dockmode_Interlock_Error.Bit6Title = "";
+            this.ucXMIT_Dockmode_Interlock_Error.Bit7Title = "";
+            this.ucXMIT_Dockmode_Interlock_Error.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_Dockmode_Interlock_Error.Location = new System.Drawing.Point(1212, 297);
+            this.ucXMIT_Dockmode_Interlock_Error.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_Dockmode_Interlock_Error.Name = "ucXMIT_Dockmode_Interlock_Error";
+            this.ucXMIT_Dockmode_Interlock_Error.PGN = "0000";
+            this.ucXMIT_Dockmode_Interlock_Error.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_Dockmode_Interlock_Error.SPNName = "XMIT_Dockmode_Interlock_Error";
+            this.ucXMIT_Dockmode_Interlock_Error.TabIndex = 37;
+            // 
+            // ucXMIT_Autocal_TrimRoll_Error
+            // 
+            this.ucXMIT_Autocal_TrimRoll_Error.Address = "00";
+            this.ucXMIT_Autocal_TrimRoll_Error.BackColor = System.Drawing.Color.Linen;
+            this.ucXMIT_Autocal_TrimRoll_Error.Bit0Title = "bTrim1_Fault";
+            this.ucXMIT_Autocal_TrimRoll_Error.Bit1Title = "bRoll1_Fault";
+            this.ucXMIT_Autocal_TrimRoll_Error.Bit2Title = "bAutocal_Fault";
+            this.ucXMIT_Autocal_TrimRoll_Error.Bit3Title = "bAP_OOR_Fault";
+            this.ucXMIT_Autocal_TrimRoll_Error.Bit4Title = "bTrim2_Fault";
+            this.ucXMIT_Autocal_TrimRoll_Error.Bit5Title = "bRoll2_Fault";
+            this.ucXMIT_Autocal_TrimRoll_Error.Bit6Title = "";
+            this.ucXMIT_Autocal_TrimRoll_Error.Bit7Title = "";
+            this.ucXMIT_Autocal_TrimRoll_Error.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_Autocal_TrimRoll_Error.Location = new System.Drawing.Point(1012, 297);
+            this.ucXMIT_Autocal_TrimRoll_Error.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_Autocal_TrimRoll_Error.Name = "ucXMIT_Autocal_TrimRoll_Error";
+            this.ucXMIT_Autocal_TrimRoll_Error.PGN = "0000";
+            this.ucXMIT_Autocal_TrimRoll_Error.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_Autocal_TrimRoll_Error.SPNName = "XMIT_Autocal_TrimRoll_Error";
+            this.ucXMIT_Autocal_TrimRoll_Error.TabIndex = 36;
+            // 
+            // ucXMIT_CmdFaultError_STA3
+            // 
+            this.ucXMIT_CmdFaultError_STA3.Address = "00";
+            this.ucXMIT_CmdFaultError_STA3.BackColor = System.Drawing.Color.Linen;
+            this.ucXMIT_CmdFaultError_STA3.Bit0Title = "bIdle3_Fault";
+            this.ucXMIT_CmdFaultError_STA3.Bit1Title = "bHelm3_Fault";
+            this.ucXMIT_CmdFaultError_STA3.Bit2Title = "bSLev2_Fault";
+            this.ucXMIT_CmdFaultError_STA3.Bit3Title = "bJoyYX3_Fault";
+            this.ucXMIT_CmdFaultError_STA3.Bit4Title = "bJoyY3_Fault";
+            this.ucXMIT_CmdFaultError_STA3.Bit5Title = "bJoyX3_Fault";
+            this.ucXMIT_CmdFaultError_STA3.Bit6Title = "";
+            this.ucXMIT_CmdFaultError_STA3.Bit7Title = "";
+            this.ucXMIT_CmdFaultError_STA3.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_CmdFaultError_STA3.Location = new System.Drawing.Point(812, 297);
+            this.ucXMIT_CmdFaultError_STA3.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_CmdFaultError_STA3.Name = "ucXMIT_CmdFaultError_STA3";
+            this.ucXMIT_CmdFaultError_STA3.PGN = "0000";
+            this.ucXMIT_CmdFaultError_STA3.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_CmdFaultError_STA3.SPNName = "XMIT_CmdFaultError_STA3";
+            this.ucXMIT_CmdFaultError_STA3.TabIndex = 35;
+            // 
+            // ucXMIT_CmdFaultError_STA2
+            // 
+            this.ucXMIT_CmdFaultError_STA2.Address = "00";
+            this.ucXMIT_CmdFaultError_STA2.BackColor = System.Drawing.Color.Linen;
+            this.ucXMIT_CmdFaultError_STA2.Bit0Title = "bIdle2_Fault";
+            this.ucXMIT_CmdFaultError_STA2.Bit1Title = "bHelm2_Fault";
+            this.ucXMIT_CmdFaultError_STA2.Bit2Title = "bSLev2_Fault";
+            this.ucXMIT_CmdFaultError_STA2.Bit3Title = "bPLev2_Fault";
+            this.ucXMIT_CmdFaultError_STA2.Bit4Title = "bJoyY2_Fault";
+            this.ucXMIT_CmdFaultError_STA2.Bit5Title = "bJoyX2_Fault";
+            this.ucXMIT_CmdFaultError_STA2.Bit6Title = "";
+            this.ucXMIT_CmdFaultError_STA2.Bit7Title = "";
+            this.ucXMIT_CmdFaultError_STA2.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_CmdFaultError_STA2.Location = new System.Drawing.Point(604, 297);
+            this.ucXMIT_CmdFaultError_STA2.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_CmdFaultError_STA2.Name = "ucXMIT_CmdFaultError_STA2";
+            this.ucXMIT_CmdFaultError_STA2.PGN = "0000";
+            this.ucXMIT_CmdFaultError_STA2.Size = new System.Drawing.Size(199, 260);
+            this.ucXMIT_CmdFaultError_STA2.SPNName = "XMIT_CmdFaultError_STA2";
+            this.ucXMIT_CmdFaultError_STA2.TabIndex = 34;
+            // 
+            // ucXMIT_CmdFaultError_STA1
+            // 
+            this.ucXMIT_CmdFaultError_STA1.Address = "00";
+            this.ucXMIT_CmdFaultError_STA1.BackColor = System.Drawing.Color.Linen;
+            this.ucXMIT_CmdFaultError_STA1.Bit0Title = "bIdle1_Fault";
+            this.ucXMIT_CmdFaultError_STA1.Bit1Title = "bHelm1_Fault";
+            this.ucXMIT_CmdFaultError_STA1.Bit2Title = "bSLev1_Fault";
+            this.ucXMIT_CmdFaultError_STA1.Bit3Title = "bPLev1_Fault";
+            this.ucXMIT_CmdFaultError_STA1.Bit4Title = "bJoyY1_Fault";
+            this.ucXMIT_CmdFaultError_STA1.Bit5Title = "bJoyX1_Fault";
+            this.ucXMIT_CmdFaultError_STA1.Bit6Title = "";
+            this.ucXMIT_CmdFaultError_STA1.Bit7Title = "";
+            this.ucXMIT_CmdFaultError_STA1.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_CmdFaultError_STA1.Location = new System.Drawing.Point(403, 297);
+            this.ucXMIT_CmdFaultError_STA1.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_CmdFaultError_STA1.Name = "ucXMIT_CmdFaultError_STA1";
+            this.ucXMIT_CmdFaultError_STA1.PGN = "0000";
+            this.ucXMIT_CmdFaultError_STA1.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_CmdFaultError_STA1.SPNName = "XMIT_CmdFaultError_STA1";
+            this.ucXMIT_CmdFaultError_STA1.TabIndex = 33;
+            this.ucXMIT_CmdFaultError_STA1.Value = 14;
+            // 
+            // ucXMIT_NonFollowError
+            // 
+            this.ucXMIT_NonFollowError.Address = "00";
+            this.ucXMIT_NonFollowError.BackColor = System.Drawing.Color.Linen;
+            this.ucXMIT_NonFollowError.Bit0Title = "bStbdBktNFU_Fault";
+            this.ucXMIT_NonFollowError.Bit1Title = "bPortBktNFU_Fault";
+            this.ucXMIT_NonFollowError.Bit2Title = "bStbdNozNFU_Fault";
+            this.ucXMIT_NonFollowError.Bit3Title = "bPortNozNFU_Fault";
+            this.ucXMIT_NonFollowError.Bit4Title = "bStbdTabNFU_Fault";
+            this.ucXMIT_NonFollowError.Bit5Title = "bPortTabNFU_Fault";
+            this.ucXMIT_NonFollowError.Bit6Title = "";
+            this.ucXMIT_NonFollowError.Bit7Title = "";
+            this.ucXMIT_NonFollowError.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_NonFollowError.Location = new System.Drawing.Point(200, 297);
+            this.ucXMIT_NonFollowError.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_NonFollowError.Name = "ucXMIT_NonFollowError";
+            this.ucXMIT_NonFollowError.PGN = "0000";
+            this.ucXMIT_NonFollowError.Size = new System.Drawing.Size(200, 260);
+            this.ucXMIT_NonFollowError.SPNName = "XMIT_NonFollowError";
+            this.ucXMIT_NonFollowError.TabIndex = 32;
+            // 
+            // ucXMIT_SensorFaultError
+            // 
+            this.ucXMIT_SensorFaultError.Address = "00";
+            this.ucXMIT_SensorFaultError.BackColor = System.Drawing.Color.Linen;
+            this.ucXMIT_SensorFaultError.Bit0Title = "bBkt2_Fault";
+            this.ucXMIT_SensorFaultError.Bit1Title = "bBkt1_Fault";
+            this.ucXMIT_SensorFaultError.Bit2Title = "bNoz2_Fault";
+            this.ucXMIT_SensorFaultError.Bit3Title = "bNoz1_Fault";
+            this.ucXMIT_SensorFaultError.Bit4Title = "bTab2_Fault";
+            this.ucXMIT_SensorFaultError.Bit5Title = "bTab1_Fault";
+            this.ucXMIT_SensorFaultError.Bit6Title = "";
+            this.ucXMIT_SensorFaultError.Bit7Title = "";
+            this.ucXMIT_SensorFaultError.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.ucXMIT_SensorFaultError.Location = new System.Drawing.Point(9, 297);
+            this.ucXMIT_SensorFaultError.Margin = new System.Windows.Forms.Padding(0);
+            this.ucXMIT_SensorFaultError.Name = "ucXMIT_SensorFaultError";
+            this.ucXMIT_SensorFaultError.PGN = "0000";
+            this.ucXMIT_SensorFaultError.Size = new System.Drawing.Size(191, 260);
+            this.ucXMIT_SensorFaultError.SPNName = "XMIT_SensorFaultError";
+            this.ucXMIT_SensorFaultError.TabIndex = 31;
+            this.ucXMIT_SensorFaultError.Value = 15;
             // 
             // Serial_C3
             // 

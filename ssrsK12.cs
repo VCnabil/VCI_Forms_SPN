@@ -41,6 +41,7 @@ namespace VCI_Forms_SPN
         double _myWPlat = 0;
         double _myWPlon = 0;
         private Timer pipeTimer;
+        private readonly object _syncLock = new object();
         public ssrsK12()
         {
             InitializeComponent();
@@ -101,7 +102,6 @@ namespace VCI_Forms_SPN
             {
                 if (double.TryParse(parts[0], out double lat) && double.TryParse(parts[1], out double lon))
                 {
-
                     vCinc_GPS1.SetShipLocationAndHeading(lat, lon, 0);
                     // Create the ShipCommands object
                     var shipCommands = new ShipCommands
@@ -126,9 +126,6 @@ namespace VCI_Forms_SPN
                         timer.Dispose(); // Dispose the timer
                     };
                     timer.Start();
-
-
-
                 }
                 else
                 {
@@ -164,7 +161,47 @@ namespace VCI_Forms_SPN
         {
             if (InvokeRequired)
             {
-                Invoke(new Action(() => PipeManager_OnMessageReceived(message)));
+                BeginInvoke(new Action(() => PipeManager_OnMessageReceived(message)));
+                return;
+            }
+
+            try
+            {
+                ShipStatus shipStatus = JsonConvert.DeserializeObject<ShipStatus>(message);
+                if (shipStatus != null)
+                {
+                    bool hasChanged;
+                    lock (_syncLock)
+                    {
+                        hasChanged = (_unity_shiplat != shipStatus.ActualLat ||
+                                      _unity_shiplon != shipStatus.ActualLon ||
+                                      _unity_shipHeading != shipStatus.ShipHeading);
+
+                        if (hasChanged)
+                        {
+                            _unity_shiplat = shipStatus.ActualLat;
+                            _unity_shiplon = shipStatus.ActualLon;
+                            _unity_shipHeading = shipStatus.ShipHeading;
+                        }
+                    }
+
+                    if (hasChanged)
+                    {
+                        // Update GPS values on the UI thread
+                        vCinc_GPS1.SetShipLocationAndHeading(_unity_shiplat, _unity_shiplon, _unity_shipHeading);
+                    }
+                }
+            }
+            catch (JsonSerializationException ex)
+            {
+                Debug.WriteLine($"[DEBUG] Error deserializing JSON: {ex.Message}");
+            }
+        }
+        private void PipeManager_OnMessageReceivedbad(string message)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => PipeManager_OnMessageReceivedbad(message)));
                 return;
             }
 
@@ -183,7 +220,7 @@ namespace VCI_Forms_SPN
                     _unity_shipHeading = shipStatus.ShipHeading;
 
                     // Update GPS values
-                    vCinc_GPS1.SetShipLocationAndHeading(_unity_shiplat, _unity_shiplon, _unity_shipHeading);
+                  vCinc_GPS1.SetShipLocationAndHeading(_unity_shiplat, _unity_shiplon, _unity_shipHeading);
                 }
 
             }
@@ -229,31 +266,43 @@ namespace VCI_Forms_SPN
             }
         }
 
+
         void UpdateTheGPS_withLocalControlValues()
         {
-            string _strInpiut = tb_InitLatlon.Text;
-            //the inpu looks like " 42.0121,-12.005"   
-            string[] _strArray = _strInpiut.Split(',');
-            if (_strArray.Length == 2)
+            if (InvokeRequired)
             {
-                if (!_pipeIsOpen)
+                BeginInvoke(new Action(UpdateTheGPS_withLocalControlValues));
+                return;
+            }
+
+            string _strInpiut = tb_InitLatlon.Text;
+            // The input looks like "42.0121,-12.005"   
+            string[] _strArray = _strInpiut.Split(',');
+
+            lock (_syncLock)
+            {
+                if (_strArray.Length == 2)
                 {
-                    _unity_shiplat = Convert.ToDouble(_strArray[0]);
-                    _unity_shiplon = Convert.ToDouble(_strArray[1]);
-                    _unity_shipHeading = trackBar1.Value;
-                    vCinc_GPS1.SetShipLocationAndHeading(_unity_shiplat, _unity_shiplon, _unity_shipHeading);
+                    if (!_pipeIsOpen)
+                    {
+                        if (double.TryParse(_strArray[0], out double lat) && double.TryParse(_strArray[1], out double lon))
+                        {
+                            _unity_shiplat = lat;
+                            _unity_shiplon = lon;
+                            _unity_shipHeading = trackBar1.Value;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid latitude or longitude format. Please enter valid numbers.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
-            //if piped, we dont send this to gps , we send unity pipe message
-            if (!_pipeIsOpen)
-            {
-                label5.ForeColor = Color.Black;
-            }
-            else
-            {
-                label5.ForeColor = Color.Red;
-            }
-            label5.Text = _unity_shiplat.ToString() + " " + _unity_shiplon.ToString();
+
+            // Update the UI components
+            vCinc_GPS1.SetShipLocationAndHeading(_unity_shiplat, _unity_shiplon, _unity_shipHeading);
+            label5.Text = $"{_unity_shiplat} {_unity_shiplon}";
+            label5.ForeColor = !_pipeIsOpen ? Color.Black : Color.Red;
         }
         private void TrackBar1_ValueChanged(object sender, EventArgs e)
         {
@@ -298,18 +347,19 @@ namespace VCI_Forms_SPN
                 var pgnByteArrays = _myPGNManager.GetPgnByteArrays();
                 foreach (var entry in pgnByteArrays.Values)
                 {
-                   
+                    //KvsrManager.Instance.SendPGN_withStatus(1, entry.pgn, entry.data);
                     int pgn = entry.pgn;
                     if (pgn == 0x09F8017F)
                     {
-                       // Debug.WriteLine("foundone");
-                        KvsrManager.Instance.SendPGN_withStatus(1, pgn, vCinc_GPS1.Get_PGNdata_CMDCOORDINATES_09F8017F()); 
+                        // Debug.WriteLine("foundone");
+                        KvsrManager.Instance.SendPGN_withStatus(1, pgn, vCinc_GPS1.Get_PGNdata_CMDCOORDINATES_09F8017F());
                     }
-                    else { 
-                    
-                    
-                    byte[] data = entry.data;
-                    KvsrManager.Instance.SendPGN_withStatus(1, pgn, data);
+                    else
+                    {
+
+
+                        byte[] data = entry.data;
+                        KvsrManager.Instance.SendPGN_withStatus(1, pgn, data);
                     }
                 }
             }
