@@ -41,6 +41,8 @@
             this.vCinc_uc5 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc6 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc7 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_uc8 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_uc9 = new VCI_Forms_LIB.VCinc_uc();
             this.SuspendLayout();
             // 
             // cb_uniqueOn
@@ -126,7 +128,7 @@
             this.vCinc_uc1.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_uc1.Location = new System.Drawing.Point(9, 5);
             this.vCinc_uc1.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc1.MaxValue = 41000;
+            this.vCinc_uc1.MaxValue = 65535;
             this.vCinc_uc1.Name = "vCinc_uc1";
             this.vCinc_uc1.NumberOfBytes = 2;
             this.vCinc_uc1.PGN = "F004";
@@ -182,6 +184,7 @@
             // 
             // vCinc_uc4
             // 
+            this.vCinc_uc4.Address = "00";
             this.vCinc_uc4.BackColor = System.Drawing.Color.Linen;
             this.vCinc_uc4.Bit0Title = "";
             this.vCinc_uc4.Bit1Title = "";
@@ -218,7 +221,7 @@
             this.vCinc_uc5.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_uc5.Location = new System.Drawing.Point(809, 5);
             this.vCinc_uc5.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc5.MaxValue = 320;
+            this.vCinc_uc5.MaxValue = 65535;
             this.vCinc_uc5.Name = "vCinc_uc5";
             this.vCinc_uc5.NumberOfBytes = 2;
             this.vCinc_uc5.PGN = "FEF7";
@@ -266,7 +269,7 @@
             this.vCinc_uc7.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_uc7.Location = new System.Drawing.Point(1009, 5);
             this.vCinc_uc7.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc7.MaxValue = 10000;
+            this.vCinc_uc7.MaxValue = 2147483647;
             this.vCinc_uc7.Name = "vCinc_uc7";
             this.vCinc_uc7.NumberOfBytes = 4;
             this.vCinc_uc7.PGN = "FEE5";
@@ -275,11 +278,62 @@
             this.vCinc_uc7.TabIndex = 223;
             this.vCinc_uc7.Value = 265;
             // 
+            // vCinc_uc8
+            // 
+            this.vCinc_uc8.Address = "29";
+            this.vCinc_uc8.BackColor = System.Drawing.Color.Linen;
+            this.vCinc_uc8.Bit0Title = "";
+            this.vCinc_uc8.Bit1Title = "";
+            this.vCinc_uc8.Bit2Title = "";
+            this.vCinc_uc8.Bit3Title = "";
+            this.vCinc_uc8.Bit4Title = "";
+            this.vCinc_uc8.Bit5Title = "";
+            this.vCinc_uc8.Bit6Title = "";
+            this.vCinc_uc8.Bit7Title = "";
+            this.vCinc_uc8.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.vCinc_uc8.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_uc8.Location = new System.Drawing.Point(472, 470);
+            this.vCinc_uc8.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_uc8.MaxValue = 2147483647;
+            this.vCinc_uc8.Name = "vCinc_uc8";
+            this.vCinc_uc8.NumberOfBytes = 4;
+            this.vCinc_uc8.PGN = "FF67";
+            this.vCinc_uc8.Size = new System.Drawing.Size(200, 260);
+            this.vCinc_uc8.SPNName = "xi";
+            this.vCinc_uc8.TabIndex = 225;
+            // 
+            // vCinc_uc9
+            // 
+            this.vCinc_uc9.A_FirstByteIndex = 4;
+            this.vCinc_uc9.Address = "29";
+            this.vCinc_uc9.BackColor = System.Drawing.Color.Linen;
+            this.vCinc_uc9.Bit0Title = "";
+            this.vCinc_uc9.Bit1Title = "";
+            this.vCinc_uc9.Bit2Title = "";
+            this.vCinc_uc9.Bit3Title = "";
+            this.vCinc_uc9.Bit4Title = "";
+            this.vCinc_uc9.Bit5Title = "";
+            this.vCinc_uc9.Bit6Title = "";
+            this.vCinc_uc9.Bit7Title = "";
+            this.vCinc_uc9.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.vCinc_uc9.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_uc9.Location = new System.Drawing.Point(672, 470);
+            this.vCinc_uc9.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_uc9.MaxValue = 2147483647;
+            this.vCinc_uc9.Name = "vCinc_uc9";
+            this.vCinc_uc9.NumberOfBytes = 4;
+            this.vCinc_uc9.PGN = "FF67";
+            this.vCinc_uc9.Size = new System.Drawing.Size(200, 260);
+            this.vCinc_uc9.SPNName = " Engine pressure";
+            this.vCinc_uc9.TabIndex = 226;
+            // 
             // C3iForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2344, 1521);
+            this.Controls.Add(this.vCinc_uc9);
+            this.Controls.Add(this.vCinc_uc8);
             this.Controls.Add(this.vCinc_uc6);
             this.Controls.Add(this.vCinc_uc7);
             this.Controls.Add(this.vCinc_uc5);
@@ -315,5 +369,7 @@
         private VCI_Forms_LIB.VCinc_uc vCinc_uc5;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc6;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc7;
+        private VCI_Forms_LIB.VCinc_uc vCinc_uc8;
+        private VCI_Forms_LIB.VCinc_uc vCinc_uc9;
     }
 }

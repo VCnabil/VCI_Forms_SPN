@@ -330,7 +330,7 @@
             this.ucXMIT_PortNoz_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.ucXMIT_PortNoz_Scaled.Location = new System.Drawing.Point(9, 9);
             this.ucXMIT_PortNoz_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_PortNoz_Scaled.MaxValue = 65535;
+            this.ucXMIT_PortNoz_Scaled.MaxValue = 1000;
             this.ucXMIT_PortNoz_Scaled.Name = "ucXMIT_PortNoz_Scaled";
             this.ucXMIT_PortNoz_Scaled.NumberOfBytes = 2;
             this.ucXMIT_PortNoz_Scaled.PGN = "0000";
@@ -355,7 +355,7 @@
             this.ucXMIT_StbdNoz_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.ucXMIT_StbdNoz_Scaled.Location = new System.Drawing.Point(209, 9);
             this.ucXMIT_StbdNoz_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_StbdNoz_Scaled.MaxValue = 65535;
+            this.ucXMIT_StbdNoz_Scaled.MaxValue = 1000;
             this.ucXMIT_StbdNoz_Scaled.Name = "ucXMIT_StbdNoz_Scaled";
             this.ucXMIT_StbdNoz_Scaled.NumberOfBytes = 2;
             this.ucXMIT_StbdNoz_Scaled.PGN = "0000";
@@ -381,7 +381,7 @@
             this.ucXMIT_PortBkt_Scaled.Location = new System.Drawing.Point(409, 9);
             this.ucXMIT_PortBkt_Scaled.m_ticks = 6;
             this.ucXMIT_PortBkt_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_PortBkt_Scaled.MaxValue = 65535;
+            this.ucXMIT_PortBkt_Scaled.MaxValue = 1000;
             this.ucXMIT_PortBkt_Scaled.Name = "ucXMIT_PortBkt_Scaled";
             this.ucXMIT_PortBkt_Scaled.NumberOfBytes = 2;
             this.ucXMIT_PortBkt_Scaled.PGN = "0000";
@@ -409,7 +409,7 @@
             this.ucXMIT_StbdBkt_Scaled.Location = new System.Drawing.Point(610, 9);
             this.ucXMIT_StbdBkt_Scaled.m_ticks = 6;
             this.ucXMIT_StbdBkt_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_StbdBkt_Scaled.MaxValue = 65535;
+            this.ucXMIT_StbdBkt_Scaled.MaxValue = 1000;
             this.ucXMIT_StbdBkt_Scaled.Name = "ucXMIT_StbdBkt_Scaled";
             this.ucXMIT_StbdBkt_Scaled.NumberOfBytes = 2;
             this.ucXMIT_StbdBkt_Scaled.PGN = "0000";
@@ -443,7 +443,7 @@
             this.ucXMIT_StbdTab_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.ucXMIT_StbdTab_Scaled.Location = new System.Drawing.Point(1010, 9);
             this.ucXMIT_StbdTab_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_StbdTab_Scaled.MaxValue = 65535;
+            this.ucXMIT_StbdTab_Scaled.MaxValue = 1000;
             this.ucXMIT_StbdTab_Scaled.Name = "ucXMIT_StbdTab_Scaled";
             this.ucXMIT_StbdTab_Scaled.NumberOfBytes = 2;
             this.ucXMIT_StbdTab_Scaled.PGN = "0000";
@@ -468,7 +468,7 @@
             this.ucXMIT_PortTab_Scaled.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.ucXMIT_PortTab_Scaled.Location = new System.Drawing.Point(810, 9);
             this.ucXMIT_PortTab_Scaled.Margin = new System.Windows.Forms.Padding(0);
-            this.ucXMIT_PortTab_Scaled.MaxValue = 65535;
+            this.ucXMIT_PortTab_Scaled.MaxValue = 1000;
             this.ucXMIT_PortTab_Scaled.Name = "ucXMIT_PortTab_Scaled";
             this.ucXMIT_PortTab_Scaled.NumberOfBytes = 2;
             this.ucXMIT_PortTab_Scaled.PGN = "0000";

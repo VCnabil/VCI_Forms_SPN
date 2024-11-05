@@ -121,6 +121,12 @@
     <Compile Include="ssrsK12.Designer.cs">
       <DependentUpon>ssrsK12.cs</DependentUpon>
     </Compile>
+    <Compile Include="XIetaSendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XIetaSendForm.Designer.cs">
+      <DependentUpon>XIetaSendForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="_BackEndDataOBJs\JSONSHIPdatamodle.cs" />
     <Compile Include="_GLobalz\ColorHelpers.cs" />
     <Compile Include="_GLobalz\G_Helpers.cs" />
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ssrsK12.resx">
       <DependentUpon>ssrsK12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XIetaSendForm.resx">
+      <DependentUpon>XIetaSendForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />
