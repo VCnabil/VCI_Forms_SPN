@@ -34,6 +34,18 @@
             this.lbl_OnScreenCount = new System.Windows.Forms.Label();
             this.lbl_onBus = new System.Windows.Forms.Label();
             this.btn_Validate = new System.Windows.Forms.Button();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_XI = new System.Windows.Forms.TextBox();
+            this.tb_ETA = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.trackBarLon = new System.Windows.Forms.TrackBar();
+            this.trackBarLat = new System.Windows.Forms.TrackBar();
+            this.vCinc_LatLon2 = new VCI_Forms_LIB.VCinc_LatLon();
+            this.vCinc_LatLon1 = new VCI_Forms_LIB.VCinc_LatLon();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarLon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarLat)).BeginInit();
             this.SuspendLayout();
             // 
             // cb_uniqueOn
@@ -102,11 +114,107 @@
             this.btn_Validate.Text = "validator";
             this.btn_Validate.UseVisualStyleBackColor = true;
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(110, 8);
+            this.trackBar1.Maximum = 72000;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(480, 90);
+            this.trackBar1.TabIndex = 224;
+            this.trackBar1.Value = 36000;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(364, 143);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 27);
+            this.label1.TabIndex = 225;
+            this.label1.Text = "heading";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tb_XI
+            // 
+            this.tb_XI.Location = new System.Drawing.Point(149, 173);
+            this.tb_XI.Name = "tb_XI";
+            this.tb_XI.Size = new System.Drawing.Size(172, 31);
+            this.tb_XI.TabIndex = 226;
+            this.tb_XI.Text = "120000";
+            // 
+            // tb_ETA
+            // 
+            this.tb_ETA.Location = new System.Drawing.Point(327, 173);
+            this.tb_ETA.Name = "tb_ETA";
+            this.tb_ETA.Size = new System.Drawing.Size(172, 31);
+            this.tb_ETA.TabIndex = 227;
+            this.tb_ETA.Text = "543210";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(153, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(195, 25);
+            this.label2.TabIndex = 228;
+            this.label2.Text = "09 FF67 29  Xi  eta";
+            // 
+            // trackBarLon
+            // 
+            this.trackBarLon.Location = new System.Drawing.Point(110, 413);
+            this.trackBarLon.Maximum = 180000;
+            this.trackBarLon.Minimum = -180000;
+            this.trackBarLon.Name = "trackBarLon";
+            this.trackBarLon.Size = new System.Drawing.Size(480, 90);
+            this.trackBarLon.TabIndex = 232;
+            // 
+            // trackBarLat
+            // 
+            this.trackBarLat.Location = new System.Drawing.Point(14, 8);
+            this.trackBarLat.Maximum = 90000;
+            this.trackBarLat.Minimum = -90000;
+            this.trackBarLat.Name = "trackBarLat";
+            this.trackBarLat.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarLat.Size = new System.Drawing.Size(90, 482);
+            this.trackBarLat.TabIndex = 233;
+            // 
+            // vCinc_LatLon2
+            // 
+            this.vCinc_LatLon2.BackColor = System.Drawing.Color.RosyBrown;
+            this.vCinc_LatLon2.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_LatLon2.LatitudeDecimal = 0D;
+            this.vCinc_LatLon2.Location = new System.Drawing.Point(147, 298);
+            this.vCinc_LatLon2.LongitudeDecimal = 0D;
+            this.vCinc_LatLon2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_LatLon2.Name = "vCinc_LatLon2";
+            this.vCinc_LatLon2.Size = new System.Drawing.Size(322, 82);
+            this.vCinc_LatLon2.TabIndex = 231;
+            // 
+            // vCinc_LatLon1
+            // 
+            this.vCinc_LatLon1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.vCinc_LatLon1.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_LatLon1.LatitudeDecimal = 0D;
+            this.vCinc_LatLon1.Location = new System.Drawing.Point(147, 210);
+            this.vCinc_LatLon1.LongitudeDecimal = 0D;
+            this.vCinc_LatLon1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_LatLon1.Name = "vCinc_LatLon1";
+            this.vCinc_LatLon1.Size = new System.Drawing.Size(318, 82);
+            this.vCinc_LatLon1.TabIndex = 230;
+            // 
             // XIetaSendForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2375, 840);
+            this.Controls.Add(this.trackBarLat);
+            this.Controls.Add(this.trackBarLon);
+            this.Controls.Add(this.vCinc_LatLon2);
+            this.Controls.Add(this.vCinc_LatLon1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tb_ETA);
+            this.Controls.Add(this.tb_XI);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.cb_uniqueOn);
             this.Controls.Add(this.tb_CAN_Bus_View);
             this.Controls.Add(this.btn_RunStop);
@@ -115,6 +223,9 @@
             this.Controls.Add(this.btn_Validate);
             this.Name = "XIetaSendForm";
             this.Text = "XIetaSendForm";
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarLon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarLat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +239,14 @@
         private System.Windows.Forms.Label lbl_OnScreenCount;
         private System.Windows.Forms.Label lbl_onBus;
         private System.Windows.Forms.Button btn_Validate;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_XI;
+        private System.Windows.Forms.TextBox tb_ETA;
+        private System.Windows.Forms.Label label2;
+        private VCI_Forms_LIB.VCinc_LatLon vCinc_LatLon1;
+        private VCI_Forms_LIB.VCinc_LatLon vCinc_LatLon2;
+        private System.Windows.Forms.TrackBar trackBarLon;
+        private System.Windows.Forms.TrackBar trackBarLat;
     }
 }
