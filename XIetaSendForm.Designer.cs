@@ -41,8 +41,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.trackBarLon = new System.Windows.Forms.TrackBar();
             this.trackBarLat = new System.Windows.Forms.TrackBar();
-            this.vCinc_LatLon2 = new VCI_Forms_LIB.VCinc_LatLon();
-            this.vCinc_LatLon1 = new VCI_Forms_LIB.VCinc_LatLon();
+            this.vCinc_LatLon_waypoint = new VCI_Forms_LIB.VCinc_LatLon();
+            this.vCinc_LatLon_mapCnter = new VCI_Forms_LIB.VCinc_LatLon();
+            this.mapPanel2 = new System.Windows.Forms.Panel();
+            this.gridSquareSizeBox = new System.Windows.Forms.TextBox();
+            this.unitsCheckBox = new System.Windows.Forms.CheckBox();
+            this.cb_useTbLon = new System.Windows.Forms.CheckBox();
+            this.cb_useTbLat = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLat)).BeginInit();
@@ -177,39 +182,96 @@
             this.trackBarLat.Size = new System.Drawing.Size(90, 482);
             this.trackBarLat.TabIndex = 233;
             // 
-            // vCinc_LatLon2
+            // vCinc_LatLon_waypoint
             // 
-            this.vCinc_LatLon2.BackColor = System.Drawing.Color.RosyBrown;
-            this.vCinc_LatLon2.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_LatLon2.LatitudeDecimal = 0D;
-            this.vCinc_LatLon2.Location = new System.Drawing.Point(147, 298);
-            this.vCinc_LatLon2.LongitudeDecimal = 0D;
-            this.vCinc_LatLon2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_LatLon2.Name = "vCinc_LatLon2";
-            this.vCinc_LatLon2.Size = new System.Drawing.Size(322, 82);
-            this.vCinc_LatLon2.TabIndex = 231;
+            this.vCinc_LatLon_waypoint.BackColor = System.Drawing.Color.RosyBrown;
+            this.vCinc_LatLon_waypoint.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_LatLon_waypoint.LatitudeDecimal = 0D;
+            this.vCinc_LatLon_waypoint.Location = new System.Drawing.Point(147, 298);
+            this.vCinc_LatLon_waypoint.LongitudeDecimal = 0D;
+            this.vCinc_LatLon_waypoint.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_LatLon_waypoint.Name = "vCinc_LatLon_waypoint";
+            this.vCinc_LatLon_waypoint.Size = new System.Drawing.Size(322, 82);
+            this.vCinc_LatLon_waypoint.TabIndex = 231;
             // 
-            // vCinc_LatLon1
+            // vCinc_LatLon_mapCnter
             // 
-            this.vCinc_LatLon1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.vCinc_LatLon1.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_LatLon1.LatitudeDecimal = 0D;
-            this.vCinc_LatLon1.Location = new System.Drawing.Point(147, 210);
-            this.vCinc_LatLon1.LongitudeDecimal = 0D;
-            this.vCinc_LatLon1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_LatLon1.Name = "vCinc_LatLon1";
-            this.vCinc_LatLon1.Size = new System.Drawing.Size(318, 82);
-            this.vCinc_LatLon1.TabIndex = 230;
+            this.vCinc_LatLon_mapCnter.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.vCinc_LatLon_mapCnter.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_LatLon_mapCnter.LatitudeDecimal = 0D;
+            this.vCinc_LatLon_mapCnter.Location = new System.Drawing.Point(147, 210);
+            this.vCinc_LatLon_mapCnter.LongitudeDecimal = 0D;
+            this.vCinc_LatLon_mapCnter.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_LatLon_mapCnter.Name = "vCinc_LatLon_mapCnter";
+            this.vCinc_LatLon_mapCnter.Size = new System.Drawing.Size(318, 82);
+            this.vCinc_LatLon_mapCnter.TabIndex = 230;
+            // 
+            // mapPanel2
+            // 
+            this.mapPanel2.BackColor = System.Drawing.Color.White;
+            this.mapPanel2.Location = new System.Drawing.Point(844, 26);
+            this.mapPanel2.Name = "mapPanel2";
+            this.mapPanel2.Size = new System.Drawing.Size(600, 600);
+            this.mapPanel2.TabIndex = 234;
+            // 
+            // gridSquareSizeBox
+            // 
+            this.gridSquareSizeBox.Location = new System.Drawing.Point(880, 638);
+            this.gridSquareSizeBox.Name = "gridSquareSizeBox";
+            this.gridSquareSizeBox.Size = new System.Drawing.Size(83, 31);
+            this.gridSquareSizeBox.TabIndex = 236;
+            this.gridSquareSizeBox.Text = "100";
+            // 
+            // unitsCheckBox
+            // 
+            this.unitsCheckBox.AutoSize = true;
+            this.unitsCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unitsCheckBox.Location = new System.Drawing.Point(991, 642);
+            this.unitsCheckBox.Margin = new System.Windows.Forms.Padding(1);
+            this.unitsCheckBox.Name = "unitsCheckBox";
+            this.unitsCheckBox.Size = new System.Drawing.Size(90, 27);
+            this.unitsCheckBox.TabIndex = 235;
+            this.unitsCheckBox.Text = "Meters";
+            this.unitsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // cb_useTbLon
+            // 
+            this.cb_useTbLon.AutoSize = true;
+            this.cb_useTbLon.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_useTbLon.Location = new System.Drawing.Point(583, 427);
+            this.cb_useTbLon.Margin = new System.Windows.Forms.Padding(1);
+            this.cb_useTbLon.Name = "cb_useTbLon";
+            this.cb_useTbLon.Size = new System.Drawing.Size(67, 27);
+            this.cb_useTbLon.TabIndex = 237;
+            this.cb_useTbLon.Text = "use";
+            this.cb_useTbLon.UseVisualStyleBackColor = true;
+            // 
+            // cb_useTbLat
+            // 
+            this.cb_useTbLat.AutoSize = true;
+            this.cb_useTbLat.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.7F);
+            this.cb_useTbLat.Location = new System.Drawing.Point(54, 506);
+            this.cb_useTbLat.Name = "cb_useTbLat";
+            this.cb_useTbLat.Size = new System.Drawing.Size(67, 27);
+            this.cb_useTbLat.TabIndex = 238;
+            this.cb_useTbLat.Text = "use";
+            this.cb_useTbLat.UseVisualStyleBackColor = true;
             // 
             // XIetaSendForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2375, 840);
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.ClientSize = new System.Drawing.Size(2375, 1026);
+            this.Controls.Add(this.cb_useTbLat);
+            this.Controls.Add(this.cb_useTbLon);
+            this.Controls.Add(this.gridSquareSizeBox);
+            this.Controls.Add(this.unitsCheckBox);
+            this.Controls.Add(this.mapPanel2);
             this.Controls.Add(this.trackBarLat);
             this.Controls.Add(this.trackBarLon);
-            this.Controls.Add(this.vCinc_LatLon2);
-            this.Controls.Add(this.vCinc_LatLon1);
+            this.Controls.Add(this.vCinc_LatLon_waypoint);
+            this.Controls.Add(this.vCinc_LatLon_mapCnter);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_ETA);
             this.Controls.Add(this.tb_XI);
@@ -244,9 +306,14 @@
         private System.Windows.Forms.TextBox tb_XI;
         private System.Windows.Forms.TextBox tb_ETA;
         private System.Windows.Forms.Label label2;
-        private VCI_Forms_LIB.VCinc_LatLon vCinc_LatLon1;
-        private VCI_Forms_LIB.VCinc_LatLon vCinc_LatLon2;
+        private VCI_Forms_LIB.VCinc_LatLon vCinc_LatLon_mapCnter;
+        private VCI_Forms_LIB.VCinc_LatLon vCinc_LatLon_waypoint;
         private System.Windows.Forms.TrackBar trackBarLon;
         private System.Windows.Forms.TrackBar trackBarLat;
+        private System.Windows.Forms.Panel mapPanel2;
+        private System.Windows.Forms.TextBox gridSquareSizeBox;
+        private System.Windows.Forms.CheckBox unitsCheckBox;
+        private System.Windows.Forms.CheckBox cb_useTbLon;
+        private System.Windows.Forms.CheckBox cb_useTbLat;
     }
 }
