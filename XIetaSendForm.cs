@@ -13,6 +13,7 @@ using VCI_Forms_LIB;
 using VCI_Forms_SPN._GLobalz;
 using VCI_Forms_SPN._Managers;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace VCI_Forms_SPN
 {
@@ -29,6 +30,7 @@ namespace VCI_Forms_SPN
         Dictionary<string, string> uniqueMessages = new Dictionary<string, string>();
         private Dictionary<int, byte[]> pgnDataDictionary = new Dictionary<int, byte[]>()
         {
+            { 0x18FF8829, new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 } },
             { 0x09F1127F, new byte[] { 0x00, 0x3A, 0x19, 0x00, 0x00, 0x00, 0x00, 0x00 } },
             { 0x09F8017F, new byte[] { 0x9A, 0x87, 0x01, 0x00, 0xDB, 0x00, 0x00, 0x00 } },
             { 0x18FF6729, new byte[] { 0x80, 0xF9, 0x64, 0x3F, 0xE4, 0x7B, 0x41, 0x41 } },
@@ -66,9 +68,34 @@ namespace VCI_Forms_SPN
         private int previousLonTrackBarValue = 0;
 
         private Timer debounceTimer;
+        private byte myByte = 0x00; // The byte to modify
+
+        private void bet_restBit0_Click(object sender, EventArgs e)
+        {
+            SetBitForOneSecond(0);
+        }
+
+        private void bet_restBit1_Click(object sender, EventArgs e)
+        {
+            SetBitForOneSecond(1);
+        }
+
+        private async void SetBitForOneSecond(int bitPosition)
+        {
+            // Set the bit at the specified position
+            myByte |= (byte)(1 << bitPosition);
+
+            // Wait for 1 second
+            await Task.Delay(1000);
+
+            // Clear the bit after 1 second
+            myByte &= (byte)~(1 << bitPosition);
+        }
         public XIetaSendForm()
         {
             InitializeComponent();
+            
+
             debounceTimer = new Timer();
             debounceTimer.Interval = 500; // 500 milliseconds delay
             debounceTimer.Tick += (s, e) =>
@@ -88,6 +115,9 @@ namespace VCI_Forms_SPN
             _waypoint = new VC_LOCATION();
             _screenWaypoint = new VC_LOCATION();
             xietaObj = new XIETAobj();
+
+             
+           
 
             #region TemplateInitialize
             lbl_OnScreenCount.BackColor = Color.Transparent;
@@ -128,7 +158,16 @@ namespace VCI_Forms_SPN
             vCinc_LatLon_mapCnter.SetLatitude(42.36487);
             vCinc_LatLon_mapCnter.SetLongitude(-71.0545);
 
+            btn_restBit0.Click += bet_restBit0_Click;
+            btn_restBit1.Click += bet_restBit1_Click;
+
         }
+
+        private void Bet_restBit0_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         private void MapPanel2_Resize(object sender, EventArgs e)
         {
             CalculateScaling();
@@ -318,8 +357,8 @@ namespace VCI_Forms_SPN
             _waypoint.Latitude = _screenWaypoint.Latitude;
             _waypoint.Longitude = _screenWaypoint.Longitude;
 
-            //vCinc_LatLon_waypoint.SetLatitude(_waypoint.Latitude);
-            //vCinc_LatLon_waypoint.SetLongitude(_waypoint.Longitude);
+            vCinc_LatLon_waypoint.SetLatitude(_waypoint.Latitude);
+            vCinc_LatLon_waypoint.SetLongitude(_waypoint.Longitude);
 
 
 
@@ -364,25 +403,38 @@ namespace VCI_Forms_SPN
                 pgnDataDictionary[0x18FF6729][7] = (byte)(my32bitvalue_ETA >> 24);
             }
 
+            if (pgnDataDictionary.ContainsKey(0x18FF8829)) { 
+                
+                pgnDataDictionary[0x18FF8829][0] = (byte)(myByte);
+            }
+
             SendAllPgnMessages();
             mapPanel2.Invalidate();
            
         }
-       
+
         #region can and stuff
         private void KvsrManager_OnMessageReceived(string message)
         {
-            // Debug.WriteLine($"[DEBUG] received: {message}");
-            string id = message.Substring(3, 8); // "ID=18EA0028" extracts the part between 'ID=' and ','
+            if (IsDisposed || Disposing)
+                return;
 
-            string _uniquePgns = "";
-            string _quedPgns = "";
             if (InvokeRequired)
             {
-                Invoke(new Action(() => KvsrManager_OnMessageReceived(message)));
+                try
+                {
+                    Invoke(new Action(() => KvsrManager_OnMessageReceived(message)));
+                }
+                catch (ObjectDisposedException)
+                {
+                    // Log the exception or handle it appropriately
+                    Debug.WriteLine("Attempted to invoke on a disposed object.");
+                }
                 return;
             }
-            // Store or replace the message for the specific ID
+
+            // Existing logic for processing the message
+            string id = message.Substring(3, 8); // Adjust as needed
             if (uniqueMessages.ContainsKey(id))
             {
                 uniqueMessages[id] = message;
@@ -391,14 +443,9 @@ namespace VCI_Forms_SPN
             {
                 uniqueMessages.Add(id, message);
             }
-            _uniquePgns = string.Join(Environment.NewLine, uniqueMessages.Values);
 
-            if (messageQueue.Count >= MaxMessages)
-            {
-                messageQueue.Dequeue();
-            }
-            messageQueue.Enqueue(message);
-            _quedPgns = string.Join(Environment.NewLine, messageQueue);
+            string _uniquePgns = string.Join(Environment.NewLine, uniqueMessages.Values);
+            string _quedPgns = string.Join(Environment.NewLine, messageQueue);
 
             if (cb_uniqueOn.Checked)
             {
@@ -409,6 +456,7 @@ namespace VCI_Forms_SPN
                 tb_CAN_Bus_View.Text = _quedPgns;
             }
         }
+
         private void Btn_Validate_Click(object sender, EventArgs e)
         {
             _OScreenCount = 0;
@@ -474,13 +522,16 @@ namespace VCI_Forms_SPN
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            looptimer.Stop(); 
             mapPanel2.Paint -= MapPanel_Paint;
+
             if (_isOnCanBus)
             {
-
-                KvsrManager.Instance.Close();
+                _isOnCanBus = false;
                 KvsrManager.Instance.OnMessageReceived -= KvsrManager_OnMessageReceived;
+                KvsrManager.Instance.Close();
             }
+
             base.OnFormClosing(e);
             Debug.WriteLine("[DEBUG] CAN manager closed and resources cleaned up.");
         }

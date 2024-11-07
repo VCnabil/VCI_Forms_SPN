@@ -48,6 +48,8 @@
             this.unitsCheckBox = new System.Windows.Forms.CheckBox();
             this.cb_useTbLon = new System.Windows.Forms.CheckBox();
             this.cb_useTbLat = new System.Windows.Forms.CheckBox();
+            this.btn_restBit0 = new System.Windows.Forms.Button();
+            this.btn_restBit1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLat)).BeginInit();
@@ -263,12 +265,32 @@
             this.cb_useTbLat.Text = "use";
             this.cb_useTbLat.UseVisualStyleBackColor = true;
             // 
+            // btn_restBit0
+            // 
+            this.btn_restBit0.Location = new System.Drawing.Point(1544, 10);
+            this.btn_restBit0.Name = "btn_restBit0";
+            this.btn_restBit0.Size = new System.Drawing.Size(140, 42);
+            this.btn_restBit0.TabIndex = 239;
+            this.btn_restBit0.Text = "hold loc";
+            this.btn_restBit0.UseVisualStyleBackColor = true;
+            // 
+            // btn_restBit1
+            // 
+            this.btn_restBit1.Location = new System.Drawing.Point(1544, 70);
+            this.btn_restBit1.Name = "btn_restBit1";
+            this.btn_restBit1.Size = new System.Drawing.Size(140, 42);
+            this.btn_restBit1.TabIndex = 240;
+            this.btn_restBit1.Text = "hold rot";
+            this.btn_restBit1.UseVisualStyleBackColor = true;
+            // 
             // XIetaSendForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(2375, 915);
+            this.Controls.Add(this.btn_restBit1);
+            this.Controls.Add(this.btn_restBit0);
             this.Controls.Add(this.cb_useTbLat);
             this.Controls.Add(this.cb_useTbLon);
             this.Controls.Add(this.gridSquareSizeBox);
@@ -321,5 +343,7 @@
         private System.Windows.Forms.CheckBox unitsCheckBox;
         private System.Windows.Forms.CheckBox cb_useTbLon;
         private System.Windows.Forms.CheckBox cb_useTbLat;
+        private System.Windows.Forms.Button btn_restBit0;
+        private System.Windows.Forms.Button btn_restBit1;
     }
 }
