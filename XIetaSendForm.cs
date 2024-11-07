@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,9 +64,26 @@ namespace VCI_Forms_SPN
         // Previous trackbar positions
         private int previousLatTrackBarValue = 0;
         private int previousLonTrackBarValue = 0;
+
+        private Timer debounceTimer;
         public XIetaSendForm()
         {
             InitializeComponent();
+            debounceTimer = new Timer();
+            debounceTimer.Interval = 500; // 500 milliseconds delay
+            debounceTimer.Tick += (s, e) =>
+            {
+                debounceTimer.Stop(); // Stop the timer after it triggers
+                CalculateScaling();
+                mapPanel2.Invalidate();
+            };
+
+            gridSquareSizeBox.TextChanged += (s, e) =>
+            {
+                debounceTimer.Stop(); // Reset the timer every time the event is triggered
+                debounceTimer.Start(); // Start the timer again
+            };
+
             _centermap = new VC_LOCATION();
             _waypoint = new VC_LOCATION();
             _screenWaypoint = new VC_LOCATION();
@@ -105,6 +123,11 @@ namespace VCI_Forms_SPN
             mapPanel2.Resize += MapPanel2_Resize;
             mapPanel2.MouseClick += MapPanel2_MouseClick;
             this.Load += XIetaSendForm_Load;
+
+
+            vCinc_LatLon_mapCnter.SetLatitude(42.36487);
+            vCinc_LatLon_mapCnter.SetLongitude(-71.0545);
+
         }
         private void MapPanel2_Resize(object sender, EventArgs e)
         {
@@ -135,46 +158,15 @@ namespace VCI_Forms_SPN
         }
         private VC_LOCATION ScreenToWorldLatLon(Point screenPoint)
         {
-            float deltaX = screenPoint.X - _panelCenter.X;
-            float deltaY = _panelCenter.Y - screenPoint.Y;  // Note the inverted Y axis
-
-            // Calculate the offsets in feet (or meters if selected)
-            double offsetInFeetX = deltaX / pixelsPerUnit;
-            double offsetInFeetY = deltaY / pixelsPerUnit;
-
-            if (_unitsInMeters)
-            {
-                offsetInFeetX *= 0.3048;  // Convert to meters
-                offsetInFeetY *= 0.3048;  // Convert to meters
-            }
-
-            // Convert offsets to changes in latitude and longitude
-            double deltaLatDegrees = offsetInFeetY / radiusEarthEquatorialFt * 180 / Math.PI;
-            double deltaLonDegrees = offsetInFeetX / (radiusEarthEquatorialFt * Math.Cos(_centermap.Latitude * Math.PI / 180)) * 180 / Math.PI;
-
-            double lat = _centermap.Latitude + deltaLatDegrees;
-            double lon = _centermap.Longitude + deltaLonDegrees;
-
-            return new VC_LOCATION(lat, lon);
+            return xietaObj.ScreenToWorldLatLon(screenPoint, _centermap, _panelCenter, pixelsPerUnit, _unitsInMeters, radiusEarthEquatorialFt);
         }
 
 
         private PointF WorldLatLonToScreen(VC_LOCATION location)
         {
-            double deltaLatInFeet = (location.Latitude - _centermap.Latitude) * radiusEarthEquatorialFt * Math.PI / 180;
-            double deltaLonInFeet = (location.Longitude - _centermap.Longitude) * radiusEarthEquatorialFt * Math.PI / 180 / Math.Cos(_centermap.Latitude * Math.PI / 180);
-
-            if (_unitsInMeters)
-            {
-                deltaLatInFeet /= 0.3048;  // Convert to feet if needed
-                deltaLonInFeet /= 0.3048;  // Convert to feet if needed
-            }
-
-            float x = (float)(_panelCenter.X + deltaLonInFeet * pixelsPerUnit);
-            float y = (float)(_panelCenter.Y - deltaLatInFeet * pixelsPerUnit);
-
-            return new PointF(x, y);
+            return xietaObj.WorldLatLonToScreen(location, _centermap, _panelCenter, pixelsPerUnit, _unitsInMeters, radiusEarthEquatorialFt);
         }
+
 
 
         private void MapPanel2_MouseClick(object sender, MouseEventArgs e)
@@ -185,8 +177,18 @@ namespace VCI_Forms_SPN
 
         private void XIetaSendForm_Load(object sender, EventArgs e)
         {
+            if (double.TryParse(gridSquareSizeBox.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out double squareSize) && squareSize > 0)
+            {
+                gridSquareEdgeLength = squareSize;
+            }
+            else
+            {
+                gridSquareEdgeLength = 1.0; // Default value if not provided
+            }
+
             CalculateScaling();
         }
+
 
         private void DrawGrid(Graphics g)
         {
@@ -316,8 +318,8 @@ namespace VCI_Forms_SPN
             _waypoint.Latitude = _screenWaypoint.Latitude;
             _waypoint.Longitude = _screenWaypoint.Longitude;
 
-            vCinc_LatLon_waypoint.SetLatitude(_waypoint.Latitude);
-            vCinc_LatLon_waypoint.SetLongitude(_waypoint.Longitude);
+            //vCinc_LatLon_waypoint.SetLatitude(_waypoint.Latitude);
+            //vCinc_LatLon_waypoint.SetLongitude(_waypoint.Longitude);
 
 
 
