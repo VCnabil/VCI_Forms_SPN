@@ -121,16 +121,18 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(110, 8);
+            this.trackBar1.AutoSize = false;
+            this.trackBar1.Location = new System.Drawing.Point(81, 815);
             this.trackBar1.Maximum = 72000;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(480, 90);
+            this.trackBar1.Size = new System.Drawing.Size(633, 62);
             this.trackBar1.TabIndex = 224;
+            this.trackBar1.TickFrequency = 1000;
             this.trackBar1.Value = 36000;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(364, 143);
+            this.label1.Location = new System.Drawing.Point(546, 785);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 27);
@@ -140,7 +142,7 @@
             // 
             // tb_XI
             // 
-            this.tb_XI.Location = new System.Drawing.Point(149, 173);
+            this.tb_XI.Location = new System.Drawing.Point(1700, 863);
             this.tb_XI.Name = "tb_XI";
             this.tb_XI.Size = new System.Drawing.Size(172, 31);
             this.tb_XI.TabIndex = 226;
@@ -148,7 +150,7 @@
             // 
             // tb_ETA
             // 
-            this.tb_ETA.Location = new System.Drawing.Point(327, 173);
+            this.tb_ETA.Location = new System.Drawing.Point(1878, 863);
             this.tb_ETA.Name = "tb_ETA";
             this.tb_ETA.Size = new System.Drawing.Size(172, 31);
             this.tb_ETA.TabIndex = 227;
@@ -157,7 +159,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(153, 145);
+            this.label2.Location = new System.Drawing.Point(1704, 835);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(195, 25);
             this.label2.TabIndex = 228;
@@ -165,21 +167,25 @@
             // 
             // trackBarLon
             // 
-            this.trackBarLon.Location = new System.Drawing.Point(110, 413);
-            this.trackBarLon.Maximum = 180000;
-            this.trackBarLon.Minimum = -180000;
+            this.trackBarLon.AutoSize = false;
+            this.trackBarLon.LargeChange = 1;
+            this.trackBarLon.Location = new System.Drawing.Point(81, 8);
+            this.trackBarLon.Maximum = 100;
+            this.trackBarLon.Minimum = -100;
             this.trackBarLon.Name = "trackBarLon";
-            this.trackBarLon.Size = new System.Drawing.Size(480, 90);
+            this.trackBarLon.Size = new System.Drawing.Size(680, 56);
             this.trackBarLon.TabIndex = 232;
             // 
             // trackBarLat
             // 
-            this.trackBarLat.Location = new System.Drawing.Point(14, 8);
-            this.trackBarLat.Maximum = 90000;
-            this.trackBarLat.Minimum = -90000;
+            this.trackBarLat.AutoSize = false;
+            this.trackBarLat.LargeChange = 1;
+            this.trackBarLat.Location = new System.Drawing.Point(12, 72);
+            this.trackBarLat.Maximum = 100;
+            this.trackBarLat.Minimum = -100;
             this.trackBarLat.Name = "trackBarLat";
             this.trackBarLat.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBarLat.Size = new System.Drawing.Size(90, 482);
+            this.trackBarLat.Size = new System.Drawing.Size(63, 680);
             this.trackBarLat.TabIndex = 233;
             // 
             // vCinc_LatLon_waypoint
@@ -187,11 +193,11 @@
             this.vCinc_LatLon_waypoint.BackColor = System.Drawing.Color.RosyBrown;
             this.vCinc_LatLon_waypoint.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_LatLon_waypoint.LatitudeDecimal = 0D;
-            this.vCinc_LatLon_waypoint.Location = new System.Drawing.Point(147, 298);
+            this.vCinc_LatLon_waypoint.Location = new System.Drawing.Point(1107, 70);
             this.vCinc_LatLon_waypoint.LongitudeDecimal = 0D;
             this.vCinc_LatLon_waypoint.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.vCinc_LatLon_waypoint.Name = "vCinc_LatLon_waypoint";
-            this.vCinc_LatLon_waypoint.Size = new System.Drawing.Size(322, 82);
+            this.vCinc_LatLon_waypoint.Size = new System.Drawing.Size(314, 82);
             this.vCinc_LatLon_waypoint.TabIndex = 231;
             // 
             // vCinc_LatLon_mapCnter
@@ -199,7 +205,7 @@
             this.vCinc_LatLon_mapCnter.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.vCinc_LatLon_mapCnter.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_LatLon_mapCnter.LatitudeDecimal = 0D;
-            this.vCinc_LatLon_mapCnter.Location = new System.Drawing.Point(147, 210);
+            this.vCinc_LatLon_mapCnter.Location = new System.Drawing.Point(785, 72);
             this.vCinc_LatLon_mapCnter.LongitudeDecimal = 0D;
             this.vCinc_LatLon_mapCnter.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.vCinc_LatLon_mapCnter.Name = "vCinc_LatLon_mapCnter";
@@ -209,14 +215,14 @@
             // mapPanel2
             // 
             this.mapPanel2.BackColor = System.Drawing.Color.White;
-            this.mapPanel2.Location = new System.Drawing.Point(844, 26);
+            this.mapPanel2.Location = new System.Drawing.Point(81, 72);
             this.mapPanel2.Name = "mapPanel2";
-            this.mapPanel2.Size = new System.Drawing.Size(600, 600);
+            this.mapPanel2.Size = new System.Drawing.Size(680, 680);
             this.mapPanel2.TabIndex = 234;
             // 
             // gridSquareSizeBox
             // 
-            this.gridSquareSizeBox.Location = new System.Drawing.Point(880, 638);
+            this.gridSquareSizeBox.Location = new System.Drawing.Point(81, 769);
             this.gridSquareSizeBox.Name = "gridSquareSizeBox";
             this.gridSquareSizeBox.Size = new System.Drawing.Size(83, 31);
             this.gridSquareSizeBox.TabIndex = 236;
@@ -226,7 +232,7 @@
             // 
             this.unitsCheckBox.AutoSize = true;
             this.unitsCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unitsCheckBox.Location = new System.Drawing.Point(991, 642);
+            this.unitsCheckBox.Location = new System.Drawing.Point(192, 773);
             this.unitsCheckBox.Margin = new System.Windows.Forms.Padding(1);
             this.unitsCheckBox.Name = "unitsCheckBox";
             this.unitsCheckBox.Size = new System.Drawing.Size(90, 27);
@@ -238,7 +244,7 @@
             // 
             this.cb_useTbLon.AutoSize = true;
             this.cb_useTbLon.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_useTbLon.Location = new System.Drawing.Point(583, 427);
+            this.cb_useTbLon.Location = new System.Drawing.Point(8, 8);
             this.cb_useTbLon.Margin = new System.Windows.Forms.Padding(1);
             this.cb_useTbLon.Name = "cb_useTbLon";
             this.cb_useTbLon.Size = new System.Drawing.Size(67, 27);
@@ -250,7 +256,7 @@
             // 
             this.cb_useTbLat.AutoSize = true;
             this.cb_useTbLat.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.7F);
-            this.cb_useTbLat.Location = new System.Drawing.Point(54, 506);
+            this.cb_useTbLat.Location = new System.Drawing.Point(8, 39);
             this.cb_useTbLat.Name = "cb_useTbLat";
             this.cb_useTbLat.Size = new System.Drawing.Size(67, 27);
             this.cb_useTbLat.TabIndex = 238;
@@ -262,7 +268,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.ClientSize = new System.Drawing.Size(2375, 1026);
+            this.ClientSize = new System.Drawing.Size(2375, 915);
             this.Controls.Add(this.cb_useTbLat);
             this.Controls.Add(this.cb_useTbLon);
             this.Controls.Add(this.gridSquareSizeBox);
