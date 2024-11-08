@@ -56,7 +56,7 @@ namespace VCI_Forms_SPN
         private bool _unitsInMeters = false;
         private double gridSquareEdgeLength = 1.0;
         private XIETAobj xietaObj;
-        private double radiusEarthEquatorialFt = 6378.14 * 100000 / (2.54 * 12); //20925600.787
+       
 
         double xi=0.0;
         double eta=0.0;
@@ -163,11 +163,7 @@ namespace VCI_Forms_SPN
 
         }
 
-        private void Bet_restBit0_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
+    
         private void MapPanel2_Resize(object sender, EventArgs e)
         {
             CalculateScaling();
@@ -197,13 +193,13 @@ namespace VCI_Forms_SPN
         }
         private VC_LOCATION ScreenToWorldLatLon(Point screenPoint)
         {
-            return xietaObj.ScreenToWorldLatLon(screenPoint, _centermap, _panelCenter, pixelsPerUnit, _unitsInMeters, radiusEarthEquatorialFt);
+            return xietaObj.ScreenToWorldLatLon(screenPoint, _centermap, _panelCenter, pixelsPerUnit, _unitsInMeters);
         }
 
 
         private PointF WorldLatLonToScreen(VC_LOCATION location)
         {
-            return xietaObj.WorldLatLonToScreen(location, _centermap, _panelCenter, pixelsPerUnit, _unitsInMeters, radiusEarthEquatorialFt);
+            return xietaObj.WorldLatLonToScreen(location, _centermap, _panelCenter, pixelsPerUnit, _unitsInMeters);
         }
 
 
@@ -222,7 +218,7 @@ namespace VCI_Forms_SPN
             }
             else
             {
-                gridSquareEdgeLength = 1.0; // Default value if not provided
+                gridSquareEdgeLength = 1.0; //  mbDefault value if not provided
             }
 
             CalculateScaling();
@@ -359,9 +355,6 @@ namespace VCI_Forms_SPN
 
             vCinc_LatLon_waypoint.SetLatitude(_waypoint.Latitude);
             vCinc_LatLon_waypoint.SetLongitude(_waypoint.Longitude);
-
-
-
             // Heading calculations and PGN data updates remain the same
             _myheading = trackBar1.Value / 100.00;
             ushort heading = (ushort)Math.Round(_myheading * Math.PI / 180 * 10000);
