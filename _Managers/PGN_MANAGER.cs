@@ -202,7 +202,7 @@ namespace VCI_Forms_SPN._Managers
 
             if (_foundGPSonform == 0)
             {
-                MessageBox.Show("No GPS_Control found in form");
+              //  MessageBox.Show("No GPS_Control found in form");
             }
         }
 

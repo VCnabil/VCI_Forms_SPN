@@ -66,12 +66,18 @@
             this.vCinc_uc15 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc14 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc13 = new VCI_Forms_LIB.VCinc_uc();
+            this.trackBar_PropulsionAngle = new System.Windows.Forms.TrackBar();
+            this.trackBar_thrust = new System.Windows.Forms.TrackBar();
+            this.btn_setLatLonToUnity = new System.Windows.Forms.Button();
+            this.btn_PipeToggle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_PropulsionAngle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_thrust)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_restBit1
             // 
-            this.btn_restBit1.Location = new System.Drawing.Point(309, 51);
+            this.btn_restBit1.Location = new System.Drawing.Point(886, 48);
             this.btn_restBit1.Name = "btn_restBit1";
             this.btn_restBit1.Size = new System.Drawing.Size(140, 32);
             this.btn_restBit1.TabIndex = 251;
@@ -80,7 +86,7 @@
             // 
             // btn_restBit0
             // 
-            this.btn_restBit0.Location = new System.Drawing.Point(471, 51);
+            this.btn_restBit0.Location = new System.Drawing.Point(886, 4);
             this.btn_restBit0.Name = "btn_restBit0";
             this.btn_restBit0.Size = new System.Drawing.Size(140, 32);
             this.btn_restBit0.TabIndex = 250;
@@ -178,7 +184,7 @@
             this.vCinc_LatLon_mapCnter.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.vCinc_LatLon_mapCnter.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_LatLon_mapCnter.LatitudeDecimal = 0D;
-            this.vCinc_LatLon_mapCnter.Location = new System.Drawing.Point(673, -2);
+            this.vCinc_LatLon_mapCnter.Location = new System.Drawing.Point(1378, 1);
             this.vCinc_LatLon_mapCnter.LongitudeDecimal = 0D;
             this.vCinc_LatLon_mapCnter.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.vCinc_LatLon_mapCnter.Name = "vCinc_LatLon_mapCnter";
@@ -198,7 +204,7 @@
             this.vCinc_uc18.Bit6Title = "";
             this.vCinc_uc18.Bit7Title = "";
             this.vCinc_uc18.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc18.Location = new System.Drawing.Point(2193, 391);
+            this.vCinc_uc18.Location = new System.Drawing.Point(2383, 92);
             this.vCinc_uc18.Margin = new System.Windows.Forms.Padding(0);
             this.vCinc_uc18.Name = "vCinc_uc18";
             this.vCinc_uc18.PGN = "FF88";
@@ -220,7 +226,7 @@
             // vCinc_SFversion2
             // 
             this.vCinc_SFversion2.BackColor = System.Drawing.Color.Bisque;
-            this.vCinc_SFversion2.Location = new System.Drawing.Point(1362, 0);
+            this.vCinc_SFversion2.Location = new System.Drawing.Point(2076, -1);
             this.vCinc_SFversion2.Major = 87;
             this.vCinc_SFversion2.Major_firstbyteindex = 0;
             this.vCinc_SFversion2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -240,7 +246,7 @@
             // vCinc_SFversion1
             // 
             this.vCinc_SFversion1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.vCinc_SFversion1.Location = new System.Drawing.Point(1552, 0);
+            this.vCinc_SFversion1.Location = new System.Drawing.Point(2266, -1);
             this.vCinc_SFversion1.Major = 18;
             this.vCinc_SFversion1.Major_firstbyteindex = 2;
             this.vCinc_SFversion1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -468,7 +474,7 @@
             this.vCinc_uc11.Bit6Title = "bAP_OverrideInEffect";
             this.vCinc_uc11.Bit7Title = "apState";
             this.vCinc_uc11.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc11.Location = new System.Drawing.Point(2389, 93);
+            this.vCinc_uc11.Location = new System.Drawing.Point(2291, 391);
             this.vCinc_uc11.Margin = new System.Windows.Forms.Padding(0);
             this.vCinc_uc11.Name = "vCinc_uc11";
             this.vCinc_uc11.PGN = "FF53";
@@ -515,7 +521,7 @@
             this.vCinc_uc9.Bit6Title = "";
             this.vCinc_uc9.Bit7Title = "";
             this.vCinc_uc9.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc9.Location = new System.Drawing.Point(2304, 93);
+            this.vCinc_uc9.Location = new System.Drawing.Point(2206, 391);
             this.vCinc_uc9.Margin = new System.Windows.Forms.Padding(0);
             this.vCinc_uc9.Name = "vCinc_uc9";
             this.vCinc_uc9.PGN = "FF53";
@@ -542,7 +548,7 @@
             this.vCinc_uc24.Margin = new System.Windows.Forms.Padding(0);
             this.vCinc_uc24.Name = "vCinc_uc24";
             this.vCinc_uc24.PGN = "FEFC";
-            this.vCinc_uc24.Size = new System.Drawing.Size(200, 260);
+            this.vCinc_uc24.Size = new System.Drawing.Size(200, 227);
             this.vCinc_uc24.SPNName = "Seng";
             this.vCinc_uc24.TabIndex = 281;
             // 
@@ -565,7 +571,7 @@
             this.vCinc_uc23.Margin = new System.Windows.Forms.Padding(0);
             this.vCinc_uc23.Name = "vCinc_uc23";
             this.vCinc_uc23.PGN = "FEFC";
-            this.vCinc_uc23.Size = new System.Drawing.Size(182, 260);
+            this.vCinc_uc23.Size = new System.Drawing.Size(182, 227);
             this.vCinc_uc23.SPNName = "Peng";
             this.vCinc_uc23.TabIndex = 280;
             // 
@@ -588,7 +594,7 @@
             this.vCinc_uc22.Margin = new System.Windows.Forms.Padding(0);
             this.vCinc_uc22.Name = "vCinc_uc22";
             this.vCinc_uc22.PGN = "FEFC";
-            this.vCinc_uc22.Size = new System.Drawing.Size(166, 260);
+            this.vCinc_uc22.Size = new System.Drawing.Size(166, 227);
             this.vCinc_uc22.SPNName = "Sbuk";
             this.vCinc_uc22.TabIndex = 279;
             this.vCinc_uc22.Value = 128;
@@ -612,7 +618,7 @@
             this.vCinc_uc21.Margin = new System.Windows.Forms.Padding(0);
             this.vCinc_uc21.Name = "vCinc_uc21";
             this.vCinc_uc21.PGN = "FEFC";
-            this.vCinc_uc21.Size = new System.Drawing.Size(173, 260);
+            this.vCinc_uc21.Size = new System.Drawing.Size(173, 227);
             this.vCinc_uc21.SPNName = "Pnoz";
             this.vCinc_uc21.TabIndex = 278;
             this.vCinc_uc21.Value = 128;
@@ -636,7 +642,7 @@
             this.vCinc_uc20.Margin = new System.Windows.Forms.Padding(0);
             this.vCinc_uc20.Name = "vCinc_uc20";
             this.vCinc_uc20.PGN = "FEFC";
-            this.vCinc_uc20.Size = new System.Drawing.Size(174, 260);
+            this.vCinc_uc20.Size = new System.Drawing.Size(174, 227);
             this.vCinc_uc20.SPNName = "Snoz";
             this.vCinc_uc20.TabIndex = 277;
             this.vCinc_uc20.Value = 128;
@@ -659,7 +665,7 @@
             this.vCinc_uc19.Margin = new System.Windows.Forms.Padding(0);
             this.vCinc_uc19.Name = "vCinc_uc19";
             this.vCinc_uc19.PGN = "FEFC";
-            this.vCinc_uc19.Size = new System.Drawing.Size(188, 260);
+            this.vCinc_uc19.Size = new System.Drawing.Size(188, 227);
             this.vCinc_uc19.SPNName = "Pbuk";
             this.vCinc_uc19.TabIndex = 276;
             this.vCinc_uc19.Value = 128;
@@ -784,11 +790,56 @@
             this.vCinc_uc13.SPNName = "DPstat";
             this.vCinc_uc13.TabIndex = 271;
             // 
+            // trackBar_PropulsionAngle
+            // 
+            this.trackBar_PropulsionAngle.Location = new System.Drawing.Point(1378, 907);
+            this.trackBar_PropulsionAngle.Margin = new System.Windows.Forms.Padding(2);
+            this.trackBar_PropulsionAngle.Maximum = 100;
+            this.trackBar_PropulsionAngle.Name = "trackBar_PropulsionAngle";
+            this.trackBar_PropulsionAngle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.trackBar_PropulsionAngle.Size = new System.Drawing.Size(244, 90);
+            this.trackBar_PropulsionAngle.TabIndex = 288;
+            this.trackBar_PropulsionAngle.Value = 50;
+            // 
+            // trackBar_thrust
+            // 
+            this.trackBar_thrust.Location = new System.Drawing.Point(1647, 907);
+            this.trackBar_thrust.Margin = new System.Windows.Forms.Padding(2);
+            this.trackBar_thrust.Maximum = 100;
+            this.trackBar_thrust.Name = "trackBar_thrust";
+            this.trackBar_thrust.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar_thrust.Size = new System.Drawing.Size(90, 259);
+            this.trackBar_thrust.TabIndex = 287;
+            // 
+            // btn_setLatLonToUnity
+            // 
+            this.btn_setLatLonToUnity.Location = new System.Drawing.Point(471, 42);
+            this.btn_setLatLonToUnity.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_setLatLonToUnity.Name = "btn_setLatLonToUnity";
+            this.btn_setLatLonToUnity.Size = new System.Drawing.Size(150, 44);
+            this.btn_setLatLonToUnity.TabIndex = 286;
+            this.btn_setLatLonToUnity.Text = "set loc";
+            this.btn_setLatLonToUnity.UseVisualStyleBackColor = true;
+            // 
+            // btn_PipeToggle
+            // 
+            this.btn_PipeToggle.Location = new System.Drawing.Point(309, 42);
+            this.btn_PipeToggle.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_PipeToggle.Name = "btn_PipeToggle";
+            this.btn_PipeToggle.Size = new System.Drawing.Size(150, 44);
+            this.btn_PipeToggle.TabIndex = 285;
+            this.btn_PipeToggle.Text = "pipe";
+            this.btn_PipeToggle.UseVisualStyleBackColor = true;
+            // 
             // FormDynPosition2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2588, 1303);
+            this.ClientSize = new System.Drawing.Size(2463, 1303);
+            this.Controls.Add(this.trackBar_PropulsionAngle);
+            this.Controls.Add(this.trackBar_thrust);
+            this.Controls.Add(this.btn_setLatLonToUnity);
+            this.Controls.Add(this.btn_PipeToggle);
             this.Controls.Add(this.vCinc_uc24);
             this.Controls.Add(this.vCinc_uc23);
             this.Controls.Add(this.vCinc_uc22);
@@ -830,6 +881,8 @@
             this.Name = "FormDynPosition2";
             this.Text = "FormDynPosition2";
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_PropulsionAngle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_thrust)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -875,5 +928,9 @@
         private VCI_Forms_LIB.VCinc_uc vCinc_uc15;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc14;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc13;
+        private System.Windows.Forms.TrackBar trackBar_PropulsionAngle;
+        private System.Windows.Forms.TrackBar trackBar_thrust;
+        private System.Windows.Forms.Button btn_setLatLonToUnity;
+        private System.Windows.Forms.Button btn_PipeToggle;
     }
 }
