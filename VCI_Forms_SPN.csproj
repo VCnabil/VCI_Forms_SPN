@@ -94,6 +94,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDynPosition2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDynPosition2.Designer.cs">
+      <DependentUpon>FormDynPosition2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSSRSDynePosition3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSSRSDynePosition3.Designer.cs">
+      <DependentUpon>FormSSRSDynePosition3.cs</DependentUpon>
+    </Compile>
     <Compile Include="LabJ_v1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +153,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDynPosition2.resx">
+      <DependentUpon>FormDynPosition2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSSRSDynePosition3.resx">
+      <DependentUpon>FormSSRSDynePosition3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LabJ_v1.resx">
       <DependentUpon>LabJ_v1.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +201,8 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UItemGPS\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
