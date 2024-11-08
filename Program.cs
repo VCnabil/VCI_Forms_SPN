@@ -23,7 +23,7 @@ namespace VCI_Forms_SPN
             // Application.Run(new Serial_C3());
             //  Application.Run(new XIetaSendForm()); 
             // Application.Run(new FormDynPosition2());
-            Application.Run(new FormSSRSDynePosition3()); 
+           // Application.Run(new FormSSRSDynePosition3()); 
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            /*
             this.btn_restBit1 = new System.Windows.Forms.Button();
             this.btn_restBit0 = new System.Windows.Forms.Button();
             this.cb_uniqueOn = new System.Windows.Forms.CheckBox();
@@ -73,7 +74,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_PropulsionAngle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_thrust)).BeginInit();
+            */
             this.SuspendLayout();
+            /*
             // 
             // btn_restBit1
             // 
@@ -878,11 +881,12 @@
             this.Controls.Add(this.lbl_OnScreenCount);
             this.Controls.Add(this.lbl_onBus);
             this.Controls.Add(this.btn_Validate);
+            */
             this.Name = "FormDynPosition2";
             this.Text = "FormDynPosition2";
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_PropulsionAngle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_thrust)).EndInit();
+         //   ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+         //  ((System.ComponentModel.ISupportInitialize)(this.trackBar_PropulsionAngle)).EndInit();
+          //  ((System.ComponentModel.ISupportInitialize)(this.trackBar_thrust)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -890,7 +894,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_restBit1;
+   /*     private System.Windows.Forms.Button btn_restBit1;
         private System.Windows.Forms.Button btn_restBit0;
         private System.Windows.Forms.CheckBox cb_uniqueOn;
         private System.Windows.Forms.TextBox tb_CAN_Bus_View;
@@ -931,6 +935,6 @@
         private System.Windows.Forms.TrackBar trackBar_PropulsionAngle;
         private System.Windows.Forms.TrackBar trackBar_thrust;
         private System.Windows.Forms.Button btn_setLatLonToUnity;
-        private System.Windows.Forms.Button btn_PipeToggle;
+        private System.Windows.Forms.Button btn_PipeToggle;*/
     }
 }

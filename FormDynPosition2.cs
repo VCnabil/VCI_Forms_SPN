@@ -18,6 +18,7 @@ namespace VCI_Forms_SPN
 {
     public partial class FormDynPosition2 : Form
     {
+        /*
         #region TemplateVariavles
         Timer looptimer = new Timer();
         PGN_MANAGER _myPGNManager;
@@ -31,8 +32,11 @@ namespace VCI_Forms_SPN
         VC_LOCATION VESSEL_LOC;
         double VESSEL_HEADING;
         VC_LOCATION WAYPOINT_LOC;
+
+        */
         public FormDynPosition2()
         {
+            /*
             InitializeComponent();
             #region TemplateInitialize
             lbl_OnScreenCount.BackColor = Color.Transparent;
@@ -56,7 +60,9 @@ namespace VCI_Forms_SPN
             VESSEL_HEADING = (  trackBar1.Value / 100.00) % 360.00;
             btn_restBit0.Click += bet_restBit0_Click;
             btn_restBit1.Click += bet_restBit1_Click;
+            */
         }
+        /*
         private byte myByte = 0x00; // The byte to modify
         private void bet_restBit0_Click(object sender, EventArgs e)
         {
@@ -228,5 +234,6 @@ namespace VCI_Forms_SPN
             Debug.WriteLine("[DEBUG] CAN manager closed and resources cleaned up.");
         }
         #endregion
+        */
     }
 }
