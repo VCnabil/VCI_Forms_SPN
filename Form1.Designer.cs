@@ -76,7 +76,7 @@
             this.vCinc_SFversion1.Rev = 9166;
             this.vCinc_SFversion1.Rev_firstbyteindex = 5;
             this.vCinc_SFversion1.Rev_numofbytes = 2;
-            this.vCinc_SFversion1.Size = new System.Drawing.Size(200, 117);
+            this.vCinc_SFversion1.Size = new System.Drawing.Size(200, 139);
             this.vCinc_SFversion1.Source = "29";
             this.vCinc_SFversion1.TabIndex = 22;
             // 

@@ -194,9 +194,9 @@
             // 
             this.vCinc_LatLon_waypoint.BackColor = System.Drawing.Color.RosyBrown;
             this.vCinc_LatLon_waypoint.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_LatLon_waypoint.LatitudeDecimal = 0D;
+  
             this.vCinc_LatLon_waypoint.Location = new System.Drawing.Point(1107, 70);
-            this.vCinc_LatLon_waypoint.LongitudeDecimal = 0D;
+ 
             this.vCinc_LatLon_waypoint.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.vCinc_LatLon_waypoint.Name = "vCinc_LatLon_waypoint";
             this.vCinc_LatLon_waypoint.Size = new System.Drawing.Size(314, 82);
@@ -206,9 +206,9 @@
             // 
             this.vCinc_LatLon_mapCnter.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.vCinc_LatLon_mapCnter.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_LatLon_mapCnter.LatitudeDecimal = 0D;
+       
             this.vCinc_LatLon_mapCnter.Location = new System.Drawing.Point(785, 72);
-            this.vCinc_LatLon_mapCnter.LongitudeDecimal = 0D;
+            
             this.vCinc_LatLon_mapCnter.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.vCinc_LatLon_mapCnter.Name = "vCinc_LatLon_mapCnter";
             this.vCinc_LatLon_mapCnter.Size = new System.Drawing.Size(318, 82);

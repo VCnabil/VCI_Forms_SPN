@@ -55,13 +55,10 @@ namespace VCI_Forms_SPN._Managers
                     _reader = null;
                     _writer = null;
                 }
-
                 _cancellationTokenSource.Dispose();
                 _cancellationTokenSource = new CancellationTokenSource();
             }
         }
-
-
 
         // New async method for sending messages
         public async Task SendMessageAsync(string message)

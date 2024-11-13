@@ -1,16 +1,20 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VCI_Forms_LIB;
+using VCI_Forms_SPN._BackEndDataOBJs;
 using VCI_Forms_SPN._GLobalz;
 using VCI_Forms_SPN._Managers;
+using static Kvaser.KvmLib.Kvmlib;
 
 namespace VCI_Forms_SPN
 {
@@ -29,6 +33,17 @@ namespace VCI_Forms_SPN
         VC_LOCATION VESSEL_LOC;
         double VESSEL_HEADING;
         VC_LOCATION WAYPOINT_LOC;
+        private PipeManager _pipeManager;
+        private bool _pipeIsOpen = false;
+        private Timer pipeTimer;
+        private readonly object _syncLock = new object();
+
+        //double _unity_shiplat = 0;
+        //double _unity_shiplon = 0;
+        //double _unity_shipHeading = 0;
+
+        double _myJET_ANG = 50;
+        double _myTHRUST = 0;
         public FormSSRSDynePosition3()
         {
             InitializeComponent();
@@ -47,14 +62,128 @@ namespace VCI_Forms_SPN
             #endregion
             VESSEL_LOC = new VC_LOCATION();
             WAYPOINT_LOC = new VC_LOCATION();
-            vCinc_LatLon_mapCnter.SetLatitude(42.36487);
-            vCinc_LatLon_mapCnter.SetLongitude(-71.0545);
-            VESSEL_LOC.Latitude = vCinc_LatLon_mapCnter.LatitudeDecimal;
-            VESSEL_LOC.Longitude = vCinc_LatLon_mapCnter.LongitudeDecimal;
-            VESSEL_HEADING = (trackBar1.Value / 100.00) % 360.00;
+            vCinc_LatLon_mapCnter.SetLatLon(VESSEL_LOC);
+            VESSEL_LOC = vCinc_LatLon_mapCnter.GetLatLon();
+            VESSEL_HEADING = (tb_manualHEading.Value / 100.00) % 360.00;
             btn_restBit0.Click += bet_restBit0_Click;
             btn_restBit1.Click += bet_restBit1_Click;
+
+            pipeTimer = new Timer();
+            pipeTimer.Interval = 320;
+            pipeTimer.Tick += PipeTimer_Tick;
+
+            _pipeManager = new PipeManager();
+            _pipeManager.OnMessageReceived += PipeManager_OnMessageReceived;
+
+            btn_PipeToggle.Click += Btn_PipeToggle_Click;
+            UpdateButtonState();
+            btn_setLatLonToUnity.Click += Btn_setLatLonToUnity_Click;
         }
+        private void PipeManager_OnMessageReceived(string message)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke(new Action(() => PipeManager_OnMessageReceived(message)));
+                return;
+            }
+            try
+            {
+                if(!_pipeIsOpen) 
+                {
+                    return;
+                }
+                ShipStatus shipStatus = JsonConvert.DeserializeObject<ShipStatus>(message);
+                if (shipStatus != null)
+                {
+                    lock (_syncLock)
+                    {
+                        VESSEL_LOC.Latitude = shipStatus.ActualLat;
+                        VESSEL_LOC.Longitude = shipStatus.ActualLon;
+                        VESSEL_HEADING = shipStatus.ShipHeading; 
+                    }
+                }
+            }
+            catch (JsonSerializationException ex)
+            {
+                Debug.WriteLine($"[DEBUG] Error deserializing JSON: {ex.Message}");
+            }
+        }
+
+
+        private void Btn_setLatLonToUnity_Click(object sender, EventArgs e)
+        {
+            vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, 0);
+            var shipCommands = new ShipCommands
+            {
+                ResetCoordinatesLat = VESSEL_LOC.Latitude,
+                ResetCoordinatesLon = VESSEL_LOC.Longitude
+            };
+            string jsonMessage = JsonConvert.SerializeObject(shipCommands);
+            _ = _pipeManager.SendMessageAsync(jsonMessage);
+            vCinc_uc18.Value = 1;
+            Timer timer = new Timer
+            {
+                Interval = 1500 // 1.5 seconds
+            };
+            timer.Tick += (s, args) =>
+            {
+                vCinc_uc18.Value = 0;
+                timer.Stop(); // Stop the timer
+                timer.Dispose(); // Dispose the timer
+            };
+            timer.Start();
+        }
+
+  
+        private void UpdateButtonState()
+        {
+            if (_pipeIsOpen)
+            {
+                btn_PipeToggle.Text = "Close Pipe";
+                btn_PipeToggle.BackColor = Color.Green;
+            }
+            else
+            {
+                btn_PipeToggle.Text = "Open Pipe";
+                btn_PipeToggle.BackColor = Color.Red;
+            }
+        }
+        private async void Btn_PipeToggle_Click(object sender, EventArgs e)
+        {
+            if (_pipeIsOpen)
+            {
+                _pipeManager.StopPipeServer();
+                _pipeIsOpen = false;
+                pipeTimer.Stop(); // Stop the timer
+            }
+            else
+            {
+                await _pipeManager.StartPipeServer();
+                _pipeIsOpen = true;
+                pipeTimer.Start(); // Start the timer
+            }
+            UpdateButtonState();
+        }
+
+
+        private async void PipeTimer_Tick(object sender, EventArgs e)
+        {
+
+            // Update the waypoint latitude and longitude
+            // _myWPlat = vCinc_GPS1.Get_purpleDot_LAT();
+            // _myWPlon = vCinc_GPS1.Get_purpleDot_LON();
+            var dataToSend = new
+            {
+                 Thrust = _myTHRUST,
+                 Jet1Angle = _myJET_ANG,
+                 Jet2Angle = _myJET_ANG,
+                 WaypointLat = WAYPOINT_LOC.Latitude,
+                 WaypointLon = WAYPOINT_LOC.Longitude
+            };
+            string message = JsonConvert.SerializeObject(dataToSend);
+            await _pipeManager.SendMessageAsync(message);
+        }
+
         private byte myByte = 0x00; // The byte to modify
         private void bet_restBit0_Click(object sender, EventArgs e)
         {
@@ -72,15 +201,41 @@ namespace VCI_Forms_SPN
             myByte &= (byte)~(1 << bitPosition);
             vCinc_uc18.Value = myByte;
         }
+
+  
+
+  
         private void Looptimer_Tick(object sender, EventArgs e)
         {
-            VESSEL_LOC.Latitude = vCinc_LatLon_mapCnter.LatitudeDecimal;
-            VESSEL_LOC.Longitude = vCinc_LatLon_mapCnter.LongitudeDecimal;
-            VESSEL_HEADING = (trackBar1.Value / 100.00) % 360.00;
-            vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, VESSEL_HEADING);
-            vCinc_LatLon_waypoint.SetLatitude(VESSEL_LOC.Latitude);
-            SendAllPgnMessages();
+            lock (_syncLock)
+            {
+                if (!_pipeIsOpen)
+                {
+                    // Local/manual control
+                    VESSEL_LOC = vCinc_LatLon_mapCnter.GetLatLon();
+                    VESSEL_HEADING = (tb_manualHEading.Value / 100.00) % 360.00;
+                }
+                vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, VESSEL_HEADING); 
+                WAYPOINT_LOC = vCinc_DynPos1.Get_WayPointLOC();
+                vCinc_LatLon_waypoint.SetLatLon(WAYPOINT_LOC);
+
+                SendAllPgnMessages(); // Send data to external CAN system
+            }
         }
+        void UpdateTheGPS_withLocalControlValues()
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke(new Action(UpdateTheGPS_withLocalControlValues));
+                return;
+            }
+
+            lock (_syncLock)
+            {
+                vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, VESSEL_HEADING);
+            }
+        }
+
         #region can and stuff
         private void KvsrManager_OnMessageReceived(string message)
         {
@@ -206,9 +361,16 @@ namespace VCI_Forms_SPN
                 // Send the message using your method
                 KvsrManager.Instance.SendPGN_withStatus(busNumber, pgn, data);
             }
+            //send version numbers 
+           //foreach(var entry in )
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            if (_pipeIsOpen)
+            {
+                _pipeManager.StopPipeServer();
+                pipeTimer.Stop();
+            }
             looptimer.Stop();
             if (_isOnCanBus)
             {
@@ -222,3 +384,21 @@ namespace VCI_Forms_SPN
         #endregion
     }
 }
+
+
+/*
+       private double GetCurrentHeading()
+        {
+            lock (_syncLock)
+            {
+                if (_pipeIsOpen)
+                {
+                    return VESSEL_HEADING; // From pipe data
+                }
+                else
+                {
+                    return (tb_manualHEading.Value / 100.00) % 360.00; // Manual heading
+                }
+            }
+        }
+ */
