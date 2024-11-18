@@ -29,6 +29,7 @@ namespace VCI_Forms_SPN
         {
             InitializeComponent();
             #region TemplateInitialize
+            cb_uniqueOn.Checked = true;
             lbl_OnScreenCount.BackColor = Color.Transparent;
             lbl_OnScreenCount.ForeColor = Color.Black;
             lbl_onBus.BackColor = Color.Transparent;
