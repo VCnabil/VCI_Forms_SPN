@@ -125,6 +125,12 @@
       <DependentUpon>LabJ_v1.cs</DependentUpon>
     </Compile>
     <Compile Include="LBJK\MBIV_RX.cs" />
+    <Compile Include="MyForms\HslcWithBKG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\HslcWithBKG.Designer.cs">
+      <DependentUpon>HslcWithBKG.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SerialForm.cs">
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LabJ_v1.resx">
       <DependentUpon>LabJ_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\HslcWithBKG.resx">
+      <DependentUpon>HslcWithBKG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

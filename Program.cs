@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VCI_Forms_SPN.MyForms;
 
 namespace VCI_Forms_SPN
 {
@@ -26,7 +27,8 @@ namespace VCI_Forms_SPN
             // Application.Run(new FormSSRSDynePosition3()); 
             // Application.Run(new GG_SANFRANForm());
             //Application.Run(new Form2());
-            Application.Run(new HSLCbkg());
+            //Application.Run(new HSLC()); <-----------------------last worked verywell
+            Application.Run(new HslcWithBKG());
         }
     }
 }
