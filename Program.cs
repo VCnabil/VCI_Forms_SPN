@@ -26,7 +26,7 @@ namespace VCI_Forms_SPN
             // Application.Run(new FormSSRSDynePosition3()); 
             // Application.Run(new GG_SANFRANForm());
             //Application.Run(new Form2());
-            Application.Run(new HSLC());
+            Application.Run(new HSLCbkg());
         }
     }
 }
