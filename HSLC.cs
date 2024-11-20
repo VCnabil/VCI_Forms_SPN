@@ -46,7 +46,7 @@ namespace VCI_Forms_SPN
             #endregion
         }
         #region TemplateFunctions
-        private void TempTimer_Tick(object sender, EventArgs e)
+        private void TempTimer_Tick(object sender, EventArgs e )
         {
             _isOnCanBus = KvsrManager.Instance.GetIsOnBus();
             if (_isOnCanBus)
