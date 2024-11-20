@@ -36,4 +36,10 @@ namespace VCI_Forms_SPN._BackEndDataOBJs
         public double ActualLon { get; set; }
         public double ShipHeading { get; set; }
     }
+
+    public class ShipMessage
+    {
+        public string MessageType { get; set; }  
+        public object Data { get; set; }
+    }
 }

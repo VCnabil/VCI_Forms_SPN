@@ -143,6 +143,12 @@ namespace VCI_Forms_SPN._Managers
                 else if (control is VCinc_SFversion vcIncSFversionControl)
                 {
                     _listVCincSFversionUcs.Add(vcIncSFversionControl);
+
+                    byte[] tempDataBytes = vcIncSFversionControl.GetCANByteArray();
+                    int tempPgn = vcIncSFversionControl.GetCANPGN();
+                    string tempPgnHex = tempPgn.ToString("X");
+                    //add to dictionary 
+                    _pgnByteArrays[tempPgnHex] = (tempPgn, tempDataBytes);
                 }
             }
         }

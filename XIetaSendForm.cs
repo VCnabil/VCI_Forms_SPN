@@ -155,8 +155,8 @@ namespace VCI_Forms_SPN
             this.Load += XIetaSendForm_Load;
 
 
-            vCinc_LatLon_mapCnter.SetLatitude(42.36487);
-            vCinc_LatLon_mapCnter.SetLongitude(-71.0545);
+            vCinc_LatLon_mapCnter.SetLatLon(_centermap);
+           // vCinc_LatLon_mapCnter.SetLongitude(-71.0545);
 
             btn_restBit0.Click += bet_restBit0_Click;
             btn_restBit1.Click += bet_restBit1_Click;
@@ -353,8 +353,8 @@ namespace VCI_Forms_SPN
             _waypoint.Latitude = _screenWaypoint.Latitude;
             _waypoint.Longitude = _screenWaypoint.Longitude;
 
-            vCinc_LatLon_waypoint.SetLatitude(_waypoint.Latitude);
-            vCinc_LatLon_waypoint.SetLongitude(_waypoint.Longitude);
+            vCinc_LatLon_waypoint.SetLatLon(_waypoint );
+             
             // Heading calculations and PGN data updates remain the same
             _myheading = trackBar1.Value / 100.00;
             ushort heading = (ushort)Math.Round(_myheading * Math.PI / 180 * 10000);
