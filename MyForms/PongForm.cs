@@ -1,36 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using VCI_Forms_LIB;
 using VCI_Forms_SPN._GLobalz;
 using VCI_Forms_SPN._Managers;
 
 namespace VCI_Forms_SPN.MyForms
 {
-    public partial class HslcWithBKG : Form
+    public partial class PongForm : Form
     {
-        #region TemplateVariavles
+        private Rectangle ball;
+        private Rectangle paddleP1;
+        private Rectangle paddleP2;
+        private int ballSpeedX = 4;
+        private int ballSpeedY = 4;
+        private Timer gameTimer;
+
+        #region TemplateVariables
         PGN_MANAGER _myPGNManager;
         Queue<string> messageQueue;
         StringBuilder messageBuffer;
         const int MaxMessages = 12;
         int _OScreenCount = 0;
-        Timer tempTimer;
         bool _isOnCanBus;
         Dictionary<string, string> uniqueMessages = new Dictionary<string, string>();
         #endregion
 
-        List<VCinc_uc> OnFormItems = new List<VCinc_uc>();
-        public HslcWithBKG()
+        private bool isGameStarte;
+        public PongForm()
         {
             InitializeComponent();
+
+            // Enable double buffering for panel1
+            typeof(Panel).InvokeMember("DoubleBuffered",
+                System.Reflection.BindingFlags.SetProperty | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic,
+                null, panel1, new object[] { true });
+
+            // Initialize ball and paddles
+            ball = new Rectangle(panel1.Width / 2 - 5, panel1.Height / 2 - 5, 10, 10);
+            paddleP1 = new Rectangle(10, tb_P1.Value, 10, 100);
+            paddleP2 = new Rectangle(panel1.Width - 20, tb_P2.Value, 10, 100);
+
+            // Set up Paint event for the panel
+            panel1.Paint += Panel1_Paint;
+
+            // Initialize game timer
+            gameTimer = new Timer
+            {
+                Interval = 24 // ~60 FPS
+            };
+            gameTimer.Tick += GameLoop;
+
+            // Start/stop button handler
+            btn_Start.Click += (sender, e) => ToggleGameStarted();
+
             #region TemplateInitialize
             cb_uniqueOn.Checked = true;
             lbl_OnScreenCount.BackColor = Color.Transparent;
@@ -39,62 +64,44 @@ namespace VCI_Forms_SPN.MyForms
             lbl_onBus.ForeColor = Color.Black;
             btn_Validate.Click += Btn_Validate_Click;
             btn_RunStop.Click += Btn_RunStop_Click;
-            tempTimer = new Timer();
-            tempTimer.Interval = 200;
-            tempTimer.Tick += TempTimer_Tick;
-            tempTimer.Start();
+ 
             messageBuffer = new StringBuilder();
             messageQueue = new Queue<string>(MaxMessages);
             KvsrManager.Instance.OnMessageReceived += KvsrManager_OnMessageReceived;
             #endregion
-
-            //add all VCinc_uc to list 
-
-
         }
         #region TemplateFunctions
+        private void ToggleGameStarted()
+        {
+            isGameStarte = !isGameStarte;
 
-        void modified_Dynaminamically() {
-
-
-            if (vCinc_A_uc12 != null && vCinc_B_uc22 != null) {
-
-                //int valueA = vCinc_A_uc12.Value;
-                //int valueB = vCinc_B_uc22.Value;
-                //if (rb_joy.Enabled)
-                //{
-                //    valueA = (1 << 1);
-                //    valueB &= ~(1 << 1);
-                //}
-                //else
-                //{
-                //    valueA = (1 << 1);
-                //    valueB &= ~(1 << 1);
-                //}
-
-                //vCinc_A_uc12.Value = valueA;
-                //vCinc_B_uc22.Value = valueB;
-
-                if (rb_cua.Checked)
-                {
-
-
-                }
-                vCinc_A_uc12.SetSingleBit(1, rb_cua.Checked);
-                vCinc_B_uc22.SetSingleBit(1, rb_cub.Checked);
-
-                vCinc_A_uc12.SetSingleBit(4, rb_joy.Checked);
-                vCinc_B_uc22.SetSingleBit(4, rb_joy.Checked);
-
-                vCinc_A_uc12.SetSingleBit(5, rb_dk.Checked);
-                vCinc_B_uc22.SetSingleBit(5, rb_dk.Checked);
-
-                //vCinc_A_uc12.SetSingleBit(1, false);
-                //vCinc_B_uc22.SetSingleBit(1, true);
+            if (isGameStarte)
+            {
+                gameTimer.Start();
+                btn_Start.Text = "Stop Pong";
+            }
+            else
+            {
+                gameTimer.Stop();
+                btn_Start.Text = "Start Pong";
             }
         }
-        private void TempTimer_Tick(object sender, EventArgs e)
+        private void GameLoop(object sender, EventArgs e)
         {
+            // Update paddle positions
+            paddleP1.Y = tb_P1.Value;
+            paddleP2.Y = tb_P2.Value;
+
+            // Move the ball
+            ball.X += ballSpeedX;
+            ball.Y += ballSpeedY;
+
+            // Handle ball collisions
+            HandleCollisions();
+
+            // Update UI elements
+            UpdateLabelsAndControls();
+
             _isOnCanBus = KvsrManager.Instance.GetIsOnBus();
             if (_isOnCanBus)
             {
@@ -110,11 +117,9 @@ namespace VCI_Forms_SPN.MyForms
             }
             if (!_isOnCanBus) { return; }
             if (_OScreenCount == 0) { return; }
-            modified_Dynaminamically();
-
             if (_myPGNManager != null)
             {
-                
+
                 _myPGNManager.LoadByteArraysForGroups();
                 var pgnByteArrays = _myPGNManager.GetPgnByteArrays();
                 foreach (var entry in pgnByteArrays.Values)
@@ -128,7 +133,55 @@ namespace VCI_Forms_SPN.MyForms
             {
                 Debug.WriteLine("[DEBUG] PGN Manager is not initialized");
             }
+
+            // Redraw the panel
+            panel1.Invalidate();
         }
+        private void HandleCollisions()
+        {
+            // Ball collision with top and bottom
+            if (ball.Top <= 0 || ball.Bottom >= panel1.Height)
+                ballSpeedY = -ballSpeedY;
+
+            // Ball collision with paddles
+            if (ball.IntersectsWith(paddleP1) || ball.IntersectsWith(paddleP2))
+                ballSpeedX = -ballSpeedX;
+
+            // Ball out of bounds
+            if (ball.Left <= 0 || ball.Right >= panel1.Width)
+            {
+                ball.X = panel1.Width / 2 - 5;
+                ball.Y = panel1.Height / 2 - 5;
+            }
+        }
+        private void UpdateLabelsAndControls()
+        {
+         
+
+            if (checkBox1.Checked)
+            {
+                // Update VCI user controls with pong values
+                vCinc_BallX.Value = ball.X;
+                vCinc_BallY.Value = ball.Y;
+                vCinc_P1y.Value = paddleP1.Y;
+                vCinc_P2y.Value = paddleP2.Y;
+
+                //labels
+                lbl_ballXpos.Text = $"Ball X: {vCinc_BallX.Value}";
+                lbl_ballYpos.Text = $"Ball Y: {vCinc_BallY.Value}";
+                lbl_P1pos.Text = $"P1: {vCinc_P1y.Value}";
+                lbl_P2pos.Text = $"P2: {vCinc_P2y.Value}";
+            }
+            else {
+                lbl_ballXpos.Text = $"Ball X: {ball.X}";
+                lbl_ballYpos.Text = $"Ball Y: {ball.Y}";
+                lbl_P1pos.Text = $"P1: {paddleP1.Y}";
+                lbl_P2pos.Text = $"P2: {paddleP2.Y}";
+            }
+        }
+
+
+  
         private void KvsrManager_OnMessageReceived(string message)
         {
             Debug.WriteLine($"[DEBUG] received: {message}");
@@ -218,7 +271,7 @@ namespace VCI_Forms_SPN.MyForms
                 KvsrManager.Instance.OnMessageReceived -= KvsrManager_OnMessageReceived;
             }
         }
-        #endregion
+#endregion
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (_isOnCanBus)
@@ -229,6 +282,29 @@ namespace VCI_Forms_SPN.MyForms
             }
             base.OnFormClosing(e);
             Debug.WriteLine("[DEBUG] CAN manager closed and resources cleaned up.");
+        }
+      
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            // Clear the panel
+            g.Clear(Color.Black);
+
+            // Draw paddles
+            using (Brush redBrush = new SolidBrush(Color.Red))
+                g.FillRectangle(redBrush, paddleP1);
+            using (Brush blueBrush = new SolidBrush(Color.Blue))
+                g.FillRectangle(blueBrush, paddleP2);
+
+            // Draw ball
+            using (Brush orangeBrush = new SolidBrush(Color.Orange))
+                g.FillRectangle(orangeBrush, ball);
+
+
+
+
         }
     }
 }
