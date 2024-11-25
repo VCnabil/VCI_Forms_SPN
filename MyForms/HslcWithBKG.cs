@@ -27,7 +27,8 @@ namespace VCI_Forms_SPN.MyForms
         Dictionary<string, string> uniqueMessages = new Dictionary<string, string>();
         #endregion
 
-        List<VCinc_uc> OnFormItems = new List<VCinc_uc>();
+        List<VCinc_uc> OnFormItems_CUA = new List<VCinc_uc>();
+        List<VCinc_uc> OnFormItems_CUB = new List<VCinc_uc>();
         public HslcWithBKG()
         {
             InitializeComponent();
@@ -50,36 +51,36 @@ namespace VCI_Forms_SPN.MyForms
 
             //add all VCinc_uc to list 
 
-
         }
         #region TemplateFunctions
 
         void modified_Dynaminamically() {
 
 
-            if (vCinc_A_uc12 != null && vCinc_B_uc22 != null) {
+            if (vCinc_HELM_A_uc35 != null && vCinc_HELM_B_uc37 != null && vCinc_PNOZ_A_uc45 != null && vCinc_PNOZ_B_uc49 != null && vCinc_SNOZ_A_uc46 != null && vCinc_SNOZ_B_uc50 != null) {
 
-                //int valueA = vCinc_A_uc12.Value;
-                //int valueB = vCinc_B_uc22.Value;
-                //if (rb_joy.Enabled)
-                //{
-                //    valueA = (1 << 1);
-                //    valueB &= ~(1 << 1);
-                //}
-                //else
-                //{
-                //    valueA = (1 << 1);
-                //    valueB &= ~(1 << 1);
-                //}
+                int _zoroTo100_HELMa = vCinc_HELM_A_uc35.Value;
+                float value_NOZZSA_0_255 = (_zoroTo100_HELMa * 255) / 100.0f;
 
-                //vCinc_A_uc12.Value = valueA;
-                //vCinc_B_uc22.Value = valueB;
+                int _zoroTo100_HELMb = vCinc_HELM_B_uc37.Value;
+                float value_NOZZSB_0_255 = (_zoroTo100_HELMb * 255) / 100.0f;
 
-                if (rb_cua.Checked)
-                {
+                vCinc_PNOZ_A_uc45.Value = (int)value_NOZZSA_0_255;
+                vCinc_SNOZ_A_uc46.Value = (int)value_NOZZSA_0_255;
 
 
-                }
+                vCinc_SNOZ_B_uc50.Value = (int)value_NOZZSB_0_255;
+                vCinc_PNOZ_B_uc49.Value = (int)value_NOZZSB_0_255;
+
+
+            }
+
+
+            if (vCinc_A_uc12 != null && vCinc_B_uc22 != null && rb_joy !=null && rb_dk != null) {
+
+           
+
+
                 vCinc_A_uc12.SetSingleBit(1, rb_cua.Checked);
                 vCinc_B_uc22.SetSingleBit(1, rb_cub.Checked);
 
@@ -89,12 +90,40 @@ namespace VCI_Forms_SPN.MyForms
                 vCinc_A_uc12.SetSingleBit(5, rb_dk.Checked);
                 vCinc_B_uc22.SetSingleBit(5, rb_dk.Checked);
 
-                //vCinc_A_uc12.SetSingleBit(1, false);
-                //vCinc_B_uc22.SetSingleBit(1, true);
+
+                if (rb_cua.Checked)
+                {
+                    foreach (VCinc_uc itemA in OnFormItems_CUA)
+                    {
+                        itemA.SetBorder(Color.Blue, 4);
+                        itemA.Visible = true;
+                    }
+                    foreach (VCinc_uc itemB in OnFormItems_CUB)
+                    {
+                        itemB.SetBorder(Color.Red, 1);
+
+                        itemB.Visible = false;
+                    }
+                }
+                else
+                if (rb_cub.Checked) {
+                    foreach (VCinc_uc itemA in OnFormItems_CUA)
+                    {
+                        itemA.SetBorder(Color.Blue, 1);
+                        itemA.Visible = false;
+                    }
+                    foreach (VCinc_uc itemB in OnFormItems_CUB)
+                    {
+                        itemB.SetBorder(Color.Red, 4);
+                        itemB.Visible = true;
+                    }
+                }
+
             }
         }
         private void TempTimer_Tick(object sender, EventArgs e)
         {
+            modified_Dynaminamically();
             _isOnCanBus = KvsrManager.Instance.GetIsOnBus();
             if (_isOnCanBus)
             {
@@ -110,7 +139,7 @@ namespace VCI_Forms_SPN.MyForms
             }
             if (!_isOnCanBus) { return; }
             if (_OScreenCount == 0) { return; }
-            modified_Dynaminamically();
+         
 
             if (_myPGNManager != null)
             {
@@ -202,6 +231,10 @@ namespace VCI_Forms_SPN.MyForms
             {
                 lbl_OnScreenCount.BackColor = Color.Green;
                 lbl_OnScreenCount.ForeColor = Color.White;
+
+
+                OnFormItems_CUA = _myPGNManager.GetList_ByNameContaining("_A_");
+                OnFormItems_CUB = _myPGNManager.GetList_ByNameContaining("_B_");
             }
         }
         private void Btn_RunStop_Click(object sender, EventArgs e)

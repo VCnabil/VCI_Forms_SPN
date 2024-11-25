@@ -225,49 +225,6 @@ namespace VCI_Forms_SPN._Managers
             }
         }
 
-        public int Get__numberOfunique_PGNADRSS() => _cnt_Onscreen_pgnAdrs_Groups;
-
-        public void LoadByteArraysForGroups()
-        {
-            foreach (var group in _pgnAdrs_Groups)
-            {
-                string groupKey = group.Key;
-                var (pgn, byteArray) = _pgnByteArrays[groupKey]; // Retrieve PGN and byte array
-
-                foreach (var spn in group.Value)
-                {
-                    int startByte = spn.A_FirstByteIndex;
-                    byte[] spnBytes = spn.GetBytes(); // Use your SPN_Control GetBytes method
-
-                    // Check if the SPN fits within the byte array
-                    if (startByte + spnBytes.Length > 8)
-                    {
-                        spn.Set_Lbl_status("nofit", Color.Red, Color.Black);
-                        _SPN_CONFLICT = true;
-                        continue; // Skip loading this SPN
-                    }
-
-                    // Load SPN bytes into the byte array
-                    for (int i = 0; i < spnBytes.Length; i++)
-                    {
-                        byteArray[startByte + i] = spnBytes[i];
-                    }
-                }
-
-                // Update the loaded byte array in the dictionary
-                _pgnByteArrays[groupKey] = (pgn, byteArray);
-            }
-        }
-
-        public void First_Call()
-        {
-            if (_cnt_Onscreen_SPNucs == 0) { MessageBox.Show("No SPN_Control found in form"); return; }
-
-            Color_EachSPN_ByPGNAndAddress();
-
-            ValidateCANPayload();
-        }
-
         private void ValidateCANPayload()
         {
             _SPN_CONFLICT = false;
@@ -349,6 +306,71 @@ namespace VCI_Forms_SPN._Managers
                     }
                 }
             }
+        }
+
+        public void LoadByteArraysForGroups()
+        {
+            foreach (var group in _pgnAdrs_Groups)
+            {
+                string groupKey = group.Key;
+                var (pgn, byteArray) = _pgnByteArrays[groupKey]; // Retrieve PGN and byte array
+
+                foreach (var spn in group.Value)
+                {
+                    int startByte = spn.A_FirstByteIndex;
+                    byte[] spnBytes = spn.GetBytes(); // Use your SPN_Control GetBytes method
+
+                    // Check if the SPN fits within the byte array
+                    if (startByte + spnBytes.Length > 8)
+                    {
+                        spn.Set_Lbl_status("nofit", Color.Red, Color.Black);
+                        _SPN_CONFLICT = true;
+                        continue; // Skip loading this SPN
+                    }
+
+                    // Load SPN bytes into the byte array
+                    for (int i = 0; i < spnBytes.Length; i++)
+                    {
+                        byteArray[startByte + i] = spnBytes[i];
+                    }
+                }
+
+                // Update the loaded byte array in the dictionary
+                _pgnByteArrays[groupKey] = (pgn, byteArray);
+            }
+        }
+        public void First_Call()
+        {
+            if (_cnt_Onscreen_SPNucs == 0) { MessageBox.Show("No SPN_Control found in form"); return; }
+
+            Color_EachSPN_ByPGNAndAddress();
+
+            ValidateCANPayload();
+        }
+
+        public int Get__numberOfunique_PGNADRSS() => _cnt_Onscreen_pgnAdrs_Groups;
+
+        public List<VCinc_uc> GetOnFormItems()
+        {
+            if (_list_Onscreen_SPNucs.Count == 0)
+            {
+                MessageBox.Show("No SPN_Control found in form");
+            }
+            return _list_Onscreen_SPNucs;
+
+        }
+
+        public List<VCinc_uc> GetList_ByNameContaining(string argContained)
+        {
+            List<VCinc_uc> _list = new List<VCinc_uc>();
+            foreach (var item in _list_Onscreen_SPNucs)
+            {
+                if (item.Name.Contains(argContained))
+                {
+                    _list.Add(item);
+                }
+            }
+            return _list;
         }
     }
 }
