@@ -49,31 +49,57 @@ namespace VCI_Forms_SPN.MyForms
             KvsrManager.Instance.OnMessageReceived += KvsrManager_OnMessageReceived;
             #endregion
 
-            //add all VCinc_uc to list 
+            rb_dk.CheckedChanged += DockingTransitModeChanged;
+            rb_tr.CheckedChanged += DockingTransitModeChanged;
+
+            rb_joy.CheckedChanged += JoyLeverModeChanged;
+            rb_levr.CheckedChanged += JoyLeverModeChanged;
+
+           
 
         }
         #region TemplateFunctions
 
+        private void JoyLeverModeChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+            if (rb.Checked)
+            {
+                if (rb_joy.Checked)
+                {
+                     
+                }
+                else
+                {
+                    
+                }
+            }
+        }
+        private void DockingTransitModeChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+            if (rb.Checked)
+            {
+                if (rb_dk.Checked)
+                {
+                    vCinc_joy1.Set_DockModeOnOff(false);
+                    if (rb_levr.Checked) {
+                        rb_joy.Checked = true;
+                    }
+                }
+                else
+                {
+                    vCinc_joy1.Set_DockModeOnOff(true);
+                }
+            }
+        }
+
         void modified_Dynaminamically() {
 
+            HelmControle();
 
-            if (vCinc_HELM_A_uc35 != null && vCinc_HELM_B_uc37 != null && vCinc_PNOZ_A_uc45 != null && vCinc_PNOZ_B_uc49 != null && vCinc_SNOZ_A_uc46 != null && vCinc_SNOZ_B_uc50 != null) {
-
-                int _zoroTo100_HELMa = vCinc_HELM_A_uc35.Value;
-                float value_NOZZSA_0_255 = (_zoroTo100_HELMa * 255) / 100.0f;
-
-                int _zoroTo100_HELMb = vCinc_HELM_B_uc37.Value;
-                float value_NOZZSB_0_255 = (_zoroTo100_HELMb * 255) / 100.0f;
-
-                vCinc_PNOZ_A_uc45.Value = (int)value_NOZZSA_0_255;
-                vCinc_SNOZ_A_uc46.Value = (int)value_NOZZSA_0_255;
-
-
-                vCinc_SNOZ_B_uc50.Value = (int)value_NOZZSB_0_255;
-                vCinc_PNOZ_B_uc49.Value = (int)value_NOZZSB_0_255;
-
-
-            }
+            JoystickModeControle();
+            LevversControl();
 
 
             if (vCinc_A_uc12 != null && vCinc_B_uc22 != null && rb_joy !=null && rb_dk != null) {
@@ -120,6 +146,88 @@ namespace VCI_Forms_SPN.MyForms
                 }
 
             }
+        }
+
+
+        void JoystickModeControle() {
+
+            if (rb_levr.Checked) { return; }
+            if (rb_dk.Checked)
+            {
+
+            }
+            else { 
+            
+
+
+
+            }
+
+            float _fullValueFromNegative100To100 = vCinc_joy1.Joystick_YaxisValue;
+
+            if (_fullValueFromNegative100To100 < 0)
+            {
+
+                vCinc_A_bucketL.Value = 125 - (int)(-1.25 * _fullValueFromNegative100To100);
+                vCinc_B_bucketL.Value = 125 - (int)(-1.25 * _fullValueFromNegative100To100);
+
+                vCinc_A_bucketR.Value = 125 - (int)(-1.25 * _fullValueFromNegative100To100);
+                vCinc_B_bucketR.Value = 125 - (int)(-1.25 * _fullValueFromNegative100To100);
+            }
+            else
+            {
+
+                vCinc_A_bucketL.Value = 125 + (int)(1.25 * _fullValueFromNegative100To100);
+                vCinc_B_bucketL.Value = 125 + (int)(1.25 * _fullValueFromNegative100To100);
+
+                vCinc_A_bucketR.Value = 125 + (int)(1.25 * _fullValueFromNegative100To100);
+                vCinc_B_bucketR.Value = 125 + (int)(1.25 * _fullValueFromNegative100To100);
+
+            }
+
+        }
+
+        void LevversControl() {
+            //levers always update the pgnL and pgnR  
+
+            vCinc_B_lvrPgn_L.Value = (int)vCinc_dualLevers1.Lever_LVal;
+            vCinc_A_lvrPgn_L.Value = (int)vCinc_dualLevers1.Lever_LVal;
+
+            vCinc_B_lvrPgn_R.Value = (int)vCinc_dualLevers1.Lever_RVal;
+            vCinc_A_lvrPgn_R.Value = (int)vCinc_dualLevers1.Lever_RVal;
+            //but only if mode is lever do we actually move the engins pgns
+            if (rb_levr.Checked) {
+                vCinc_A_Eng_L.Value = vCinc_A_lvrPgn_L.Value;
+                vCinc_B_Eng_L.Value = vCinc_B_lvrPgn_L.Value;
+
+                vCinc_A_Eng_R.Value = vCinc_A_lvrPgn_R.Value;
+                vCinc_B_Eng_R.Value = vCinc_B_lvrPgn_R.Value;
+
+            }
+        }
+        void HelmControle() {
+            if (vCinc_HELM_A_uc35 != null && vCinc_HELM_B_uc37 != null && vCinc_PNOZ_A_uc45 != null && vCinc_PNOZ_B_uc49 != null && vCinc_SNOZ_A_uc46 != null && vCinc_SNOZ_B_uc50 != null && vCinc_steerWheel1 != null)
+            {
+
+                vCinc_HELM_A_uc35.Value = (int)vCinc_steerWheel1.WheelVAlue;
+                vCinc_HELM_B_uc37.Value = (int)vCinc_steerWheel1.WheelVAlue;
+                int _zoroTo100_HELMa = vCinc_HELM_A_uc35.Value;
+                float value_NOZZSA_0_255 = (_zoroTo100_HELMa * 255) / 100.0f;
+
+                int _zoroTo100_HELMb = vCinc_HELM_B_uc37.Value;
+                float value_NOZZSB_0_255 = (_zoroTo100_HELMb * 255) / 100.0f;
+
+                vCinc_PNOZ_A_uc45.Value = (int)value_NOZZSA_0_255;
+                vCinc_SNOZ_A_uc46.Value = (int)value_NOZZSA_0_255;
+
+
+                vCinc_SNOZ_B_uc50.Value = (int)value_NOZZSB_0_255;
+                vCinc_PNOZ_B_uc49.Value = (int)value_NOZZSB_0_255;
+
+
+            }
+
+
         }
         private void TempTimer_Tick(object sender, EventArgs e)
         {

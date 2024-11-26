@@ -28,8 +28,15 @@ namespace VCI_Forms_SPN
             // Application.Run(new GG_SANFRANForm());
             // Application.Run(new Form2());
             // Application.Run(new HSLC());// <-----------------------last worked verywell
-            Application.Run(new HslcWithBKG()); 
+            //Application.Run(new HslcWithBKG()); 
             // Application.Run(new PongForm());
+            Application.Run(new SSRSk12WithBKG()); 
+
+
+
+
+
+
         }
     }
 }
