@@ -44,14 +44,14 @@
             // 
             // btn_PipeToggle
             // 
-            this.btn_PipeToggle.Location = new System.Drawing.Point(1004, 15);
+            this.btn_PipeToggle.Location = new System.Drawing.Point(1208, 300);
             this.btn_PipeToggle.Margin = new System.Windows.Forms.Padding(6);
             this.btn_PipeToggle.Name = "btn_PipeToggle";
             this.btn_PipeToggle.Size = new System.Drawing.Size(150, 35);
             this.btn_PipeToggle.TabIndex = 328;
             this.btn_PipeToggle.Text = "pipe";
             this.btn_PipeToggle.UseVisualStyleBackColor = true;
-            this.btn_PipeToggle.Click += new System.EventHandler(this.btn_PipeToggle_Click);
+            this.btn_PipeToggle.Click += new System.EventHandler(this.btn_SetCoordinates);
             // 
             // vCinc_LatLon_waypoint
             // 
@@ -113,20 +113,20 @@
             // 
             this.vCinc_LatLon1.BackColor = System.Drawing.Color.RosyBrown;
             this.vCinc_LatLon1.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_LatLon1.Location = new System.Drawing.Point(682, 188);
+            this.vCinc_LatLon1.Location = new System.Drawing.Point(682, 300);
             this.vCinc_LatLon1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.vCinc_LatLon1.Name = "vCinc_LatLon1";
-            this.vCinc_LatLon1.Size = new System.Drawing.Size(314, 82);
+            this.vCinc_LatLon1.Size = new System.Drawing.Size(472, 82);
             this.vCinc_LatLon1.TabIndex = 336;
             // 
             // vCinc_LatLon2
             // 
             this.vCinc_LatLon2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.vCinc_LatLon2.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_LatLon2.Location = new System.Drawing.Point(678, 276);
+            this.vCinc_LatLon2.Location = new System.Drawing.Point(678, 423);
             this.vCinc_LatLon2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.vCinc_LatLon2.Name = "vCinc_LatLon2";
-            this.vCinc_LatLon2.Size = new System.Drawing.Size(318, 82);
+            this.vCinc_LatLon2.Size = new System.Drawing.Size(476, 82);
             this.vCinc_LatLon2.TabIndex = 335;
             // 
             // Form2

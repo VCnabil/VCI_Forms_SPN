@@ -38,9 +38,13 @@ namespace VCI_Forms_SPN.MyForms
         private readonly object _syncLock = new object();
         double _myJET_ANG = 50;
         double _myTHRUST = 0;
-        public SSRSk12WithBKG()
+        
+ 
+    
+        public SSRSk12WithBKG(   )
         {
             InitializeComponent();
+       
             #region TemplateInitialize
             lbl_OnScreenCount.BackColor = Color.Transparent;
             lbl_OnScreenCount.ForeColor = Color.Black;
@@ -60,7 +64,7 @@ namespace VCI_Forms_SPN.MyForms
             VESSEL_LOC = vCinc_LatLon_mapCnter.GetLatLon();
             VESSEL_HEADING = (tb_manualHEading.Value / 100.00) % 360.00;
             btn_restBit0.Click += bet_restBit0_Click;
-           btn_restBit1.Click += bet_restBit1_Click;
+            btn_restBit1.Click += bet_restBit1_Click;
 
             pipeTimer = new Timer();
             pipeTimer.Interval = 320;
@@ -72,7 +76,15 @@ namespace VCI_Forms_SPN.MyForms
             btn_PipeToggle.Click += Btn_PipeToggle_Click;
             UpdateButtonState();
             btn_setLatLonToUnity.Click += Btn_setLatLonToUnity_Click;
+            btn_webview2.Click += Btn_webview2_Click;
         }
+        private void Btn_webview2_Click(object sender, EventArgs e)
+        {
+            // Create and show Form1 with the coordinates
+            Form1 form1 = new Form1(vCinc_LatLon_mapCnter.LatitudeDecimal.ToString(), vCinc_LatLon_mapCnter.LongitudeDecimal.ToString(), vCinc_LatLon_waypoint.LatitudeDecimal.ToString(), vCinc_LatLon_waypoint.LongitudeDecimal.ToString());
+            form1.Show();
+        }
+
         private void PipeManager_OnMessageReceived(string message)
         {
             if (InvokeRequired)

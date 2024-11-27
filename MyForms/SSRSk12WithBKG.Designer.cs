@@ -73,6 +73,7 @@
             this.vCinc_uc18 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_LatLon_waypoint = new VCI_Forms_LIB.VCinc_LatLon();
             this.vCinc_LatLon_mapCnter = new VCI_Forms_LIB.VCinc_LatLon();
+            this.btn_webview2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_PropulsionAngle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_thrust)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_manualHEading)).BeginInit();
@@ -128,10 +129,10 @@
             // tb_manualHEading
             // 
             this.tb_manualHEading.AutoSize = false;
-            this.tb_manualHEading.Location = new System.Drawing.Point(1955, 2082);
+            this.tb_manualHEading.Location = new System.Drawing.Point(2489, 2086);
             this.tb_manualHEading.Maximum = 72000;
             this.tb_manualHEading.Name = "tb_manualHEading";
-            this.tb_manualHEading.Size = new System.Drawing.Size(570, 53);
+            this.tb_manualHEading.Size = new System.Drawing.Size(389, 53);
             this.tb_manualHEading.TabIndex = 343;
             this.tb_manualHEading.TickFrequency = 1000;
             this.tb_manualHEading.Value = 36000;
@@ -857,13 +858,24 @@
             this.vCinc_LatLon_mapCnter.Size = new System.Drawing.Size(470, 74);
             this.vCinc_LatLon_mapCnter.TabIndex = 376;
             // 
+            // btn_webview2
+            // 
+            this.btn_webview2.Location = new System.Drawing.Point(2367, 2094);
+            this.btn_webview2.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_webview2.Name = "btn_webview2";
+            this.btn_webview2.Size = new System.Drawing.Size(100, 45);
+            this.btn_webview2.TabIndex = 378;
+            this.btn_webview2.Text = "Dist";
+            this.btn_webview2.UseVisualStyleBackColor = true;
+            // 
             // SSRSk12WithBKG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(3374, 2129);
+            this.ClientSize = new System.Drawing.Size(3374, 2135);
+            this.Controls.Add(this.btn_webview2);
             this.Controls.Add(this.vCinc_LatLon_waypoint);
             this.Controls.Add(this.vCinc_LatLon_mapCnter);
             this.Controls.Add(this.vCinc_dualLevers1);
@@ -967,5 +979,6 @@
         private System.Windows.Forms.Button btn_restBit0;
         private VCI_Forms_LIB.VCinc_LatLon vCinc_LatLon_waypoint;
         private VCI_Forms_LIB.VCinc_LatLon vCinc_LatLon_mapCnter;
+        private System.Windows.Forms.Button btn_webview2;
     }
 }
