@@ -111,6 +111,8 @@
             this.vCinc_uc54 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc55 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_A_SFversion2 = new VCI_Forms_LIB.VCinc_SFversion();
+            this.vCinc_BackupPanelClutch1 = new VCI_Forms_LIB.vCinc_BackupPanelClutch();
+            this.vCinc_BackupPanel1 = new VCI_Forms_LIB.vCinc_BackupPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -356,6 +358,7 @@
             // 
             // vCinc_dualLevers1
             // 
+            this.vCinc_dualLevers1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.vCinc_dualLevers1.Location = new System.Drawing.Point(2840, 127);
             this.vCinc_dualLevers1.Name = "vCinc_dualLevers1";
             this.vCinc_dualLevers1.Size = new System.Drawing.Size(224, 240);
@@ -1829,6 +1832,26 @@
             this.vCinc_A_SFversion2.Source = "00";
             this.vCinc_A_SFversion2.TabIndex = 325;
             // 
+            // vCinc_BackupPanelClutch1
+            // 
+            this.vCinc_BackupPanelClutch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.vCinc_BackupPanelClutch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_BackupPanelClutch1.Location = new System.Drawing.Point(2002, 170);
+            this.vCinc_BackupPanelClutch1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_BackupPanelClutch1.Name = "vCinc_BackupPanelClutch1";
+            this.vCinc_BackupPanelClutch1.Size = new System.Drawing.Size(314, 212);
+            this.vCinc_BackupPanelClutch1.TabIndex = 488;
+            // 
+            // vCinc_BackupPanel1
+            // 
+            this.vCinc_BackupPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(28)))));
+            this.vCinc_BackupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_BackupPanel1.Location = new System.Drawing.Point(1538, 170);
+            this.vCinc_BackupPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_BackupPanel1.Name = "vCinc_BackupPanel1";
+            this.vCinc_BackupPanel1.Size = new System.Drawing.Size(330, 280);
+            this.vCinc_BackupPanel1.TabIndex = 489;
+            // 
             // HslcWithBKG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
@@ -1836,6 +1859,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(3655, 2214);
+            this.Controls.Add(this.vCinc_BackupPanel1);
+            this.Controls.Add(this.vCinc_BackupPanelClutch1);
             this.Controls.Add(this.vCinc_joy1);
             this.Controls.Add(this.vCinc_B_bucketL);
             this.Controls.Add(this.vCinc_A_bucketL);
@@ -2012,5 +2037,7 @@
         private VCI_Forms_LIB.vCinc_steerWheel vCinc_steerWheel1;
         private VCI_Forms_LIB.vCinc_dualLevers vCinc_dualLevers1;
         private VCI_Forms_LIB.vCinc_joy vCinc_joy1;
+        private VCI_Forms_LIB.vCinc_BackupPanelClutch vCinc_BackupPanelClutch1;
+        private VCI_Forms_LIB.vCinc_BackupPanel vCinc_BackupPanel1;
     }
 }

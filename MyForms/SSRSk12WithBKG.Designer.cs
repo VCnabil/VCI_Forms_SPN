@@ -41,26 +41,28 @@
             this.btn_restBit1 = new System.Windows.Forms.Button();
             this.btn_restBit0 = new System.Windows.Forms.Button();
             this.btn_webview2 = new System.Windows.Forms.Button();
+            this.vCinc_BackupPanelEng1 = new VCI_Forms_LIB.vCinc_BackupPanelEng();
+            this.vCinc_BackupPanelWJ1 = new VCI_Forms_LIB.vCinc_BackupPanelWJ();
             this.vCinc_Tiller1 = new VCI_Forms_LIB.vCinc_Tiller();
             this.vCinc_LatLon_waypoint = new VCI_Forms_LIB.VCinc_LatLon();
             this.vCinc_LatLon_mapCnter = new VCI_Forms_LIB.VCinc_LatLon();
             this.vCinc_dualLevers1 = new VCI_Forms_LIB.vCinc_dualLevers();
             this.vCinc_3AxisJoy1 = new VCI_Forms_LIB.vCinc_3AxisJoy();
             this.vCinc_DynPos1 = new VCI_Forms_LIB.VCinc_DynPos();
-            this.vCinc_uc24 = new VCI_Forms_LIB.VCinc_uc();
-            this.vCinc_uc23 = new VCI_Forms_LIB.VCinc_uc();
-            this.vCinc_uc22 = new VCI_Forms_LIB.VCinc_uc();
-            this.vCinc_uc21 = new VCI_Forms_LIB.VCinc_uc();
-            this.vCinc_uc20 = new VCI_Forms_LIB.VCinc_uc();
-            this.vCinc_uc19 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_Seng_uc24 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_Peng_uc23 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_pbuk_uc22 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_pnoz_uc21 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_snoz_uc20 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_sbuk_uc19 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc17 = new VCI_Forms_LIB.VCinc_uc();
-            this.vCinc_uc16 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_helm_uc16 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc15 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc14 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc13 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc12 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc11 = new VCI_Forms_LIB.VCinc_uc();
-            this.vCinc_uc10 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_stationInCtrl_uc10 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc9 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_SFversion2 = new VCI_Forms_LIB.VCinc_SFversion();
             this.vCinc_SFversion1 = new VCI_Forms_LIB.VCinc_SFversion();
@@ -73,6 +75,10 @@
             this.vCinc_uc2 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc1 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc18 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_BackupPanel1 = new VCI_Forms_LIB.vCinc_BackupPanel();
+            this.vCinc_ClutchPanel1 = new VCI_Forms_LIB.vCinc_ClutchPanel();
+            this.vCinc_ClutchPanel2 = new VCI_Forms_LIB.vCinc_ClutchPanel();
+            this.vCinc_BackupPanelClutch1 = new VCI_Forms_LIB.vCinc_BackupPanelClutch();
             ((System.ComponentModel.ISupportInitialize)(this.tb_manualHEading)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,6 +207,34 @@
             this.btn_webview2.Text = "Dist";
             this.btn_webview2.UseVisualStyleBackColor = true;
             // 
+            // vCinc_BackupPanelEng1
+            // 
+            this.vCinc_BackupPanelEng1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vCinc_BackupPanelEng1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_BackupPanelEng1.Location = new System.Drawing.Point(2389, 234);
+            this.vCinc_BackupPanelEng1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_BackupPanelEng1.Name = "vCinc_BackupPanelEng1";
+            this.vCinc_BackupPanelEng1.Size = new System.Drawing.Size(271, 170);
+            this.vCinc_BackupPanelEng1.TabIndex = 384;
+            this.vCinc_BackupPanelEng1.Uc2bitBtnA_Button1Name = "Button 1";
+            this.vCinc_BackupPanelEng1.Uc2bitBtnA_Button2Name = "Button 2";
+            this.vCinc_BackupPanelEng1.Uc2bitBtnB_Button1Name = "Button 1";
+            this.vCinc_BackupPanelEng1.Uc2bitBtnB_Button2Name = "Button 2";
+            // 
+            // vCinc_BackupPanelWJ1
+            // 
+            this.vCinc_BackupPanelWJ1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.vCinc_BackupPanelWJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_BackupPanelWJ1.Location = new System.Drawing.Point(2085, 234);
+            this.vCinc_BackupPanelWJ1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_BackupPanelWJ1.Name = "vCinc_BackupPanelWJ1";
+            this.vCinc_BackupPanelWJ1.Size = new System.Drawing.Size(300, 170);
+            this.vCinc_BackupPanelWJ1.TabIndex = 383;
+            this.vCinc_BackupPanelWJ1.Uc2bitBtnA_Button1Name = "Button 1";
+            this.vCinc_BackupPanelWJ1.Uc2bitBtnA_Button2Name = "Button 2";
+            this.vCinc_BackupPanelWJ1.Uc2bitBtnB_Button1Name = "Button 1";
+            this.vCinc_BackupPanelWJ1.Uc2bitBtnB_Button2Name = "Button 2";
+            // 
             // vCinc_Tiller1
             // 
             this.vCinc_Tiller1.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -260,146 +294,146 @@
             this.vCinc_DynPos1.Size = new System.Drawing.Size(570, 639);
             this.vCinc_DynPos1.TabIndex = 373;
             // 
-            // vCinc_uc24
+            // vCinc_Seng_uc24
             // 
-            this.vCinc_uc24.A_FirstByteIndex = 7;
-            this.vCinc_uc24.Address = "29";
-            this.vCinc_uc24.BackColor = System.Drawing.Color.Transparent;
-            this.vCinc_uc24.Bit0Title = " ";
-            this.vCinc_uc24.Bit1Title = " ";
-            this.vCinc_uc24.Bit2Title = " ";
-            this.vCinc_uc24.Bit3Title = " ";
-            this.vCinc_uc24.Bit4Title = " ";
-            this.vCinc_uc24.Bit5Title = " ";
-            this.vCinc_uc24.Bit6Title = "";
-            this.vCinc_uc24.Bit7Title = "";
-            this.vCinc_uc24.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
-            this.vCinc_uc24.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc24.Location = new System.Drawing.Point(396, 597);
-            this.vCinc_uc24.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc24.Name = "vCinc_uc24";
-            this.vCinc_uc24.PGN = "FEFC";
-            this.vCinc_uc24.Size = new System.Drawing.Size(160, 120);
-            this.vCinc_uc24.SPNName = "Seng";
-            this.vCinc_uc24.TabIndex = 368;
+            this.vCinc_Seng_uc24.A_FirstByteIndex = 7;
+            this.vCinc_Seng_uc24.Address = "29";
+            this.vCinc_Seng_uc24.BackColor = System.Drawing.Color.Transparent;
+            this.vCinc_Seng_uc24.Bit0Title = " ";
+            this.vCinc_Seng_uc24.Bit1Title = " ";
+            this.vCinc_Seng_uc24.Bit2Title = " ";
+            this.vCinc_Seng_uc24.Bit3Title = " ";
+            this.vCinc_Seng_uc24.Bit4Title = " ";
+            this.vCinc_Seng_uc24.Bit5Title = " ";
+            this.vCinc_Seng_uc24.Bit6Title = "";
+            this.vCinc_Seng_uc24.Bit7Title = "";
+            this.vCinc_Seng_uc24.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.vCinc_Seng_uc24.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_Seng_uc24.Location = new System.Drawing.Point(396, 597);
+            this.vCinc_Seng_uc24.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_Seng_uc24.Name = "vCinc_Seng_uc24";
+            this.vCinc_Seng_uc24.PGN = "FEFC";
+            this.vCinc_Seng_uc24.Size = new System.Drawing.Size(195, 120);
+            this.vCinc_Seng_uc24.SPNName = "Seng";
+            this.vCinc_Seng_uc24.TabIndex = 368;
             // 
-            // vCinc_uc23
+            // vCinc_Peng_uc23
             // 
-            this.vCinc_uc23.A_FirstByteIndex = 6;
-            this.vCinc_uc23.Address = "29";
-            this.vCinc_uc23.BackColor = System.Drawing.Color.Transparent;
-            this.vCinc_uc23.Bit0Title = " ";
-            this.vCinc_uc23.Bit1Title = " ";
-            this.vCinc_uc23.Bit2Title = " ";
-            this.vCinc_uc23.Bit3Title = " ";
-            this.vCinc_uc23.Bit4Title = " ";
-            this.vCinc_uc23.Bit5Title = " ";
-            this.vCinc_uc23.Bit6Title = "";
-            this.vCinc_uc23.Bit7Title = "";
-            this.vCinc_uc23.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
-            this.vCinc_uc23.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc23.Location = new System.Drawing.Point(396, 477);
-            this.vCinc_uc23.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc23.Name = "vCinc_uc23";
-            this.vCinc_uc23.PGN = "FEFC";
-            this.vCinc_uc23.Size = new System.Drawing.Size(160, 120);
-            this.vCinc_uc23.SPNName = "Peng";
-            this.vCinc_uc23.TabIndex = 367;
+            this.vCinc_Peng_uc23.A_FirstByteIndex = 6;
+            this.vCinc_Peng_uc23.Address = "29";
+            this.vCinc_Peng_uc23.BackColor = System.Drawing.Color.Transparent;
+            this.vCinc_Peng_uc23.Bit0Title = " ";
+            this.vCinc_Peng_uc23.Bit1Title = " ";
+            this.vCinc_Peng_uc23.Bit2Title = " ";
+            this.vCinc_Peng_uc23.Bit3Title = " ";
+            this.vCinc_Peng_uc23.Bit4Title = " ";
+            this.vCinc_Peng_uc23.Bit5Title = " ";
+            this.vCinc_Peng_uc23.Bit6Title = "";
+            this.vCinc_Peng_uc23.Bit7Title = "";
+            this.vCinc_Peng_uc23.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.vCinc_Peng_uc23.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_Peng_uc23.Location = new System.Drawing.Point(396, 477);
+            this.vCinc_Peng_uc23.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_Peng_uc23.Name = "vCinc_Peng_uc23";
+            this.vCinc_Peng_uc23.PGN = "FEFC";
+            this.vCinc_Peng_uc23.Size = new System.Drawing.Size(195, 120);
+            this.vCinc_Peng_uc23.SPNName = "Peng";
+            this.vCinc_Peng_uc23.TabIndex = 367;
             // 
-            // vCinc_uc22
+            // vCinc_pbuk_uc22
             // 
-            this.vCinc_uc22.A_FirstByteIndex = 5;
-            this.vCinc_uc22.Address = "29";
-            this.vCinc_uc22.BackColor = System.Drawing.Color.Transparent;
-            this.vCinc_uc22.Bit0Title = " ";
-            this.vCinc_uc22.Bit1Title = " ";
-            this.vCinc_uc22.Bit2Title = " ";
-            this.vCinc_uc22.Bit3Title = " ";
-            this.vCinc_uc22.Bit4Title = " ";
-            this.vCinc_uc22.Bit5Title = " ";
-            this.vCinc_uc22.Bit6Title = "";
-            this.vCinc_uc22.Bit7Title = "";
-            this.vCinc_uc22.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
-            this.vCinc_uc22.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc22.Location = new System.Drawing.Point(141, 438);
-            this.vCinc_uc22.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc22.Name = "vCinc_uc22";
-            this.vCinc_uc22.PGN = "FEFC";
-            this.vCinc_uc22.Size = new System.Drawing.Size(170, 119);
-            this.vCinc_uc22.SPNName = "Sbuk";
-            this.vCinc_uc22.TabIndex = 366;
-            this.vCinc_uc22.Value = 128;
+            this.vCinc_pbuk_uc22.A_FirstByteIndex = 5;
+            this.vCinc_pbuk_uc22.Address = "29";
+            this.vCinc_pbuk_uc22.BackColor = System.Drawing.Color.Transparent;
+            this.vCinc_pbuk_uc22.Bit0Title = " ";
+            this.vCinc_pbuk_uc22.Bit1Title = " ";
+            this.vCinc_pbuk_uc22.Bit2Title = " ";
+            this.vCinc_pbuk_uc22.Bit3Title = " ";
+            this.vCinc_pbuk_uc22.Bit4Title = " ";
+            this.vCinc_pbuk_uc22.Bit5Title = " ";
+            this.vCinc_pbuk_uc22.Bit6Title = "";
+            this.vCinc_pbuk_uc22.Bit7Title = "";
+            this.vCinc_pbuk_uc22.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.vCinc_pbuk_uc22.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_pbuk_uc22.Location = new System.Drawing.Point(128, 433);
+            this.vCinc_pbuk_uc22.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_pbuk_uc22.Name = "vCinc_pbuk_uc22";
+            this.vCinc_pbuk_uc22.PGN = "FEFC";
+            this.vCinc_pbuk_uc22.Size = new System.Drawing.Size(212, 120);
+            this.vCinc_pbuk_uc22.SPNName = "Sbuk";
+            this.vCinc_pbuk_uc22.TabIndex = 366;
+            this.vCinc_pbuk_uc22.Value = 128;
             // 
-            // vCinc_uc21
+            // vCinc_pnoz_uc21
             // 
-            this.vCinc_uc21.A_FirstByteIndex = 3;
-            this.vCinc_uc21.Address = "29";
-            this.vCinc_uc21.BackColor = System.Drawing.Color.Transparent;
-            this.vCinc_uc21.Bit0Title = " ";
-            this.vCinc_uc21.Bit1Title = " ";
-            this.vCinc_uc21.Bit2Title = " ";
-            this.vCinc_uc21.Bit3Title = " ";
-            this.vCinc_uc21.Bit4Title = " ";
-            this.vCinc_uc21.Bit5Title = " ";
-            this.vCinc_uc21.Bit6Title = "";
-            this.vCinc_uc21.Bit7Title = "";
-            this.vCinc_uc21.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
-            this.vCinc_uc21.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc21.Location = new System.Drawing.Point(141, 208);
-            this.vCinc_uc21.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc21.Name = "vCinc_uc21";
-            this.vCinc_uc21.PGN = "FEFC";
-            this.vCinc_uc21.Size = new System.Drawing.Size(160, 120);
-            this.vCinc_uc21.SPNName = "Pnoz";
-            this.vCinc_uc21.TabIndex = 365;
-            this.vCinc_uc21.Value = 128;
+            this.vCinc_pnoz_uc21.A_FirstByteIndex = 3;
+            this.vCinc_pnoz_uc21.Address = "29";
+            this.vCinc_pnoz_uc21.BackColor = System.Drawing.Color.Transparent;
+            this.vCinc_pnoz_uc21.Bit0Title = " ";
+            this.vCinc_pnoz_uc21.Bit1Title = " ";
+            this.vCinc_pnoz_uc21.Bit2Title = " ";
+            this.vCinc_pnoz_uc21.Bit3Title = " ";
+            this.vCinc_pnoz_uc21.Bit4Title = " ";
+            this.vCinc_pnoz_uc21.Bit5Title = " ";
+            this.vCinc_pnoz_uc21.Bit6Title = "";
+            this.vCinc_pnoz_uc21.Bit7Title = "";
+            this.vCinc_pnoz_uc21.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.vCinc_pnoz_uc21.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_pnoz_uc21.Location = new System.Drawing.Point(128, 203);
+            this.vCinc_pnoz_uc21.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_pnoz_uc21.Name = "vCinc_pnoz_uc21";
+            this.vCinc_pnoz_uc21.PGN = "FEFC";
+            this.vCinc_pnoz_uc21.Size = new System.Drawing.Size(202, 121);
+            this.vCinc_pnoz_uc21.SPNName = "Pnoz";
+            this.vCinc_pnoz_uc21.TabIndex = 365;
+            this.vCinc_pnoz_uc21.Value = 128;
             // 
-            // vCinc_uc20
+            // vCinc_snoz_uc20
             // 
-            this.vCinc_uc20.A_FirstByteIndex = 2;
-            this.vCinc_uc20.Address = "29";
-            this.vCinc_uc20.BackColor = System.Drawing.Color.Transparent;
-            this.vCinc_uc20.Bit0Title = " ";
-            this.vCinc_uc20.Bit1Title = " ";
-            this.vCinc_uc20.Bit2Title = " ";
-            this.vCinc_uc20.Bit3Title = " ";
-            this.vCinc_uc20.Bit4Title = " ";
-            this.vCinc_uc20.Bit5Title = " ";
-            this.vCinc_uc20.Bit6Title = "";
-            this.vCinc_uc20.Bit7Title = "";
-            this.vCinc_uc20.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
-            this.vCinc_uc20.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc20.Location = new System.Drawing.Point(151, 834);
-            this.vCinc_uc20.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc20.Name = "vCinc_uc20";
-            this.vCinc_uc20.PGN = "FEFC";
-            this.vCinc_uc20.Size = new System.Drawing.Size(160, 123);
-            this.vCinc_uc20.SPNName = "Snoz";
-            this.vCinc_uc20.TabIndex = 364;
-            this.vCinc_uc20.Value = 128;
+            this.vCinc_snoz_uc20.A_FirstByteIndex = 2;
+            this.vCinc_snoz_uc20.Address = "29";
+            this.vCinc_snoz_uc20.BackColor = System.Drawing.Color.Transparent;
+            this.vCinc_snoz_uc20.Bit0Title = " ";
+            this.vCinc_snoz_uc20.Bit1Title = " ";
+            this.vCinc_snoz_uc20.Bit2Title = " ";
+            this.vCinc_snoz_uc20.Bit3Title = " ";
+            this.vCinc_snoz_uc20.Bit4Title = " ";
+            this.vCinc_snoz_uc20.Bit5Title = " ";
+            this.vCinc_snoz_uc20.Bit6Title = "";
+            this.vCinc_snoz_uc20.Bit7Title = "";
+            this.vCinc_snoz_uc20.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.vCinc_snoz_uc20.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_snoz_uc20.Location = new System.Drawing.Point(138, 829);
+            this.vCinc_snoz_uc20.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_snoz_uc20.Name = "vCinc_snoz_uc20";
+            this.vCinc_snoz_uc20.PGN = "FEFC";
+            this.vCinc_snoz_uc20.Size = new System.Drawing.Size(202, 124);
+            this.vCinc_snoz_uc20.SPNName = "Snoz";
+            this.vCinc_snoz_uc20.TabIndex = 364;
+            this.vCinc_snoz_uc20.Value = 128;
             // 
-            // vCinc_uc19
+            // vCinc_sbuk_uc19
             // 
-            this.vCinc_uc19.Address = "29";
-            this.vCinc_uc19.BackColor = System.Drawing.Color.Transparent;
-            this.vCinc_uc19.Bit0Title = " ";
-            this.vCinc_uc19.Bit1Title = " ";
-            this.vCinc_uc19.Bit2Title = " ";
-            this.vCinc_uc19.Bit3Title = " ";
-            this.vCinc_uc19.Bit4Title = " ";
-            this.vCinc_uc19.Bit5Title = " ";
-            this.vCinc_uc19.Bit6Title = "";
-            this.vCinc_uc19.Bit7Title = "";
-            this.vCinc_uc19.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
-            this.vCinc_uc19.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc19.Location = new System.Drawing.Point(151, 909);
-            this.vCinc_uc19.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc19.Name = "vCinc_uc19";
-            this.vCinc_uc19.PGN = "FEFC";
-            this.vCinc_uc19.Size = new System.Drawing.Size(160, 115);
-            this.vCinc_uc19.SPNName = "Pbuk";
-            this.vCinc_uc19.TabIndex = 363;
-            this.vCinc_uc19.Value = 128;
+            this.vCinc_sbuk_uc19.Address = "29";
+            this.vCinc_sbuk_uc19.BackColor = System.Drawing.Color.Transparent;
+            this.vCinc_sbuk_uc19.Bit0Title = " ";
+            this.vCinc_sbuk_uc19.Bit1Title = " ";
+            this.vCinc_sbuk_uc19.Bit2Title = " ";
+            this.vCinc_sbuk_uc19.Bit3Title = " ";
+            this.vCinc_sbuk_uc19.Bit4Title = " ";
+            this.vCinc_sbuk_uc19.Bit5Title = " ";
+            this.vCinc_sbuk_uc19.Bit6Title = "";
+            this.vCinc_sbuk_uc19.Bit7Title = "";
+            this.vCinc_sbuk_uc19.ControlMode = VCI_Forms_LIB.ControlModes.Trackbar;
+            this.vCinc_sbuk_uc19.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_sbuk_uc19.Location = new System.Drawing.Point(138, 904);
+            this.vCinc_sbuk_uc19.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_sbuk_uc19.Name = "vCinc_sbuk_uc19";
+            this.vCinc_sbuk_uc19.PGN = "FEFC";
+            this.vCinc_sbuk_uc19.Size = new System.Drawing.Size(202, 116);
+            this.vCinc_sbuk_uc19.SPNName = "Pbuk";
+            this.vCinc_sbuk_uc19.TabIndex = 363;
+            this.vCinc_sbuk_uc19.Value = 128;
             // 
             // vCinc_uc17
             // 
@@ -427,31 +461,31 @@
             this.vCinc_uc17.TabIndex = 362;
             this.vCinc_uc17.Value = 100;
             // 
-            // vCinc_uc16
+            // vCinc_helm_uc16
             // 
-            this.vCinc_uc16.A_FirstByteIndex = 4;
-            this.vCinc_uc16.Address = "29";
-            this.vCinc_uc16.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.vCinc_uc16.Bit0Title = "isBlocked";
-            this.vCinc_uc16.Bit1Title = " DP ovr helm";
-            this.vCinc_uc16.Bit2Title = " DP ovr joy";
-            this.vCinc_uc16.Bit3Title = " ";
-            this.vCinc_uc16.Bit4Title = " ";
-            this.vCinc_uc16.Bit5Title = " ";
-            this.vCinc_uc16.Bit6Title = "";
-            this.vCinc_uc16.Bit7Title = "";
-            this.vCinc_uc16.ControlMode = VCI_Forms_LIB.ControlModes.Gauge;
-            this.vCinc_uc16.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc16.Location = new System.Drawing.Point(523, 1666);
-            this.vCinc_uc16.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc16.MaxValue = 65535;
-            this.vCinc_uc16.Name = "vCinc_uc16";
-            this.vCinc_uc16.NumberOfBytes = 2;
-            this.vCinc_uc16.PGN = "FF66";
-            this.vCinc_uc16.Size = new System.Drawing.Size(200, 117);
-            this.vCinc_uc16.SPNName = "Helm";
-            this.vCinc_uc16.TabIndex = 361;
-            this.vCinc_uc16.Value = 180;
+            this.vCinc_helm_uc16.A_FirstByteIndex = 4;
+            this.vCinc_helm_uc16.Address = "29";
+            this.vCinc_helm_uc16.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.vCinc_helm_uc16.Bit0Title = "isBlocked";
+            this.vCinc_helm_uc16.Bit1Title = " DP ovr helm";
+            this.vCinc_helm_uc16.Bit2Title = " DP ovr joy";
+            this.vCinc_helm_uc16.Bit3Title = " ";
+            this.vCinc_helm_uc16.Bit4Title = " ";
+            this.vCinc_helm_uc16.Bit5Title = " ";
+            this.vCinc_helm_uc16.Bit6Title = "";
+            this.vCinc_helm_uc16.Bit7Title = "";
+            this.vCinc_helm_uc16.ControlMode = VCI_Forms_LIB.ControlModes.Gauge;
+            this.vCinc_helm_uc16.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_helm_uc16.Location = new System.Drawing.Point(523, 1666);
+            this.vCinc_helm_uc16.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_helm_uc16.MaxValue = 65535;
+            this.vCinc_helm_uc16.Name = "vCinc_helm_uc16";
+            this.vCinc_helm_uc16.NumberOfBytes = 2;
+            this.vCinc_helm_uc16.PGN = "FF66";
+            this.vCinc_helm_uc16.Size = new System.Drawing.Size(200, 117);
+            this.vCinc_helm_uc16.SPNName = "Helm";
+            this.vCinc_helm_uc16.TabIndex = 361;
+            this.vCinc_helm_uc16.Value = 180;
             // 
             // vCinc_uc15
             // 
@@ -535,11 +569,11 @@
             this.vCinc_uc12.Bit6Title = "Flip_Dutycycle";
             this.vCinc_uc12.Bit7Title = "";
             this.vCinc_uc12.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc12.Location = new System.Drawing.Point(256, 1666);
+            this.vCinc_uc12.Location = new System.Drawing.Point(48, 1666);
             this.vCinc_uc12.Margin = new System.Windows.Forms.Padding(0);
             this.vCinc_uc12.Name = "vCinc_uc12";
             this.vCinc_uc12.PGN = "FF59";
-            this.vCinc_uc12.Size = new System.Drawing.Size(99, 235);
+            this.vCinc_uc12.Size = new System.Drawing.Size(307, 235);
             this.vCinc_uc12.SPNName = "SWITCHES raw";
             this.vCinc_uc12.TabIndex = 357;
             // 
@@ -565,31 +599,34 @@
             this.vCinc_uc11.SPNName = "AUTOPILOT";
             this.vCinc_uc11.TabIndex = 356;
             // 
-            // vCinc_uc10
+            // vCinc_stationInCtrl_uc10
             // 
-            this.vCinc_uc10.A_FirstByteIndex = 1;
-            this.vCinc_uc10.Address = "29";
-            this.vCinc_uc10.BackColor = System.Drawing.Color.Gainsboro;
-            this.vCinc_uc10.Bit0Title = " ";
-            this.vCinc_uc10.Bit1Title = " ";
-            this.vCinc_uc10.Bit2Title = " ";
-            this.vCinc_uc10.Bit3Title = " ";
-            this.vCinc_uc10.Bit4Title = " ";
-            this.vCinc_uc10.Bit5Title = " ";
-            this.vCinc_uc10.Bit6Title = "";
-            this.vCinc_uc10.Bit7Title = "";
-            this.vCinc_uc10.ControlMode = VCI_Forms_LIB.ControlModes.Gauge;
-            this.vCinc_uc10.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc10.Location = new System.Drawing.Point(56, 1666);
-            this.vCinc_uc10.m_ticks = 2;
-            this.vCinc_uc10.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc10.MaxValue = 3;
-            this.vCinc_uc10.Name = "vCinc_uc10";
-            this.vCinc_uc10.PGN = "FF53";
-            this.vCinc_uc10.Size = new System.Drawing.Size(200, 235);
-            this.vCinc_uc10.SPNName = "active STATION";
-            this.vCinc_uc10.TabIndex = 355;
-            this.vCinc_uc10.Value = 1;
+            this.vCinc_stationInCtrl_uc10.A_FirstByteIndex = 1;
+            this.vCinc_stationInCtrl_uc10.Address = "29";
+            this.vCinc_stationInCtrl_uc10.BackColor = System.Drawing.Color.Gainsboro;
+            this.vCinc_stationInCtrl_uc10.Bit0Title = " ";
+            this.vCinc_stationInCtrl_uc10.Bit1Title = " ";
+            this.vCinc_stationInCtrl_uc10.Bit2Title = " ";
+            this.vCinc_stationInCtrl_uc10.Bit3Title = " ";
+            this.vCinc_stationInCtrl_uc10.Bit4Title = " ";
+            this.vCinc_stationInCtrl_uc10.Bit5Title = " ";
+            this.vCinc_stationInCtrl_uc10.Bit6Title = "";
+            this.vCinc_stationInCtrl_uc10.Bit7Title = "";
+            this.vCinc_stationInCtrl_uc10.ControlMode = VCI_Forms_LIB.ControlModes.Gauge;
+            this.vCinc_stationInCtrl_uc10.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_stationInCtrl_uc10.G_EndAngle = 215;
+            this.vCinc_stationInCtrl_uc10.G_StartAngle = 148;
+            this.vCinc_stationInCtrl_uc10.Location = new System.Drawing.Point(2269, 764);
+            this.vCinc_stationInCtrl_uc10.m_ticks = 1;
+            this.vCinc_stationInCtrl_uc10.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_stationInCtrl_uc10.MaxValue = 2;
+            this.vCinc_stationInCtrl_uc10.MinValue = 1;
+            this.vCinc_stationInCtrl_uc10.Name = "vCinc_stationInCtrl_uc10";
+            this.vCinc_stationInCtrl_uc10.PGN = "FF53";
+            this.vCinc_stationInCtrl_uc10.Size = new System.Drawing.Size(200, 235);
+            this.vCinc_stationInCtrl_uc10.SPNName = "active STATION";
+            this.vCinc_stationInCtrl_uc10.TabIndex = 355;
+            this.vCinc_stationInCtrl_uc10.Value = 1;
             // 
             // vCinc_uc9
             // 
@@ -636,7 +673,7 @@
             // vCinc_SFversion1
             // 
             this.vCinc_SFversion1.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.vCinc_SFversion1.Location = new System.Drawing.Point(1845, 131);
+            this.vCinc_SFversion1.Location = new System.Drawing.Point(1702, 129);
             this.vCinc_SFversion1.Major = 18;
             this.vCinc_SFversion1.Major_firstbyteindex = 2;
             this.vCinc_SFversion1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -849,6 +886,60 @@
             this.vCinc_uc18.SPNName = "DP?";
             this.vCinc_uc18.TabIndex = 342;
             // 
+            // vCinc_BackupPanel1
+            // 
+            this.vCinc_BackupPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(28)))));
+            this.vCinc_BackupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_BackupPanel1.Location = new System.Drawing.Point(2815, 249);
+            this.vCinc_BackupPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_BackupPanel1.Name = "vCinc_BackupPanel1";
+            this.vCinc_BackupPanel1.Size = new System.Drawing.Size(330, 280);
+            this.vCinc_BackupPanel1.TabIndex = 385;
+            // 
+            // vCinc_ClutchPanel1
+            // 
+            this.vCinc_ClutchPanel1.BackColor = System.Drawing.Color.SlateGray;
+            this.vCinc_ClutchPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_ClutchPanel1.Location = new System.Drawing.Point(2545, 739);
+            this.vCinc_ClutchPanel1.Name = "vCinc_ClutchPanel1";
+            this.vCinc_ClutchPanel1.Size = new System.Drawing.Size(259, 221);
+            this.vCinc_ClutchPanel1.TabIndex = 380;
+            this.vCinc_ClutchPanel1.Uc2bitBtnA_Button1Name = "Button 1";
+            this.vCinc_ClutchPanel1.Uc2bitBtnA_Button2Name = "Button 2";
+            this.vCinc_ClutchPanel1.Uc2bitBtnB_Button1Name = "Button 1";
+            this.vCinc_ClutchPanel1.Uc2bitBtnB_Button2Name = "Button 2";
+            this.vCinc_ClutchPanel1.Uc2bitBtnC_Button1Name = "Button 1";
+            this.vCinc_ClutchPanel1.Uc2bitBtnC_Button2Name = "Button 2";
+            this.vCinc_ClutchPanel1.Uc2bitBtnD_Button1Name = "Button 1";
+            this.vCinc_ClutchPanel1.Uc2bitBtnD_Button2Name = "Button 2";
+            // 
+            // vCinc_ClutchPanel2
+            // 
+            this.vCinc_ClutchPanel2.BackColor = System.Drawing.Color.SlateGray;
+            this.vCinc_ClutchPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_ClutchPanel2.Location = new System.Drawing.Point(1821, 234);
+            this.vCinc_ClutchPanel2.Name = "vCinc_ClutchPanel2";
+            this.vCinc_ClutchPanel2.Size = new System.Drawing.Size(259, 218);
+            this.vCinc_ClutchPanel2.TabIndex = 382;
+            this.vCinc_ClutchPanel2.Uc2bitBtnA_Button1Name = "Button 1";
+            this.vCinc_ClutchPanel2.Uc2bitBtnA_Button2Name = "Button 2";
+            this.vCinc_ClutchPanel2.Uc2bitBtnB_Button1Name = "Button 1";
+            this.vCinc_ClutchPanel2.Uc2bitBtnB_Button2Name = "Button 2";
+            this.vCinc_ClutchPanel2.Uc2bitBtnC_Button1Name = "Button 1";
+            this.vCinc_ClutchPanel2.Uc2bitBtnC_Button2Name = "Button 2";
+            this.vCinc_ClutchPanel2.Uc2bitBtnD_Button1Name = "Button 1";
+            this.vCinc_ClutchPanel2.Uc2bitBtnD_Button2Name = "Button 2";
+            // 
+            // vCinc_BackupPanelClutch1
+            // 
+            this.vCinc_BackupPanelClutch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.vCinc_BackupPanelClutch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_BackupPanelClutch1.Location = new System.Drawing.Point(2988, 1070);
+            this.vCinc_BackupPanelClutch1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_BackupPanelClutch1.Name = "vCinc_BackupPanelClutch1";
+            this.vCinc_BackupPanelClutch1.Size = new System.Drawing.Size(259, 212);
+            this.vCinc_BackupPanelClutch1.TabIndex = 386;
+            // 
             // SSRSk12WithBKG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -856,6 +947,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(3374, 2135);
+            this.Controls.Add(this.vCinc_BackupPanelClutch1);
+            this.Controls.Add(this.vCinc_BackupPanel1);
+            this.Controls.Add(this.vCinc_BackupPanelEng1);
+            this.Controls.Add(this.vCinc_BackupPanelWJ1);
+            this.Controls.Add(this.vCinc_ClutchPanel2);
+            this.Controls.Add(this.vCinc_ClutchPanel1);
             this.Controls.Add(this.vCinc_Tiller1);
             this.Controls.Add(this.btn_webview2);
             this.Controls.Add(this.vCinc_LatLon_waypoint);
@@ -865,20 +962,20 @@
             this.Controls.Add(this.vCinc_DynPos1);
             this.Controls.Add(this.btn_setLatLonToUnity);
             this.Controls.Add(this.btn_PipeToggle);
-            this.Controls.Add(this.vCinc_uc24);
-            this.Controls.Add(this.vCinc_uc23);
-            this.Controls.Add(this.vCinc_uc22);
-            this.Controls.Add(this.vCinc_uc21);
-            this.Controls.Add(this.vCinc_uc20);
-            this.Controls.Add(this.vCinc_uc19);
+            this.Controls.Add(this.vCinc_Seng_uc24);
+            this.Controls.Add(this.vCinc_Peng_uc23);
+            this.Controls.Add(this.vCinc_pbuk_uc22);
+            this.Controls.Add(this.vCinc_pnoz_uc21);
+            this.Controls.Add(this.vCinc_snoz_uc20);
+            this.Controls.Add(this.vCinc_sbuk_uc19);
             this.Controls.Add(this.vCinc_uc17);
-            this.Controls.Add(this.vCinc_uc16);
+            this.Controls.Add(this.vCinc_helm_uc16);
             this.Controls.Add(this.vCinc_uc15);
             this.Controls.Add(this.vCinc_uc14);
             this.Controls.Add(this.vCinc_uc13);
             this.Controls.Add(this.vCinc_uc12);
             this.Controls.Add(this.vCinc_uc11);
-            this.Controls.Add(this.vCinc_uc10);
+            this.Controls.Add(this.vCinc_stationInCtrl_uc10);
             this.Controls.Add(this.vCinc_uc9);
             this.Controls.Add(this.vCinc_SFversion2);
             this.Controls.Add(this.vCinc_SFversion1);
@@ -914,20 +1011,20 @@
         #endregion
         private System.Windows.Forms.Button btn_setLatLonToUnity;
         private System.Windows.Forms.Button btn_PipeToggle;
-        private VCI_Forms_LIB.VCinc_uc vCinc_uc24;
-        private VCI_Forms_LIB.VCinc_uc vCinc_uc23;
-        private VCI_Forms_LIB.VCinc_uc vCinc_uc22;
-        private VCI_Forms_LIB.VCinc_uc vCinc_uc21;
-        private VCI_Forms_LIB.VCinc_uc vCinc_uc20;
-        private VCI_Forms_LIB.VCinc_uc vCinc_uc19;
+        private VCI_Forms_LIB.VCinc_uc vCinc_Seng_uc24;
+        private VCI_Forms_LIB.VCinc_uc vCinc_Peng_uc23;
+        private VCI_Forms_LIB.VCinc_uc vCinc_pbuk_uc22;
+        private VCI_Forms_LIB.VCinc_uc vCinc_pnoz_uc21;
+        private VCI_Forms_LIB.VCinc_uc vCinc_snoz_uc20;
+        private VCI_Forms_LIB.VCinc_uc vCinc_sbuk_uc19;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc17;
-        private VCI_Forms_LIB.VCinc_uc vCinc_uc16;
+        private VCI_Forms_LIB.VCinc_uc vCinc_helm_uc16;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc15;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc14;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc13;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc12;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc11;
-        private VCI_Forms_LIB.VCinc_uc vCinc_uc10;
+        private VCI_Forms_LIB.VCinc_uc vCinc_stationInCtrl_uc10;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc9;
         private VCI_Forms_LIB.VCinc_SFversion vCinc_SFversion2;
         private VCI_Forms_LIB.VCinc_SFversion vCinc_SFversion1;
@@ -956,5 +1053,11 @@
         private VCI_Forms_LIB.VCinc_LatLon vCinc_LatLon_mapCnter;
         private System.Windows.Forms.Button btn_webview2;
         private VCI_Forms_LIB.vCinc_Tiller vCinc_Tiller1;
+        private VCI_Forms_LIB.vCinc_BackupPanelWJ vCinc_BackupPanelWJ1;
+        private VCI_Forms_LIB.vCinc_BackupPanelEng vCinc_BackupPanelEng1;
+        private VCI_Forms_LIB.vCinc_BackupPanel vCinc_BackupPanel1;
+        private VCI_Forms_LIB.vCinc_ClutchPanel vCinc_ClutchPanel1;
+        private VCI_Forms_LIB.vCinc_ClutchPanel vCinc_ClutchPanel2;
+        private VCI_Forms_LIB.vCinc_BackupPanelClutch vCinc_BackupPanelClutch1;
     }
 }

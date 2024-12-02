@@ -203,6 +203,104 @@ namespace VCI_Forms_SPN.MyForms
             myByte &= (byte)~(1 << bitPosition);
             vCinc_uc18.Value = myByte;
         }
+
+        void PGN_Controlled()
+        {
+            if (vCinc_stationInCtrl_uc10.Value == 1)
+            {
+                Controll_tiller_levers();
+            }
+            else {
+                Controll_3AxisJoystick();
+            }
+            
+        }
+
+        void Controll_tiller_levers() {
+            vCinc_Seng_uc24.Value = (int)(vCinc_dualLevers1.Lever_RVal * 255 / 100.00);
+            vCinc_Peng_uc23.Value = (int)(vCinc_dualLevers1.Lever_LVal * 255 / 100.00);
+
+            // Tiller value ranges from -100 to +100, convert it to a 0 to 360 value
+            float tillerValue = vCinc_Tiller1.TillerValue;
+
+            if (tillerValue < 0)
+            {
+                // Convert -100 to 0 -> 180 to 0
+                vCinc_helm_uc16.Value = (int)(180 + (tillerValue * 180 / 100));
+                // Convert -100 to 0 -> 127 to 0
+                vCinc_pnoz_uc21.Value = (int)(127 + (tillerValue * 127 / 100));
+                vCinc_snoz_uc20.Value = (int)(127 + (tillerValue * 127 / 100));
+
+                // Must make the pbuck lower from 255 down to 0
+                // vCinc_pbuk_uc22.Value = (int)(255 + (tillerValue * 255 / 100));
+                vCinc_pbuk_uc22.Value = 127;
+                 // And sbuck increase from 0 to 255
+                 vCinc_sbuk_uc19.Value = (int)(-tillerValue * 255 / 100);
+            }
+            else
+            {
+                // Convert 0 to 100 -> 180 to 360
+                vCinc_helm_uc16.Value = (int)(180 + (tillerValue * 180 / 100));
+                // Convert 0 to 100 -> 127 to 254
+                vCinc_pnoz_uc21.Value = (int)(127 + (tillerValue * 127 / 100));
+                vCinc_snoz_uc20.Value = (int)(127 + (tillerValue * 127 / 100));
+
+                // Must make the sbuck lower from 255 down to 0
+                //  vCinc_sbuk_uc19.Value = (int)(255 - (tillerValue * 255 / 100));
+                vCinc_sbuk_uc19.Value = 127;
+                // And pbuck increase from 0 to 255
+                vCinc_pbuk_uc22.Value = (int)(tillerValue * 255 / 100);
+            }
+        }
+
+        void Controll_3AxisJoystick()
+        {
+            //joyx value from -100 to +100   -> for helm
+            //joyy value from -100 to +100  -> for throttle
+            //joyAxis 0-360 
+
+            float jx=  vCinc_3AxisJoy1.Joystick_XaxisValue;
+            float jy = vCinc_3AxisJoy1.Joystick_YaxisValue;
+            float jz = vCinc_3AxisJoy1.AngleValue;
+
+            if (jx < 0)
+            {
+                vCinc_helm_uc16.Value = (int)(180 + (jx * 180 / 100));
+                vCinc_pnoz_uc21.Value = (int)(127 + (jx * 127 / 100));
+                vCinc_snoz_uc20.Value = (int)(127 + (jx * 127 / 100));
+
+
+            }
+            else { 
+                vCinc_helm_uc16.Value = (int)(180 + (jx * 180 / 100));
+                vCinc_pnoz_uc21.Value = (int)(127 + (jx * 127 / 100));
+                vCinc_snoz_uc20.Value = (int)(127 + (jx * 127 / 100));
+            
+            }
+
+
+
+            //vCinc_sbuk_uc19  need a value from 0 to 250 
+            //  vCinc_pbuk_uc22 need a value from 0 to 250
+            //use jy value from -100 to +100
+
+            if (jy < 0)
+            {
+                vCinc_sbuk_uc19.Value = (int)(125 + (jy * 125 / 100));
+                vCinc_pbuk_uc22.Value = (int)(125 + (jy * 125 / 100));
+            }
+            else
+            {
+                vCinc_sbuk_uc19.Value = (int)(125 + (jy * 125 / 100));
+                vCinc_pbuk_uc22.Value = (int)(125 + (jy * 125 / 100));
+            }
+
+            //use angle 0-360 for throttle
+            vCinc_Seng_uc24.Value = (int)(jz * 255 / 360);
+            vCinc_Peng_uc23.Value = (int)(jz * 255 / 360);
+
+        }
+
         private void Looptimer_Tick(object sender, EventArgs e)
         {
             lock (_syncLock)
@@ -212,6 +310,8 @@ namespace VCI_Forms_SPN.MyForms
                     VESSEL_LOC = vCinc_LatLon_mapCnter.GetLatLon();
                     VESSEL_HEADING = (tb_manualHEading.Value / 100.00) % 360.00;
                 }
+                PGN_Controlled();
+
                 vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, VESSEL_HEADING);
                 WAYPOINT_LOC = vCinc_DynPos1.Get_WayPointLOC();
                 vCinc_LatLon_waypoint.SetLatLon(WAYPOINT_LOC);
