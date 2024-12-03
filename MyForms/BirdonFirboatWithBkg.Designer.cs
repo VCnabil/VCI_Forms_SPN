@@ -82,6 +82,8 @@
             this.vCinc_stationInCtrl_uc10 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc16 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc10 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_SFversion3 = new VCI_Forms_LIB.VCinc_SFversion();
+            this.vCinc_SFversion1 = new VCI_Forms_LIB.VCinc_SFversion();
             ((System.ComponentModel.ISupportInitialize)(this.tb_manualHEading)).BeginInit();
             this.SuspendLayout();
             // 
@@ -962,6 +964,46 @@
             this.vCinc_uc10.TabIndex = 423;
             this.vCinc_uc10.Value = 500;
             // 
+            // vCinc_SFversion3
+            // 
+            this.vCinc_SFversion3.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.vCinc_SFversion3.Location = new System.Drawing.Point(2853, 1232);
+            this.vCinc_SFversion3.Major = 99;
+            this.vCinc_SFversion3.Major_firstbyteindex = 4;
+            this.vCinc_SFversion3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SFversion3.Minor = 1;
+            this.vCinc_SFversion3.Minor_firstbyteindex = 5;
+            this.vCinc_SFversion3.Name = "vCinc_SFversion3";
+            this.vCinc_SFversion3.PGN = "ff54";
+            this.vCinc_SFversion3.Priority = "0c";
+            this.vCinc_SFversion3.PrnName = "AM Birdon ";
+            this.vCinc_SFversion3.Rev = 5818;
+            this.vCinc_SFversion3.Rev_firstbyteindex = 6;
+            this.vCinc_SFversion3.Rev_numofbytes = 2;
+            this.vCinc_SFversion3.Size = new System.Drawing.Size(205, 158);
+            this.vCinc_SFversion3.Source = "34";
+            this.vCinc_SFversion3.TabIndex = 496;
+            // 
+            // vCinc_SFversion1
+            // 
+            this.vCinc_SFversion1.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.vCinc_SFversion1.Location = new System.Drawing.Point(1026, 532);
+            this.vCinc_SFversion1.Major = 99;
+            this.vCinc_SFversion1.Major_firstbyteindex = 2;
+            this.vCinc_SFversion1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SFversion1.Minor = 1001;
+            this.vCinc_SFversion1.Minor_firstbyteindex = 3;
+            this.vCinc_SFversion1.Minor_numofbytes = 2;
+            this.vCinc_SFversion1.Name = "vCinc_SFversion1";
+            this.vCinc_SFversion1.PGN = "ff30";
+            this.vCinc_SFversion1.PrnName = "CU Birdon";
+            this.vCinc_SFversion1.Rev = 6187;
+            this.vCinc_SFversion1.Rev_firstbyteindex = 5;
+            this.vCinc_SFversion1.Rev_numofbytes = 2;
+            this.vCinc_SFversion1.Size = new System.Drawing.Size(205, 180);
+            this.vCinc_SFversion1.Source = "29";
+            this.vCinc_SFversion1.TabIndex = 495;
+            // 
             // BirdonFirboatWithBkg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -969,6 +1011,8 @@
             this.BackgroundImage = global::VCI_Forms_SPN.Properties.Resources._2953___Birdon_Fireboat_SysDiag;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(3374, 2135);
+            this.Controls.Add(this.vCinc_SFversion3);
+            this.Controls.Add(this.vCinc_SFversion1);
             this.Controls.Add(this.vCinc_uc10);
             this.Controls.Add(this.vCinc_uc16);
             this.Controls.Add(this.vCinc_stationInCtrl_uc10);
@@ -1090,5 +1134,7 @@
         private VCI_Forms_LIB.VCinc_uc vCinc_stationInCtrl_uc10;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc16;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc10;
+        private VCI_Forms_LIB.VCinc_SFversion vCinc_SFversion3;
+        private VCI_Forms_LIB.VCinc_SFversion vCinc_SFversion1;
     }
 }
