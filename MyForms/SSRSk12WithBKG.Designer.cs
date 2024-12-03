@@ -41,12 +41,8 @@
             this.btn_restBit1 = new System.Windows.Forms.Button();
             this.btn_restBit0 = new System.Windows.Forms.Button();
             this.btn_webview2 = new System.Windows.Forms.Button();
-            this.vCinc_BackupPanelEng1 = new VCI_Forms_LIB.vCinc_BackupPanelEng();
-            this.vCinc_BackupPanelWJ1 = new VCI_Forms_LIB.vCinc_BackupPanelWJ();
-            this.vCinc_Tiller1 = new VCI_Forms_LIB.vCinc_Tiller();
             this.vCinc_LatLon_waypoint = new VCI_Forms_LIB.VCinc_LatLon();
             this.vCinc_LatLon_mapCnter = new VCI_Forms_LIB.VCinc_LatLon();
-            this.vCinc_dualLevers1 = new VCI_Forms_LIB.vCinc_dualLevers();
             this.vCinc_3AxisJoy1 = new VCI_Forms_LIB.vCinc_3AxisJoy();
             this.vCinc_DynPos1 = new VCI_Forms_LIB.VCinc_DynPos();
             this.vCinc_Seng_uc24 = new VCI_Forms_LIB.VCinc_uc();
@@ -75,10 +71,15 @@
             this.vCinc_uc2 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc1 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc18 = new VCI_Forms_LIB.VCinc_uc();
-            this.vCinc_BackupPanel1 = new VCI_Forms_LIB.vCinc_BackupPanel();
+            this.vCinc_dualLevers1 = new VCI_Forms_LIB.vCinc_dualLevers();
+            this.vCinc_Tiller1 = new VCI_Forms_LIB.vCinc_Tiller();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.vCinc_ClutchPanel1 = new VCI_Forms_LIB.vCinc_ClutchPanel();
             this.vCinc_ClutchPanel2 = new VCI_Forms_LIB.vCinc_ClutchPanel();
-            this.vCinc_BackupPanelClutch1 = new VCI_Forms_LIB.vCinc_BackupPanelClutch();
+            this.vCinc_BackupPanelWJ1 = new VCI_Forms_LIB.vCinc_BackupPanelWJ();
+            this.vCinc_BackupPanelEng1 = new VCI_Forms_LIB.vCinc_BackupPanelEng();
+            this.vCinc_SFversion3 = new VCI_Forms_LIB.VCinc_SFversion();
             ((System.ComponentModel.ISupportInitialize)(this.tb_manualHEading)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,44 +208,6 @@
             this.btn_webview2.Text = "Dist";
             this.btn_webview2.UseVisualStyleBackColor = true;
             // 
-            // vCinc_BackupPanelEng1
-            // 
-            this.vCinc_BackupPanelEng1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vCinc_BackupPanelEng1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_BackupPanelEng1.Location = new System.Drawing.Point(2389, 234);
-            this.vCinc_BackupPanelEng1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_BackupPanelEng1.Name = "vCinc_BackupPanelEng1";
-            this.vCinc_BackupPanelEng1.Size = new System.Drawing.Size(271, 170);
-            this.vCinc_BackupPanelEng1.TabIndex = 384;
-            this.vCinc_BackupPanelEng1.Uc2bitBtnA_Button1Name = "Button 1";
-            this.vCinc_BackupPanelEng1.Uc2bitBtnA_Button2Name = "Button 2";
-            this.vCinc_BackupPanelEng1.Uc2bitBtnB_Button1Name = "Button 1";
-            this.vCinc_BackupPanelEng1.Uc2bitBtnB_Button2Name = "Button 2";
-            // 
-            // vCinc_BackupPanelWJ1
-            // 
-            this.vCinc_BackupPanelWJ1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.vCinc_BackupPanelWJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_BackupPanelWJ1.Location = new System.Drawing.Point(2085, 234);
-            this.vCinc_BackupPanelWJ1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_BackupPanelWJ1.Name = "vCinc_BackupPanelWJ1";
-            this.vCinc_BackupPanelWJ1.Size = new System.Drawing.Size(300, 170);
-            this.vCinc_BackupPanelWJ1.TabIndex = 383;
-            this.vCinc_BackupPanelWJ1.Uc2bitBtnA_Button1Name = "Button 1";
-            this.vCinc_BackupPanelWJ1.Uc2bitBtnA_Button2Name = "Button 2";
-            this.vCinc_BackupPanelWJ1.Uc2bitBtnB_Button1Name = "Button 1";
-            this.vCinc_BackupPanelWJ1.Uc2bitBtnB_Button2Name = "Button 2";
-            // 
-            // vCinc_Tiller1
-            // 
-            this.vCinc_Tiller1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.vCinc_Tiller1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.vCinc_Tiller1.Location = new System.Drawing.Point(1767, 753);
-            this.vCinc_Tiller1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_Tiller1.Name = "vCinc_Tiller1";
-            this.vCinc_Tiller1.Size = new System.Drawing.Size(193, 245);
-            this.vCinc_Tiller1.TabIndex = 379;
-            // 
             // vCinc_LatLon_waypoint
             // 
             this.vCinc_LatLon_waypoint.BackColor = System.Drawing.Color.DarkOrange;
@@ -264,16 +227,6 @@
             this.vCinc_LatLon_mapCnter.Name = "vCinc_LatLon_mapCnter";
             this.vCinc_LatLon_mapCnter.Size = new System.Drawing.Size(470, 74);
             this.vCinc_LatLon_mapCnter.TabIndex = 376;
-            // 
-            // vCinc_dualLevers1
-            // 
-            this.vCinc_dualLevers1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.vCinc_dualLevers1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_dualLevers1.Location = new System.Drawing.Point(1988, 759);
-            this.vCinc_dualLevers1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_dualLevers1.Name = "vCinc_dualLevers1";
-            this.vCinc_dualLevers1.Size = new System.Drawing.Size(208, 240);
-            this.vCinc_dualLevers1.TabIndex = 375;
             // 
             // vCinc_3AxisJoy1
             // 
@@ -653,7 +606,7 @@
             // vCinc_SFversion2
             // 
             this.vCinc_SFversion2.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.vCinc_SFversion2.Location = new System.Drawing.Point(1226, 649);
+            this.vCinc_SFversion2.Location = new System.Drawing.Point(1074, 565);
             this.vCinc_SFversion2.Major = 87;
             this.vCinc_SFversion2.Major_firstbyteindex = 0;
             this.vCinc_SFversion2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -673,7 +626,7 @@
             // vCinc_SFversion1
             // 
             this.vCinc_SFversion1.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.vCinc_SFversion1.Location = new System.Drawing.Point(1702, 129);
+            this.vCinc_SFversion1.Location = new System.Drawing.Point(1092, 298);
             this.vCinc_SFversion1.Major = 18;
             this.vCinc_SFversion1.Major_firstbyteindex = 2;
             this.vCinc_SFversion1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -886,59 +839,106 @@
             this.vCinc_uc18.SPNName = "DP?";
             this.vCinc_uc18.TabIndex = 342;
             // 
-            // vCinc_BackupPanel1
+            // vCinc_dualLevers1
             // 
-            this.vCinc_BackupPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(28)))));
-            this.vCinc_BackupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_BackupPanel1.Location = new System.Drawing.Point(2815, 249);
-            this.vCinc_BackupPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_BackupPanel1.Name = "vCinc_BackupPanel1";
-            this.vCinc_BackupPanel1.Size = new System.Drawing.Size(330, 280);
-            this.vCinc_BackupPanel1.TabIndex = 385;
+            this.vCinc_dualLevers1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.vCinc_dualLevers1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_dualLevers1.Location = new System.Drawing.Point(1988, 759);
+            this.vCinc_dualLevers1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_dualLevers1.Name = "vCinc_dualLevers1";
+            this.vCinc_dualLevers1.Size = new System.Drawing.Size(208, 240);
+            this.vCinc_dualLevers1.TabIndex = 375;
+            // 
+            // vCinc_Tiller1
+            // 
+            this.vCinc_Tiller1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.vCinc_Tiller1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.vCinc_Tiller1.Location = new System.Drawing.Point(1751, 754);
+            this.vCinc_Tiller1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_Tiller1.Name = "vCinc_Tiller1";
+            this.vCinc_Tiller1.Size = new System.Drawing.Size(191, 245);
+            this.vCinc_Tiller1.TabIndex = 379;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(1587, 829);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(136, 28);
+            this.checkBox1.TabIndex = 380;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(2923, 787);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(136, 28);
+            this.checkBox2.TabIndex = 381;
+            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // vCinc_ClutchPanel1
             // 
-            this.vCinc_ClutchPanel1.BackColor = System.Drawing.Color.SlateGray;
+            this.vCinc_ClutchPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.vCinc_ClutchPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_ClutchPanel1.Location = new System.Drawing.Point(2545, 739);
+            this.vCinc_ClutchPanel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.vCinc_ClutchPanel1.Location = new System.Drawing.Point(2529, 739);
             this.vCinc_ClutchPanel1.Name = "vCinc_ClutchPanel1";
-            this.vCinc_ClutchPanel1.Size = new System.Drawing.Size(259, 221);
-            this.vCinc_ClutchPanel1.TabIndex = 380;
-            this.vCinc_ClutchPanel1.Uc2bitBtnA_Button1Name = "Button 1";
-            this.vCinc_ClutchPanel1.Uc2bitBtnA_Button2Name = "Button 2";
-            this.vCinc_ClutchPanel1.Uc2bitBtnB_Button1Name = "Button 1";
-            this.vCinc_ClutchPanel1.Uc2bitBtnB_Button2Name = "Button 2";
-            this.vCinc_ClutchPanel1.Uc2bitBtnC_Button1Name = "Button 1";
-            this.vCinc_ClutchPanel1.Uc2bitBtnC_Button2Name = "Button 2";
-            this.vCinc_ClutchPanel1.Uc2bitBtnD_Button1Name = "Button 1";
-            this.vCinc_ClutchPanel1.Uc2bitBtnD_Button2Name = "Button 2";
+            this.vCinc_ClutchPanel1.Size = new System.Drawing.Size(300, 200);
+            this.vCinc_ClutchPanel1.TabIndex = 382;
             // 
             // vCinc_ClutchPanel2
             // 
-            this.vCinc_ClutchPanel2.BackColor = System.Drawing.Color.SlateGray;
+            this.vCinc_ClutchPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.vCinc_ClutchPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_ClutchPanel2.Location = new System.Drawing.Point(1821, 234);
+            this.vCinc_ClutchPanel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.vCinc_ClutchPanel2.Location = new System.Drawing.Point(1751, 239);
             this.vCinc_ClutchPanel2.Name = "vCinc_ClutchPanel2";
-            this.vCinc_ClutchPanel2.Size = new System.Drawing.Size(259, 218);
-            this.vCinc_ClutchPanel2.TabIndex = 382;
-            this.vCinc_ClutchPanel2.Uc2bitBtnA_Button1Name = "Button 1";
-            this.vCinc_ClutchPanel2.Uc2bitBtnA_Button2Name = "Button 2";
-            this.vCinc_ClutchPanel2.Uc2bitBtnB_Button1Name = "Button 1";
-            this.vCinc_ClutchPanel2.Uc2bitBtnB_Button2Name = "Button 2";
-            this.vCinc_ClutchPanel2.Uc2bitBtnC_Button1Name = "Button 1";
-            this.vCinc_ClutchPanel2.Uc2bitBtnC_Button2Name = "Button 2";
-            this.vCinc_ClutchPanel2.Uc2bitBtnD_Button1Name = "Button 1";
-            this.vCinc_ClutchPanel2.Uc2bitBtnD_Button2Name = "Button 2";
+            this.vCinc_ClutchPanel2.Size = new System.Drawing.Size(300, 200);
+            this.vCinc_ClutchPanel2.TabIndex = 383;
             // 
-            // vCinc_BackupPanelClutch1
+            // vCinc_BackupPanelWJ1
             // 
-            this.vCinc_BackupPanelClutch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.vCinc_BackupPanelClutch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_BackupPanelClutch1.Location = new System.Drawing.Point(2988, 1070);
-            this.vCinc_BackupPanelClutch1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_BackupPanelClutch1.Name = "vCinc_BackupPanelClutch1";
-            this.vCinc_BackupPanelClutch1.Size = new System.Drawing.Size(259, 212);
-            this.vCinc_BackupPanelClutch1.TabIndex = 386;
+            this.vCinc_BackupPanelWJ1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vCinc_BackupPanelWJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_BackupPanelWJ1.Location = new System.Drawing.Point(2056, 239);
+            this.vCinc_BackupPanelWJ1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_BackupPanelWJ1.Name = "vCinc_BackupPanelWJ1";
+            this.vCinc_BackupPanelWJ1.Size = new System.Drawing.Size(300, 160);
+            this.vCinc_BackupPanelWJ1.TabIndex = 384;
+            // 
+            // vCinc_BackupPanelEng1
+            // 
+            this.vCinc_BackupPanelEng1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vCinc_BackupPanelEng1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_BackupPanelEng1.Location = new System.Drawing.Point(2359, 239);
+            this.vCinc_BackupPanelEng1.Margin = new System.Windows.Forms.Padding(1);
+            this.vCinc_BackupPanelEng1.Name = "vCinc_BackupPanelEng1";
+            this.vCinc_BackupPanelEng1.Size = new System.Drawing.Size(280, 159);
+            this.vCinc_BackupPanelEng1.TabIndex = 385;
+            // 
+            // vCinc_SFversion3
+            // 
+            this.vCinc_SFversion3.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.vCinc_SFversion3.Location = new System.Drawing.Point(1074, 454);
+            this.vCinc_SFversion3.Major = 87;
+            this.vCinc_SFversion3.Major_firstbyteindex = 0;
+            this.vCinc_SFversion3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SFversion3.Minor = 1003;
+            this.vCinc_SFversion3.Minor_firstbyteindex = 1;
+            this.vCinc_SFversion3.Minor_numofbytes = 2;
+            this.vCinc_SFversion3.Name = "vCinc_SFversion3";
+            this.vCinc_SFversion3.PGN = "ff54";
+            this.vCinc_SFversion3.Priority = "0c";
+            this.vCinc_SFversion3.PrnName = "SSRS CU";
+            this.vCinc_SFversion3.Rev = 9166;
+            this.vCinc_SFversion3.Rev_firstbyteindex = 3;
+            this.vCinc_SFversion3.Rev_numofbytes = 2;
+            this.vCinc_SFversion3.Size = new System.Drawing.Size(128, 69);
+            this.vCinc_SFversion3.Source = "34";
+            this.vCinc_SFversion3.TabIndex = 386;
             // 
             // SSRSk12WithBKG
             // 
@@ -947,12 +947,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(3374, 2135);
-            this.Controls.Add(this.vCinc_BackupPanelClutch1);
-            this.Controls.Add(this.vCinc_BackupPanel1);
+            this.Controls.Add(this.vCinc_SFversion3);
             this.Controls.Add(this.vCinc_BackupPanelEng1);
             this.Controls.Add(this.vCinc_BackupPanelWJ1);
             this.Controls.Add(this.vCinc_ClutchPanel2);
             this.Controls.Add(this.vCinc_ClutchPanel1);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.vCinc_Tiller1);
             this.Controls.Add(this.btn_webview2);
             this.Controls.Add(this.vCinc_LatLon_waypoint);
@@ -1046,18 +1047,19 @@
         private System.Windows.Forms.Button btn_Validate;
         private VCI_Forms_LIB.VCinc_DynPos vCinc_DynPos1;
         private VCI_Forms_LIB.vCinc_3AxisJoy vCinc_3AxisJoy1;
-        private VCI_Forms_LIB.vCinc_dualLevers vCinc_dualLevers1;
         private System.Windows.Forms.Button btn_restBit1;
         private System.Windows.Forms.Button btn_restBit0;
         private VCI_Forms_LIB.VCinc_LatLon vCinc_LatLon_waypoint;
         private VCI_Forms_LIB.VCinc_LatLon vCinc_LatLon_mapCnter;
         private System.Windows.Forms.Button btn_webview2;
+        private VCI_Forms_LIB.vCinc_dualLevers vCinc_dualLevers1;
         private VCI_Forms_LIB.vCinc_Tiller vCinc_Tiller1;
-        private VCI_Forms_LIB.vCinc_BackupPanelWJ vCinc_BackupPanelWJ1;
-        private VCI_Forms_LIB.vCinc_BackupPanelEng vCinc_BackupPanelEng1;
-        private VCI_Forms_LIB.vCinc_BackupPanel vCinc_BackupPanel1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
         private VCI_Forms_LIB.vCinc_ClutchPanel vCinc_ClutchPanel1;
         private VCI_Forms_LIB.vCinc_ClutchPanel vCinc_ClutchPanel2;
-        private VCI_Forms_LIB.vCinc_BackupPanelClutch vCinc_BackupPanelClutch1;
+        private VCI_Forms_LIB.vCinc_BackupPanelWJ vCinc_BackupPanelWJ1;
+        private VCI_Forms_LIB.vCinc_BackupPanelEng vCinc_BackupPanelEng1;
+        private VCI_Forms_LIB.VCinc_SFversion vCinc_SFversion3;
     }
 }

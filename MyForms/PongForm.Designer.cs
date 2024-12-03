@@ -47,6 +47,9 @@
             this.lbl_onBus = new System.Windows.Forms.Label();
             this.btn_Validate = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.vCinc_SFversion3 = new VCI_Forms_LIB.VCinc_SFversion();
+            this.vCinc_SFversion2 = new VCI_Forms_LIB.VCinc_SFversion();
+            this.vCinc_SFversion1 = new VCI_Forms_LIB.VCinc_SFversion();
             ((System.ComponentModel.ISupportInitialize)(this.tb_P1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_P2)).BeginInit();
             this.SuspendLayout();
@@ -302,11 +305,75 @@
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // vCinc_SFversion3
+            // 
+            this.vCinc_SFversion3.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.vCinc_SFversion3.Location = new System.Drawing.Point(1377, 790);
+            this.vCinc_SFversion3.Major = 87;
+            this.vCinc_SFversion3.Major_firstbyteindex = 0;
+            this.vCinc_SFversion3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SFversion3.Minor = 1003;
+            this.vCinc_SFversion3.Minor_firstbyteindex = 1;
+            this.vCinc_SFversion3.Minor_numofbytes = 2;
+            this.vCinc_SFversion3.Name = "vCinc_SFversion3";
+            this.vCinc_SFversion3.PGN = "ff54";
+            this.vCinc_SFversion3.Priority = "0c";
+            this.vCinc_SFversion3.PrnName = "SSRS CU";
+            this.vCinc_SFversion3.Rev = 9166;
+            this.vCinc_SFversion3.Rev_firstbyteindex = 3;
+            this.vCinc_SFversion3.Rev_numofbytes = 2;
+            this.vCinc_SFversion3.Size = new System.Drawing.Size(268, 134);
+            this.vCinc_SFversion3.Source = "34";
+            this.vCinc_SFversion3.TabIndex = 491;
+            // 
+            // vCinc_SFversion2
+            // 
+            this.vCinc_SFversion2.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.vCinc_SFversion2.Location = new System.Drawing.Point(1285, 957);
+            this.vCinc_SFversion2.Major = 86;
+            this.vCinc_SFversion2.Major_firstbyteindex = 0;
+            this.vCinc_SFversion2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SFversion2.Minor = 1003;
+            this.vCinc_SFversion2.Minor_firstbyteindex = 1;
+            this.vCinc_SFversion2.Minor_numofbytes = 2;
+            this.vCinc_SFversion2.Name = "vCinc_SFversion2";
+            this.vCinc_SFversion2.PGN = "ff75";
+            this.vCinc_SFversion2.PrnName = "SSRS CU";
+            this.vCinc_SFversion2.Rev = 9166;
+            this.vCinc_SFversion2.Rev_firstbyteindex = 3;
+            this.vCinc_SFversion2.Rev_numofbytes = 2;
+            this.vCinc_SFversion2.Size = new System.Drawing.Size(271, 132);
+            this.vCinc_SFversion2.Source = "29";
+            this.vCinc_SFversion2.TabIndex = 490;
+            // 
+            // vCinc_SFversion1
+            // 
+            this.vCinc_SFversion1.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.vCinc_SFversion1.Location = new System.Drawing.Point(1486, 638);
+            this.vCinc_SFversion1.Major = 18;
+            this.vCinc_SFversion1.Major_firstbyteindex = 2;
+            this.vCinc_SFversion1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SFversion1.Minor = 1048;
+            this.vCinc_SFversion1.Minor_firstbyteindex = 3;
+            this.vCinc_SFversion1.Minor_numofbytes = 2;
+            this.vCinc_SFversion1.Name = "vCinc_SFversion1";
+            this.vCinc_SFversion1.PGN = "ff30";
+            this.vCinc_SFversion1.PrnName = "SSRS Clutch pannel";
+            this.vCinc_SFversion1.Rev = 9166;
+            this.vCinc_SFversion1.Rev_firstbyteindex = 5;
+            this.vCinc_SFversion1.Rev_numofbytes = 2;
+            this.vCinc_SFversion1.Size = new System.Drawing.Size(246, 123);
+            this.vCinc_SFversion1.Source = "29";
+            this.vCinc_SFversion1.TabIndex = 489;
+            // 
             // PongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1922, 1126);
+            this.Controls.Add(this.vCinc_SFversion3);
+            this.Controls.Add(this.vCinc_SFversion2);
+            this.Controls.Add(this.vCinc_SFversion1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.vCinc_BallX);
             this.Controls.Add(this.vCinc_BallY);
@@ -355,5 +422,8 @@
         private System.Windows.Forms.Label lbl_onBus;
         private System.Windows.Forms.Button btn_Validate;
         private System.Windows.Forms.CheckBox checkBox1;
+        private VCI_Forms_LIB.VCinc_SFversion vCinc_SFversion3;
+        private VCI_Forms_LIB.VCinc_SFversion vCinc_SFversion2;
+        private VCI_Forms_LIB.VCinc_SFversion vCinc_SFversion1;
     }
 }

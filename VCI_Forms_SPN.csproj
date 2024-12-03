@@ -136,6 +136,12 @@
       <DependentUpon>LabJ_v1.cs</DependentUpon>
     </Compile>
     <Compile Include="LBJK\MBIV_RX.cs" />
+    <Compile Include="MyForms\BirdonFirboatWithBkg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\BirdonFirboatWithBkg.Designer.cs">
+      <DependentUpon>BirdonFirboatWithBkg.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\HslcWithBKG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     <EmbeddedResource Include="LabJ_v1.resx">
       <DependentUpon>LabJ_v1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\BirdonFirboatWithBkg.resx">
+      <DependentUpon>BirdonFirboatWithBkg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForms\HslcWithBKG.resx">
       <DependentUpon>HslcWithBKG.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +235,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SerialForm.resx">
       <DependentUpon>SerialForm.cs</DependentUpon>
@@ -269,6 +279,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="_ExternalResources\Media\2953_-_Birdon Fireboat SysDiag.png" />
     <Content Include="_ExternalResources\Media\3306_P1.1_SSRS K12 No2 thru No4 SysDiag.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
