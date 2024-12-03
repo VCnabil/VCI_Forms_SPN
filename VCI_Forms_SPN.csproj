@@ -93,103 +93,103 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BirdonRawPgn.cs">
+    <Compile Include="MyForms\simpleOldForms\BirdonRawPgn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BirdonRawPgn.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\BirdonRawPgn.Designer.cs">
       <DependentUpon>BirdonRawPgn.cs</DependentUpon>
     </Compile>
-    <Compile Include="C3iForm.cs">
+    <Compile Include="MyForms\simpleOldForms\C3iForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C3iForm.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\C3iForm.Designer.cs">
       <DependentUpon>C3iForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MyForms\simpleOldForms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="MyForms\simpleOldForms\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSSRSDynePosition3.cs">
+    <Compile Include="MyForms\simpleOldForms\FormSSRSDynePosition3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSSRSDynePosition3.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\FormSSRSDynePosition3.Designer.cs">
       <DependentUpon>FormSSRSDynePosition3.cs</DependentUpon>
     </Compile>
-    <Compile Include="GG_SANFRANForm.cs">
+    <Compile Include="MyForms\simpleOldForms\GG_SANFRANForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GG_SANFRANForm.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\GG_SANFRANForm.Designer.cs">
       <DependentUpon>GG_SANFRANForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSLC.cs">
+    <Compile Include="MyForms\simpleOldForms\HSLC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSLC.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\HSLC.Designer.cs">
       <DependentUpon>HSLC.cs</DependentUpon>
     </Compile>
-    <Compile Include="LabJ_v1.cs">
+    <Compile Include="MyForms\simpleOldForms\LabJ_v1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LabJ_v1.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\LabJ_v1.Designer.cs">
       <DependentUpon>LabJ_v1.cs</DependentUpon>
     </Compile>
     <Compile Include="LBJK\MBIV_RX.cs" />
-    <Compile Include="MyForms\BirdonFirboatWithBkg.cs">
+    <Compile Include="MyForms\BKGFroms\BirdonFirboatWithBkg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyForms\BirdonFirboatWithBkg.Designer.cs">
+    <Compile Include="MyForms\BKGFroms\BirdonFirboatWithBkg.Designer.cs">
       <DependentUpon>BirdonFirboatWithBkg.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForms\HslcWithBKG.cs">
+    <Compile Include="MyForms\BKGFroms\HslcWithBKG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyForms\HslcWithBKG.Designer.cs">
+    <Compile Include="MyForms\BKGFroms\HslcWithBKG.Designer.cs">
       <DependentUpon>HslcWithBKG.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForms\PongForm.cs">
+    <Compile Include="MyForms\simpleOldForms\PongForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyForms\PongForm.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\PongForm.Designer.cs">
       <DependentUpon>PongForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForms\SSRSk12WithBKG.cs">
+    <Compile Include="MyForms\BKGFroms\SSRSk12WithBKG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyForms\SSRSk12WithBKG.Designer.cs">
+    <Compile Include="MyForms\BKGFroms\SSRSk12WithBKG.Designer.cs">
       <DependentUpon>SSRSk12WithBKG.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SerialForm.cs">
+    <Compile Include="MyForms\simpleOldForms\SerialForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SerialForm.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\SerialForm.Designer.cs">
       <DependentUpon>SerialForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Serial_C3.cs">
+    <Compile Include="MyForms\simpleOldForms\Serial_C3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Serial_C3.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\Serial_C3.Designer.cs">
       <DependentUpon>Serial_C3.cs</DependentUpon>
     </Compile>
-    <Compile Include="ssrsK12.cs">
+    <Compile Include="MyForms\simpleOldForms\ssrsK12.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ssrsK12.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\ssrsK12.Designer.cs">
       <DependentUpon>ssrsK12.cs</DependentUpon>
     </Compile>
-    <Compile Include="XIetaSendForm.cs">
+    <Compile Include="MyForms\simpleOldForms\XIetaSendForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="XIetaSendForm.Designer.cs">
+    <Compile Include="MyForms\simpleOldForms\XIetaSendForm.Designer.cs">
       <DependentUpon>XIetaSendForm.cs</DependentUpon>
     </Compile>
     <Compile Include="_BackEndDataOBJs\JSONSHIPdatamodle.cs" />
@@ -200,40 +200,40 @@
     <Compile Include="_GLobalz\TaskExtensions.cs" />
     <Compile Include="_Managers\PGN_MANAGER.cs" />
     <Compile Include="_Managers\PipeManager.cs" />
-    <EmbeddedResource Include="BirdonRawPgn.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\BirdonRawPgn.resx">
       <DependentUpon>BirdonRawPgn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C3iForm.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\C3iForm.resx">
       <DependentUpon>C3iForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSSRSDynePosition3.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\FormSSRSDynePosition3.resx">
       <DependentUpon>FormSSRSDynePosition3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GG_SANFRANForm.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\GG_SANFRANForm.resx">
       <DependentUpon>GG_SANFRANForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSLC.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\HSLC.resx">
       <DependentUpon>HSLC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LabJ_v1.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\LabJ_v1.resx">
       <DependentUpon>LabJ_v1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForms\BirdonFirboatWithBkg.resx">
+    <EmbeddedResource Include="MyForms\BKGFroms\BirdonFirboatWithBkg.resx">
       <DependentUpon>BirdonFirboatWithBkg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForms\HslcWithBKG.resx">
+    <EmbeddedResource Include="MyForms\BKGFroms\HslcWithBKG.resx">
       <DependentUpon>HslcWithBKG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForms\PongForm.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\PongForm.resx">
       <DependentUpon>PongForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForms\SSRSk12WithBKG.resx">
+    <EmbeddedResource Include="MyForms\BKGFroms\SSRSk12WithBKG.resx">
       <DependentUpon>SSRSk12WithBKG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -246,16 +246,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SerialForm.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\SerialForm.resx">
       <DependentUpon>SerialForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Serial_C3.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\Serial_C3.resx">
       <DependentUpon>Serial_C3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ssrsK12.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\ssrsK12.resx">
       <DependentUpon>ssrsK12.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="XIetaSendForm.resx">
+    <EmbeddedResource Include="MyForms\simpleOldForms\XIetaSendForm.resx">
       <DependentUpon>XIetaSendForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
