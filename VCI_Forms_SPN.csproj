@@ -67,6 +67,15 @@
       <HintPath>..\..\..\Program Files (x86)\Kvaser\Canlib\dotnet\x64\netstandard2.0\Kvaser.KvmLib.dll</HintPath>
     </Reference>
     <Reference Include="LabJack.LJM, Version=1.23.0.0, Culture=neutral, PublicKeyToken=0316e29ba8d40ce0, processorArchitecture=MSIL" />
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
     </Reference>
@@ -126,6 +135,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyForms\pdfFormSysdiag\pdf_2_read.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\pdf_2_read.Designer.cs">
+      <DependentUpon>pdf_2_read.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\simpleOldForms\BirdonRawPgn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +214,12 @@
     <Compile Include="MyForms\BKGFroms\SSRSk12WithBKG.Designer.cs">
       <DependentUpon>SSRSk12WithBKG.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForms\TessForms\TesseractWinForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\TessForms\TesseractWinForms.Designer.cs">
+      <DependentUpon>TesseractWinForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyForms\simpleOldForms\SerialForm.cs">
@@ -225,14 +246,29 @@
     <Compile Include="MyForms\simpleOldForms\XIetaSendForm.Designer.cs">
       <DependentUpon>XIetaSendForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="_BackEndDataOBJs\JSONSHIPdatamodle.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\IMatEffect.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\MyCV_SR_Locator.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\MyOCvTesseract.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\MyOpenCV5_3MatsCoordinator.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\OCV_LowerROIManager.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\OCV_MatEffectesFirst.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\Ocv_Stripper.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\OCV_TBLfinder.cs" />
+    <Compile Include="_BackEndDataOBJs\OCVObjs\MyPDF_toInnerFrameMat.cs" />
+    <Compile Include="_BackEndDataOBJs\OCVObjs\OCV_filterObj.cs" />
+    <Compile Include="_BackEndDataOBJs\OCVObjs\OCV_TempDataObj.cs" />
+    <Compile Include="_BackEndDataOBJs\ShipObjects\JSONSHIPdatamodle.cs" />
     <Compile Include="_GLobalz\ColorHelpers.cs" />
+    <Compile Include="_GLobalz\EventsManagerLib.cs" />
     <Compile Include="_GLobalz\G_Helpers.cs" />
     <Compile Include="_GLobalz\KvsrManager.cs" />
     <Compile Include="_GLobalz\LabJManager.cs" />
     <Compile Include="_GLobalz\TaskExtensions.cs" />
     <Compile Include="_Managers\PGN_MANAGER.cs" />
     <Compile Include="_Managers\PipeManager.cs" />
+    <EmbeddedResource Include="MyForms\pdfFormSysdiag\pdf_2_read.resx">
+      <DependentUpon>pdf_2_read.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForms\simpleOldForms\BirdonRawPgn.resx">
       <DependentUpon>BirdonRawPgn.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\BKGFroms\SSRSk12WithBKG.resx">
       <DependentUpon>SSRSk12WithBKG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\TessForms\TesseractWinForms.resx">
+      <DependentUpon>TesseractWinForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

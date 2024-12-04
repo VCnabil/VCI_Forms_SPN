@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VCI_Forms_SPN.MyForms;
+using VCI_Forms_SPN.MyForms.pdfFormSysdiag;
+using VCI_Forms_SPN.MyForms.TessForms;
 
 namespace VCI_Forms_SPN
 {
@@ -31,7 +33,12 @@ namespace VCI_Forms_SPN
             //Application.Run(new HslcWithBKG()); 
             // Application.Run(new PongForm());
             // Application.Run(new SSRSk12WithBKG()); 
-                Application.Run(new BirdonFirboatWithBkg());
+              //  Application.Run(new BirdonFirboatWithBkg());
+
+
+           // Application.Run(new TesseractWinForms());
+            Application.Run(new pdf_2_read());
+            
           //  Application.Run(new BirdonRawPgn());
           //  Application.Run(new Form1());
 
