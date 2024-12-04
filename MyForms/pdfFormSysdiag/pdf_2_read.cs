@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static VCI_Forms_SPN._GLobalz.G_Helpers;
 using static VCI_Forms_SPN._GLobalz.ColorHelpers;

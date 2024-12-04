@@ -135,11 +135,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyForms\pdfFormSysdiag\DEBUGER_StandaloneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\DEBUGER_StandaloneForm.Designer.cs">
+      <DependentUpon>DEBUGER_StandaloneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\FormPDFViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\FormPDFViewer.Designer.cs">
+      <DependentUpon>FormPDFViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\img_2_Analyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\img_2_Analyze.Designer.cs">
+      <DependentUpon>img_2_Analyze.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\pdfFormSysdiag\pdf_2_read.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyForms\pdfFormSysdiag\pdf_2_read.Designer.cs">
       <DependentUpon>pdf_2_read.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\UC_NavButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\UC_NavButton.Designer.cs">
+      <DependentUpon>UC_NavButton.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForms\simpleOldForms\BirdonRawPgn.cs">
       <SubType>Form</SubType>
@@ -266,8 +290,20 @@
     <Compile Include="_GLobalz\TaskExtensions.cs" />
     <Compile Include="_Managers\PGN_MANAGER.cs" />
     <Compile Include="_Managers\PipeManager.cs" />
+    <EmbeddedResource Include="MyForms\pdfFormSysdiag\DEBUGER_StandaloneForm.resx">
+      <DependentUpon>DEBUGER_StandaloneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\pdfFormSysdiag\FormPDFViewer.resx">
+      <DependentUpon>FormPDFViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\pdfFormSysdiag\img_2_Analyze.resx">
+      <DependentUpon>img_2_Analyze.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForms\pdfFormSysdiag\pdf_2_read.resx">
       <DependentUpon>pdf_2_read.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\pdfFormSysdiag\UC_NavButton.resx">
+      <DependentUpon>UC_NavButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\simpleOldForms\BirdonRawPgn.resx">
       <DependentUpon>BirdonRawPgn.cs</DependentUpon>
