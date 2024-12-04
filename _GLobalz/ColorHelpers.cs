@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenCvSharp;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -82,5 +83,137 @@ namespace VCI_Forms_SPN._GLobalz
             }
         }
 
+
+        #region colorscalar
+        public static Scalar H_GetRandomColorScalar()
+        {
+            Random random = new Random();
+
+            return new Scalar(random.NextDouble() * 255, random.NextDouble() * 255, random.NextDouble() * 255, 255);
+        }
+
+        public static Scalar H_GetRandom_ColorScalar(int arg_index)
+        {
+            int _indexmod = arg_index % 10;
+
+            switch (_indexmod)
+            {
+                case 0:
+                    return H_GetRandom_WhiteColorScalar();
+                case 1:
+                    return H_GetRandom_BlackColorScalar();
+                case 2:
+                    return H_GetRandom_RedScalar();
+                case 3:
+                    return H_GetRandom_GreenScalar();
+                case 4:
+                    return H_GetRandom_BlueScalar();
+                case 5:
+                    return H_GetRandom_OrangeScalar();
+                case 6:
+                    return H_GetRandom_YellowScalar();
+                case 7:
+                    return H_GetRandom_MagentaScalar();
+                case 8:
+                    return H_GetRandom_CyanScalar();
+                default:
+                    return H_GetRandomColorScalar();
+            }
+
+
+        }
+
+
+        public static Scalar H_GetColor_LRG_ROW_smlcel()
+        {
+            //               Blue Green Red Alfa  
+            return new Scalar(010, 010, 220, 255);
+        }
+
+        public static Scalar H_GetColor_LRG_ROW_LRGcel()
+        {
+            //               Blue Green Red Alfa  
+            return new Scalar(000, 000, 245, 255);
+        }
+
+        public static Scalar H_GetColor_sml_ROW_smlcel()
+        {
+            //               Blue Green Red Alfa  
+            return new Scalar(010, 250, 010, 255);
+        }
+
+        public static Scalar H_GetColor_sml_ROW_LRGcel()
+        {
+            //               Blue Green Red Alfa  
+            return new Scalar(000, 255, 255, 255);
+        }
+
+        public static Scalar H_GetRandom_WhiteColorScalar()
+        {
+            return new Scalar(255, 255, 255, 255);
+        }
+        public static Scalar H_GetRandom_BlackColorScalar()
+        {
+
+            Random random = new Random();
+            int randLownumber = random.Next(0, 20);
+
+            return new Scalar(randLownumber, randLownumber, randLownumber, 255);
+        }
+        public static Scalar H_GetRandom_RedScalar()
+        {
+            Random random = new Random();
+            int random_number_between_200and255 = random.Next(190, 255);
+            //Blue Green Red
+            return new Scalar(0, 0, random_number_between_200and255, 255);
+        }
+
+        public static Scalar H_GetRandom_GreenScalar()
+        {
+
+            Random random = new Random();
+            int random_number_between_200and255 = random.Next(190, 255);
+            //Blue Green Red
+            return new Scalar(0, random_number_between_200and255, 0, 255);
+        }
+        public static Scalar H_GetRandom_BlueScalar()
+        {
+            Random random = new Random();
+            int random_number_between_200and255 = random.Next(190, 255);
+            //Blue Green Red
+            return new Scalar(random_number_between_200and255, 0, 0, 255);
+        }
+
+        public static Scalar H_GetRandom_OrangeScalar()
+        {
+            Random random = new Random();
+            int random_number_between_200and255 = random.Next(190, 255);
+            //Blue Green Red
+            return new Scalar(0, random_number_between_200and255, random_number_between_200and255, 255);
+        }
+
+        public static Scalar H_GetRandom_YellowScalar()
+        {
+            Random random = new Random();
+            int random_number_between_200and255 = random.Next(190, 255);
+            //Blue Green Red
+            return new Scalar(random_number_between_200and255, random_number_between_200and255, random_number_between_200and255, 255);
+        }
+
+        public static Scalar H_GetRandom_MagentaScalar()
+        {
+            Random random = new Random();
+            int random_number_between_200and255 = random.Next(190, 255);
+            //Blue Green Red
+            return new Scalar(random_number_between_200and255, 0, random_number_between_200and255, 255);
+        }
+        public static Scalar H_GetRandom_CyanScalar()
+        {
+            Random random = new Random();
+            int random_number_between_200and255 = random.Next(190, 255);
+            //Blue Green Red
+            return new Scalar(0, random_number_between_200and255, random_number_between_200and255, 255);
+        }
+        #endregion
     }
 }

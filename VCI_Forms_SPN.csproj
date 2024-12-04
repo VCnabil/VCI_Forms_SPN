@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\PdfiumViewer.Native.x86_64.v8-xfa.2018.4.8.256\build\PdfiumViewer.Native.x86_64.v8-xfa.props" Condition="Exists('packages\PdfiumViewer.Native.x86_64.v8-xfa.2018.4.8.256\build\PdfiumViewer.Native.x86_64.v8-xfa.props')" />
+  <Import Project="packages\OpenCvSharp4.runtime.win.4.10.0.20241108\build\netstandard\OpenCvSharp4.runtime.win.props" Condition="Exists('packages\OpenCvSharp4.runtime.win.4.10.0.20241108\build\netstandard\OpenCvSharp4.runtime.win.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -65,6 +67,15 @@
       <HintPath>..\..\..\Program Files (x86)\Kvaser\Canlib\dotnet\x64\netstandard2.0\Kvaser.KvmLib.dll</HintPath>
     </Reference>
     <Reference Include="LabJack.LJM, Version=1.23.0.0, Culture=neutral, PublicKeyToken=0316e29ba8d40ce0, processorArchitecture=MSIL" />
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
     </Reference>
@@ -77,8 +88,33 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>packages\OpenCvSharp4.4.10.0.20241108\lib\netstandard2.0\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>packages\OpenCvSharp4.Extensions.4.10.0.20241108\lib\netstandard2.0\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfiumViewer, Version=2.13.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
+      <HintPath>packages\PdfiumViewer.2.13.0.0\lib\net20\PdfiumViewer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Drawing.Common.9.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.6.0\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.6.0\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -88,11 +124,47 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tesseract, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Tesseract.5.2.0\lib\net47\Tesseract.dll</HintPath>
+    </Reference>
     <Reference Include="VCI_Forms_LIB">
       <HintPath>..\..\VCI_Forms_LIB\VCI_Forms_LIB\bin\Debug\VCI_Forms_LIB.dll</HintPath>
     </Reference>
+    <Reference Include="WriteableBitmapEx.Wpf, Version=1.6.8.0, Culture=neutral, PublicKeyToken=50375ca6144f1c69, processorArchitecture=MSIL">
+      <HintPath>packages\WriteableBitmapEx.1.6.8\lib\net40\WriteableBitmapEx.Wpf.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyForms\pdfFormSysdiag\DEBUGER_StandaloneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\DEBUGER_StandaloneForm.Designer.cs">
+      <DependentUpon>DEBUGER_StandaloneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\FormPDFViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\FormPDFViewer.Designer.cs">
+      <DependentUpon>FormPDFViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\img_2_Analyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\img_2_Analyze.Designer.cs">
+      <DependentUpon>img_2_Analyze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\pdf_2_read.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\pdf_2_read.Designer.cs">
+      <DependentUpon>pdf_2_read.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\UC_NavButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyForms\pdfFormSysdiag\UC_NavButton.Designer.cs">
+      <DependentUpon>UC_NavButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\simpleOldForms\BirdonRawPgn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +238,12 @@
     <Compile Include="MyForms\BKGFroms\SSRSk12WithBKG.Designer.cs">
       <DependentUpon>SSRSk12WithBKG.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForms\TessForms\TesseractWinForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\TessForms\TesseractWinForms.Designer.cs">
+      <DependentUpon>TesseractWinForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyForms\simpleOldForms\SerialForm.cs">
@@ -192,14 +270,42 @@
     <Compile Include="MyForms\simpleOldForms\XIetaSendForm.Designer.cs">
       <DependentUpon>XIetaSendForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="_BackEndDataOBJs\JSONSHIPdatamodle.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\IMatEffect.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\MyCV_SR_Locator.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\MyOCvTesseract.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\MyOpenCV3.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\MyOpenCV5_3MatsCoordinator.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\OCV_LowerROIManager.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\OCV_MatEffectesFirst.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\Ocv_Stripper.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\OCV_TBLfinder.cs" />
+    <Compile Include="_BackEndDataOBJs\OCVObjs\MyPDF_toInnerFrameMat.cs" />
+    <Compile Include="_BackEndDataOBJs\OCVObjs\OCV_filterObj.cs" />
+    <Compile Include="_BackEndDataOBJs\OCVObjs\OCV_TempDataObj.cs" />
+    <Compile Include="_BackEndDataOBJs\ShipObjects\JSONSHIPdatamodle.cs" />
     <Compile Include="_GLobalz\ColorHelpers.cs" />
+    <Compile Include="_GLobalz\EventsManagerLib.cs" />
     <Compile Include="_GLobalz\G_Helpers.cs" />
     <Compile Include="_GLobalz\KvsrManager.cs" />
     <Compile Include="_GLobalz\LabJManager.cs" />
     <Compile Include="_GLobalz\TaskExtensions.cs" />
     <Compile Include="_Managers\PGN_MANAGER.cs" />
     <Compile Include="_Managers\PipeManager.cs" />
+    <EmbeddedResource Include="MyForms\pdfFormSysdiag\DEBUGER_StandaloneForm.resx">
+      <DependentUpon>DEBUGER_StandaloneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\pdfFormSysdiag\FormPDFViewer.resx">
+      <DependentUpon>FormPDFViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\pdfFormSysdiag\img_2_Analyze.resx">
+      <DependentUpon>img_2_Analyze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\pdfFormSysdiag\pdf_2_read.resx">
+      <DependentUpon>pdf_2_read.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\pdfFormSysdiag\UC_NavButton.resx">
+      <DependentUpon>UC_NavButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForms\simpleOldForms\BirdonRawPgn.resx">
       <DependentUpon>BirdonRawPgn.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +342,9 @@
     <EmbeddedResource Include="MyForms\BKGFroms\SSRSk12WithBKG.resx">
       <DependentUpon>SSRSk12WithBKG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\TessForms\TesseractWinForms.resx">
+      <DependentUpon>TesseractWinForms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -269,6 +378,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="tessdata\eng.traineddata">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="tessdata\pdf.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="_ExternalResources\Media\3539_P2_STEML_TB00391_HSLC_SysDiag.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -298,5 +413,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets'))" />
+    <Error Condition="!Exists('packages\OpenCvSharp4.runtime.win.4.10.0.20241108\build\netstandard\OpenCvSharp4.runtime.win.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\OpenCvSharp4.runtime.win.4.10.0.20241108\build\netstandard\OpenCvSharp4.runtime.win.props'))" />
+    <Error Condition="!Exists('packages\PdfiumViewer.Native.x86_64.v8-xfa.2018.4.8.256\build\PdfiumViewer.Native.x86_64.v8-xfa.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\PdfiumViewer.Native.x86_64.v8-xfa.2018.4.8.256\build\PdfiumViewer.Native.x86_64.v8-xfa.props'))" />
+    <Error Condition="!Exists('packages\Tesseract.5.2.0\build\Tesseract.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Tesseract.5.2.0\build\Tesseract.targets'))" />
   </Target>
+  <Import Project="packages\Tesseract.5.2.0\build\Tesseract.targets" Condition="Exists('packages\Tesseract.5.2.0\build\Tesseract.targets')" />
 </Project>
