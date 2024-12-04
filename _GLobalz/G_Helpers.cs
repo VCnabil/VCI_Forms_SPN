@@ -14,7 +14,17 @@ namespace VCI_Forms_SPN._GLobalz
 {
     public static class G_Helpers
     {
-
+        public readonly struct WindowParameters
+        {
+            public int Width { get; }
+            public int Height { get; }
+            public WindowParameters(int width, int height)
+            {
+                Width = width;
+                Height = height;
+            }
+        }
+        public static readonly WindowParameters WP_imagebox_p7_p7 = new WindowParameters(1700, 1100);
 
         #region SysDiag
 

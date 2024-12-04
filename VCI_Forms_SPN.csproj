@@ -273,6 +273,7 @@
     <Compile Include="_BackEndDataOBJs\DocReaders\IMatEffect.cs" />
     <Compile Include="_BackEndDataOBJs\DocReaders\MyCV_SR_Locator.cs" />
     <Compile Include="_BackEndDataOBJs\DocReaders\MyOCvTesseract.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\MyOpenCV3.cs" />
     <Compile Include="_BackEndDataOBJs\DocReaders\MyOpenCV5_3MatsCoordinator.cs" />
     <Compile Include="_BackEndDataOBJs\DocReaders\OCV_LowerROIManager.cs" />
     <Compile Include="_BackEndDataOBJs\DocReaders\OCV_MatEffectesFirst.cs" />

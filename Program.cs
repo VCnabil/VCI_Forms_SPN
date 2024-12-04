@@ -36,10 +36,9 @@ namespace VCI_Forms_SPN
             //  Application.Run(new BirdonFirboatWithBkg());
 
 
-            // Application.Run(new TesseractWinForms());
+              Application.Run(new TesseractWinForms());
 
-            Application.Run(new img_2_Analyze());
-           // Application.Run(new img_2_Analyze());
+         //   Application.Run(new img_2_Analyze());
             //Application.Run(new pdf_2_read());
             
           //  Application.Run(new BirdonRawPgn());

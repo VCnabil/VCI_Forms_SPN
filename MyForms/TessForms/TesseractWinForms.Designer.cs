@@ -178,7 +178,7 @@
             // 
             this.mlbv_LinesP_PercentHeight.AutoSize = true;
             this.mlbv_LinesP_PercentHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbv_LinesP_PercentHeight.Location = new System.Drawing.Point(1278, 921);
+            this.mlbv_LinesP_PercentHeight.Location = new System.Drawing.Point(1280, 735);
             this.mlbv_LinesP_PercentHeight.Margin = new System.Windows.Forms.Padding(0);
             this.mlbv_LinesP_PercentHeight.Name = "mlbv_LinesP_PercentHeight";
             this.mlbv_LinesP_PercentHeight.Size = new System.Drawing.Size(36, 20);
@@ -191,7 +191,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(1073, 921);
+            this.label28.Location = new System.Drawing.Point(1075, 735);
             this.label28.Margin = new System.Windows.Forms.Padding(0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(132, 20);
@@ -203,7 +203,7 @@
             // trkbar_LinesP_PercentHeight
             // 
             this.trkbar_LinesP_PercentHeight.BackColor = System.Drawing.Color.RosyBrown;
-            this.trkbar_LinesP_PercentHeight.Location = new System.Drawing.Point(1068, 947);
+            this.trkbar_LinesP_PercentHeight.Location = new System.Drawing.Point(1070, 761);
             this.trkbar_LinesP_PercentHeight.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_LinesP_PercentHeight.MouseWheelBarPartitions = 100;
             this.trkbar_LinesP_PercentHeight.Name = "trkbar_LinesP_PercentHeight";
@@ -216,7 +216,7 @@
             // 
             this.mlbv_LinesP_PercentWidth.AutoSize = true;
             this.mlbv_LinesP_PercentWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbv_LinesP_PercentWidth.Location = new System.Drawing.Point(1278, 856);
+            this.mlbv_LinesP_PercentWidth.Location = new System.Drawing.Point(1280, 670);
             this.mlbv_LinesP_PercentWidth.Margin = new System.Windows.Forms.Padding(0);
             this.mlbv_LinesP_PercentWidth.Name = "mlbv_LinesP_PercentWidth";
             this.mlbv_LinesP_PercentWidth.Size = new System.Drawing.Size(36, 20);
@@ -229,7 +229,7 @@
             // 
             this.label99.AutoSize = true;
             this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label99.Location = new System.Drawing.Point(1073, 856);
+            this.label99.Location = new System.Drawing.Point(1075, 670);
             this.label99.Margin = new System.Windows.Forms.Padding(0);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(107, 20);
@@ -241,7 +241,7 @@
             // trkbar_LinesP_PercentWidth
             // 
             this.trkbar_LinesP_PercentWidth.BackColor = System.Drawing.Color.RosyBrown;
-            this.trkbar_LinesP_PercentWidth.Location = new System.Drawing.Point(1068, 882);
+            this.trkbar_LinesP_PercentWidth.Location = new System.Drawing.Point(1070, 696);
             this.trkbar_LinesP_PercentWidth.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_LinesP_PercentWidth.MouseWheelBarPartitions = 100;
             this.trkbar_LinesP_PercentWidth.Name = "trkbar_LinesP_PercentWidth";
@@ -253,7 +253,7 @@
             // lbl_LinesP_MaxDx
             // 
             this.lbl_LinesP_MaxDx.AutoSize = true;
-            this.lbl_LinesP_MaxDx.Location = new System.Drawing.Point(1135, 714);
+            this.lbl_LinesP_MaxDx.Location = new System.Drawing.Point(1137, 528);
             this.lbl_LinesP_MaxDx.Name = "lbl_LinesP_MaxDx";
             this.lbl_LinesP_MaxDx.Size = new System.Drawing.Size(108, 25);
             this.lbl_LinesP_MaxDx.TabIndex = 380;
@@ -261,7 +261,7 @@
             // 
             // tb_LinesP_MaxDx
             // 
-            this.tb_LinesP_MaxDx.Location = new System.Drawing.Point(1140, 742);
+            this.tb_LinesP_MaxDx.Location = new System.Drawing.Point(1142, 556);
             this.tb_LinesP_MaxDx.Name = "tb_LinesP_MaxDx";
             this.tb_LinesP_MaxDx.Size = new System.Drawing.Size(100, 31);
             this.tb_LinesP_MaxDx.TabIndex = 379;
@@ -271,7 +271,7 @@
             // 
             this.mblv_LinesP_Thr.AutoSize = true;
             this.mblv_LinesP_Thr.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mblv_LinesP_Thr.Location = new System.Drawing.Point(643, 725);
+            this.mblv_LinesP_Thr.Location = new System.Drawing.Point(645, 539);
             this.mblv_LinesP_Thr.Margin = new System.Windows.Forms.Padding(0);
             this.mblv_LinesP_Thr.Name = "mblv_LinesP_Thr";
             this.mblv_LinesP_Thr.Size = new System.Drawing.Size(36, 20);
@@ -283,7 +283,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(476, 725);
+            this.label22.Location = new System.Drawing.Point(478, 539);
             this.label22.Margin = new System.Windows.Forms.Padding(0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(122, 25);
@@ -294,7 +294,7 @@
             // 
             this.trkbar_LinesP_Thr.BackColor = System.Drawing.Color.Transparent;
             this.trkbar_LinesP_Thr.LargeChange = 1;
-            this.trkbar_LinesP_Thr.Location = new System.Drawing.Point(476, 750);
+            this.trkbar_LinesP_Thr.Location = new System.Drawing.Point(478, 564);
             this.trkbar_LinesP_Thr.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_LinesP_Thr.Maximum = 255;
             this.trkbar_LinesP_Thr.MouseWheelBarPartitions = 2;
@@ -307,7 +307,7 @@
             // lbl_LinesP_MaxDy
             // 
             this.lbl_LinesP_MaxDy.AutoSize = true;
-            this.lbl_LinesP_MaxDy.Location = new System.Drawing.Point(1026, 689);
+            this.lbl_LinesP_MaxDy.Location = new System.Drawing.Point(1028, 503);
             this.lbl_LinesP_MaxDy.Name = "lbl_LinesP_MaxDy";
             this.lbl_LinesP_MaxDy.Size = new System.Drawing.Size(154, 25);
             this.lbl_LinesP_MaxDy.TabIndex = 375;
@@ -315,7 +315,7 @@
             // 
             // tb_LinesP_MaxDy
             // 
-            this.tb_LinesP_MaxDy.Location = new System.Drawing.Point(1022, 717);
+            this.tb_LinesP_MaxDy.Location = new System.Drawing.Point(1024, 531);
             this.tb_LinesP_MaxDy.Name = "tb_LinesP_MaxDy";
             this.tb_LinesP_MaxDy.Size = new System.Drawing.Size(100, 31);
             this.tb_LinesP_MaxDy.TabIndex = 374;
@@ -335,7 +335,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(1135, 190);
+            this.label21.Location = new System.Drawing.Point(797, 158);
             this.label21.Margin = new System.Windows.Forms.Padding(0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(168, 29);
@@ -345,7 +345,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(8, 1506);
+            this.label20.Location = new System.Drawing.Point(10, 1320);
             this.label20.Margin = new System.Windows.Forms.Padding(0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(199, 25);
@@ -355,7 +355,7 @@
             // comboBox_AdaptiveThresh_tt2
             // 
             this.comboBox_AdaptiveThresh_tt2.FormattingEnabled = true;
-            this.comboBox_AdaptiveThresh_tt2.Location = new System.Drawing.Point(13, 1534);
+            this.comboBox_AdaptiveThresh_tt2.Location = new System.Drawing.Point(15, 1348);
             this.comboBox_AdaptiveThresh_tt2.Name = "comboBox_AdaptiveThresh_tt2";
             this.comboBox_AdaptiveThresh_tt2.Size = new System.Drawing.Size(183, 33);
             this.comboBox_AdaptiveThresh_tt2.TabIndex = 370;
@@ -377,7 +377,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(1076, 94);
+            this.label29.Location = new System.Drawing.Point(1097, 94);
             this.label29.Margin = new System.Windows.Forms.Padding(0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(36, 20);
@@ -416,7 +416,7 @@
             // 
             this.mlbv_LinesP_rho.AutoSize = true;
             this.mlbv_LinesP_rho.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbv_LinesP_rho.Location = new System.Drawing.Point(191, 723);
+            this.mlbv_LinesP_rho.Location = new System.Drawing.Point(193, 537);
             this.mlbv_LinesP_rho.Margin = new System.Windows.Forms.Padding(0);
             this.mlbv_LinesP_rho.Name = "mlbv_LinesP_rho";
             this.mlbv_LinesP_rho.Size = new System.Drawing.Size(36, 20);
@@ -468,7 +468,7 @@
             // 
             this.mlbv_AdaptiveThreshC.AutoSize = true;
             this.mlbv_AdaptiveThreshC.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbv_AdaptiveThreshC.Location = new System.Drawing.Point(1228, 633);
+            this.mlbv_AdaptiveThreshC.Location = new System.Drawing.Point(1230, 447);
             this.mlbv_AdaptiveThreshC.Margin = new System.Windows.Forms.Padding(0);
             this.mlbv_AdaptiveThreshC.Name = "mlbv_AdaptiveThreshC";
             this.mlbv_AdaptiveThreshC.Size = new System.Drawing.Size(36, 20);
@@ -494,7 +494,7 @@
             // 
             this.mlbv_CannyThr1.AutoSize = true;
             this.mlbv_CannyThr1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbv_CannyThr1.Location = new System.Drawing.Point(248, 296);
+            this.mlbv_CannyThr1.Location = new System.Drawing.Point(243, 259);
             this.mlbv_CannyThr1.Margin = new System.Windows.Forms.Padding(0);
             this.mlbv_CannyThr1.Name = "mlbv_CannyThr1";
             this.mlbv_CannyThr1.Size = new System.Drawing.Size(36, 20);
@@ -520,7 +520,7 @@
             // 
             this.mlbv_LinesP_thetaMultiplyer.AutoSize = true;
             this.mlbv_LinesP_thetaMultiplyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbv_LinesP_thetaMultiplyer.Location = new System.Drawing.Point(396, 725);
+            this.mlbv_LinesP_thetaMultiplyer.Location = new System.Drawing.Point(398, 539);
             this.mlbv_LinesP_thetaMultiplyer.Margin = new System.Windows.Forms.Padding(0);
             this.mlbv_LinesP_thetaMultiplyer.Name = "mlbv_LinesP_thetaMultiplyer";
             this.mlbv_LinesP_thetaMultiplyer.Size = new System.Drawing.Size(36, 20);
@@ -533,7 +533,7 @@
             // 
             this.mlbv_CannyThr2.AutoSize = true;
             this.mlbv_CannyThr2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbv_CannyThr2.Location = new System.Drawing.Point(246, 351);
+            this.mlbv_CannyThr2.Location = new System.Drawing.Point(241, 314);
             this.mlbv_CannyThr2.Margin = new System.Windows.Forms.Padding(0);
             this.mlbv_CannyThr2.Name = "mlbv_CannyThr2";
             this.mlbv_CannyThr2.Size = new System.Drawing.Size(36, 20);
@@ -546,7 +546,7 @@
             // 
             this.mlbv_StdThreshMaxV.AutoSize = true;
             this.mlbv_StdThreshMaxV.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbv_StdThreshMaxV.Location = new System.Drawing.Point(381, 647);
+            this.mlbv_StdThreshMaxV.Location = new System.Drawing.Point(382, 450);
             this.mlbv_StdThreshMaxV.Margin = new System.Windows.Forms.Padding(0);
             this.mlbv_StdThreshMaxV.Name = "mlbv_StdThreshMaxV";
             this.mlbv_StdThreshMaxV.Size = new System.Drawing.Size(36, 20);
@@ -572,7 +572,7 @@
             // 
             this.mlbv_StdThreshThr.AutoSize = true;
             this.mlbv_StdThreshThr.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbv_StdThreshThr.Location = new System.Drawing.Point(33, 647);
+            this.mlbv_StdThreshThr.Location = new System.Drawing.Point(34, 450);
             this.mlbv_StdThreshThr.Margin = new System.Windows.Forms.Padding(0);
             this.mlbv_StdThreshThr.Name = "mlbv_StdThreshThr";
             this.mlbv_StdThreshThr.Size = new System.Drawing.Size(36, 20);
@@ -585,7 +585,7 @@
             // 
             this.mlbl_sR_height.AutoSize = true;
             this.mlbl_sR_height.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sR_height.Location = new System.Drawing.Point(853, 1312);
+            this.mlbl_sR_height.Location = new System.Drawing.Point(855, 1126);
             this.mlbl_sR_height.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sR_height.Name = "mlbl_sR_height";
             this.mlbl_sR_height.Size = new System.Drawing.Size(36, 20);
@@ -598,7 +598,7 @@
             // 
             this.mlbl_sR_margin.AutoSize = true;
             this.mlbl_sR_margin.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sR_margin.Location = new System.Drawing.Point(853, 1246);
+            this.mlbl_sR_margin.Location = new System.Drawing.Point(855, 1060);
             this.mlbl_sR_margin.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sR_margin.Name = "mlbl_sR_margin";
             this.mlbl_sR_margin.Size = new System.Drawing.Size(36, 20);
@@ -611,7 +611,7 @@
             // 
             this.mlbl_sL_top.AutoSize = true;
             this.mlbl_sL_top.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sL_top.Location = new System.Drawing.Point(236, 1389);
+            this.mlbl_sL_top.Location = new System.Drawing.Point(238, 1203);
             this.mlbl_sL_top.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sL_top.Name = "mlbl_sL_top";
             this.mlbl_sL_top.Size = new System.Drawing.Size(36, 20);
@@ -624,7 +624,7 @@
             // 
             this.mlbl_sL_height.AutoSize = true;
             this.mlbl_sL_height.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sL_height.Location = new System.Drawing.Point(236, 1313);
+            this.mlbl_sL_height.Location = new System.Drawing.Point(238, 1127);
             this.mlbl_sL_height.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sL_height.Name = "mlbl_sL_height";
             this.mlbl_sL_height.Size = new System.Drawing.Size(36, 20);
@@ -637,7 +637,7 @@
             // 
             this.mlbl_sL_margin.AutoSize = true;
             this.mlbl_sL_margin.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sL_margin.Location = new System.Drawing.Point(236, 1247);
+            this.mlbl_sL_margin.Location = new System.Drawing.Point(238, 1061);
             this.mlbl_sL_margin.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sL_margin.Name = "mlbl_sL_margin";
             this.mlbl_sL_margin.Size = new System.Drawing.Size(36, 20);
@@ -650,7 +650,7 @@
             // 
             this.mlbl_sL_width.AutoSize = true;
             this.mlbl_sL_width.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sL_width.Location = new System.Drawing.Point(236, 1171);
+            this.mlbl_sL_width.Location = new System.Drawing.Point(238, 985);
             this.mlbl_sL_width.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sL_width.Name = "mlbl_sL_width";
             this.mlbl_sL_width.Size = new System.Drawing.Size(36, 20);
@@ -663,7 +663,7 @@
             // 
             this.mlbl_sL_mxgap.AutoSize = true;
             this.mlbl_sL_mxgap.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sL_mxgap.Location = new System.Drawing.Point(234, 1024);
+            this.mlbl_sL_mxgap.Location = new System.Drawing.Point(236, 838);
             this.mlbl_sL_mxgap.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sL_mxgap.Name = "mlbl_sL_mxgap";
             this.mlbl_sL_mxgap.Size = new System.Drawing.Size(36, 20);
@@ -677,7 +677,7 @@
             this.mlbl_sL_minLen.AutoSize = true;
             this.mlbl_sL_minLen.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mlbl_sL_minLen.ForeColor = System.Drawing.Color.Red;
-            this.mlbl_sL_minLen.Location = new System.Drawing.Point(234, 948);
+            this.mlbl_sL_minLen.Location = new System.Drawing.Point(236, 762);
             this.mlbl_sL_minLen.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sL_minLen.Name = "mlbl_sL_minLen";
             this.mlbl_sL_minLen.Size = new System.Drawing.Size(39, 20);
@@ -690,7 +690,7 @@
             // 
             this.mlbl_sV_top.AutoSize = true;
             this.mlbl_sV_top.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sV_top.Location = new System.Drawing.Point(533, 1388);
+            this.mlbl_sV_top.Location = new System.Drawing.Point(535, 1202);
             this.mlbl_sV_top.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sV_top.Name = "mlbl_sV_top";
             this.mlbl_sV_top.Size = new System.Drawing.Size(36, 20);
@@ -703,7 +703,7 @@
             // 
             this.mlbl_sV_height.AutoSize = true;
             this.mlbl_sV_height.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sV_height.Location = new System.Drawing.Point(533, 1312);
+            this.mlbl_sV_height.Location = new System.Drawing.Point(535, 1126);
             this.mlbl_sV_height.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sV_height.Name = "mlbl_sV_height";
             this.mlbl_sV_height.Size = new System.Drawing.Size(36, 20);
@@ -716,7 +716,7 @@
             // 
             this.mlbl_sV_margin.AutoSize = true;
             this.mlbl_sV_margin.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sV_margin.Location = new System.Drawing.Point(533, 1246);
+            this.mlbl_sV_margin.Location = new System.Drawing.Point(535, 1060);
             this.mlbl_sV_margin.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sV_margin.Name = "mlbl_sV_margin";
             this.mlbl_sV_margin.Size = new System.Drawing.Size(36, 20);
@@ -729,7 +729,7 @@
             // 
             this.mlbl_sV_width.AutoSize = true;
             this.mlbl_sV_width.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sV_width.Location = new System.Drawing.Point(533, 1170);
+            this.mlbl_sV_width.Location = new System.Drawing.Point(535, 984);
             this.mlbl_sV_width.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sV_width.Name = "mlbl_sV_width";
             this.mlbl_sV_width.Size = new System.Drawing.Size(36, 20);
@@ -742,7 +742,7 @@
             // 
             this.mlbl_sV_mxgap.AutoSize = true;
             this.mlbl_sV_mxgap.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sV_mxgap.Location = new System.Drawing.Point(531, 1023);
+            this.mlbl_sV_mxgap.Location = new System.Drawing.Point(533, 837);
             this.mlbl_sV_mxgap.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sV_mxgap.Name = "mlbl_sV_mxgap";
             this.mlbl_sV_mxgap.Size = new System.Drawing.Size(36, 20);
@@ -756,7 +756,7 @@
             this.mlbl_sV_minLen.AutoSize = true;
             this.mlbl_sV_minLen.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mlbl_sV_minLen.ForeColor = System.Drawing.Color.Red;
-            this.mlbl_sV_minLen.Location = new System.Drawing.Point(531, 947);
+            this.mlbl_sV_minLen.Location = new System.Drawing.Point(533, 761);
             this.mlbl_sV_minLen.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sV_minLen.Name = "mlbl_sV_minLen";
             this.mlbl_sV_minLen.Size = new System.Drawing.Size(39, 20);
@@ -769,7 +769,7 @@
             // 
             this.mlbl_sR_top.AutoSize = true;
             this.mlbl_sR_top.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sR_top.Location = new System.Drawing.Point(853, 1388);
+            this.mlbl_sR_top.Location = new System.Drawing.Point(855, 1202);
             this.mlbl_sR_top.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sR_top.Name = "mlbl_sR_top";
             this.mlbl_sR_top.Size = new System.Drawing.Size(36, 20);
@@ -782,7 +782,7 @@
             // 
             this.mlbl_sR_width.AutoSize = true;
             this.mlbl_sR_width.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sR_width.Location = new System.Drawing.Point(853, 1170);
+            this.mlbl_sR_width.Location = new System.Drawing.Point(855, 984);
             this.mlbl_sR_width.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sR_width.Name = "mlbl_sR_width";
             this.mlbl_sR_width.Size = new System.Drawing.Size(36, 20);
@@ -795,7 +795,7 @@
             // 
             this.mlbl_sR_mxgap.AutoSize = true;
             this.mlbl_sR_mxgap.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_sR_mxgap.Location = new System.Drawing.Point(851, 1023);
+            this.mlbl_sR_mxgap.Location = new System.Drawing.Point(853, 837);
             this.mlbl_sR_mxgap.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sR_mxgap.Name = "mlbl_sR_mxgap";
             this.mlbl_sR_mxgap.Size = new System.Drawing.Size(36, 20);
@@ -809,7 +809,7 @@
             this.mlbl_sR_minLen.AutoSize = true;
             this.mlbl_sR_minLen.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mlbl_sR_minLen.ForeColor = System.Drawing.Color.Red;
-            this.mlbl_sR_minLen.Location = new System.Drawing.Point(851, 947);
+            this.mlbl_sR_minLen.Location = new System.Drawing.Point(853, 761);
             this.mlbl_sR_minLen.Margin = new System.Windows.Forms.Padding(0);
             this.mlbl_sR_minLen.Name = "mlbl_sR_minLen";
             this.mlbl_sR_minLen.Size = new System.Drawing.Size(39, 20);
@@ -822,7 +822,7 @@
             // 
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(53, 1389);
+            this.label47.Location = new System.Drawing.Point(55, 1203);
             this.label47.Margin = new System.Windows.Forms.Padding(0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(98, 20);
@@ -834,7 +834,7 @@
             // mtkb_sL_top
             // 
             this.mtkb_sL_top.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sL_top.Location = new System.Drawing.Point(48, 1415);
+            this.mtkb_sL_top.Location = new System.Drawing.Point(50, 1229);
             this.mtkb_sL_top.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sL_top.Maximum = 800;
             this.mtkb_sL_top.MouseWheelBarPartitions = 400;
@@ -848,7 +848,7 @@
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(53, 1313);
+            this.label48.Location = new System.Drawing.Point(55, 1127);
             this.label48.Margin = new System.Windows.Forms.Padding(0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(103, 20);
@@ -860,7 +860,7 @@
             // mtkb_sL_height
             // 
             this.mtkb_sL_height.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sL_height.Location = new System.Drawing.Point(48, 1339);
+            this.mtkb_sL_height.Location = new System.Drawing.Point(50, 1153);
             this.mtkb_sL_height.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sL_height.Maximum = 1000;
             this.mtkb_sL_height.MouseWheelBarPartitions = 500;
@@ -874,7 +874,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(53, 1247);
+            this.label49.Location = new System.Drawing.Point(55, 1061);
             this.label49.Margin = new System.Windows.Forms.Padding(0);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(104, 20);
@@ -886,7 +886,7 @@
             // mtkb_sL_margin
             // 
             this.mtkb_sL_margin.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sL_margin.Location = new System.Drawing.Point(48, 1273);
+            this.mtkb_sL_margin.Location = new System.Drawing.Point(50, 1087);
             this.mtkb_sL_margin.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sL_margin.Maximum = 400;
             this.mtkb_sL_margin.MouseWheelBarPartitions = 200;
@@ -900,7 +900,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(53, 1171);
+            this.label50.Location = new System.Drawing.Point(55, 985);
             this.label50.Margin = new System.Windows.Forms.Padding(0);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(93, 20);
@@ -912,7 +912,7 @@
             // mtkb_sL_width
             // 
             this.mtkb_sL_width.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sL_width.Location = new System.Drawing.Point(48, 1197);
+            this.mtkb_sL_width.Location = new System.Drawing.Point(50, 1011);
             this.mtkb_sL_width.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sL_width.Maximum = 2000;
             this.mtkb_sL_width.MouseWheelBarPartitions = 1000;
@@ -926,7 +926,7 @@
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(51, 1024);
+            this.label51.Location = new System.Drawing.Point(53, 838);
             this.label51.Margin = new System.Windows.Forms.Padding(0);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(87, 20);
@@ -938,7 +938,7 @@
             // mtkb_sL_mxgap
             // 
             this.mtkb_sL_mxgap.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sL_mxgap.Location = new System.Drawing.Point(46, 1050);
+            this.mtkb_sL_mxgap.Location = new System.Drawing.Point(48, 864);
             this.mtkb_sL_mxgap.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sL_mxgap.MouseWheelBarPartitions = 100;
             this.mtkb_sL_mxgap.Name = "mtkb_sL_mxgap";
@@ -952,7 +952,7 @@
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label52.ForeColor = System.Drawing.Color.Red;
-            this.label52.Location = new System.Drawing.Point(51, 948);
+            this.label52.Location = new System.Drawing.Point(53, 762);
             this.label52.Margin = new System.Windows.Forms.Padding(0);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(102, 20);
@@ -964,7 +964,7 @@
             // mtkb_sL_minLen
             // 
             this.mtkb_sL_minLen.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sL_minLen.Location = new System.Drawing.Point(46, 974);
+            this.mtkb_sL_minLen.Location = new System.Drawing.Point(48, 788);
             this.mtkb_sL_minLen.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sL_minLen.Maximum = 800;
             this.mtkb_sL_minLen.Name = "mtkb_sL_minLen";
@@ -977,7 +977,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(350, 1388);
+            this.label41.Location = new System.Drawing.Point(352, 1202);
             this.label41.Margin = new System.Windows.Forms.Padding(0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(100, 20);
@@ -989,7 +989,7 @@
             // mtkb_sV_top
             // 
             this.mtkb_sV_top.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sV_top.Location = new System.Drawing.Point(345, 1414);
+            this.mtkb_sV_top.Location = new System.Drawing.Point(347, 1228);
             this.mtkb_sV_top.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sV_top.Maximum = 800;
             this.mtkb_sV_top.MouseWheelBarPartitions = 400;
@@ -1003,7 +1003,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(350, 1312);
+            this.label42.Location = new System.Drawing.Point(352, 1126);
             this.label42.Margin = new System.Windows.Forms.Padding(0);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(105, 20);
@@ -1015,7 +1015,7 @@
             // mtkb_sV_height
             // 
             this.mtkb_sV_height.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sV_height.Location = new System.Drawing.Point(345, 1338);
+            this.mtkb_sV_height.Location = new System.Drawing.Point(347, 1152);
             this.mtkb_sV_height.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sV_height.Maximum = 1000;
             this.mtkb_sV_height.MouseWheelBarPartitions = 500;
@@ -1029,7 +1029,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(350, 1246);
+            this.label43.Location = new System.Drawing.Point(352, 1060);
             this.label43.Margin = new System.Windows.Forms.Padding(0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(106, 20);
@@ -1041,7 +1041,7 @@
             // mtkb_sV_margin
             // 
             this.mtkb_sV_margin.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sV_margin.Location = new System.Drawing.Point(345, 1272);
+            this.mtkb_sV_margin.Location = new System.Drawing.Point(347, 1086);
             this.mtkb_sV_margin.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sV_margin.Maximum = 400;
             this.mtkb_sV_margin.MouseWheelBarPartitions = 200;
@@ -1055,7 +1055,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(350, 1170);
+            this.label44.Location = new System.Drawing.Point(352, 984);
             this.label44.Margin = new System.Windows.Forms.Padding(0);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(95, 20);
@@ -1067,7 +1067,7 @@
             // mtkb_sV_width
             // 
             this.mtkb_sV_width.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sV_width.Location = new System.Drawing.Point(345, 1196);
+            this.mtkb_sV_width.Location = new System.Drawing.Point(347, 1010);
             this.mtkb_sV_width.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sV_width.Maximum = 2000;
             this.mtkb_sV_width.MouseWheelBarPartitions = 1000;
@@ -1081,7 +1081,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(348, 1023);
+            this.label45.Location = new System.Drawing.Point(350, 837);
             this.label45.Margin = new System.Windows.Forms.Padding(0);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(89, 20);
@@ -1093,7 +1093,7 @@
             // mtkb_sV_mxgap
             // 
             this.mtkb_sV_mxgap.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sV_mxgap.Location = new System.Drawing.Point(343, 1049);
+            this.mtkb_sV_mxgap.Location = new System.Drawing.Point(345, 863);
             this.mtkb_sV_mxgap.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sV_mxgap.MouseWheelBarPartitions = 100;
             this.mtkb_sV_mxgap.Name = "mtkb_sV_mxgap";
@@ -1107,7 +1107,7 @@
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.Red;
-            this.label46.Location = new System.Drawing.Point(348, 947);
+            this.label46.Location = new System.Drawing.Point(350, 761);
             this.label46.Margin = new System.Windows.Forms.Padding(0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(104, 20);
@@ -1119,7 +1119,7 @@
             // mtkb_sV_minLen
             // 
             this.mtkb_sV_minLen.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sV_minLen.Location = new System.Drawing.Point(343, 973);
+            this.mtkb_sV_minLen.Location = new System.Drawing.Point(345, 787);
             this.mtkb_sV_minLen.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sV_minLen.Maximum = 800;
             this.mtkb_sV_minLen.Name = "mtkb_sV_minLen";
@@ -1132,7 +1132,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(648, 1388);
+            this.label39.Location = new System.Drawing.Point(650, 1202);
             this.label39.Margin = new System.Windows.Forms.Padding(0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(101, 20);
@@ -1144,7 +1144,7 @@
             // mtkb_sR_top
             // 
             this.mtkb_sR_top.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sR_top.Location = new System.Drawing.Point(643, 1414);
+            this.mtkb_sR_top.Location = new System.Drawing.Point(645, 1228);
             this.mtkb_sR_top.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sR_top.Maximum = 800;
             this.mtkb_sR_top.MouseWheelBarPartitions = 400;
@@ -1158,7 +1158,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(648, 1312);
+            this.label40.Location = new System.Drawing.Point(650, 1126);
             this.label40.Margin = new System.Windows.Forms.Padding(0);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(106, 20);
@@ -1170,7 +1170,7 @@
             // mtkb_sR_height
             // 
             this.mtkb_sR_height.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sR_height.Location = new System.Drawing.Point(643, 1338);
+            this.mtkb_sR_height.Location = new System.Drawing.Point(645, 1152);
             this.mtkb_sR_height.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sR_height.Maximum = 1000;
             this.mtkb_sR_height.MouseWheelBarPartitions = 500;
@@ -1184,7 +1184,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(648, 1246);
+            this.label37.Location = new System.Drawing.Point(650, 1060);
             this.label37.Margin = new System.Windows.Forms.Padding(0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(107, 20);
@@ -1196,7 +1196,7 @@
             // mtkb_sR_margin
             // 
             this.mtkb_sR_margin.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sR_margin.Location = new System.Drawing.Point(643, 1272);
+            this.mtkb_sR_margin.Location = new System.Drawing.Point(645, 1086);
             this.mtkb_sR_margin.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sR_margin.Maximum = 400;
             this.mtkb_sR_margin.MouseWheelBarPartitions = 200;
@@ -1210,7 +1210,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(648, 1170);
+            this.label38.Location = new System.Drawing.Point(650, 984);
             this.label38.Margin = new System.Windows.Forms.Padding(0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(96, 20);
@@ -1222,7 +1222,7 @@
             // mtkb_sR_width
             // 
             this.mtkb_sR_width.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sR_width.Location = new System.Drawing.Point(643, 1196);
+            this.mtkb_sR_width.Location = new System.Drawing.Point(645, 1010);
             this.mtkb_sR_width.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sR_width.Maximum = 2000;
             this.mtkb_sR_width.MouseWheelBarPartitions = 1000;
@@ -1236,7 +1236,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(646, 1023);
+            this.label36.Location = new System.Drawing.Point(648, 837);
             this.label36.Margin = new System.Windows.Forms.Padding(0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(90, 20);
@@ -1248,7 +1248,7 @@
             // mtkb_sR_mxgap
             // 
             this.mtkb_sR_mxgap.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sR_mxgap.Location = new System.Drawing.Point(641, 1049);
+            this.mtkb_sR_mxgap.Location = new System.Drawing.Point(643, 863);
             this.mtkb_sR_mxgap.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sR_mxgap.MouseWheelBarPartitions = 100;
             this.mtkb_sR_mxgap.Name = "mtkb_sR_mxgap";
@@ -1262,7 +1262,7 @@
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.Red;
-            this.label35.Location = new System.Drawing.Point(646, 947);
+            this.label35.Location = new System.Drawing.Point(648, 761);
             this.label35.Margin = new System.Windows.Forms.Padding(0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(105, 20);
@@ -1274,7 +1274,7 @@
             // mtkb_sR_minLen
             // 
             this.mtkb_sR_minLen.BackColor = System.Drawing.Color.RosyBrown;
-            this.mtkb_sR_minLen.Location = new System.Drawing.Point(641, 973);
+            this.mtkb_sR_minLen.Location = new System.Drawing.Point(643, 787);
             this.mtkb_sR_minLen.Margin = new System.Windows.Forms.Padding(0);
             this.mtkb_sR_minLen.Maximum = 800;
             this.mtkb_sR_minLen.Name = "mtkb_sR_minLen";
@@ -1286,7 +1286,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(1096, 583);
+            this.label34.Location = new System.Drawing.Point(1098, 397);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(71, 25);
             this.label34.TabIndex = 298;
@@ -1296,7 +1296,7 @@
             // 
             this.lbl_Xvalue.AutoSize = true;
             this.lbl_Xvalue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Xvalue.Location = new System.Drawing.Point(517, 1530);
+            this.lbl_Xvalue.Location = new System.Drawing.Point(519, 1344);
             this.lbl_Xvalue.Name = "lbl_Xvalue";
             this.lbl_Xvalue.Size = new System.Drawing.Size(16, 20);
             this.lbl_Xvalue.TabIndex = 297;
@@ -1306,7 +1306,7 @@
             // tb_Yvalue
             // 
             this.tb_Yvalue.LargeChange = 10;
-            this.tb_Yvalue.Location = new System.Drawing.Point(1286, 1336);
+            this.tb_Yvalue.Location = new System.Drawing.Point(1288, 1150);
             this.tb_Yvalue.Margin = new System.Windows.Forms.Padding(0);
             this.tb_Yvalue.Maximum = 900;
             this.tb_Yvalue.Name = "tb_Yvalue";
@@ -1323,7 +1323,7 @@
             // 
             this.lbl_Yvalue.AutoSize = true;
             this.lbl_Yvalue.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Yvalue.Location = new System.Drawing.Point(1307, 1297);
+            this.lbl_Yvalue.Location = new System.Drawing.Point(1309, 1111);
             this.lbl_Yvalue.Name = "lbl_Yvalue";
             this.lbl_Yvalue.Size = new System.Drawing.Size(16, 20);
             this.lbl_Yvalue.TabIndex = 295;
@@ -1332,7 +1332,7 @@
             // 
             // tb_Xvalue
             // 
-            this.tb_Xvalue.Location = new System.Drawing.Point(224, 1506);
+            this.tb_Xvalue.Location = new System.Drawing.Point(226, 1320);
             this.tb_Xvalue.Margin = new System.Windows.Forms.Padding(0);
             this.tb_Xvalue.Maximum = 900;
             this.tb_Xvalue.Name = "tb_Xvalue";
@@ -1346,7 +1346,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(148, 843);
+            this.label26.Location = new System.Drawing.Point(337, 630);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(68, 25);
             this.label26.TabIndex = 293;
@@ -1354,7 +1354,7 @@
             // 
             // tb__LinesP_XGap
             // 
-            this.tb__LinesP_XGap.Location = new System.Drawing.Point(143, 876);
+            this.tb__LinesP_XGap.Location = new System.Drawing.Point(332, 663);
             this.tb__LinesP_XGap.Name = "tb__LinesP_XGap";
             this.tb__LinesP_XGap.Size = new System.Drawing.Size(100, 31);
             this.tb__LinesP_XGap.TabIndex = 292;
@@ -1363,7 +1363,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(387, 882);
+            this.label25.Location = new System.Drawing.Point(572, 663);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(69, 25);
             this.label25.TabIndex = 291;
@@ -1372,7 +1372,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(1183, 1501);
+            this.label19.Location = new System.Drawing.Point(1185, 1315);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(57, 25);
             this.label19.TabIndex = 290;
@@ -1381,7 +1381,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(247, 723);
+            this.label16.Location = new System.Drawing.Point(249, 537);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(81, 25);
             this.label16.TabIndex = 289;
@@ -1390,7 +1390,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(32, 723);
+            this.label17.Location = new System.Drawing.Point(34, 537);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(43, 25);
             this.label17.TabIndex = 288;
@@ -1400,7 +1400,7 @@
             // 
             this.trkbar_LinesP_thetaMultiplyer.BackColor = System.Drawing.Color.Transparent;
             this.trkbar_LinesP_thetaMultiplyer.LargeChange = 1;
-            this.trkbar_LinesP_thetaMultiplyer.Location = new System.Drawing.Point(242, 748);
+            this.trkbar_LinesP_thetaMultiplyer.Location = new System.Drawing.Point(244, 562);
             this.trkbar_LinesP_thetaMultiplyer.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_LinesP_thetaMultiplyer.Maximum = 180;
             this.trkbar_LinesP_thetaMultiplyer.MouseWheelBarPartitions = 90;
@@ -1414,7 +1414,7 @@
             // 
             this.trkbar_LinesP_rho.BackColor = System.Drawing.Color.RosyBrown;
             this.trkbar_LinesP_rho.LargeChange = 100;
-            this.trkbar_LinesP_rho.Location = new System.Drawing.Point(26, 750);
+            this.trkbar_LinesP_rho.Location = new System.Drawing.Point(28, 564);
             this.trkbar_LinesP_rho.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_LinesP_rho.Maximum = 10000;
             this.trkbar_LinesP_rho.MouseWheelBarPartitions = 500;
@@ -1428,7 +1428,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(25, 351);
+            this.label14.Location = new System.Drawing.Point(20, 314);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(97, 24);
@@ -1439,7 +1439,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(27, 292);
+            this.label15.Location = new System.Drawing.Point(22, 255);
             this.label15.Margin = new System.Windows.Forms.Padding(0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(97, 24);
@@ -1449,7 +1449,7 @@
             // trkbar_CannyThr2
             // 
             this.trkbar_CannyThr2.BackColor = System.Drawing.Color.Transparent;
-            this.trkbar_CannyThr2.Location = new System.Drawing.Point(27, 385);
+            this.trkbar_CannyThr2.Location = new System.Drawing.Point(22, 348);
             this.trkbar_CannyThr2.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_CannyThr2.Maximum = 255;
             this.trkbar_CannyThr2.MouseWheelBarPartitions = 100;
@@ -1462,7 +1462,7 @@
             // trkbar_CannyThr1
             // 
             this.trkbar_CannyThr1.BackColor = System.Drawing.Color.Transparent;
-            this.trkbar_CannyThr1.Location = new System.Drawing.Point(29, 326);
+            this.trkbar_CannyThr1.Location = new System.Drawing.Point(24, 289);
             this.trkbar_CannyThr1.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_CannyThr1.Maximum = 255;
             this.trkbar_CannyThr1.MouseWheelBarPartitions = 100;
@@ -1475,7 +1475,7 @@
             // trkbar_AdaptiveThreshC
             // 
             this.trkbar_AdaptiveThreshC.BackColor = System.Drawing.Color.RosyBrown;
-            this.trkbar_AdaptiveThreshC.Location = new System.Drawing.Point(1101, 608);
+            this.trkbar_AdaptiveThreshC.Location = new System.Drawing.Point(1103, 422);
             this.trkbar_AdaptiveThreshC.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_AdaptiveThreshC.Maximum = 5000;
             this.trkbar_AdaptiveThreshC.Minimum = -5000;
@@ -1488,7 +1488,7 @@
             // lbl6_bsize
             // 
             this.lbl6_bsize.AutoSize = true;
-            this.lbl6_bsize.Location = new System.Drawing.Point(1020, 566);
+            this.lbl6_bsize.Location = new System.Drawing.Point(1022, 380);
             this.lbl6_bsize.Name = "lbl6_bsize";
             this.lbl6_bsize.Size = new System.Drawing.Size(65, 25);
             this.lbl6_bsize.TabIndex = 280;
@@ -1496,7 +1496,7 @@
             // 
             // tb_daptiveThreshBlockSize
             // 
-            this.tb_daptiveThreshBlockSize.Location = new System.Drawing.Point(1025, 594);
+            this.tb_daptiveThreshBlockSize.Location = new System.Drawing.Point(1027, 408);
             this.tb_daptiveThreshBlockSize.Name = "tb_daptiveThreshBlockSize";
             this.tb_daptiveThreshBlockSize.Size = new System.Drawing.Size(58, 31);
             this.tb_daptiveThreshBlockSize.TabIndex = 279;
@@ -1505,7 +1505,7 @@
             // trkbar_adp3
             // 
             this.trkbar_adp3.BackColor = System.Drawing.Color.Transparent;
-            this.trkbar_adp3.Location = new System.Drawing.Point(675, 1606);
+            this.trkbar_adp3.Location = new System.Drawing.Point(677, 1420);
             this.trkbar_adp3.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_adp3.Maximum = 255;
             this.trkbar_adp3.Name = "trkbar_adp3";
@@ -1517,7 +1517,7 @@
             // trkbar_adp2
             // 
             this.trkbar_adp2.BackColor = System.Drawing.Color.Transparent;
-            this.trkbar_adp2.Location = new System.Drawing.Point(675, 1571);
+            this.trkbar_adp2.Location = new System.Drawing.Point(677, 1385);
             this.trkbar_adp2.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_adp2.Maximum = 255;
             this.trkbar_adp2.Name = "trkbar_adp2";
@@ -1529,7 +1529,7 @@
             // trkbar_adp1
             // 
             this.trkbar_adp1.BackColor = System.Drawing.Color.Transparent;
-            this.trkbar_adp1.Location = new System.Drawing.Point(675, 1535);
+            this.trkbar_adp1.Location = new System.Drawing.Point(677, 1349);
             this.trkbar_adp1.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_adp1.Maximum = 255;
             this.trkbar_adp1.Name = "trkbar_adp1";
@@ -1541,7 +1541,7 @@
             // trkbar_adp0
             // 
             this.trkbar_adp0.BackColor = System.Drawing.Color.Transparent;
-            this.trkbar_adp0.Location = new System.Drawing.Point(675, 1501);
+            this.trkbar_adp0.Location = new System.Drawing.Point(677, 1315);
             this.trkbar_adp0.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_adp0.Maximum = 255;
             this.trkbar_adp0.Name = "trkbar_adp0";
@@ -1552,7 +1552,7 @@
             // 
             // tb_LinesP_Thr
             // 
-            this.tb_LinesP_Thr.Location = new System.Drawing.Point(1175, 1534);
+            this.tb_LinesP_Thr.Location = new System.Drawing.Point(1177, 1348);
             this.tb_LinesP_Thr.Name = "tb_LinesP_Thr";
             this.tb_LinesP_Thr.Size = new System.Drawing.Size(100, 31);
             this.tb_LinesP_Thr.TabIndex = 249;
@@ -1561,7 +1561,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(64, 597);
+            this.label12.Location = new System.Drawing.Point(65, 400);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(143, 25);
@@ -1571,7 +1571,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(327, 594);
+            this.label11.Location = new System.Drawing.Point(328, 397);
             this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(163, 25);
@@ -1580,7 +1580,7 @@
             // 
             // tb__LinesP_YGap
             // 
-            this.tb__LinesP_YGap.Location = new System.Drawing.Point(280, 876);
+            this.tb__LinesP_YGap.Location = new System.Drawing.Point(469, 663);
             this.tb__LinesP_YGap.Name = "tb__LinesP_YGap";
             this.tb__LinesP_YGap.Size = new System.Drawing.Size(100, 31);
             this.tb__LinesP_YGap.TabIndex = 248;
@@ -1590,7 +1590,7 @@
             // 
             this.trkbar_StdThreshMaxV.BackColor = System.Drawing.Color.Transparent;
             this.trkbar_StdThreshMaxV.LargeChange = 2;
-            this.trkbar_StdThreshMaxV.Location = new System.Drawing.Point(290, 622);
+            this.trkbar_StdThreshMaxV.Location = new System.Drawing.Point(291, 425);
             this.trkbar_StdThreshMaxV.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_StdThreshMaxV.Maximum = 255;
             this.trkbar_StdThreshMaxV.MouseWheelBarPartitions = 100;
@@ -1604,7 +1604,7 @@
             // 
             this.trkbar_StdThreshThr.BackColor = System.Drawing.Color.Transparent;
             this.trkbar_StdThreshThr.LargeChange = 1;
-            this.trkbar_StdThreshThr.Location = new System.Drawing.Point(27, 622);
+            this.trkbar_StdThreshThr.Location = new System.Drawing.Point(28, 425);
             this.trkbar_StdThreshThr.Margin = new System.Windows.Forms.Padding(0);
             this.trkbar_StdThreshThr.Maximum = 255;
             this.trkbar_StdThreshThr.MouseWheelBarPartitions = 100;
@@ -1617,7 +1617,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(574, 566);
+            this.label10.Location = new System.Drawing.Point(550, 383);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(193, 25);
             this.label10.TabIndex = 270;
@@ -1626,7 +1626,7 @@
             // comboBox_AdaptiveThresh_at
             // 
             this.comboBox_AdaptiveThresh_at.FormattingEnabled = true;
-            this.comboBox_AdaptiveThresh_at.Location = new System.Drawing.Point(579, 594);
+            this.comboBox_AdaptiveThresh_at.Location = new System.Drawing.Point(555, 411);
             this.comboBox_AdaptiveThresh_at.Name = "comboBox_AdaptiveThresh_at";
             this.comboBox_AdaptiveThresh_at.Size = new System.Drawing.Size(183, 33);
             this.comboBox_AdaptiveThresh_at.TabIndex = 269;
@@ -1634,7 +1634,7 @@
             // comboBox_AdaptiveThresh_tt
             // 
             this.comboBox_AdaptiveThresh_tt.FormattingEnabled = true;
-            this.comboBox_AdaptiveThresh_tt.Location = new System.Drawing.Point(802, 594);
+            this.comboBox_AdaptiveThresh_tt.Location = new System.Drawing.Point(804, 408);
             this.comboBox_AdaptiveThresh_tt.Name = "comboBox_AdaptiveThresh_tt";
             this.comboBox_AdaptiveThresh_tt.Size = new System.Drawing.Size(183, 33);
             this.comboBox_AdaptiveThresh_tt.TabIndex = 268;
@@ -1642,7 +1642,7 @@
             // comboBox_StdThres_tt
             // 
             this.comboBox_StdThres_tt.FormattingEnabled = true;
-            this.comboBox_StdThres_tt.Location = new System.Drawing.Point(31, 534);
+            this.comboBox_StdThres_tt.Location = new System.Drawing.Point(631, 300);
             this.comboBox_StdThres_tt.Name = "comboBox_StdThres_tt";
             this.comboBox_StdThres_tt.Size = new System.Drawing.Size(183, 33);
             this.comboBox_StdThres_tt.TabIndex = 267;
@@ -1651,7 +1651,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1156, 228);
+            this.label9.Location = new System.Drawing.Point(900, 214);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 29);
@@ -1747,7 +1747,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(807, 566);
+            this.label4.Location = new System.Drawing.Point(809, 380);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(187, 25);
             this.label4.TabIndex = 256;
@@ -1756,7 +1756,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 506);
+            this.label3.Location = new System.Drawing.Point(642, 272);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 25);
             this.label3.TabIndex = 255;
@@ -1765,7 +1765,7 @@
             // comboBox_ThresholdTypeToUse
             // 
             this.comboBox_ThresholdTypeToUse.FormattingEnabled = true;
-            this.comboBox_ThresholdTypeToUse.Location = new System.Drawing.Point(594, 453);
+            this.comboBox_ThresholdTypeToUse.Location = new System.Drawing.Point(870, 301);
             this.comboBox_ThresholdTypeToUse.Name = "comboBox_ThresholdTypeToUse";
             this.comboBox_ThresholdTypeToUse.Size = new System.Drawing.Size(183, 33);
             this.comboBox_ThresholdTypeToUse.TabIndex = 254;
@@ -1773,7 +1773,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(444, 456);
+            this.label2.Location = new System.Drawing.Point(876, 272);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 25);
             this.label2.TabIndex = 253;
@@ -1782,7 +1782,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(992, 1501);
+            this.label1.Location = new System.Drawing.Point(994, 1315);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 25);
             this.label1.TabIndex = 252;
@@ -1805,7 +1805,7 @@
             // comboBox_blurBoarderType
             // 
             this.comboBox_blurBoarderType.FormattingEnabled = true;
-            this.comboBox_blurBoarderType.Location = new System.Drawing.Point(978, 1529);
+            this.comboBox_blurBoarderType.Location = new System.Drawing.Point(980, 1343);
             this.comboBox_blurBoarderType.Name = "comboBox_blurBoarderType";
             this.comboBox_blurBoarderType.Size = new System.Drawing.Size(183, 33);
             this.comboBox_blurBoarderType.TabIndex = 250;
@@ -1842,7 +1842,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(1399, 5);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 1292);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 1244);
             this.flowLayoutPanel1.TabIndex = 245;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -1850,7 +1850,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2635, 1630);
+            this.ClientSize = new System.Drawing.Size(2635, 1582);
             this.Controls.Add(this.mlbv_LinesP_PercentHeight);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.trkbar_LinesP_PercentHeight);
