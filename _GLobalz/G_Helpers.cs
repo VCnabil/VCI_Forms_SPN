@@ -1720,4 +1720,36 @@ namespace VCI_Forms_SPN._GLobalz
 
     }
 
+
+    //HC is fo HArcoded path useage
+    public static class ESvee_ExaminerHC
+    {
+         
+        public static List<string> Get_DirectroryNames_inRootSVN()
+        {
+            string rootSVNDirectory = @"C:\_____Ufake\SVN_Projects\";
+
+            List<string> directoryNames = new List<string>();
+
+            try
+            {
+                // Use EnumerateDirectories to find all directories in the root SVN directory
+                IEnumerable<string> directories = Directory.EnumerateDirectories(rootSVNDirectory);
+
+                foreach (string directory in directories)
+                {
+                    string directoryName = Path.GetFileName(directory);
+                    directoryNames.Add(directoryName);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An error occurred: " + e.Message);
+            }
+
+            return directoryNames;
+        }
+
+    }
+
 }
