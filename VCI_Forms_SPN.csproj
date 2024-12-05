@@ -285,6 +285,7 @@
     <Compile Include="_BackEndDataOBJs\DocReaders\OCV_MatEffectesFirst.cs" />
     <Compile Include="_BackEndDataOBJs\DocReaders\Ocv_Stripper.cs" />
     <Compile Include="_BackEndDataOBJs\DocReaders\OCV_TBLfinder.cs" />
+    <Compile Include="_BackEndDataOBJs\OBJ_defs\FirmwareParameters.cs" />
     <Compile Include="_BackEndDataOBJs\OCVObjs\MyPDF_toInnerFrameMat.cs" />
     <Compile Include="_BackEndDataOBJs\OCVObjs\OCV_filterObj.cs" />
     <Compile Include="_BackEndDataOBJs\OCVObjs\OCV_TempDataObj.cs" />
