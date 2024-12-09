@@ -135,6 +135,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyForms\BKGFroms\SSRSk12_234BKG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\BKGFroms\SSRSk12_234BKG.Designer.cs">
+      <DependentUpon>SSRSk12_234BKG.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\DirSearchForms\SVeeSearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     <Compile Include="_GLobalz\TaskExtensions.cs" />
     <Compile Include="_Managers\PGN_MANAGER.cs" />
     <Compile Include="_Managers\PipeManager.cs" />
+    <EmbeddedResource Include="MyForms\BKGFroms\SSRSk12_234BKG.resx">
+      <DependentUpon>SSRSk12_234BKG.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForms\DirSearchForms\SVeeSearchForm.resx">
       <DependentUpon>SVeeSearchForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,8 +422,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="_ExternalResources\Media\2953_-_Birdon Fireboat SysDiag.png" />
-    <Content Include="_ExternalResources\Media\3306_P1.1_SSRS K12 No2 thru No4 SysDiag.png" />
+    <Content Include="_ExternalResources\Media\2953_-_Birdon Fireboat SysDiag.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_ExternalResources\Media\3306_P1.1_SSRS K12 No2 thru No4 SysDiag.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_ExternalResources\Media\3306_P1.3_SSRS K12 - no DP - No2 thru No4 SysDiag.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets')" />

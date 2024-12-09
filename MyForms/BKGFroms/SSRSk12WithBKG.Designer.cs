@@ -73,13 +73,13 @@
             this.vCinc_uc18 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_dualLevers1 = new VCI_Forms_LIB.vCinc_dualLevers();
             this.vCinc_Tiller1 = new VCI_Forms_LIB.vCinc_Tiller();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.vCinc_ClutchPanel1 = new VCI_Forms_LIB.vCinc_ClutchPanel();
             this.vCinc_ClutchPanel2 = new VCI_Forms_LIB.vCinc_ClutchPanel();
             this.vCinc_BackupPanelWJ1 = new VCI_Forms_LIB.vCinc_BackupPanelWJ();
             this.vCinc_BackupPanelEng1 = new VCI_Forms_LIB.vCinc_BackupPanelEng();
             this.vCinc_SFversion3 = new VCI_Forms_LIB.VCinc_SFversion();
+            this.vCinc_Sta1ctrl = new VCI_Forms_LIB.vCinc_StaCtrlButton();
+            this.vCinc_Sta2ctrl = new VCI_Forms_LIB.vCinc_StaCtrlButton();
             ((System.ComponentModel.ISupportInitialize)(this.tb_manualHEading)).BeginInit();
             this.SuspendLayout();
             // 
@@ -569,7 +569,7 @@
             this.vCinc_stationInCtrl_uc10.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_stationInCtrl_uc10.G_EndAngle = 215;
             this.vCinc_stationInCtrl_uc10.G_StartAngle = 148;
-            this.vCinc_stationInCtrl_uc10.Location = new System.Drawing.Point(2269, 764);
+            this.vCinc_stationInCtrl_uc10.Location = new System.Drawing.Point(2529, 1582);
             this.vCinc_stationInCtrl_uc10.m_ticks = 1;
             this.vCinc_stationInCtrl_uc10.Margin = new System.Windows.Forms.Padding(0);
             this.vCinc_stationInCtrl_uc10.MaxValue = 2;
@@ -859,26 +859,6 @@
             this.vCinc_Tiller1.Size = new System.Drawing.Size(191, 245);
             this.vCinc_Tiller1.TabIndex = 379;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(1587, 829);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(136, 28);
-            this.checkBox1.TabIndex = 380;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(2923, 787);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(136, 28);
-            this.checkBox2.TabIndex = 381;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
             // vCinc_ClutchPanel1
             // 
             this.vCinc_ClutchPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
@@ -940,6 +920,28 @@
             this.vCinc_SFversion3.Source = "34";
             this.vCinc_SFversion3.TabIndex = 386;
             // 
+            // vCinc_Sta1ctrl
+            // 
+            this.vCinc_Sta1ctrl.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vCinc_Sta1ctrl.Button1Name = "STA1 on";
+            this.vCinc_Sta1ctrl.Font = new System.Drawing.Font("Arial Narrow", 6.8F);
+            this.vCinc_Sta1ctrl.Location = new System.Drawing.Point(1518, 778);
+            this.vCinc_Sta1ctrl.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_Sta1ctrl.Name = "vCinc_Sta1ctrl";
+            this.vCinc_Sta1ctrl.Size = new System.Drawing.Size(191, 115);
+            this.vCinc_Sta1ctrl.TabIndex = 387;
+            // 
+            // vCinc_Sta2ctrl
+            // 
+            this.vCinc_Sta2ctrl.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vCinc_Sta2ctrl.Button1Name = "STA2 on";
+            this.vCinc_Sta2ctrl.Font = new System.Drawing.Font("Arial Narrow", 6.8F);
+            this.vCinc_Sta2ctrl.Location = new System.Drawing.Point(2899, 739);
+            this.vCinc_Sta2ctrl.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_Sta2ctrl.Name = "vCinc_Sta2ctrl";
+            this.vCinc_Sta2ctrl.Size = new System.Drawing.Size(100, 115);
+            this.vCinc_Sta2ctrl.TabIndex = 388;
+            // 
             // SSRSk12WithBKG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -947,13 +949,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(3374, 2135);
+            this.Controls.Add(this.vCinc_Sta2ctrl);
+            this.Controls.Add(this.vCinc_Sta1ctrl);
             this.Controls.Add(this.vCinc_SFversion3);
             this.Controls.Add(this.vCinc_BackupPanelEng1);
             this.Controls.Add(this.vCinc_BackupPanelWJ1);
             this.Controls.Add(this.vCinc_ClutchPanel2);
             this.Controls.Add(this.vCinc_ClutchPanel1);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.vCinc_Tiller1);
             this.Controls.Add(this.btn_webview2);
             this.Controls.Add(this.vCinc_LatLon_waypoint);
@@ -1054,12 +1056,12 @@
         private System.Windows.Forms.Button btn_webview2;
         private VCI_Forms_LIB.vCinc_dualLevers vCinc_dualLevers1;
         private VCI_Forms_LIB.vCinc_Tiller vCinc_Tiller1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
         private VCI_Forms_LIB.vCinc_ClutchPanel vCinc_ClutchPanel1;
         private VCI_Forms_LIB.vCinc_ClutchPanel vCinc_ClutchPanel2;
         private VCI_Forms_LIB.vCinc_BackupPanelWJ vCinc_BackupPanelWJ1;
         private VCI_Forms_LIB.vCinc_BackupPanelEng vCinc_BackupPanelEng1;
         private VCI_Forms_LIB.VCinc_SFversion vCinc_SFversion3;
+        private VCI_Forms_LIB.vCinc_StaCtrlButton vCinc_Sta1ctrl;
+        private VCI_Forms_LIB.vCinc_StaCtrlButton vCinc_Sta2ctrl;
     }
 }

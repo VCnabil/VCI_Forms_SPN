@@ -14,11 +14,10 @@ using VCI_Forms_SPN._BackEndDataOBJs;
 using VCI_Forms_SPN._GLobalz;
 using VCI_Forms_SPN._Managers;
 
-namespace VCI_Forms_SPN.MyForms
+namespace VCI_Forms_SPN.MyForms.BKGFroms
 {
-    public partial class SSRSk12WithBKG : Form
+    public partial class SSRSk12_234BKG : Form
     {
-
         #region TemplateVariavles
         Timer looptimer = new Timer();
         PGN_MANAGER _myPGNManager;
@@ -38,13 +37,11 @@ namespace VCI_Forms_SPN.MyForms
         private readonly object _syncLock = new object();
         double _myJET_ANG = 50;
         double _myTHRUST = 0;
-        
- 
-    
-        public SSRSk12WithBKG(   )
+
+        public SSRSk12_234BKG()
         {
             InitializeComponent();
-       
+          
             #region TemplateInitialize
             lbl_OnScreenCount.BackColor = Color.Transparent;
             lbl_OnScreenCount.ForeColor = Color.Black;
@@ -60,11 +57,7 @@ namespace VCI_Forms_SPN.MyForms
             #endregion
             VESSEL_LOC = new VC_LOCATION();
             WAYPOINT_LOC = new VC_LOCATION();
-            vCinc_LatLon_mapCnter.SetLatLon(VESSEL_LOC);
-            VESSEL_LOC = vCinc_LatLon_mapCnter.GetLatLon();
-            VESSEL_HEADING = (tb_manualHEading.Value / 100.00) % 360.00;
-            btn_restBit0.Click += bet_restBit0_Click;
-            btn_restBit1.Click += bet_restBit1_Click;
+        
 
             pipeTimer = new Timer();
             pipeTimer.Interval = 320;
@@ -73,15 +66,12 @@ namespace VCI_Forms_SPN.MyForms
             _pipeManager = new PipeManager();
             _pipeManager.OnMessageReceived += PipeManager_OnMessageReceived;
 
-            btn_PipeToggle.Click += Btn_PipeToggle_Click;
             UpdateButtonState();
-            btn_setLatLonToUnity.Click += Btn_setLatLonToUnity_Click;
-            btn_webview2.Click += Btn_webview2_Click;
             InitializeControls_StationControls();
         }
         public void InitializeControls_StationControls()
         {
-             
+
             vCinc_Sta1ctrl.MainButtonStateChanged += (s, e) =>
             {
                 if (vCinc_Sta1ctrl.Get_MainButtonState())
@@ -98,7 +88,7 @@ namespace VCI_Forms_SPN.MyForms
                 }
             };
 
-             
+
         }
 
         void Read_Controls()
@@ -109,16 +99,98 @@ namespace VCI_Forms_SPN.MyForms
 
             vCinc_stationInCtrl_uc10.Value = Station1State ? 1 : 2;
 
+           int station1LeverP = (int)(vCinc_dualLevers1.Lever_LVal ) * 10;
+           int station1LeverS = (int)(vCinc_dualLevers1.Lever_RVal ) *10;
+
+            vCinc_FF43_st1Plever_uc24.Value= station1LeverP;
+            vCinc__FF43_st1Slever_uc23.Value= station1LeverS;
+
+            float station1TillerValue = vCinc_Tiller1.TillerValue;
+            int station1TillerDirection = 0;
+            if (station1TillerValue > -5.0 && station1TillerValue < 5.0)
+            {
+                station1TillerDirection = 0;
+            }
+            else if (station1TillerValue < -5.0)
+            {
+                station1TillerDirection = 1;
+            }
+            else {
+                station1TillerDirection = 2;
+            }
+             
+            int station1_tiller_0_1000 = (int)((station1TillerValue + 100.0f) * (1000.0f / 200.0f)); 
+
+            vCinc_FF41St1Xpos_uc16.Value = station1_tiller_0_1000;
+            vCinc_FF42helm1_uc22.Value = station1_tiller_0_1000;
+
+            vCinc_FF41St1Xdir_uc10.Value= station1TillerDirection;
+
+            float  Joy3axis_Yvalue = vCinc_3AxisJoy1.Joystick_YaxisValue;
+            float Joy3axis_Xvalue = vCinc_3AxisJoy1.Joystick_XaxisValue;
+
+            int Yvalue_0_1000 = 0;
+            int Xvalue_0_1000 = 0;
+
+            //Joy3axis_Yvalue goes from -100.0 to +100 must be converted to 0 to 1000 
+           Yvalue_0_1000 = (int)((Joy3axis_Yvalue + 100.0f) * (1000.0f / 200.0f));
+            Xvalue_0_1000= (int)((Joy3axis_Xvalue + 100.0f) * (1000.0f / 200.0f));
 
 
+
+
+
+
+
+
+            float Joy3axis_Zvalue  = vCinc_3AxisJoy1.AngleValue;
+            int station2DirectionFromZ = 0;
+            int stationZ_0_1000 = 0;
+
+            // Joy3axis_Zvalue 0-360 coverter to 0-1000
+            stationZ_0_1000 = (int)(Joy3axis_Zvalue * 1000 / 360);
+
+            //if (Joy3axis_Zvalue >= 0.0f && Joy3axis_Zvalue < 5.0f)
+            //{
+            //    station2DirectionFromZ = 0;
+            //}
+            //else if (Joy3axis_Zvalue >= 5.0f && Joy3axis_Zvalue < 180.0f)
+            //{
+            //    station2DirectionFromZ = 2;
+            //}
+            //else
+            //{
+            //    station2DirectionFromZ = 1;
+            //}
+
+            if (Joy3axis_Xvalue > -5.0 && Joy3axis_Xvalue < 5.0)
+            {
+                station2DirectionFromZ = 0;
+            }
+            else if (Joy3axis_Xvalue < -5.0)
+            {
+                station2DirectionFromZ = 1;
+            }
+            else
+            {
+                station2DirectionFromZ = 2;
+            }
+
+            vCinc_FF41Sta2Xdir_uc19.Value= station2DirectionFromZ;
+
+             vCinc_FF41Sta2Xpos_uc20.Value= Yvalue_0_1000;
+
+
+            vCinc_FF42Helm2_uc21.Value =  Xvalue_0_1000;
+
+            vCinc_FF43_st2Plever_uc25.Value = vCinc_FF43_st2Slever_uc26.Value = stationZ_0_1000;// Yvalue_0_1000;
+
+
+
+            vCinc_sta1IdleKnob_uc20.Value = vCinc_ClutchPanel1.KnovValue;
+            vCinc_sta2IdleKnob_uc21.Value = vCinc_ClutchPanel2.KnovValue ;
         }
 
-        private void Btn_webview2_Click(object sender, EventArgs e)
-        {
-            // Create and show Form1 with the coordinates
-            Form1 form1 = new Form1(vCinc_LatLon_mapCnter.LatitudeDecimal.ToString(), vCinc_LatLon_mapCnter.LongitudeDecimal.ToString(), vCinc_LatLon_waypoint.LatitudeDecimal.ToString(), vCinc_LatLon_waypoint.LongitudeDecimal.ToString());
-            form1.Show();
-        }
 
         private void PipeManager_OnMessageReceived(string message)
         {
@@ -149,47 +221,18 @@ namespace VCI_Forms_SPN.MyForms
                 Debug.WriteLine($"[DEBUG] Error deserializing JSON: {ex.Message}");
             }
         }
-        private async void Btn_setLatLonToUnity_Click(object sender, EventArgs e)
-        {
-            vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, 0);
-            vCinc_DynPos1.ZeroMe();
-
-            // Ensure these calls execute sequentially
-            await SetBitForOneSecond(0);
-            await SetBitForOneSecond(1);
-
-            var shipCommands = new ShipCommands
-            {
-                ResetCoordinatesLat = VESSEL_LOC.Latitude,
-                ResetCoordinatesLon = VESSEL_LOC.Longitude
-            };
-            string jsonMessage = JsonConvert.SerializeObject(shipCommands);
-            _ = _pipeManager.SendMessageAsync(jsonMessage);
-
-            vCinc_uc18.Value = 1;
-            Timer timer = new Timer
-            {
-                Interval = 1500 // 1.5 seconds
-            };
-            timer.Tick += (s, args) =>
-            {
-                vCinc_uc18.Value = 0;
-                timer.Stop();
-                timer.Dispose();
-            };
-            timer.Start();
-        }
+ 
         private void UpdateButtonState()
         {
             if (_pipeIsOpen)
             {
-                btn_PipeToggle.Text = "Close Pipe";
-                btn_PipeToggle.BackColor = Color.Green;
+             //   btn_PipeToggle.Text = "Close Pipe";
+            //    btn_PipeToggle.BackColor = Color.Green;
             }
             else
             {
-                btn_PipeToggle.Text = "Open Pipe";
-                btn_PipeToggle.BackColor = Color.Red;
+             //   btn_PipeToggle.Text = "Open Pipe";
+             //   btn_PipeToggle.BackColor = Color.Red;
             }
         }
         private async void Btn_PipeToggle_Click(object sender, EventArgs e)
@@ -221,8 +264,8 @@ namespace VCI_Forms_SPN.MyForms
             string message = JsonConvert.SerializeObject(dataToSend);
             await _pipeManager.SendMessageAsync(message);
         }
-        private byte myByte = 0x00; 
-        private async  void bet_restBit0_Click(object sender, EventArgs e)
+        private byte myByte = 0x00;
+        private async void bet_restBit0_Click(object sender, EventArgs e)
         {
             await SetBitForOneSecond(0);
         }
@@ -246,13 +289,15 @@ namespace VCI_Forms_SPN.MyForms
             {
                 Controll_tiller_levers();
             }
-            else {
+            else
+            {
                 Controll_3AxisJoystick();
             }
-            
+
         }
 
-        void Controll_tiller_levers() {
+        void Controll_tiller_levers()
+        {
             vCinc_Seng_uc24.Value = (int)(vCinc_dualLevers1.Lever_RVal * 255 / 100.00);
             vCinc_Peng_uc23.Value = (int)(vCinc_dualLevers1.Lever_LVal * 255 / 100.00);
 
@@ -270,8 +315,8 @@ namespace VCI_Forms_SPN.MyForms
                 // Must make the pbuck lower from 255 down to 0
                 // vCinc_pbuk_uc22.Value = (int)(255 + (tillerValue * 255 / 100));
                 vCinc_pbuk_uc22.Value = 127;
-                 // And sbuck increase from 0 to 255
-                 vCinc_sbuk_uc19.Value = (int)(-tillerValue * 255 / 100);
+                // And sbuck increase from 0 to 255
+                vCinc_sbuk_uc19.Value = (int)(-tillerValue * 255 / 100);
             }
             else
             {
@@ -295,7 +340,7 @@ namespace VCI_Forms_SPN.MyForms
             //joyy value from -100 to +100  -> for throttle
             //joyAxis 0-360 
 
-            float jx=  vCinc_3AxisJoy1.Joystick_XaxisValue;
+            float jx = vCinc_3AxisJoy1.Joystick_XaxisValue;
             float jy = vCinc_3AxisJoy1.Joystick_YaxisValue;
             float jz = vCinc_3AxisJoy1.AngleValue;
 
@@ -307,11 +352,12 @@ namespace VCI_Forms_SPN.MyForms
 
 
             }
-            else { 
+            else
+            {
                 vCinc_helm_uc16.Value = (int)(180 + (jx * 180 / 100));
                 vCinc_pnoz_uc21.Value = (int)(127 + (jx * 127 / 100));
                 vCinc_snoz_uc20.Value = (int)(127 + (jx * 127 / 100));
-            
+
             }
 
 
@@ -341,17 +387,10 @@ namespace VCI_Forms_SPN.MyForms
         {
             lock (_syncLock)
             {
-                if (!_pipeIsOpen)
-                {
-                    VESSEL_LOC = vCinc_LatLon_mapCnter.GetLatLon();
-                    VESSEL_HEADING = (tb_manualHEading.Value / 100.00) % 360.00;
-                }
+             
                 PGN_Controlled();
 
-                vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, VESSEL_HEADING);
-                WAYPOINT_LOC = vCinc_DynPos1.Get_WayPointLOC();
-                vCinc_LatLon_waypoint.SetLatLon(WAYPOINT_LOC);
-                SendAllPgnMessages(); 
+                SendAllPgnMessages();
             }
         }
         void UpdateTheGPS_withLocalControlValues()
@@ -363,7 +402,7 @@ namespace VCI_Forms_SPN.MyForms
             }
             lock (_syncLock)
             {
-                vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, VESSEL_HEADING);
+              //  vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, VESSEL_HEADING);
             }
         }
         #region can and stuff
@@ -482,12 +521,12 @@ namespace VCI_Forms_SPN.MyForms
             {
                 Debug.WriteLine("[DEBUG] PGN Manager is not initialized");
             }
-            foreach (var entry in vCinc_DynPos1.Get_PGNData())
-            {
-                int pgn = entry.Key;
-                byte[] data = entry.Value;
-                KvsrManager.Instance.SendPGN_withStatus(busNumber, pgn, data);
-            }
+            //foreach (var entry in vCinc_DynPos1.Get_PGNData())
+            //{
+            //    int pgn = entry.Key;
+            //    byte[] data = entry.Value;
+            //    KvsrManager.Instance.SendPGN_withStatus(busNumber, pgn, data);
+            //}
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -507,5 +546,15 @@ namespace VCI_Forms_SPN.MyForms
             Debug.WriteLine("[DEBUG] CAN manager closed and resources cleaned up.");
         }
         #endregion
+
+        private void vCinc_uc10_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vCinc_uc16_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

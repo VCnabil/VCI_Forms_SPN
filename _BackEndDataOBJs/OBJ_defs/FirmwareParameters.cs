@@ -23,8 +23,8 @@ namespace VCI_Forms_SPN._BackEndDataOBJs.OBJ_defs
     }
 
     public class vcEparam
-    { 
-
-    
+    {
+        public string Name { get; set; }
+        public int Value { get; set; }
     }
 }
