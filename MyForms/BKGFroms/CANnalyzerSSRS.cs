@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,15 +19,19 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
     {
         #region TemplateVariavles
         PGN_MANAGER _myPGNManager;
-        Queue<string> messageQueue;
         StringBuilder messageBuffer;
-        const int MaxMessages = 1;
+        const int MaxMessages = 32;
         int _OScreenCount = 0;
         Timer tempTimer;
         bool _isOnCanBus;
         Dictionary<string, string> uniqueMessages = new Dictionary<string, string>();
+
+        // Use a ConcurrentQueue for thread-safe message passing from the CAN thread to the UI thread.
+        private ConcurrentQueue<string> receivedMessages = new ConcurrentQueue<string>();
         #endregion
+
         List<string> testMessages;
+
         public CANnalyzerSSRS()
         {
             InitializeComponent();
@@ -37,12 +42,14 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             lbl_onBus.ForeColor = Color.Black;
             btn_Validate.Click += Btn_Validate_Click;
             btn_RunStop.Click += Btn_RunStop_Click;
+
             tempTimer = new Timer();
             tempTimer.Interval = 200;
             tempTimer.Tick += TempTimer_Tick;
             tempTimer.Start();
+
             messageBuffer = new StringBuilder();
-            messageQueue = new Queue<string>(MaxMessages);
+            // No need for a blocking queue here since we now handle messages differently.
 
             #endregion
             //form load event 
@@ -50,56 +57,57 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             btn_InjectMessage.Click += (s, e) => InjectNextTestMessage();
 
             testMessages = new List<string>
-                {
-                    "ID=0CFF3134, DLC=8, Data=02-00-0C-A9-00-00-01-0a, Timestamp=1866",
-                    "ID=0CFF3134, DLC=8, Data=02-00-0C-A9-00-00-01-0a, Timestamp=1866",
-                    "ID=0CFF322A, DLC=8, Data=00-00-05-9D-00-00-00-00, Timestamp=1867",
-                    "ID=18FF3600, DLC=8, Data=00-0B-02-00-00-00-00-00, Timestamp=1863",
-                    "ID=18FF3600, DLC=8, Data=01-0C-01-00-00-00-00-00, Timestamp=1864",
-                    "ID=18FF3600, DLC=8, Data=00-0B-01-00-00-00-00-00, Timestamp=1865",
-                    "ID=0CFF3134, DLC=8, Data=00-00-0C-A9-00-00-00-00, Timestamp=1866",
-                    "ID=0CFF322A, DLC=8, Data=00-00-05-9D-00-00-00-00, Timestamp=1867",
-                    "ID=0CFF3134, DLC=8, Data=02-00-0C-A9-00-00-01-0a, Timestamp=1866",
-                    "ID=0CFF3334, DLC=8, Data=00-02-00-00-02-00-00-00, Timestamp=1868",
-                    "ID=18FEFC29, DLC=8, Data=00-17-FA-FA-00-69-33-33, Timestamp=1869",
-                    "ID=18FF3600, DLC=8, Data=00-0B-01-00-00-00-00-00, Timestamp=1870",
-                    "ID=18FEFC29, DLC=8, Data=02-02-0C-A9-20-a0-01-0a, Timestamp=1866",
-                    "ID=18FEFC29, DLC=8, Data=02-03-1C-A9-20-a0-01-0a, Timestamp=1866",
-                    "ID=18FEFC29, DLC=8, Data=02-02-0C-A9-20-a0-01-0a, Timestamp=1866",
-                    "ID=0CFF3134, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=0CFF322A, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=186",
-                    "ID=0CFF3334, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FEFC29, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF2100, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF3029, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF4129, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF4229, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF4329, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF4929, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF5329, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF5629, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF5729, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF5829, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF5929, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF6029, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF6129, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF6229, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF6329, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF6429, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF7300, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
-                    "ID=18FF7400, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866"
-                };
+            {
+                "ID=0CFF3134, DLC=8, Data=02-00-0C-A9-00-00-01-0a, Timestamp=1866",
+                "ID=0CFF3134, DLC=8, Data=02-00-0C-A9-00-00-01-0a, Timestamp=1866",
+                "ID=0CFF322A, DLC=8, Data=00-00-05-9D-00-00-00-00, Timestamp=1867",
+                "ID=18FF3600, DLC=8, Data=00-0B-02-00-00-00-00-00, Timestamp=1863",
+                "ID=18FF3600, DLC=8, Data=01-0C-01-00-00-00-00-00, Timestamp=1864",
+                "ID=18FF3600, DLC=8, Data=00-0B-01-00-00-00-00-00, Timestamp=1865",
+                "ID=0CFF3134, DLC=8, Data=00-00-0C-A9-00-00-00-00, Timestamp=1866",
+                "ID=0CFF322A, DLC=8, Data=00-00-05-9D-00-00-00-00, Timestamp=1867",
+                "ID=0CFF3134, DLC=8, Data=02-00-0C-A9-00-00-01-0a, Timestamp=1866",
+                "ID=0CFF3334, DLC=8, Data=00-02-00-00-02-00-00-00, Timestamp=1868",
+                "ID=18FEFC29, DLC=8, Data=00-17-FA-FA-00-69-33-33, Timestamp=1869",
+                "ID=18FF3600, DLC=8, Data=00-0B-01-00-00-00-00-00, Timestamp=1870",
+                "ID=18FEFC29, DLC=8, Data=02-02-0C-A9-20-a0-01-0a, Timestamp=1866",
+                "ID=18FEFC29, DLC=8, Data=02-03-1C-A9-20-a0-01-0a, Timestamp=1866",
+                "ID=18FEFC29, DLC=8, Data=02-02-0C-A9-20-a0-01-0a, Timestamp=1866",
+                "ID=0CFF3134, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=0CFF322A, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=186",
+                "ID=0CFF3334, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FEFC29, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF2100, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF3029, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF4129, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF4229, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF4329, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF4929, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF5329, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF5629, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF5729, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF5829, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF5929, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF6029, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF6129, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF6229, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF6329, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF6429, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF7300, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866",
+                "ID=18FF7400, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866"
+            };
         }
+
         #region TemplateFunctions
         private List<VCinc_SPNVAL_uc> spnValControls = new List<VCinc_SPNVAL_uc>();
         private void Form1_Load(object sender, EventArgs e)
         {
             spnValControls = Controls.OfType<VCinc_SPNVAL_uc>().ToList();
         }
+
         private void TempTimer_Tick(object sender, EventArgs e)
         {
             _isOnCanBus = KvsrManager.Instance.GetIsOnBus();
-          //  InjectNextTestMessage();
             if (_isOnCanBus)
             {
                 lbl_onBus.BackColor = Color.Green;
@@ -112,11 +120,17 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                 lbl_onBus.ForeColor = Color.White;
                 lbl_onBus.Text = "OFF BUS";
             }
+
+            // Process any messages received since last tick on the UI thread
+            while (receivedMessages.TryDequeue(out var msg))
+            {
+                ProcessMessageOnUIThread(msg);
+            }
+
             if (!_isOnCanBus) { return; }
             if (_OScreenCount == 0) { return; }
             if (_myPGNManager != null)
             {
-
                 _myPGNManager.LoadByteArraysForGroups();
                 var pgnByteArrays = _myPGNManager.GetPgnByteArrays();
                 foreach (var entry in pgnByteArrays.Values)
@@ -132,43 +146,12 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             }
         }
 
-        private string GenerateRandomData()
+        private void ProcessMessageOnUIThread(string message)
         {
-            Random rnd = new Random();
-            byte[] dataBytes = new byte[8];
-            for (int i = 0; i < dataBytes.Length; i++)
-            {
-                dataBytes[i] = (byte)rnd.Next(0, 256);
-            }
-            return string.Join("-", dataBytes.Select(b => b.ToString("X2")));
-        }
+            // Extract ID
+            string id = message.Substring(3, 8);
 
-
-      
-        // Create a method to inject these test messages:
-        private int testMessageIndex = 0;
-        private void InjectNextTestMessage()
-        {
-            if (testMessageIndex < testMessages.Count)
-            {
-                // Directly call the KvsrManager_OnMessageReceived method with a test message
-                KvsrManager_OnMessageReceived(testMessages[testMessageIndex]);
-
-                testMessageIndex++;
-                if (testMessageIndex >= testMessages.Count)
-                    testMessageIndex = 0; // Reset or stop as desired
-            }
-        }
-
-        // Change the way you extract dataHex so that it does not rely on a fixed length and trims the result.
-        // Also ensure that the substring does not include additional non-hex characters.
-
-        // For example:
-        private void KvsrManager_OnMessageReceived(string message)
-        {
-            string id = message.Substring(3, 8); // Extract the part between 'ID=' and ','
-
-            // Instead of using a fixed length (23), find the index of the next comma after Data=.
+            // Extract Data
             int dataStartIndex = message.IndexOf("Data=") + 5;
             int commaIndex = message.IndexOf(',', dataStartIndex);
             string dataHex;
@@ -178,27 +161,17 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             }
             else
             {
-                // If there's no comma, take everything till the end of the string
                 dataHex = message.Substring(dataStartIndex);
             }
 
-            dataHex = dataHex.Trim(); // Trim spaces or newline characters if any
-            byte[] dataBytes = dataHex
-                .Split('-')
-                .Select(hex => Convert.ToByte(hex.Trim(), 16))
-                .ToArray();
+            dataHex = dataHex.Trim();
+            byte[] dataBytes = dataHex.Split('-').Select(hex => Convert.ToByte(hex.Trim(), 16)).ToArray();
 
             // Update user controls based on PGN (ID)
             UpdateUserControls(id, dataBytes);
 
-            string _uniquePgns = "";
-            string _quedPgns = "";
-
-            if (InvokeRequired)
-            {
-                Invoke(new Action(() => KvsrManager_OnMessageReceived(message)));
-                return;
-            }
+            string _uniquePgns;
+            string _quedPgns;
 
             if (uniqueMessages.ContainsKey(id))
             {
@@ -210,6 +183,8 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             }
             _uniquePgns = string.Join(Environment.NewLine, uniqueMessages.Values);
 
+            // Only store the most recent message
+            Queue<string> messageQueue = new Queue<string>(MaxMessages);
             if (messageQueue.Count >= MaxMessages)
             {
                 messageQueue.Dequeue();
@@ -227,16 +202,47 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             }
         }
 
+        private string GenerateRandomData()
+        {
+            Random rnd = new Random();
+            byte[] dataBytes = new byte[8];
+            for (int i = 0; i < dataBytes.Length; i++)
+            {
+                dataBytes[i] = (byte)rnd.Next(0, 256);
+            }
+            return string.Join("-", dataBytes.Select(b => b.ToString("X2")));
+        }
 
+        private int testMessageIndex = 0;
+        private void InjectNextTestMessage()
+        {
+            if (testMessageIndex < testMessages.Count)
+            {
+                // Instead of calling KvsrManager_OnMessageReceived directly,
+                // enqueue the message to simulate the CAN manager receiving it.
+                KvsrManager_OnMessageReceived(testMessages[testMessageIndex]);
+                testMessageIndex++;
+                if (testMessageIndex >= testMessages.Count)
+                    testMessageIndex = 0;
+            }
+        }
+
+        // Do not invoke here. Just enqueue the messages.
+        private void KvsrManager_OnMessageReceived(string message)
+        {
+            // This runs on a non-UI thread.
+            // Just enqueue the messages for UI processing.
+            receivedMessages.Enqueue(message);
+        }
 
         private void UpdateUserControls(string id, byte[] dataBytes)
         {
             // Convert ID to PGN
-            string pgn = id; // id.Substring(2, 6); // Extract PGN from ID (bits 8–23)
+            string pgn = id; // id.Substring(2, 6);
 
             foreach (var control in spnValControls)
             {
-                if (control.PGN.ToUpper() == pgn.ToUpper()) // Match PGN
+                if (control.PGN.ToUpper() == pgn.ToUpper())
                 {
                     int startIndex = control.A_FirstByteIndex;
                     int length = control.NumberOfBytes;
@@ -245,28 +251,21 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                     {
                         int value = 0;
 
-                        // NEW CODE START
-                        // Add this conditional check before the original for-loop
+                        // If certain PGNs need reversing:
                         if (length == 2 &&
-                             //   (pgn.Equals("OCff3134", StringComparison.OrdinalIgnoreCase) ||
-                             //pgn.Equals("OCff322A", StringComparison.OrdinalIgnoreCase))
-                             pgn.Contains("FF3134") || pgn.Contains("FF32")
-                            )
+                            (pgn.Contains("FF3134") || pgn.Contains("FF32")))
                         {
-                            // Reverse low/high byte order for these PGNs
                             value = (dataBytes[startIndex] << 8) | dataBytes[startIndex + 1];
                         }
                         else
                         {
-                            // Original code path: normal combination
                             for (int i = 0; i < length; i++)
                             {
                                 value |= dataBytes[startIndex + i] << (i * 8);
                             }
                         }
-                        // NEW CODE END
 
-                        // Update the control's value (thread-safe)
+                        // Update the control's value
                         if (control.InvokeRequired)
                         {
                             control.Invoke(new Action(() => control.Value = value));
@@ -279,11 +278,6 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                 }
             }
         }
-
-
-   
-
-
 
         private void Btn_Validate_Click(object sender, EventArgs e)
         {
@@ -300,6 +294,7 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                 MessageBox.Show("No SPN_Control found to serialize.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         void Call_PgnManager_GatherOnscreen()
         {
             if (_myPGNManager == null)
@@ -321,11 +316,11 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                 lbl_OnScreenCount.ForeColor = Color.White;
             }
         }
+
         private void Btn_RunStop_Click(object sender, EventArgs e)
         {
             if (!_isOnCanBus)
             {
-
                 KvsrManager.Instance.Init();
                 KvsrManager.Instance.OnMessageReceived += KvsrManager_OnMessageReceived;
             }
@@ -336,11 +331,11 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             }
         }
         #endregion
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (_isOnCanBus)
             {
-
                 KvsrManager.Instance.Close();
                 KvsrManager.Instance.OnMessageReceived -= KvsrManager_OnMessageReceived;
             }
