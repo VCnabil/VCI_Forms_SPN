@@ -34,16 +34,16 @@ namespace VCI_Forms_SPN
             // Application.Run(new HSLC());// <-----------------------last worked verywell
             //Application.Run(new HslcWithBKG()); 
             // Application.Run(new PongForm());
-            //   Application.Run(new SSRSk12WithBKG()); 
+            //Application.Run(new SSRSk12WithBKG());
             // Application.Run(new BirdonFirboatWithBkg());
             // Application.Run(new TesseractWinForms());
-            //Application.Run(new img_2_Analyze());
+           // Application.Run(new img_2_Analyze());
             //  Application.Run(new pdf_2_read());
             // Application.Run(new BirdonRawPgn());
             // Application.Run(new Form1());
             //  Application.Run(new SVeeSearchForm()); 
-            Application.Run(new SSRSk12_234BKG());
-
+          //  Application.Run(new SSRSk12_234BKG()); //CANnalyzerSSRS
+            Application.Run(new CANnalyzerSSRS());
 
 
         }

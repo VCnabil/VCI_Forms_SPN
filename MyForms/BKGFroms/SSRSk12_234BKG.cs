@@ -13,6 +13,7 @@ using VCI_Forms_LIB;
 using VCI_Forms_SPN._BackEndDataOBJs;
 using VCI_Forms_SPN._GLobalz;
 using VCI_Forms_SPN._Managers;
+using static Kvaser.CanLib.Canlib;
 
 namespace VCI_Forms_SPN.MyForms.BKGFroms
 {
@@ -71,7 +72,27 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             gather_physicalControllers();
             // gather_ucsManually();
             gather_ucsSemiManually();
+
+            button1.Click += SendCall1Status;
         }
+
+        private void SendCall1Status(object sender, EventArgs e)
+        {
+            string tbString =   textBox1.Text;
+            int tbString_int = Convert.ToInt32(tbString, 16);
+
+            if(tbString_int > 255) { tbString_int =255; }
+            if (tbString_int < 0) { tbString_int = 0; }
+
+
+            SendCallCan(tbString_int);
+          // int Hexvaluetosend = textBox1.Text.HexToInt();
+
+
+
+            //KvsrManager.Instance.SendPGN_withStatus(1, Hexvaluetosend, new byte[8]);
+        }
+
         vCinc_ClutchPanel CP1, CP2;
         vCinc_BackupPanelWJ WJP1;
         vCinc_BackupPanelEng EB1;
@@ -103,6 +124,24 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             PhysicalCOntollers.Add(JOY3AXIS);
             PhysicalCOntollers.Add(STA1);
             PhysicalCOntollers.Add(STA2);
+        }
+
+        void SendCallCan(int argVAl) {
+
+            int pgn = 0x18FF6429;
+
+            byte[] data = new byte[8];
+            data[0] = 0x00;
+            data[1] = (byte)argVAl;
+            data[2] = 0x01;
+            data[3] = 0x01;
+            data[4] = 0x00;
+            data[5] = 0x00;
+            data[6] = 0x00;
+            data[7] = 0x00;
+
+            KvsrManager.Instance.SendPGN_withStatus(1,pgn, data);
+        
         }
 
         void gather_ucsManually()
@@ -307,9 +346,9 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             // x is  TBD
 
             //get Joystic3axis hard values
-            vCinc_FF41Sta2Xpos_uc20.Value = JOY3AXIS.Get_X_0_1000();
+            vCinc_FF41Sta2Xpos_uc20.Value = JOY3AXIS.Get_Z_0_1000();
             vCinc_FF41Sta2Xdir_uc19.Value = JOY3AXIS.Get_X_direction();
-            vCinc_FF42Helm2_uc21.Value = JOY3AXIS.Get_Z_0_1000();
+            vCinc_FF42Helm2_uc21.Value = JOY3AXIS.Get_X_0_1000();
 
    
             //get joystick3axis hard values

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using OpenCvSharp.Extensions;
 using OpenCvSharp;
 using PdfiumViewer;
-using VCI_Forms_SPN._GLobalz;
+using VCI_Forms_SPN._GLobalz;//for enevets manger lib
 using Rect = OpenCvSharp.Rect;
 namespace VCI_Forms_SPN._BackEndDataOBJs.OCVObjs
 {
