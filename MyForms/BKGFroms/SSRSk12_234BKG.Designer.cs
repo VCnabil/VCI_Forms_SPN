@@ -1072,11 +1072,11 @@
             this.vCinc_uc8.Bit0Title = "CAN Fault";
             this.vCinc_uc8.Bit1Title = "1 Clutch Panel CAN Fault";
             this.vCinc_uc8.Bit2Title = "2 Clutch Panel CAN Fault";
-            this.vCinc_uc8.Bit3Title = "3 Clutch Panel CAN Fault";
+            this.vCinc_uc8.Bit3Title = "---- 3 CluPanCANFa";
             this.vCinc_uc8.Bit4Title = "";
             this.vCinc_uc8.Bit5Title = " DP LCD CAN Fault";
-            this.vCinc_uc8.Bit6Title = "Rmt Sta CU CAN Fault";
-            this.vCinc_uc8.Bit7Title = "";
+            this.vCinc_uc8.Bit6Title = "GPS position fault Rmt Sta CU CAN Fault";
+            this.vCinc_uc8.Bit7Title = "GPS heading fault";
             this.vCinc_uc8.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_uc8.Location = new System.Drawing.Point(734, 1898);
             this.vCinc_uc8.Margin = new System.Windows.Forms.Padding(0);
@@ -1331,6 +1331,7 @@
             this.vCinc_uc16.Size = new System.Drawing.Size(176, 235);
             this.vCinc_uc16.SPNName = "AUTOPILOT";
             this.vCinc_uc16.TabIndex = 463;
+            this.vCinc_uc16.Value = 64;
             // 
             // vCinc_uc20
             // 

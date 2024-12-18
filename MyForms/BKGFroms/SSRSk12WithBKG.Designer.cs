@@ -431,7 +431,7 @@
             this.vCinc_helm_uc16.Font = new System.Drawing.Font("Arial Narrow", 7F);
             this.vCinc_helm_uc16.Location = new System.Drawing.Point(523, 1666);
             this.vCinc_helm_uc16.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_helm_uc16.MaxValue = 65535;
+            this.vCinc_helm_uc16.MaxValue = 360;
             this.vCinc_helm_uc16.Name = "vCinc_helm_uc16";
             this.vCinc_helm_uc16.NumberOfBytes = 2;
             this.vCinc_helm_uc16.PGN = "FF66";
@@ -864,20 +864,32 @@
             this.vCinc_ClutchPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.vCinc_ClutchPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vCinc_ClutchPanel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.vCinc_ClutchPanel1.KnobValueINIT = 0;
+            this.vCinc_ClutchPanel1.KnovValue = 0;
             this.vCinc_ClutchPanel1.Location = new System.Drawing.Point(2529, 739);
             this.vCinc_ClutchPanel1.Name = "vCinc_ClutchPanel1";
             this.vCinc_ClutchPanel1.Size = new System.Drawing.Size(300, 200);
             this.vCinc_ClutchPanel1.TabIndex = 382;
+            this.vCinc_ClutchPanel1.VerticalSwitch1Button0InitialState = false;
+            this.vCinc_ClutchPanel1.VerticalSwitchButton1InitialState = false;
+            this.vCinc_ClutchPanel1.VerticalSwitchButton2InitialState = false;
+            this.vCinc_ClutchPanel1.VerticalSwitchButton3InitialState = false;
             // 
             // vCinc_ClutchPanel2
             // 
             this.vCinc_ClutchPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.vCinc_ClutchPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vCinc_ClutchPanel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.vCinc_ClutchPanel2.KnobValueINIT = 0;
+            this.vCinc_ClutchPanel2.KnovValue = 0;
             this.vCinc_ClutchPanel2.Location = new System.Drawing.Point(1751, 239);
             this.vCinc_ClutchPanel2.Name = "vCinc_ClutchPanel2";
             this.vCinc_ClutchPanel2.Size = new System.Drawing.Size(300, 200);
             this.vCinc_ClutchPanel2.TabIndex = 383;
+            this.vCinc_ClutchPanel2.VerticalSwitch1Button0InitialState = false;
+            this.vCinc_ClutchPanel2.VerticalSwitchButton1InitialState = false;
+            this.vCinc_ClutchPanel2.VerticalSwitchButton2InitialState = false;
+            this.vCinc_ClutchPanel2.VerticalSwitchButton3InitialState = false;
             // 
             // vCinc_BackupPanelWJ1
             // 
@@ -888,16 +900,24 @@
             this.vCinc_BackupPanelWJ1.Name = "vCinc_BackupPanelWJ1";
             this.vCinc_BackupPanelWJ1.Size = new System.Drawing.Size(300, 160);
             this.vCinc_BackupPanelWJ1.TabIndex = 384;
+            this.vCinc_BackupPanelWJ1.VerticalSwitch1Button1InitialState = false;
+            this.vCinc_BackupPanelWJ1.VerticalSwitch2Button1InitialState = false;
             // 
             // vCinc_BackupPanelEng1
             // 
             this.vCinc_BackupPanelEng1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.vCinc_BackupPanelEng1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_BackupPanelEng1.KnobPortValue = 0;
+            this.vCinc_BackupPanelEng1.KnobPortValueINIT = 0;
+            this.vCinc_BackupPanelEng1.KnobStbdValueINIT = 0;
             this.vCinc_BackupPanelEng1.Location = new System.Drawing.Point(2359, 239);
             this.vCinc_BackupPanelEng1.Margin = new System.Windows.Forms.Padding(1);
             this.vCinc_BackupPanelEng1.Name = "vCinc_BackupPanelEng1";
             this.vCinc_BackupPanelEng1.Size = new System.Drawing.Size(280, 159);
+            this.vCinc_BackupPanelEng1.StbdKnobValue = 0;
             this.vCinc_BackupPanelEng1.TabIndex = 385;
+            this.vCinc_BackupPanelEng1.VerticalSwitch1Button1InitialState = false;
+            this.vCinc_BackupPanelEng1.VerticalSwitch2Button1InitialState = false;
             // 
             // vCinc_SFversion3
             // 

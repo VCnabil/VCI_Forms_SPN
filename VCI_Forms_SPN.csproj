@@ -135,6 +135,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyForms\BKGFroms\BirdonSLick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\BKGFroms\BirdonSLick.Designer.cs">
+      <DependentUpon>BirdonSLick.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\BKGFroms\CANnalyzerSSRS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     <Compile Include="_GLobalz\TaskExtensions.cs" />
     <Compile Include="_Managers\PGN_MANAGER.cs" />
     <Compile Include="_Managers\PipeManager.cs" />
+    <EmbeddedResource Include="MyForms\BKGFroms\BirdonSLick.resx">
+      <DependentUpon>BirdonSLick.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForms\BKGFroms\CANnalyzerSSRS.resx">
       <DependentUpon>CANnalyzerSSRS.cs</DependentUpon>
     </EmbeddedResource>

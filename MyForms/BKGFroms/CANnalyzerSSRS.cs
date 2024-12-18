@@ -20,14 +20,19 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
         #region TemplateVariavles
         PGN_MANAGER _myPGNManager;
         StringBuilder messageBuffer;
-        const int MaxMessages = 32;
+        const int MaxMessages = 24;
         int _OScreenCount = 0;
-        Timer tempTimer;
+        Timer tempTimer;     // Existing timer at 200ms
+        Timer receiveTimer;  // New timer at 50ms for processing messages and updating UI
         bool _isOnCanBus;
+
         Dictionary<string, string> uniqueMessages = new Dictionary<string, string>();
 
-        // Use a ConcurrentQueue for thread-safe message passing from the CAN thread to the UI thread.
+        // Thread-safe queue to store incoming CAN messages:
         private ConcurrentQueue<string> receivedMessages = new ConcurrentQueue<string>();
+
+        // Latest data by PGN:
+        private Dictionary<string, byte[]> latestDataByPgn = new Dictionary<string, byte[]>();
         #endregion
 
         List<string> testMessages;
@@ -35,6 +40,7 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
         public CANnalyzerSSRS()
         {
             InitializeComponent();
+
             #region TemplateInitialize
             lbl_OnScreenCount.BackColor = Color.Transparent;
             lbl_OnScreenCount.ForeColor = Color.Black;
@@ -43,16 +49,21 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             btn_Validate.Click += Btn_Validate_Click;
             btn_RunStop.Click += Btn_RunStop_Click;
 
+            // Original timer at 200ms
             tempTimer = new Timer();
             tempTimer.Interval = 200;
             tempTimer.Tick += TempTimer_Tick;
             tempTimer.Start();
 
-            messageBuffer = new StringBuilder();
-            // No need for a blocking queue here since we now handle messages differently.
+            // New timer at 50ms for receiving messages and updating UI
+            receiveTimer = new Timer();
+            receiveTimer.Interval = 50;
+            receiveTimer.Tick += ReceiveTimer_Tick;
+            receiveTimer.Start();
 
+            messageBuffer = new StringBuilder();
             #endregion
-            //form load event 
+
             this.Load += Form1_Load;
             btn_InjectMessage.Click += (s, e) => InjectNextTestMessage();
 
@@ -97,7 +108,6 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                 "ID=18FF7400, DLC=8, Data=" + GenerateRandomData() + ", Timestamp=1866"
             };
         }
-
         #region TemplateFunctions
         private List<VCinc_SPNVAL_uc> spnValControls = new List<VCinc_SPNVAL_uc>();
         private void Form1_Load(object sender, EventArgs e)
@@ -105,6 +115,7 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             spnValControls = Controls.OfType<VCinc_SPNVAL_uc>().ToList();
         }
 
+        // This existing timer remains at 200ms for on-bus checks and PGN sending
         private void TempTimer_Tick(object sender, EventArgs e)
         {
             _isOnCanBus = KvsrManager.Instance.GetIsOnBus();
@@ -121,14 +132,9 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                 lbl_onBus.Text = "OFF BUS";
             }
 
-            // Process any messages received since last tick on the UI thread
-            while (receivedMessages.TryDequeue(out var msg))
-            {
-                ProcessMessageOnUIThread(msg);
-            }
-
             if (!_isOnCanBus) { return; }
             if (_OScreenCount == 0) { return; }
+
             if (_myPGNManager != null)
             {
                 _myPGNManager.LoadByteArraysForGroups();
@@ -146,7 +152,20 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             }
         }
 
-        private void ProcessMessageOnUIThread(string message)
+        // New timer at 50ms for processing incoming messages and updating UI
+        private void ReceiveTimer_Tick(object sender, EventArgs e)
+        {
+            // Dequeue and process all messages
+            while (receivedMessages.TryDequeue(out var msg))
+            {
+                ProcessMessage(msg);
+            }
+
+            // After processing all messages, update the UI controls in bulk
+            BatchUpdateUserControls();
+        }
+
+        private void ProcessMessage(string message)
         {
             // Extract ID
             string id = message.Substring(3, 8);
@@ -154,25 +173,20 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             // Extract Data
             int dataStartIndex = message.IndexOf("Data=") + 5;
             int commaIndex = message.IndexOf(',', dataStartIndex);
-            string dataHex;
-            if (commaIndex > dataStartIndex)
-            {
-                dataHex = message.Substring(dataStartIndex, commaIndex - dataStartIndex);
-            }
-            else
-            {
-                dataHex = message.Substring(dataStartIndex);
-            }
+            string dataHex = (commaIndex > dataStartIndex)
+                ? message.Substring(dataStartIndex, commaIndex - dataStartIndex)
+                : message.Substring(dataStartIndex);
 
             dataHex = dataHex.Trim();
             byte[] dataBytes = dataHex.Split('-').Select(hex => Convert.ToByte(hex.Trim(), 16)).ToArray();
 
-            // Update user controls based on PGN (ID)
-            UpdateUserControls(id, dataBytes);
+            // Store the latest data for this PGN
+            lock (latestDataByPgn)
+            {
+                latestDataByPgn[id.ToUpper()] = dataBytes;
+            }
 
-            string _uniquePgns;
-            string _quedPgns;
-
+            // Update textual displays for unique and queued messages
             if (uniqueMessages.ContainsKey(id))
             {
                 uniqueMessages[id] = message;
@@ -181,17 +195,18 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             {
                 uniqueMessages.Add(id, message);
             }
-            _uniquePgns = string.Join(Environment.NewLine, uniqueMessages.Values);
 
-            // Only store the most recent message
-            Queue<string> messageQueue = new Queue<string>(MaxMessages);
-            if (messageQueue.Count >= MaxMessages)
+            Queue<string> localQueue = new Queue<string>(MaxMessages);
+            if (localQueue.Count >= MaxMessages)
             {
-                messageQueue.Dequeue();
+                localQueue.Dequeue();
             }
-            messageQueue.Enqueue(message);
-            _quedPgns = string.Join(Environment.NewLine, messageQueue);
+            localQueue.Enqueue(message);
 
+            string _uniquePgns = string.Join(Environment.NewLine, uniqueMessages.Values);
+            string _quedPgns = string.Join(Environment.NewLine, localQueue);
+
+            // These UI updates are safe since we are on the UI thread (ReceiveTimer_Tick)
             if (cb_uniqueOn.Checked)
             {
                 tb_CAN_Bus_View.Text = _uniquePgns;
@@ -199,6 +214,43 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             else
             {
                 tb_CAN_Bus_View.Text = _quedPgns;
+            }
+        }
+
+        private void BatchUpdateUserControls()
+        {
+            // Update all user controls with the latest data
+            lock (latestDataByPgn)
+            {
+                foreach (var control in spnValControls)
+                {
+                    string pgn = control.PGN.ToUpper();
+                    if (latestDataByPgn.TryGetValue(pgn, out var dataBytes))
+                    {
+                        int startIndex = control.A_FirstByteIndex;
+                        int length = control.NumberOfBytes;
+                        if (startIndex + length <= dataBytes.Length)
+                        {
+                            int value = 0;
+
+                            // If certain PGNs need reversing:
+                            if (length == 2 && (pgn.Contains("FF3134") || pgn.Contains("FF32")))
+                            {
+                                value = (dataBytes[startIndex] << 8) | dataBytes[startIndex + 1];
+                            }
+                            else
+                            {
+                                for (int i = 0; i < length; i++)
+                                {
+                                    value |= dataBytes[startIndex + i] << (i * 8);
+                                }
+                            }
+
+                            // No Invoke needed, ReceiveTimer_Tick is on UI thread already
+                            control.Value = value;
+                        }
+                    }
+                }
             }
         }
 
@@ -218,8 +270,7 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
         {
             if (testMessageIndex < testMessages.Count)
             {
-                // Instead of calling KvsrManager_OnMessageReceived directly,
-                // enqueue the message to simulate the CAN manager receiving it.
+                // Enqueue the message to simulate receiving it from CAN
                 KvsrManager_OnMessageReceived(testMessages[testMessageIndex]);
                 testMessageIndex++;
                 if (testMessageIndex >= testMessages.Count)
@@ -227,56 +278,11 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             }
         }
 
-        // Do not invoke here. Just enqueue the messages.
         private void KvsrManager_OnMessageReceived(string message)
         {
-            // This runs on a non-UI thread.
-            // Just enqueue the messages for UI processing.
+            // Called from CAN manager (non-UI thread):
+            // Just enqueue the message, processing is done by ReceiveTimer_Tick
             receivedMessages.Enqueue(message);
-        }
-
-        private void UpdateUserControls(string id, byte[] dataBytes)
-        {
-            // Convert ID to PGN
-            string pgn = id; // id.Substring(2, 6);
-
-            foreach (var control in spnValControls)
-            {
-                if (control.PGN.ToUpper() == pgn.ToUpper())
-                {
-                    int startIndex = control.A_FirstByteIndex;
-                    int length = control.NumberOfBytes;
-
-                    if (startIndex + length <= dataBytes.Length)
-                    {
-                        int value = 0;
-
-                        // If certain PGNs need reversing:
-                        if (length == 2 &&
-                            (pgn.Contains("FF3134") || pgn.Contains("FF32")))
-                        {
-                            value = (dataBytes[startIndex] << 8) | dataBytes[startIndex + 1];
-                        }
-                        else
-                        {
-                            for (int i = 0; i < length; i++)
-                            {
-                                value |= dataBytes[startIndex + i] << (i * 8);
-                            }
-                        }
-
-                        // Update the control's value
-                        if (control.InvokeRequired)
-                        {
-                            control.Invoke(new Action(() => control.Value = value));
-                        }
-                        else
-                        {
-                            control.Value = value;
-                        }
-                    }
-                }
-            }
         }
 
         private void Btn_Validate_Click(object sender, EventArgs e)
