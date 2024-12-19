@@ -153,6 +153,12 @@
     <Compile Include="MyForms\BKGFroms\SSRSk12_234BKG.Designer.cs">
       <DependentUpon>SSRSk12_234BKG.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForms\BKGFroms\STEML_HSLC_Slick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\BKGFroms\STEML_HSLC_Slick.Designer.cs">
+      <DependentUpon>STEML_HSLC_Slick.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\DirSearchForms\SVeeSearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +256,12 @@
     <Compile Include="MyForms\BKGFroms\HslcWithBKG.Designer.cs">
       <DependentUpon>HslcWithBKG.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForms\simpleOldForms\PalmTextCleanerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\simpleOldForms\PalmTextCleanerForm.Designer.cs">
+      <DependentUpon>PalmTextCleanerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\simpleOldForms\PongForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,10 +315,14 @@
     <Compile Include="_BackEndDataOBJs\DocReaders\OCV_MatEffectesFirst.cs" />
     <Compile Include="_BackEndDataOBJs\DocReaders\Ocv_Stripper.cs" />
     <Compile Include="_BackEndDataOBJs\DocReaders\OCV_TBLfinder.cs" />
+    <Compile Include="_BackEndDataOBJs\DocReaders\PalmMenuOutputCleaner.cs" />
     <Compile Include="_BackEndDataOBJs\OBJ_defs\FirmwareParameters.cs" />
     <Compile Include="_BackEndDataOBJs\OCVObjs\MyPDF_toInnerFrameMat.cs" />
     <Compile Include="_BackEndDataOBJs\OCVObjs\OCV_filterObj.cs" />
     <Compile Include="_BackEndDataOBJs\OCVObjs\OCV_TempDataObj.cs" />
+    <Compile Include="_BackEndDataOBJs\ShipControls\IShipUiController.cs" />
+    <Compile Include="_BackEndDataOBJs\ShipControls\ShipBirdonController.cs" />
+    <Compile Include="_BackEndDataOBJs\ShipControls\ShipSTEML_HSLCController.cs" />
     <Compile Include="_BackEndDataOBJs\ShipObjects\JSONSHIPdatamodle.cs" />
     <Compile Include="_GLobalz\ColorHelpers.cs" />
     <Compile Include="_GLobalz\EventsManagerLib.cs" />
@@ -324,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\BKGFroms\SSRSk12_234BKG.resx">
       <DependentUpon>SSRSk12_234BKG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\BKGFroms\STEML_HSLC_Slick.resx">
+      <DependentUpon>STEML_HSLC_Slick.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\DirSearchForms\SVeeSearchForm.resx">
       <DependentUpon>SVeeSearchForm.cs</DependentUpon>
@@ -372,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\BKGFroms\HslcWithBKG.resx">
       <DependentUpon>HslcWithBKG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\simpleOldForms\PalmTextCleanerForm.resx">
+      <DependentUpon>PalmTextCleanerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\simpleOldForms\PongForm.resx">
       <DependentUpon>PongForm.cs</DependentUpon>

@@ -69,5 +69,15 @@ namespace VCI_Forms_SPN.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3539_P2_STEML_TB00391_HSLC_SysDiag {
+            get {
+                object obj = ResourceManager.GetObject("3539_P2_STEML_TB00391_HSLC_SysDiag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

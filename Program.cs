@@ -7,6 +7,7 @@ using VCI_Forms_SPN.MyForms;
 using VCI_Forms_SPN.MyForms.BKGFroms;
 using VCI_Forms_SPN.MyForms.DirSearchForms;
 using VCI_Forms_SPN.MyForms.pdfFormSysdiag;
+using VCI_Forms_SPN.MyForms.simpleOldForms;
 using VCI_Forms_SPN.MyForms.TessForms;
 
 namespace VCI_Forms_SPN
@@ -44,7 +45,10 @@ namespace VCI_Forms_SPN
             //  Application.Run(new SVeeSearchForm()); 
             //  Application.Run(new SSRSk12_234BKG()); //CANnalyzerSSRS
             //  Application.Run(new CANnalyzerSSRS());
-            Application.Run(new BirdonSLick());
+           // Application.Run(new BirdonSLick());  
+           // Application.Run(new STEML_HSLC_Slick()); //PalmTextCleanerForm
+
+            Application.Run(new PalmTextCleanerForm());
 
         }
     }
