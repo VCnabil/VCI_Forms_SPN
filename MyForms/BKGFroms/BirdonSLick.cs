@@ -24,7 +24,7 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
         StringBuilder messageBuffer;
         const int MaxMessages = 24;
         int _OScreenCount = 0;
-        Timer tempTimer;     // Existing timer at 200ms
+        Timer MainLoopTimer;     // Existing timer at 200ms
         Timer receiveTimer;  // New timer at 50ms for processing messages and updating UI
         bool _isOnCanBus;
         Dictionary<string, string> uniqueMessages = new Dictionary<string, string>();
@@ -51,9 +51,156 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
         double _myTHRUST = 0;
         private byte myByte = 0x00;
         #endregion
+
+        #region ShowHIde
+        List<UserControl> _MasterCustomUcsList = new List<UserControl>(); // Master list of all UserControls
+        List<UserControl> _ALLHardControls = new List<UserControl>(); // Master list of HArd UserControls like duallevers , clutchpanels ...
+        List<UserControl> _All_UCS = new List<UserControl>(); // Master list of all UserControls
+        List<UserControl> _All_GpsRelated = new List<UserControl>(); // Master list of allGPS stuf , the uc , latlon, uc for send reset heading/pos, and buttons
+        List<vCinc_ClutchPanel> _OnScreenClutchPanels = new List<vCinc_ClutchPanel>();
+        List<vCinc_BackupPanelWJ> _OnScreenBackupPanelWJs = new List<vCinc_BackupPanelWJ>();
+        List<vCinc_BackupPanelEng> _OnScreenBackupPanelEng = new List<vCinc_BackupPanelEng>();
+        List<vCinc_Tiller> _OnscreenTillers = new List<vCinc_Tiller>();
+        List<vCinc_dualLevers> _OnscreenDualLevers = new List<vCinc_dualLevers>();
+        List<vCinc_joy> _OnscreenJoys = new List<vCinc_joy>();
+        List<vCinc_3AxisJoy> _Onscreen3AxisJoys = new List<vCinc_3AxisJoy>();
+        List<vCinc_StaCtrlButton> _OnscreenStaCtrlButtons = new List<vCinc_StaCtrlButton>();
+        List<vCinc_StaCtrlMaster> _OnscreenStaCtrlMaster = new List<vCinc_StaCtrlMaster>();
+        List<vCinc_StaCtrlAft> _OnscreenStaCtrlAft = new List<vCinc_StaCtrlAft>();
+        List<VCinc_uc> _OnsceenVcUcs = new List<VCinc_uc>();
+        List<VCinc_SFversion> vCinc_SFversions = new List<VCinc_SFversion>();
+        List<VCinc_SPNVAL_uc> OnscreenVcSpns = new List<VCinc_SPNVAL_uc>();
+        List<VCinc_DynPos> _OnscreenDynPos = new List<VCinc_DynPos>();
+        List<VCinc_LatLon> _OnscreenLatLon = new List<VCinc_LatLon>();
+        List<Button> _OnscreenGPSButtons = new List<Button>();
+        List<TrackBar> OnScreenTrakBarGPS = new List<TrackBar>();
+        void InitializeUiLists()
+        {
+            // Dynamically populate lists with specific types
+            foreach (Control control in Controls)
+            {
+                if (control is vCinc_ClutchPanel clutchPanel)
+                {
+                    _OnScreenClutchPanels.Add(clutchPanel);
+                    _MasterCustomUcsList.Add(clutchPanel);
+                    _ALLHardControls.Add(clutchPanel);
+                }
+                if (control is vCinc_BackupPanelWJ backupPanelWJ)
+                {
+                    _OnScreenBackupPanelWJs.Add(backupPanelWJ);
+                    _MasterCustomUcsList.Add(backupPanelWJ);
+                    _ALLHardControls.Add(backupPanelWJ);
+                }
+                if (control is vCinc_BackupPanelEng backupPanelEng)
+                {
+                    _OnScreenBackupPanelEng.Add(backupPanelEng);
+                    _MasterCustomUcsList.Add(backupPanelEng);
+                    _ALLHardControls.Add(backupPanelEng);
+                }
+                if (control is vCinc_Tiller tiller)
+                {
+                    _OnscreenTillers.Add(tiller);
+                    _MasterCustomUcsList.Add(tiller);
+                    _ALLHardControls.Add(tiller);
+                }
+                if (control is vCinc_dualLevers dualLevers)
+                {
+                    _OnscreenDualLevers.Add(dualLevers);
+                    _MasterCustomUcsList.Add(dualLevers);
+                    _ALLHardControls.Add(dualLevers);
+                }
+                if (control is vCinc_joy joy)
+                {
+                    _OnscreenJoys.Add(joy);
+                    _MasterCustomUcsList.Add(joy);
+                    _ALLHardControls.Add(joy);
+                }
+                if (control is vCinc_3AxisJoy axisJoy)
+                {
+                    _Onscreen3AxisJoys.Add(axisJoy);
+                    _MasterCustomUcsList.Add(axisJoy);
+                    _ALLHardControls.Add(axisJoy);
+                }
+                if (control is vCinc_StaCtrlButton staCtrlButton)
+                {
+                    _OnscreenStaCtrlButtons.Add(staCtrlButton);
+                    _MasterCustomUcsList.Add(staCtrlButton);
+                    _ALLHardControls.Add(staCtrlButton);
+                }
+                if (control is vCinc_StaCtrlMaster staCtrlMaster)
+                {
+                    _OnscreenStaCtrlMaster.Add(staCtrlMaster);
+                    _MasterCustomUcsList.Add(staCtrlMaster);
+                    _ALLHardControls.Add(staCtrlMaster);
+                }
+                if (control is vCinc_StaCtrlAft staCtrlAft)
+                {
+                    _OnscreenStaCtrlAft.Add(staCtrlAft);
+                    _MasterCustomUcsList.Add(staCtrlAft);
+                    _ALLHardControls.Add(staCtrlAft);
+                }
+                //ucs and spns
+                if (control is VCinc_uc vcUc)
+                {
+                    _MasterCustomUcsList.Add(vcUc);
+                    //do not include FF88 as it is a GPS related uc
+                    if (vcUc.PGN != "FF88")
+                    {
+                        _All_UCS.Add(vcUc);
+                        _OnsceenVcUcs.Add(vcUc);
+                    }
+                    else {
+                        _All_GpsRelated.Add(vcUc);
+                    }
+                }
+                if (control is VCinc_SFversion sfVersion)
+                {
+                    vCinc_SFversions.Add(sfVersion);
+                    _MasterCustomUcsList.Add(sfVersion);
+                    _All_UCS.Add(sfVersion);
+                }
+                if (control is VCinc_SPNVAL_uc spnVal)
+                {
+                    OnscreenVcSpns.Add(spnVal);
+                    _MasterCustomUcsList.Add(spnVal);
+                     //not part of ucs 
+                }
+                //gps
+                if (control is VCinc_DynPos dynPos)
+                {
+                    _OnscreenDynPos.Add(dynPos);
+                    _MasterCustomUcsList.Add(dynPos);
+                    _All_GpsRelated.Add(dynPos);
+                }
+                if (control is VCinc_LatLon latLon)
+                {
+                    _OnscreenLatLon.Add(latLon);
+                    _MasterCustomUcsList.Add(latLon);
+                    _All_GpsRelated.Add(latLon);
+                }
+                if (control is Button gpsButton)
+                {
+                    if (gpsButton.Name.Contains("btn_GPS")) { 
+                        _OnscreenGPSButtons.Add(gpsButton);                  
+                    }
+                    
+                }
+                //if trackbar 
+                if (control is TrackBar trackBar)
+                {
+                    if (trackBar.Name.Contains("tb_GPS")) { 
+                        OnScreenTrakBarGPS.Add(trackBar);
+                    }
+                }
+            }
+        }
+        #endregion
         public BirdonSLick()
         {
             InitializeComponent();
+            #region ShowhideUcs
+            InitializeUiLists();
+            #endregion
             #region TemplateInitialize
             lbl_OnScreenCount.BackColor = Color.Transparent;
             lbl_OnScreenCount.ForeColor = Color.Black;
@@ -61,13 +208,6 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             lbl_onBus.ForeColor = Color.Black;
             btn_Validate.Click += Btn_Validate_Click;
             btn_RunStop.Click += Btn_RunStop_Click;
-            // Original timer at 200ms
-            tempTimer = new Timer();
-            tempTimer.Interval = 200;
-            // tempTimer.Tick += TempTimer_Tick;
-
-            tempTimer.Tick += Looptimer_Tick;
-            tempTimer.Start();
             // New timer at 50ms for receiving messages and updating UI
             receiveTimer = new Timer();
             receiveTimer.Interval = 500;
@@ -77,13 +217,21 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             this.Load += Form1_Load;
             #endregion
 
+            // Original timer at 200ms
+            MainLoopTimer = new Timer();
+            MainLoopTimer.Interval = 200;
+            // MainLoopTimer.Tick += TempTimer_Tick; <--this one has no gos or pipe 
+            MainLoopTimer.Tick += Looptimer_Tick;
+            MainLoopTimer.Start();
+            #region LocLatLonPipe
+
             VESSEL_LOC = new VC_LOCATION();
             WAYPOINT_LOC = new VC_LOCATION();
             vCinc_LatLon_mapCnter.SetLatLon(VESSEL_LOC);
             VESSEL_LOC = vCinc_LatLon_mapCnter.GetLatLon();
-            VESSEL_HEADING = (tb_manualHEading.Value / 100.00) % 360.00;
-            btn_restBit0.Click += bet_restBit0_Click;
-            btn_restBit1.Click += bet_restBit1_Click;
+            VESSEL_HEADING = (tb_GPSmanualHEading.Value / 100.00) % 360.00;
+            btn_GPSrestBit0.Click += bet_restBit0_Click;
+            btn_GPSrestBit1.Click += bet_restBit1_Click;
 
             pipeTimer = new Timer();
             pipeTimer.Interval = 320;
@@ -94,8 +242,9 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
 
             btn_PipeToggle.Click += Btn_PipeToggle_Click;
             UpdateButtonState();
-            btn_setLatLonToUnity.Click += Btn_setLatLonToUnity_Click;
-            btn_webview2.Click += Btn_webview2_Click;
+            btn_GPSsetLatLonToUnity.Click += Btn_setLatLonToUnity_Click;
+            btn_GPSwebview2.Click += Btn_webview2_Click;
+            #endregion
         }
 
         #region LocPos
@@ -154,6 +303,7 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
 
         private void PipeManager_OnMessageReceived(string message)
         {
+
             if (InvokeRequired)
             {
                 BeginInvoke(new Action(() => PipeManager_OnMessageReceived(message)));
@@ -229,6 +379,26 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
         {
         
 
+        }
+        void ShowHideUiElements() {
+            //HardControls
+            foreach (var userControl in _ALLHardControls)
+                userControl.Visible = cbShowHardCtrls.Checked;
+            //GPS
+            foreach (var userControl in _All_GpsRelated)
+                userControl.Visible = cbShowGps.Checked;
+            //UCS
+            foreach (var userControl in _All_UCS)
+                userControl.Visible = cbShowUcs.Checked;
+            //SPN
+            foreach (var userControl in OnscreenVcSpns)
+                userControl.Visible = cbShowSpns.Checked;
+            //GPSButtons
+            foreach (var userControl in _OnscreenGPSButtons)
+                userControl.Visible = cbShowGps.Checked;
+            //GPStrackbar
+            foreach (var userControl in OnScreenTrakBarGPS)
+                userControl.Visible = cbShowGps.Checked;
         }
         #region TemplateFuncs
         private void ReceiveTimer_Tick(object sender, EventArgs e)
@@ -366,18 +536,25 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
         }
         private void Looptimer_Tick(object sender, EventArgs e)
         {
+            ShowHideUiElements();
             lock (_syncLock)
             {
                 if (!_pipeIsOpen)
                 {
-                    VESSEL_LOC = vCinc_LatLon_mapCnter.GetLatLon();
-                    VESSEL_HEADING = (tb_manualHEading.Value / 100.00) % 360.00;
+                    if (vCinc_LatLon_mapCnter != null && VESSEL_LOC != null  ) {
+                        VESSEL_LOC = vCinc_LatLon_mapCnter.GetLatLon();
+                        VESSEL_HEADING = (tb_GPSmanualHEading.Value / 100.00) % 360.00;
+                    }
+
                 }
                 PGN_Controlled();
 
-                vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, VESSEL_HEADING);
-                WAYPOINT_LOC = vCinc_DynPos1.Get_WayPointLOC();
-                vCinc_LatLon_waypoint.SetLatLon(WAYPOINT_LOC);
+                if (vCinc_LatLon_mapCnter != null && VESSEL_LOC != null  && WAYPOINT_LOC != null)
+                {
+                    vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, VESSEL_HEADING);
+                    WAYPOINT_LOC = vCinc_DynPos1.Get_WayPointLOC();
+                    vCinc_LatLon_waypoint.SetLatLon(WAYPOINT_LOC);          
+                }
                 SendAllPgnMessages();
             }
         }
@@ -481,7 +658,7 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                 _pipeManager.StopPipeServer();
                 pipeTimer.Stop();
             }
-            tempTimer.Stop();
+            MainLoopTimer.Stop();
             if (_isOnCanBus)
             {
                 _isOnCanBus = false;
