@@ -73,6 +73,16 @@ namespace VCI_Forms_SPN.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3306_P1_3_SSRS_K12___no_DP___No2_thru_No4_SysDiag {
+            get {
+                object obj = ResourceManager.GetObject("3306_P1.3_SSRS K12 - no DP - No2 thru No4 SysDiag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3539_P2_STEML_TB00391_HSLC_SysDiag {
             get {
                 object obj = ResourceManager.GetObject("3539_P2_STEML_TB00391_HSLC_SysDiag", resourceCulture);

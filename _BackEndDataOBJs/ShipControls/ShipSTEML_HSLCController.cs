@@ -13,6 +13,7 @@ namespace VCI_Forms_SPN._BackEndDataOBJs.ShipControls
 
         vCinc_BackupPanel vCinc_BackupPanel; //vCinc_BackupPanel1
         VCinc_uc VCinttest; //ucname:vCinc_testuc   SPNName:testSpn
+        VCinc_uc uc_DPcmdStats;    //ucname:vCinc_DPcmd_FF65_B0  SPNName:DPcmdstat
         public ShipSTEML_HSLCController() { 
         
         }
@@ -31,7 +32,22 @@ namespace VCI_Forms_SPN._BackEndDataOBJs.ShipControls
 
         public void RunController(bool argLinkOnOff)
         {
-           // throw new NotImplementedException();
+
+            bool PNOZ_isInAuto = vCinc_BackupPanel.VertSwitch_1_StartState;
+
+
+
+            if (!argLinkOnOff){return;}
+            
+
+            if(PNOZ_isInAuto)
+            {
+                VCinttest.Value = 1;
+            }
+            else
+            {
+                VCinttest.Value = 0;
+            }
         }
     }
 }

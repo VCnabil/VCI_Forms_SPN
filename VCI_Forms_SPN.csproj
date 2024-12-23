@@ -147,6 +147,12 @@
     <Compile Include="MyForms\BKGFroms\CANnalyzerSSRS.Designer.cs">
       <DependentUpon>CANnalyzerSSRS.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForms\BKGFroms\SSRS12K234Slick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\BKGFroms\SSRS12K234Slick.Designer.cs">
+      <DependentUpon>SSRS12K234Slick.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\BKGFroms\SSRSk12_234BKG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,12 @@
     <Compile Include="MyForms\BKGFroms\HslcWithBKG.Designer.cs">
       <DependentUpon>HslcWithBKG.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForms\simpleOldForms\MuphyXMLToAngelScriptFilemaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\simpleOldForms\MuphyXMLToAngelScriptFilemaker.Designer.cs">
+      <DependentUpon>MuphyXMLToAngelScriptFilemaker.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\simpleOldForms\PalmTextCleanerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +334,7 @@
     <Compile Include="_BackEndDataOBJs\OCVObjs\OCV_TempDataObj.cs" />
     <Compile Include="_BackEndDataOBJs\ShipControls\IShipUiController.cs" />
     <Compile Include="_BackEndDataOBJs\ShipControls\ShipBirdonController.cs" />
+    <Compile Include="_BackEndDataOBJs\ShipControls\ShipSSRS12K234Controller.cs" />
     <Compile Include="_BackEndDataOBJs\ShipControls\ShipSTEML_HSLCController.cs" />
     <Compile Include="_BackEndDataOBJs\ShipObjects\JSONSHIPdatamodle.cs" />
     <Compile Include="_GLobalz\ColorHelpers.cs" />
@@ -337,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\BKGFroms\CANnalyzerSSRS.resx">
       <DependentUpon>CANnalyzerSSRS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\BKGFroms\SSRS12K234Slick.resx">
+      <DependentUpon>SSRS12K234Slick.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\BKGFroms\SSRSk12_234BKG.resx">
       <DependentUpon>SSRSk12_234BKG.cs</DependentUpon>
@@ -391,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\BKGFroms\HslcWithBKG.resx">
       <DependentUpon>HslcWithBKG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\simpleOldForms\MuphyXMLToAngelScriptFilemaker.resx">
+      <DependentUpon>MuphyXMLToAngelScriptFilemaker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\simpleOldForms\PalmTextCleanerForm.resx">
       <DependentUpon>PalmTextCleanerForm.cs</DependentUpon>

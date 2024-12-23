@@ -870,10 +870,10 @@
             this.vCinc_ClutchPanel1.Name = "vCinc_ClutchPanel1";
             this.vCinc_ClutchPanel1.Size = new System.Drawing.Size(300, 200);
             this.vCinc_ClutchPanel1.TabIndex = 382;
-            this.vCinc_ClutchPanel1.VerticalSwitch1Button0InitialState = false;
-            this.vCinc_ClutchPanel1.VerticalSwitchButton1InitialState = false;
-            this.vCinc_ClutchPanel1.VerticalSwitchButton2InitialState = false;
-            this.vCinc_ClutchPanel1.VerticalSwitchButton3InitialState = false;
+            this.vCinc_ClutchPanel1.VerticalSwitch_Port_EngageDisengageState = true;
+            this.vCinc_ClutchPanel1.VerticalSwitch_Port_BkflshBright = false;
+            this.vCinc_ClutchPanel1.VerticalSwitch_Stbd_BkflshDimm = false;
+            this.vCinc_ClutchPanel1.VerticalSwitch_Stbd_EngageDisengageState = true;
             // 
             // vCinc_ClutchPanel2
             // 
@@ -886,10 +886,10 @@
             this.vCinc_ClutchPanel2.Name = "vCinc_ClutchPanel2";
             this.vCinc_ClutchPanel2.Size = new System.Drawing.Size(300, 200);
             this.vCinc_ClutchPanel2.TabIndex = 383;
-            this.vCinc_ClutchPanel2.VerticalSwitch1Button0InitialState = false;
-            this.vCinc_ClutchPanel2.VerticalSwitchButton1InitialState = false;
-            this.vCinc_ClutchPanel2.VerticalSwitchButton2InitialState = false;
-            this.vCinc_ClutchPanel2.VerticalSwitchButton3InitialState = false;
+            this.vCinc_ClutchPanel2.VerticalSwitch_Port_EngageDisengageState = true;
+            this.vCinc_ClutchPanel2.VerticalSwitch_Port_BkflshBright = false;
+            this.vCinc_ClutchPanel2.VerticalSwitch_Stbd_BkflshDimm = false;
+            this.vCinc_ClutchPanel2.VerticalSwitch_Stbd_EngageDisengageState = true;
             // 
             // vCinc_BackupPanelWJ1
             // 

@@ -1696,7 +1696,7 @@
             this.tb_CAN_Bus_View.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_CAN_Bus_View.Size = new System.Drawing.Size(729, 325);
             this.tb_CAN_Bus_View.TabIndex = 602;
-            this.tb_CAN_Bus_View.Text = ": Console Bkg.green  -c -0 ";
+            this.tb_CAN_Bus_View.Text = "s";
             // 
             // btn_RunStop
             // 
@@ -1956,7 +1956,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "STEML_HSLC_Slick";
-            this.Text = "STEML_HSLC_Slick";
+            this.Text = "e";
             ((System.ComponentModel.ISupportInitialize)(this.tb_GPSmanualHEading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

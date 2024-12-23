@@ -28,6 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tb_CAN_Bus_View = new System.Windows.Forms.TextBox();
+            this.btn_Validate = new System.Windows.Forms.Button();
+            this.lbl_onBus = new System.Windows.Forms.Label();
+            this.lbl_OnScreenCount = new System.Windows.Forms.Label();
+            this.btn_RunStop = new System.Windows.Forms.Button();
+            this.cb_uniqueOn = new System.Windows.Forms.CheckBox();
+            this.btn_GPSrestBit0 = new System.Windows.Forms.Button();
+            this.btn_GPSrestBit1 = new System.Windows.Forms.Button();
+            this.tb_GPSmanualHEading = new System.Windows.Forms.TrackBar();
+            this.btn_PipeToggle = new System.Windows.Forms.Button();
+            this.btn_GPSsetLatLonToUnity = new System.Windows.Forms.Button();
+            this.btn_GPSwebview2 = new System.Windows.Forms.Button();
+            this.cbShowHardCtrls = new System.Windows.Forms.CheckBox();
+            this.cbShowUcs = new System.Windows.Forms.CheckBox();
+            this.cb_LinkControls = new System.Windows.Forms.CheckBox();
+            this.cbShowSpns = new System.Windows.Forms.CheckBox();
+            this.cbShowGps = new System.Windows.Forms.CheckBox();
+            this.lbl_allFound = new System.Windows.Forms.Label();
+            this.vCinc_testuc = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_ClutchPanel1 = new VCI_Forms_LIB.vCinc_ClutchPanel();
+            this.vCinc_ClutchPanel2 = new VCI_Forms_LIB.vCinc_ClutchPanel();
+            this.vCinc_StaCtrlAft1 = new VCI_Forms_LIB.vCinc_StaCtrlAft();
+            this.vCinc_dualLevers2 = new VCI_Forms_LIB.vCinc_dualLevers();
+            this.vCinc_joy2 = new VCI_Forms_LIB.vCinc_joy();
+            this.vCinc_Tiller3 = new VCI_Forms_LIB.vCinc_Tiller();
+            this.vCinc_dualLevers1 = new VCI_Forms_LIB.vCinc_dualLevers();
+            this.vCinc_joy1 = new VCI_Forms_LIB.vCinc_joy();
+            this.vCinc_Tiller2 = new VCI_Forms_LIB.vCinc_Tiller();
+            this.vCinc_Tiller1 = new VCI_Forms_LIB.vCinc_Tiller();
+            this.vCinc_StaCtrlMaster1 = new VCI_Forms_LIB.vCinc_StaCtrlMaster();
+            this.vCinc_BackupPanelEng1 = new VCI_Forms_LIB.vCinc_BackupPanelEng();
+            this.vCinc_BackupPanelWJ1 = new VCI_Forms_LIB.vCinc_BackupPanelWJ();
+            this.vCinc_SPNVAL_uc6 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
+            this.vCinc_SPNVAL_uc5 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
+            this.vCinc_SPNVAL_uc4 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
+            this.vCinc_SPNVAL_uc3 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
+            this.vCinc_SPNVAL_uc2 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
+            this.vCinc_SPNVAL_uc1 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
             this.vCinc_uc13 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_sta2IdleKnob_uc21 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_sta1IdleKnob_uc20 = new VCI_Forms_LIB.VCinc_uc();
@@ -41,7 +79,7 @@
             this.vCinc_FF41Sta2Xdir_uc19 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_FF41St1Xpos_uc16 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_FF41St1Xdir_uc10 = new VCI_Forms_LIB.VCinc_uc();
-            this.vCinc_uc9 = new VCI_Forms_LIB.VCinc_uc();
+            this.vCinc_FF3134_B0_clutch = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc19 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc20 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc21 = new VCI_Forms_LIB.VCinc_uc();
@@ -76,45 +114,446 @@
             this.vCinc_uc2 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc1 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc18 = new VCI_Forms_LIB.VCinc_uc();
-            this.tb_CAN_Bus_View = new System.Windows.Forms.TextBox();
-            this.btn_Validate = new System.Windows.Forms.Button();
-            this.lbl_onBus = new System.Windows.Forms.Label();
-            this.lbl_OnScreenCount = new System.Windows.Forms.Label();
-            this.btn_RunStop = new System.Windows.Forms.Button();
-            this.cb_uniqueOn = new System.Windows.Forms.CheckBox();
-            this.btn_GPSrestBit0 = new System.Windows.Forms.Button();
-            this.btn_GPSrestBit1 = new System.Windows.Forms.Button();
-            this.tb_GPSmanualHEading = new System.Windows.Forms.TrackBar();
-            this.btn_PipeToggle = new System.Windows.Forms.Button();
-            this.btn_GPSsetLatLonToUnity = new System.Windows.Forms.Button();
-            this.btn_GPSwebview2 = new System.Windows.Forms.Button();
-            this.vCinc_SPNVAL_uc1 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
-            this.vCinc_SPNVAL_uc2 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
-            this.vCinc_SPNVAL_uc3 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
-            this.vCinc_SPNVAL_uc4 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
-            this.vCinc_SPNVAL_uc5 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
-            this.vCinc_SPNVAL_uc6 = new VCI_Forms_LIB.VCinc_SPNVAL_uc();
-            this.cbShowHardCtrls = new System.Windows.Forms.CheckBox();
-            this.cbShowUcs = new System.Windows.Forms.CheckBox();
-            this.cb_LinkControls = new System.Windows.Forms.CheckBox();
-            this.cbShowSpns = new System.Windows.Forms.CheckBox();
-            this.vCinc_ClutchPanel1 = new VCI_Forms_LIB.vCinc_ClutchPanel();
-            this.vCinc_BackupPanelEng1 = new VCI_Forms_LIB.vCinc_BackupPanelEng();
-            this.vCinc_BackupPanelWJ1 = new VCI_Forms_LIB.vCinc_BackupPanelWJ();
-            this.vCinc_dualLevers1 = new VCI_Forms_LIB.vCinc_dualLevers();
-            this.vCinc_joy1 = new VCI_Forms_LIB.vCinc_joy();
-            this.vCinc_Tiller2 = new VCI_Forms_LIB.vCinc_Tiller();
-            this.vCinc_Tiller1 = new VCI_Forms_LIB.vCinc_Tiller();
-            this.vCinc_StaCtrlMaster1 = new VCI_Forms_LIB.vCinc_StaCtrlMaster();
-            this.vCinc_StaCtrlAft1 = new VCI_Forms_LIB.vCinc_StaCtrlAft();
-            this.vCinc_dualLevers2 = new VCI_Forms_LIB.vCinc_dualLevers();
-            this.vCinc_joy2 = new VCI_Forms_LIB.vCinc_joy();
-            this.vCinc_Tiller3 = new VCI_Forms_LIB.vCinc_Tiller();
-            this.vCinc_ClutchPanel2 = new VCI_Forms_LIB.vCinc_ClutchPanel();
-            this.cbShowGps = new System.Windows.Forms.CheckBox();
-            this.lbl_allFound = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tb_GPSmanualHEading)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tb_CAN_Bus_View
+            // 
+            this.tb_CAN_Bus_View.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tb_CAN_Bus_View.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CAN_Bus_View.ForeColor = System.Drawing.Color.Lime;
+            this.tb_CAN_Bus_View.Location = new System.Drawing.Point(2719, 733);
+            this.tb_CAN_Bus_View.Margin = new System.Windows.Forms.Padding(6);
+            this.tb_CAN_Bus_View.Multiline = true;
+            this.tb_CAN_Bus_View.Name = "tb_CAN_Bus_View";
+            this.tb_CAN_Bus_View.ReadOnly = true;
+            this.tb_CAN_Bus_View.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tb_CAN_Bus_View.Size = new System.Drawing.Size(612, 261);
+            this.tb_CAN_Bus_View.TabIndex = 534;
+            this.tb_CAN_Bus_View.Text = ": Console Bkg.green  -c -0 ";
+            // 
+            // btn_Validate
+            // 
+            this.btn_Validate.Location = new System.Drawing.Point(2952, 1006);
+            this.btn_Validate.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_Validate.Name = "btn_Validate";
+            this.btn_Validate.Size = new System.Drawing.Size(90, 45);
+            this.btn_Validate.TabIndex = 530;
+            this.btn_Validate.Text = "validator";
+            this.btn_Validate.UseVisualStyleBackColor = true;
+            // 
+            // lbl_onBus
+            // 
+            this.lbl_onBus.Location = new System.Drawing.Point(2742, 1024);
+            this.lbl_onBus.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_onBus.Name = "lbl_onBus";
+            this.lbl_onBus.Size = new System.Drawing.Size(98, 36);
+            this.lbl_onBus.TabIndex = 531;
+            this.lbl_onBus.Text = "on bus";
+            this.lbl_onBus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_OnScreenCount
+            // 
+            this.lbl_OnScreenCount.Location = new System.Drawing.Point(2852, 1024);
+            this.lbl_OnScreenCount.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_OnScreenCount.Name = "lbl_OnScreenCount";
+            this.lbl_OnScreenCount.Size = new System.Drawing.Size(97, 36);
+            this.lbl_OnScreenCount.TabIndex = 532;
+            this.lbl_OnScreenCount.Text = "on screen ";
+            this.lbl_OnScreenCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btn_RunStop
+            // 
+            this.btn_RunStop.Location = new System.Drawing.Point(3054, 1006);
+            this.btn_RunStop.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_RunStop.Name = "btn_RunStop";
+            this.btn_RunStop.Size = new System.Drawing.Size(142, 45);
+            this.btn_RunStop.TabIndex = 533;
+            this.btn_RunStop.Text = "Send Can";
+            this.btn_RunStop.UseVisualStyleBackColor = true;
+            // 
+            // cb_uniqueOn
+            // 
+            this.cb_uniqueOn.AutoSize = true;
+            this.cb_uniqueOn.Checked = true;
+            this.cb_uniqueOn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_uniqueOn.Location = new System.Drawing.Point(3176, 677);
+            this.cb_uniqueOn.Margin = new System.Windows.Forms.Padding(6);
+            this.cb_uniqueOn.Name = "cb_uniqueOn";
+            this.cb_uniqueOn.Size = new System.Drawing.Size(140, 28);
+            this.cb_uniqueOn.TabIndex = 535;
+            this.cb_uniqueOn.Text = "group pgn?";
+            this.cb_uniqueOn.UseVisualStyleBackColor = true;
+            // 
+            // btn_GPSrestBit0
+            // 
+            this.btn_GPSrestBit0.Location = new System.Drawing.Point(3227, 1205);
+            this.btn_GPSrestBit0.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_GPSrestBit0.Name = "btn_GPSrestBit0";
+            this.btn_GPSrestBit0.Size = new System.Drawing.Size(90, 30);
+            this.btn_GPSrestBit0.TabIndex = 536;
+            this.btn_GPSrestBit0.Text = "hold loc";
+            this.btn_GPSrestBit0.UseVisualStyleBackColor = true;
+            // 
+            // btn_GPSrestBit1
+            // 
+            this.btn_GPSrestBit1.Location = new System.Drawing.Point(3227, 1241);
+            this.btn_GPSrestBit1.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_GPSrestBit1.Name = "btn_GPSrestBit1";
+            this.btn_GPSrestBit1.Size = new System.Drawing.Size(90, 30);
+            this.btn_GPSrestBit1.TabIndex = 537;
+            this.btn_GPSrestBit1.Text = "hold rot";
+            this.btn_GPSrestBit1.UseVisualStyleBackColor = true;
+            // 
+            // tb_GPSmanualHEading
+            // 
+            this.tb_GPSmanualHEading.AutoSize = false;
+            this.tb_GPSmanualHEading.Location = new System.Drawing.Point(2859, 1083);
+            this.tb_GPSmanualHEading.Maximum = 72000;
+            this.tb_GPSmanualHEading.Name = "tb_GPSmanualHEading";
+            this.tb_GPSmanualHEading.Size = new System.Drawing.Size(337, 53);
+            this.tb_GPSmanualHEading.TabIndex = 538;
+            this.tb_GPSmanualHEading.TickFrequency = 1000;
+            this.tb_GPSmanualHEading.Value = 36000;
+            // 
+            // btn_PipeToggle
+            // 
+            this.btn_PipeToggle.Location = new System.Drawing.Point(3223, 1006);
+            this.btn_PipeToggle.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_PipeToggle.Name = "btn_PipeToggle";
+            this.btn_PipeToggle.Size = new System.Drawing.Size(90, 45);
+            this.btn_PipeToggle.TabIndex = 539;
+            this.btn_PipeToggle.Text = "pipe";
+            this.btn_PipeToggle.UseVisualStyleBackColor = true;
+            // 
+            // btn_GPSsetLatLonToUnity
+            // 
+            this.btn_GPSsetLatLonToUnity.Location = new System.Drawing.Point(3227, 1162);
+            this.btn_GPSsetLatLonToUnity.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_GPSsetLatLonToUnity.Name = "btn_GPSsetLatLonToUnity";
+            this.btn_GPSsetLatLonToUnity.Size = new System.Drawing.Size(90, 41);
+            this.btn_GPSsetLatLonToUnity.TabIndex = 540;
+            this.btn_GPSsetLatLonToUnity.Text = "set loc";
+            this.btn_GPSsetLatLonToUnity.UseVisualStyleBackColor = true;
+            // 
+            // btn_GPSwebview2
+            // 
+            this.btn_GPSwebview2.Location = new System.Drawing.Point(3227, 1273);
+            this.btn_GPSwebview2.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_GPSwebview2.Name = "btn_GPSwebview2";
+            this.btn_GPSwebview2.Size = new System.Drawing.Size(90, 30);
+            this.btn_GPSwebview2.TabIndex = 541;
+            this.btn_GPSwebview2.Text = "Dist";
+            this.btn_GPSwebview2.UseVisualStyleBackColor = true;
+            // 
+            // cbShowHardCtrls
+            // 
+            this.cbShowHardCtrls.AutoSize = true;
+            this.cbShowHardCtrls.Location = new System.Drawing.Point(3207, 55);
+            this.cbShowHardCtrls.Margin = new System.Windows.Forms.Padding(6);
+            this.cbShowHardCtrls.Name = "cbShowHardCtrls";
+            this.cbShowHardCtrls.Size = new System.Drawing.Size(167, 28);
+            this.cbShowHardCtrls.TabIndex = 600;
+            this.cbShowHardCtrls.Text = "ShowHardCtrls";
+            this.cbShowHardCtrls.UseVisualStyleBackColor = true;
+            // 
+            // cbShowUcs
+            // 
+            this.cbShowUcs.AutoSize = true;
+            this.cbShowUcs.Location = new System.Drawing.Point(3209, 95);
+            this.cbShowUcs.Margin = new System.Windows.Forms.Padding(6);
+            this.cbShowUcs.Name = "cbShowUcs";
+            this.cbShowUcs.Size = new System.Drawing.Size(122, 28);
+            this.cbShowUcs.TabIndex = 599;
+            this.cbShowUcs.Text = "ShowUcs";
+            this.cbShowUcs.UseVisualStyleBackColor = true;
+            // 
+            // cb_LinkControls
+            // 
+            this.cb_LinkControls.AutoSize = true;
+            this.cb_LinkControls.Location = new System.Drawing.Point(3209, 175);
+            this.cb_LinkControls.Margin = new System.Windows.Forms.Padding(6);
+            this.cb_LinkControls.Name = "cb_LinkControls";
+            this.cb_LinkControls.Size = new System.Drawing.Size(145, 28);
+            this.cb_LinkControls.TabIndex = 598;
+            this.cb_LinkControls.Text = "LinkControls";
+            this.cb_LinkControls.UseVisualStyleBackColor = true;
+            // 
+            // cbShowSpns
+            // 
+            this.cbShowSpns.AutoSize = true;
+            this.cbShowSpns.Location = new System.Drawing.Point(3209, 135);
+            this.cbShowSpns.Margin = new System.Windows.Forms.Padding(6);
+            this.cbShowSpns.Name = "cbShowSpns";
+            this.cbShowSpns.Size = new System.Drawing.Size(133, 28);
+            this.cbShowSpns.TabIndex = 601;
+            this.cbShowSpns.Text = "ShowSpns";
+            this.cbShowSpns.UseVisualStyleBackColor = true;
+            // 
+            // cbShowGps
+            // 
+            this.cbShowGps.AutoSize = true;
+            this.cbShowGps.Location = new System.Drawing.Point(3207, 15);
+            this.cbShowGps.Margin = new System.Windows.Forms.Padding(6);
+            this.cbShowGps.Name = "cbShowGps";
+            this.cbShowGps.Size = new System.Drawing.Size(124, 28);
+            this.cbShowGps.TabIndex = 615;
+            this.cbShowGps.Text = "ShowGps";
+            this.cbShowGps.UseVisualStyleBackColor = true;
+            // 
+            // lbl_allFound
+            // 
+            this.lbl_allFound.Location = new System.Drawing.Point(3205, 209);
+            this.lbl_allFound.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_allFound.Name = "lbl_allFound";
+            this.lbl_allFound.Size = new System.Drawing.Size(126, 36);
+            this.lbl_allFound.TabIndex = 616;
+            this.lbl_allFound.Text = "AllFound";
+            this.lbl_allFound.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // vCinc_testuc
+            // 
+            this.vCinc_testuc.A_FirstByteIndex = 2;
+            this.vCinc_testuc.Address = "01";
+            this.vCinc_testuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.vCinc_testuc.Bit0Title = "testbit";
+            this.vCinc_testuc.Bit1Title = "";
+            this.vCinc_testuc.Bit2Title = "";
+            this.vCinc_testuc.Bit3Title = "";
+            this.vCinc_testuc.Bit4Title = "";
+            this.vCinc_testuc.Bit5Title = "";
+            this.vCinc_testuc.Bit6Title = "";
+            this.vCinc_testuc.Bit7Title = "";
+            this.vCinc_testuc.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_testuc.Location = new System.Drawing.Point(978, 607);
+            this.vCinc_testuc.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_testuc.Name = "vCinc_testuc";
+            this.vCinc_testuc.PGN = "B00B";
+            this.vCinc_testuc.Size = new System.Drawing.Size(154, 277);
+            this.vCinc_testuc.SPNName = "testSpn";
+            this.vCinc_testuc.TabIndex = 627;
+            // 
+            // vCinc_ClutchPanel1
+            // 
+            this.vCinc_ClutchPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.vCinc_ClutchPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_ClutchPanel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.vCinc_ClutchPanel1.KNobPercentValue = 0F;
+            this.vCinc_ClutchPanel1.KnobValueINIT = 0;
+            this.vCinc_ClutchPanel1.KnovValue = 0;
+            this.vCinc_ClutchPanel1.Location = new System.Drawing.Point(894, 15);
+            this.vCinc_ClutchPanel1.Name = "vCinc_ClutchPanel1";
+            this.vCinc_ClutchPanel1.Size = new System.Drawing.Size(341, 227);
+            this.vCinc_ClutchPanel1.TabIndex = 617;
+            this.vCinc_ClutchPanel1.VerticalSwitch_Port_BkflshBright = false;
+            this.vCinc_ClutchPanel1.VerticalSwitch_Port_EngageDisengageState = true;
+            this.vCinc_ClutchPanel1.VerticalSwitch_Stbd_BkflshDimm = false;
+            this.vCinc_ClutchPanel1.VerticalSwitch_Stbd_EngageDisengageState = true;
+            // 
+            // vCinc_ClutchPanel2
+            // 
+            this.vCinc_ClutchPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.vCinc_ClutchPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_ClutchPanel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.vCinc_ClutchPanel2.KNobPercentValue = 0F;
+            this.vCinc_ClutchPanel2.KnobValueINIT = 0;
+            this.vCinc_ClutchPanel2.KnovValue = 0;
+            this.vCinc_ClutchPanel2.Location = new System.Drawing.Point(1630, 257);
+            this.vCinc_ClutchPanel2.Name = "vCinc_ClutchPanel2";
+            this.vCinc_ClutchPanel2.Size = new System.Drawing.Size(341, 227);
+            this.vCinc_ClutchPanel2.TabIndex = 614;
+            this.vCinc_ClutchPanel2.VerticalSwitch_Port_BkflshBright = false;
+            this.vCinc_ClutchPanel2.VerticalSwitch_Port_EngageDisengageState = true;
+            this.vCinc_ClutchPanel2.VerticalSwitch_Stbd_BkflshDimm = false;
+            this.vCinc_ClutchPanel2.VerticalSwitch_Stbd_EngageDisengageState = true;
+            // 
+            // vCinc_StaCtrlAft1
+            // 
+            this.vCinc_StaCtrlAft1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vCinc_StaCtrlAft1.Font = new System.Drawing.Font("Arial Narrow", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_StaCtrlAft1.Location = new System.Drawing.Point(1296, 257);
+            this.vCinc_StaCtrlAft1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_StaCtrlAft1.Name = "vCinc_StaCtrlAft1";
+            this.vCinc_StaCtrlAft1.Size = new System.Drawing.Size(117, 235);
+            this.vCinc_StaCtrlAft1.TabIndex = 613;
+            // 
+            // vCinc_dualLevers2
+            // 
+            this.vCinc_dualLevers2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vCinc_dualLevers2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.vCinc_dualLevers2.Location = new System.Drawing.Point(1418, 257);
+            this.vCinc_dualLevers2.Name = "vCinc_dualLevers2";
+            this.vCinc_dualLevers2.Size = new System.Drawing.Size(206, 240);
+            this.vCinc_dualLevers2.TabIndex = 612;
+            // 
+            // vCinc_joy2
+            // 
+            this.vCinc_joy2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vCinc_joy2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_joy2.Location = new System.Drawing.Point(1091, 257);
+            this.vCinc_joy2.Name = "vCinc_joy2";
+            this.vCinc_joy2.Size = new System.Drawing.Size(210, 240);
+            this.vCinc_joy2.TabIndex = 611;
+            // 
+            // vCinc_Tiller3
+            // 
+            this.vCinc_Tiller3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vCinc_Tiller3.Location = new System.Drawing.Point(925, 257);
+            this.vCinc_Tiller3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_Tiller3.Name = "vCinc_Tiller3";
+            this.vCinc_Tiller3.Size = new System.Drawing.Size(161, 227);
+            this.vCinc_Tiller3.TabIndex = 610;
+            // 
+            // vCinc_dualLevers1
+            // 
+            this.vCinc_dualLevers1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vCinc_dualLevers1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.vCinc_dualLevers1.Location = new System.Drawing.Point(559, 12);
+            this.vCinc_dualLevers1.Name = "vCinc_dualLevers1";
+            this.vCinc_dualLevers1.Size = new System.Drawing.Size(206, 240);
+            this.vCinc_dualLevers1.TabIndex = 609;
+            // 
+            // vCinc_joy1
+            // 
+            this.vCinc_joy1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vCinc_joy1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_joy1.Location = new System.Drawing.Point(188, 12);
+            this.vCinc_joy1.Name = "vCinc_joy1";
+            this.vCinc_joy1.Size = new System.Drawing.Size(188, 242);
+            this.vCinc_joy1.TabIndex = 608;
+            // 
+            // vCinc_Tiller2
+            // 
+            this.vCinc_Tiller2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vCinc_Tiller2.Location = new System.Drawing.Point(380, 12);
+            this.vCinc_Tiller2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_Tiller2.Name = "vCinc_Tiller2";
+            this.vCinc_Tiller2.Size = new System.Drawing.Size(174, 240);
+            this.vCinc_Tiller2.TabIndex = 607;
+            // 
+            // vCinc_Tiller1
+            // 
+            this.vCinc_Tiller1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vCinc_Tiller1.Location = new System.Drawing.Point(4, 12);
+            this.vCinc_Tiller1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_Tiller1.Name = "vCinc_Tiller1";
+            this.vCinc_Tiller1.Size = new System.Drawing.Size(179, 242);
+            this.vCinc_Tiller1.TabIndex = 606;
+            // 
+            // vCinc_StaCtrlMaster1
+            // 
+            this.vCinc_StaCtrlMaster1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vCinc_StaCtrlMaster1.Font = new System.Drawing.Font("Arial Narrow", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_StaCtrlMaster1.Location = new System.Drawing.Point(770, 14);
+            this.vCinc_StaCtrlMaster1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_StaCtrlMaster1.Name = "vCinc_StaCtrlMaster1";
+            this.vCinc_StaCtrlMaster1.Size = new System.Drawing.Size(119, 238);
+            this.vCinc_StaCtrlMaster1.TabIndex = 605;
+            // 
+            // vCinc_BackupPanelEng1
+            // 
+            this.vCinc_BackupPanelEng1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vCinc_BackupPanelEng1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_BackupPanelEng1.KnobPortValue = 0;
+            this.vCinc_BackupPanelEng1.KnobPortValueINIT = 0;
+            this.vCinc_BackupPanelEng1.KnobStbdValueINIT = 0;
+            this.vCinc_BackupPanelEng1.Location = new System.Drawing.Point(1557, 14);
+            this.vCinc_BackupPanelEng1.Margin = new System.Windows.Forms.Padding(1);
+            this.vCinc_BackupPanelEng1.Name = "vCinc_BackupPanelEng1";
+            this.vCinc_BackupPanelEng1.Size = new System.Drawing.Size(280, 199);
+            this.vCinc_BackupPanelEng1.StbdKnobValue = 0;
+            this.vCinc_BackupPanelEng1.TabIndex = 603;
+            this.vCinc_BackupPanelEng1.VerticalSwitch1Button1InitialState = false;
+            this.vCinc_BackupPanelEng1.VerticalSwitch2Button1InitialState = false;
+            // 
+            // vCinc_BackupPanelWJ1
+            // 
+            this.vCinc_BackupPanelWJ1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vCinc_BackupPanelWJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_BackupPanelWJ1.Location = new System.Drawing.Point(1254, 13);
+            this.vCinc_BackupPanelWJ1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_BackupPanelWJ1.Name = "vCinc_BackupPanelWJ1";
+            this.vCinc_BackupPanelWJ1.Size = new System.Drawing.Size(300, 200);
+            this.vCinc_BackupPanelWJ1.TabIndex = 602;
+            this.vCinc_BackupPanelWJ1.VerticalSwitch1Button1InitialState = false;
+            this.vCinc_BackupPanelWJ1.VerticalSwitch2Button1InitialState = false;
+            // 
+            // vCinc_SPNVAL_uc6
+            // 
+            this.vCinc_SPNVAL_uc6.A_FirstByteIndex = 1;
+            this.vCinc_SPNVAL_uc6.BackColor = System.Drawing.SystemColors.Info;
+            this.vCinc_SPNVAL_uc6.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_SPNVAL_uc6.Location = new System.Drawing.Point(2711, 624);
+            this.vCinc_SPNVAL_uc6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SPNVAL_uc6.Name = "vCinc_SPNVAL_uc6";
+            this.vCinc_SPNVAL_uc6.PGN = "18FF7400";
+            this.vCinc_SPNVAL_uc6.Size = new System.Drawing.Size(147, 90);
+            this.vCinc_SPNVAL_uc6.SPNname = "HEading";
+            this.vCinc_SPNVAL_uc6.TabIndex = 597;
+            // 
+            // vCinc_SPNVAL_uc5
+            // 
+            this.vCinc_SPNVAL_uc5.A_FirstByteIndex = 4;
+            this.vCinc_SPNVAL_uc5.BackColor = System.Drawing.SystemColors.Info;
+            this.vCinc_SPNVAL_uc5.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_SPNVAL_uc5.Location = new System.Drawing.Point(2711, 528);
+            this.vCinc_SPNVAL_uc5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SPNVAL_uc5.Name = "vCinc_SPNVAL_uc5";
+            this.vCinc_SPNVAL_uc5.NumberOfBytes = 4;
+            this.vCinc_SPNVAL_uc5.PGN = "18FF7300";
+            this.vCinc_SPNVAL_uc5.Size = new System.Drawing.Size(298, 90);
+            this.vCinc_SPNVAL_uc5.SPNname = "Lati";
+            this.vCinc_SPNVAL_uc5.TabIndex = 596;
+            // 
+            // vCinc_SPNVAL_uc4
+            // 
+            this.vCinc_SPNVAL_uc4.BackColor = System.Drawing.SystemColors.Info;
+            this.vCinc_SPNVAL_uc4.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_SPNVAL_uc4.Location = new System.Drawing.Point(2711, 432);
+            this.vCinc_SPNVAL_uc4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SPNVAL_uc4.Name = "vCinc_SPNVAL_uc4";
+            this.vCinc_SPNVAL_uc4.NumberOfBytes = 4;
+            this.vCinc_SPNVAL_uc4.PGN = "18FF7300";
+            this.vCinc_SPNVAL_uc4.Size = new System.Drawing.Size(298, 90);
+            this.vCinc_SPNVAL_uc4.SPNname = "Logitude";
+            this.vCinc_SPNVAL_uc4.TabIndex = 595;
+            // 
+            // vCinc_SPNVAL_uc3
+            // 
+            this.vCinc_SPNVAL_uc3.BackColor = System.Drawing.SystemColors.Info;
+            this.vCinc_SPNVAL_uc3.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_SPNVAL_uc3.Location = new System.Drawing.Point(3013, 624);
+            this.vCinc_SPNVAL_uc3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SPNVAL_uc3.Name = "vCinc_SPNVAL_uc3";
+            this.vCinc_SPNVAL_uc3.PGN = "18FF7500";
+            this.vCinc_SPNVAL_uc3.Size = new System.Drawing.Size(152, 90);
+            this.vCinc_SPNVAL_uc3.SPNname = "PV  BowOFF";
+            this.vCinc_SPNVAL_uc3.TabIndex = 594;
+            // 
+            // vCinc_SPNVAL_uc2
+            // 
+            this.vCinc_SPNVAL_uc2.BackColor = System.Drawing.SystemColors.Info;
+            this.vCinc_SPNVAL_uc2.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_SPNVAL_uc2.Location = new System.Drawing.Point(2862, 624);
+            this.vCinc_SPNVAL_uc2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SPNVAL_uc2.Name = "vCinc_SPNVAL_uc2";
+            this.vCinc_SPNVAL_uc2.PGN = "18FF2100";
+            this.vCinc_SPNVAL_uc2.Size = new System.Drawing.Size(147, 90);
+            this.vCinc_SPNVAL_uc2.SPNname = "Mode";
+            this.vCinc_SPNVAL_uc2.TabIndex = 593;
+            // 
+            // vCinc_SPNVAL_uc1
+            // 
+            this.vCinc_SPNVAL_uc1.A_FirstByteIndex = 1;
+            this.vCinc_SPNVAL_uc1.BackColor = System.Drawing.SystemColors.Info;
+            this.vCinc_SPNVAL_uc1.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vCinc_SPNVAL_uc1.Location = new System.Drawing.Point(3013, 528);
+            this.vCinc_SPNVAL_uc1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_SPNVAL_uc1.Name = "vCinc_SPNVAL_uc1";
+            this.vCinc_SPNVAL_uc1.PGN = "18FF3600";
+            this.vCinc_SPNVAL_uc1.Size = new System.Drawing.Size(152, 90);
+            this.vCinc_SPNVAL_uc1.SPNname = "cal from";
+            this.vCinc_SPNVAL_uc1.TabIndex = 592;
             // 
             // vCinc_uc13
             // 
@@ -447,28 +886,28 @@
             this.vCinc_FF41St1Xdir_uc10.SPNName = "Sta1joyXdir0c1L2R";
             this.vCinc_FF41St1Xdir_uc10.TabIndex = 579;
             // 
-            // vCinc_uc9
+            // vCinc_FF3134_B0_clutch
             // 
-            this.vCinc_uc9.Address = "34";
-            this.vCinc_uc9.BackColor = System.Drawing.Color.Salmon;
-            this.vCinc_uc9.Bit0Title = "S clu engaged";
-            this.vCinc_uc9.Bit1Title = "Pclu engaged";
-            this.vCinc_uc9.Bit2Title = "";
-            this.vCinc_uc9.Bit3Title = "";
-            this.vCinc_uc9.Bit4Title = "";
-            this.vCinc_uc9.Bit5Title = "";
-            this.vCinc_uc9.Bit6Title = "";
-            this.vCinc_uc9.Bit7Title = "";
-            this.vCinc_uc9.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.vCinc_uc9.Location = new System.Drawing.Point(1285, 594);
-            this.vCinc_uc9.Margin = new System.Windows.Forms.Padding(0);
-            this.vCinc_uc9.Name = "vCinc_uc9";
-            this.vCinc_uc9.PGN = "FF31";
-            this.vCinc_uc9.PRIO = "0C";
-            this.vCinc_uc9.Size = new System.Drawing.Size(189, 251);
-            this.vCinc_uc9.SPNName = "ClutSig";
-            this.vCinc_uc9.TabIndex = 576;
-            this.vCinc_uc9.Value = 1;
+            this.vCinc_FF3134_B0_clutch.Address = "34";
+            this.vCinc_FF3134_B0_clutch.BackColor = System.Drawing.Color.Salmon;
+            this.vCinc_FF3134_B0_clutch.Bit0Title = "S clu engaged";
+            this.vCinc_FF3134_B0_clutch.Bit1Title = "Pclu engaged";
+            this.vCinc_FF3134_B0_clutch.Bit2Title = "";
+            this.vCinc_FF3134_B0_clutch.Bit3Title = "";
+            this.vCinc_FF3134_B0_clutch.Bit4Title = "";
+            this.vCinc_FF3134_B0_clutch.Bit5Title = "";
+            this.vCinc_FF3134_B0_clutch.Bit6Title = "";
+            this.vCinc_FF3134_B0_clutch.Bit7Title = "";
+            this.vCinc_FF3134_B0_clutch.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.vCinc_FF3134_B0_clutch.Location = new System.Drawing.Point(1285, 594);
+            this.vCinc_FF3134_B0_clutch.Margin = new System.Windows.Forms.Padding(0);
+            this.vCinc_FF3134_B0_clutch.Name = "vCinc_FF3134_B0_clutch";
+            this.vCinc_FF3134_B0_clutch.PGN = "FF31";
+            this.vCinc_FF3134_B0_clutch.PRIO = "0C";
+            this.vCinc_FF3134_B0_clutch.Size = new System.Drawing.Size(189, 251);
+            this.vCinc_FF3134_B0_clutch.SPNName = "ClutSig";
+            this.vCinc_FF3134_B0_clutch.TabIndex = 576;
+            this.vCinc_FF3134_B0_clutch.Value = 1;
             // 
             // vCinc_uc19
             // 
@@ -934,9 +1373,9 @@
             // 
             this.vCinc_DPcmd_FF65_B0.Address = "29";
             this.vCinc_DPcmd_FF65_B0.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.vCinc_DPcmd_FF65_B0.Bit0Title = "prob";
-            this.vCinc_DPcmd_FF65_B0.Bit1Title = "ovr";
-            this.vCinc_DPcmd_FF65_B0.Bit2Title = "on";
+            this.vCinc_DPcmd_FF65_B0.Bit0Title = "DPblocked";
+            this.vCinc_DPcmd_FF65_B0.Bit1Title = "DPovr";
+            this.vCinc_DPcmd_FF65_B0.Bit2Title = "DP is on";
             this.vCinc_DPcmd_FF65_B0.Bit3Title = " ";
             this.vCinc_DPcmd_FF65_B0.Bit4Title = " ";
             this.vCinc_DPcmd_FF65_B0.Bit5Title = " ";
@@ -948,7 +1387,7 @@
             this.vCinc_DPcmd_FF65_B0.Name = "vCinc_DPcmd_FF65_B0";
             this.vCinc_DPcmd_FF65_B0.PGN = "FF65";
             this.vCinc_DPcmd_FF65_B0.Size = new System.Drawing.Size(142, 283);
-            this.vCinc_DPcmd_FF65_B0.SPNName = "DPstat";
+            this.vCinc_DPcmd_FF65_B0.SPNName = "DPcmdstat";
             this.vCinc_DPcmd_FF65_B0.TabIndex = 554;
             // 
             // vCinc_FF59_B7_ctrlbits
@@ -1213,425 +1652,13 @@
             this.vCinc_uc18.SPNName = "DP?";
             this.vCinc_uc18.TabIndex = 542;
             // 
-            // tb_CAN_Bus_View
-            // 
-            this.tb_CAN_Bus_View.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tb_CAN_Bus_View.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_CAN_Bus_View.ForeColor = System.Drawing.Color.Lime;
-            this.tb_CAN_Bus_View.Location = new System.Drawing.Point(2719, 733);
-            this.tb_CAN_Bus_View.Margin = new System.Windows.Forms.Padding(6);
-            this.tb_CAN_Bus_View.Multiline = true;
-            this.tb_CAN_Bus_View.Name = "tb_CAN_Bus_View";
-            this.tb_CAN_Bus_View.ReadOnly = true;
-            this.tb_CAN_Bus_View.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_CAN_Bus_View.Size = new System.Drawing.Size(612, 261);
-            this.tb_CAN_Bus_View.TabIndex = 534;
-            this.tb_CAN_Bus_View.Text = ": Console Bkg.green  -c -0 ";
-            // 
-            // btn_Validate
-            // 
-            this.btn_Validate.Location = new System.Drawing.Point(2952, 1006);
-            this.btn_Validate.Margin = new System.Windows.Forms.Padding(6);
-            this.btn_Validate.Name = "btn_Validate";
-            this.btn_Validate.Size = new System.Drawing.Size(90, 45);
-            this.btn_Validate.TabIndex = 530;
-            this.btn_Validate.Text = "validator";
-            this.btn_Validate.UseVisualStyleBackColor = true;
-            // 
-            // lbl_onBus
-            // 
-            this.lbl_onBus.Location = new System.Drawing.Point(2742, 1024);
-            this.lbl_onBus.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbl_onBus.Name = "lbl_onBus";
-            this.lbl_onBus.Size = new System.Drawing.Size(98, 36);
-            this.lbl_onBus.TabIndex = 531;
-            this.lbl_onBus.Text = "on bus";
-            this.lbl_onBus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl_OnScreenCount
-            // 
-            this.lbl_OnScreenCount.Location = new System.Drawing.Point(2852, 1024);
-            this.lbl_OnScreenCount.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbl_OnScreenCount.Name = "lbl_OnScreenCount";
-            this.lbl_OnScreenCount.Size = new System.Drawing.Size(97, 36);
-            this.lbl_OnScreenCount.TabIndex = 532;
-            this.lbl_OnScreenCount.Text = "on screen ";
-            this.lbl_OnScreenCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btn_RunStop
-            // 
-            this.btn_RunStop.Location = new System.Drawing.Point(3054, 1006);
-            this.btn_RunStop.Margin = new System.Windows.Forms.Padding(6);
-            this.btn_RunStop.Name = "btn_RunStop";
-            this.btn_RunStop.Size = new System.Drawing.Size(142, 45);
-            this.btn_RunStop.TabIndex = 533;
-            this.btn_RunStop.Text = "Send Can";
-            this.btn_RunStop.UseVisualStyleBackColor = true;
-            // 
-            // cb_uniqueOn
-            // 
-            this.cb_uniqueOn.AutoSize = true;
-            this.cb_uniqueOn.Checked = true;
-            this.cb_uniqueOn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_uniqueOn.Location = new System.Drawing.Point(3176, 677);
-            this.cb_uniqueOn.Margin = new System.Windows.Forms.Padding(6);
-            this.cb_uniqueOn.Name = "cb_uniqueOn";
-            this.cb_uniqueOn.Size = new System.Drawing.Size(140, 28);
-            this.cb_uniqueOn.TabIndex = 535;
-            this.cb_uniqueOn.Text = "group pgn?";
-            this.cb_uniqueOn.UseVisualStyleBackColor = true;
-            // 
-            // btn_GPSrestBit0
-            // 
-            this.btn_GPSrestBit0.Location = new System.Drawing.Point(3227, 1205);
-            this.btn_GPSrestBit0.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_GPSrestBit0.Name = "btn_GPSrestBit0";
-            this.btn_GPSrestBit0.Size = new System.Drawing.Size(90, 30);
-            this.btn_GPSrestBit0.TabIndex = 536;
-            this.btn_GPSrestBit0.Text = "hold loc";
-            this.btn_GPSrestBit0.UseVisualStyleBackColor = true;
-            // 
-            // btn_GPSrestBit1
-            // 
-            this.btn_GPSrestBit1.Location = new System.Drawing.Point(3227, 1241);
-            this.btn_GPSrestBit1.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_GPSrestBit1.Name = "btn_GPSrestBit1";
-            this.btn_GPSrestBit1.Size = new System.Drawing.Size(90, 30);
-            this.btn_GPSrestBit1.TabIndex = 537;
-            this.btn_GPSrestBit1.Text = "hold rot";
-            this.btn_GPSrestBit1.UseVisualStyleBackColor = true;
-            // 
-            // tb_GPSmanualHEading
-            // 
-            this.tb_GPSmanualHEading.AutoSize = false;
-            this.tb_GPSmanualHEading.Location = new System.Drawing.Point(2859, 1083);
-            this.tb_GPSmanualHEading.Maximum = 72000;
-            this.tb_GPSmanualHEading.Name = "tb_GPSmanualHEading";
-            this.tb_GPSmanualHEading.Size = new System.Drawing.Size(337, 53);
-            this.tb_GPSmanualHEading.TabIndex = 538;
-            this.tb_GPSmanualHEading.TickFrequency = 1000;
-            this.tb_GPSmanualHEading.Value = 36000;
-            // 
-            // btn_PipeToggle
-            // 
-            this.btn_PipeToggle.Location = new System.Drawing.Point(3223, 1006);
-            this.btn_PipeToggle.Margin = new System.Windows.Forms.Padding(6);
-            this.btn_PipeToggle.Name = "btn_PipeToggle";
-            this.btn_PipeToggle.Size = new System.Drawing.Size(90, 45);
-            this.btn_PipeToggle.TabIndex = 539;
-            this.btn_PipeToggle.Text = "pipe";
-            this.btn_PipeToggle.UseVisualStyleBackColor = true;
-            // 
-            // btn_GPSsetLatLonToUnity
-            // 
-            this.btn_GPSsetLatLonToUnity.Location = new System.Drawing.Point(3227, 1162);
-            this.btn_GPSsetLatLonToUnity.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_GPSsetLatLonToUnity.Name = "btn_GPSsetLatLonToUnity";
-            this.btn_GPSsetLatLonToUnity.Size = new System.Drawing.Size(90, 41);
-            this.btn_GPSsetLatLonToUnity.TabIndex = 540;
-            this.btn_GPSsetLatLonToUnity.Text = "set loc";
-            this.btn_GPSsetLatLonToUnity.UseVisualStyleBackColor = true;
-            // 
-            // btn_GPSwebview2
-            // 
-            this.btn_GPSwebview2.Location = new System.Drawing.Point(3227, 1273);
-            this.btn_GPSwebview2.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_GPSwebview2.Name = "btn_GPSwebview2";
-            this.btn_GPSwebview2.Size = new System.Drawing.Size(90, 30);
-            this.btn_GPSwebview2.TabIndex = 541;
-            this.btn_GPSwebview2.Text = "Dist";
-            this.btn_GPSwebview2.UseVisualStyleBackColor = true;
-            // 
-            // vCinc_SPNVAL_uc1
-            // 
-            this.vCinc_SPNVAL_uc1.A_FirstByteIndex = 1;
-            this.vCinc_SPNVAL_uc1.BackColor = System.Drawing.SystemColors.Info;
-            this.vCinc_SPNVAL_uc1.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_SPNVAL_uc1.Location = new System.Drawing.Point(3013, 528);
-            this.vCinc_SPNVAL_uc1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_SPNVAL_uc1.Name = "vCinc_SPNVAL_uc1";
-            this.vCinc_SPNVAL_uc1.PGN = "18FF3600";
-            this.vCinc_SPNVAL_uc1.Size = new System.Drawing.Size(152, 90);
-            this.vCinc_SPNVAL_uc1.SPNname = "cal from";
-            this.vCinc_SPNVAL_uc1.TabIndex = 592;
-            // 
-            // vCinc_SPNVAL_uc2
-            // 
-            this.vCinc_SPNVAL_uc2.BackColor = System.Drawing.SystemColors.Info;
-            this.vCinc_SPNVAL_uc2.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_SPNVAL_uc2.Location = new System.Drawing.Point(2862, 624);
-            this.vCinc_SPNVAL_uc2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_SPNVAL_uc2.Name = "vCinc_SPNVAL_uc2";
-            this.vCinc_SPNVAL_uc2.PGN = "18FF2100";
-            this.vCinc_SPNVAL_uc2.Size = new System.Drawing.Size(147, 90);
-            this.vCinc_SPNVAL_uc2.SPNname = "Mode";
-            this.vCinc_SPNVAL_uc2.TabIndex = 593;
-            // 
-            // vCinc_SPNVAL_uc3
-            // 
-            this.vCinc_SPNVAL_uc3.BackColor = System.Drawing.SystemColors.Info;
-            this.vCinc_SPNVAL_uc3.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_SPNVAL_uc3.Location = new System.Drawing.Point(3013, 624);
-            this.vCinc_SPNVAL_uc3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_SPNVAL_uc3.Name = "vCinc_SPNVAL_uc3";
-            this.vCinc_SPNVAL_uc3.PGN = "18FF7500";
-            this.vCinc_SPNVAL_uc3.Size = new System.Drawing.Size(152, 90);
-            this.vCinc_SPNVAL_uc3.SPNname = "PV  BowOFF";
-            this.vCinc_SPNVAL_uc3.TabIndex = 594;
-            // 
-            // vCinc_SPNVAL_uc4
-            // 
-            this.vCinc_SPNVAL_uc4.BackColor = System.Drawing.SystemColors.Info;
-            this.vCinc_SPNVAL_uc4.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_SPNVAL_uc4.Location = new System.Drawing.Point(2711, 432);
-            this.vCinc_SPNVAL_uc4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_SPNVAL_uc4.Name = "vCinc_SPNVAL_uc4";
-            this.vCinc_SPNVAL_uc4.NumberOfBytes = 4;
-            this.vCinc_SPNVAL_uc4.PGN = "18FF7300";
-            this.vCinc_SPNVAL_uc4.Size = new System.Drawing.Size(298, 90);
-            this.vCinc_SPNVAL_uc4.SPNname = "Logitude";
-            this.vCinc_SPNVAL_uc4.TabIndex = 595;
-            // 
-            // vCinc_SPNVAL_uc5
-            // 
-            this.vCinc_SPNVAL_uc5.A_FirstByteIndex = 4;
-            this.vCinc_SPNVAL_uc5.BackColor = System.Drawing.SystemColors.Info;
-            this.vCinc_SPNVAL_uc5.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_SPNVAL_uc5.Location = new System.Drawing.Point(2711, 528);
-            this.vCinc_SPNVAL_uc5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_SPNVAL_uc5.Name = "vCinc_SPNVAL_uc5";
-            this.vCinc_SPNVAL_uc5.NumberOfBytes = 4;
-            this.vCinc_SPNVAL_uc5.PGN = "18FF7300";
-            this.vCinc_SPNVAL_uc5.Size = new System.Drawing.Size(298, 90);
-            this.vCinc_SPNVAL_uc5.SPNname = "Lati";
-            this.vCinc_SPNVAL_uc5.TabIndex = 596;
-            // 
-            // vCinc_SPNVAL_uc6
-            // 
-            this.vCinc_SPNVAL_uc6.A_FirstByteIndex = 1;
-            this.vCinc_SPNVAL_uc6.BackColor = System.Drawing.SystemColors.Info;
-            this.vCinc_SPNVAL_uc6.Font = new System.Drawing.Font("Arial Narrow", 7.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_SPNVAL_uc6.Location = new System.Drawing.Point(2711, 624);
-            this.vCinc_SPNVAL_uc6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_SPNVAL_uc6.Name = "vCinc_SPNVAL_uc6";
-            this.vCinc_SPNVAL_uc6.PGN = "18FF7400";
-            this.vCinc_SPNVAL_uc6.Size = new System.Drawing.Size(147, 90);
-            this.vCinc_SPNVAL_uc6.SPNname = "HEading";
-            this.vCinc_SPNVAL_uc6.TabIndex = 597;
-            // 
-            // cbShowHardCtrls
-            // 
-            this.cbShowHardCtrls.AutoSize = true;
-            this.cbShowHardCtrls.Location = new System.Drawing.Point(3207, 55);
-            this.cbShowHardCtrls.Margin = new System.Windows.Forms.Padding(6);
-            this.cbShowHardCtrls.Name = "cbShowHardCtrls";
-            this.cbShowHardCtrls.Size = new System.Drawing.Size(167, 28);
-            this.cbShowHardCtrls.TabIndex = 600;
-            this.cbShowHardCtrls.Text = "ShowHardCtrls";
-            this.cbShowHardCtrls.UseVisualStyleBackColor = true;
-            // 
-            // cbShowUcs
-            // 
-            this.cbShowUcs.AutoSize = true;
-            this.cbShowUcs.Location = new System.Drawing.Point(3209, 95);
-            this.cbShowUcs.Margin = new System.Windows.Forms.Padding(6);
-            this.cbShowUcs.Name = "cbShowUcs";
-            this.cbShowUcs.Size = new System.Drawing.Size(122, 28);
-            this.cbShowUcs.TabIndex = 599;
-            this.cbShowUcs.Text = "ShowUcs";
-            this.cbShowUcs.UseVisualStyleBackColor = true;
-            // 
-            // cb_LinkControls
-            // 
-            this.cb_LinkControls.AutoSize = true;
-            this.cb_LinkControls.Location = new System.Drawing.Point(3209, 175);
-            this.cb_LinkControls.Margin = new System.Windows.Forms.Padding(6);
-            this.cb_LinkControls.Name = "cb_LinkControls";
-            this.cb_LinkControls.Size = new System.Drawing.Size(145, 28);
-            this.cb_LinkControls.TabIndex = 598;
-            this.cb_LinkControls.Text = "LinkControls";
-            this.cb_LinkControls.UseVisualStyleBackColor = true;
-            // 
-            // cbShowSpns
-            // 
-            this.cbShowSpns.AutoSize = true;
-            this.cbShowSpns.Location = new System.Drawing.Point(3209, 135);
-            this.cbShowSpns.Margin = new System.Windows.Forms.Padding(6);
-            this.cbShowSpns.Name = "cbShowSpns";
-            this.cbShowSpns.Size = new System.Drawing.Size(133, 28);
-            this.cbShowSpns.TabIndex = 601;
-            this.cbShowSpns.Text = "ShowSpns";
-            this.cbShowSpns.UseVisualStyleBackColor = true;
-            // 
-            // vCinc_ClutchPanel1
-            // 
-            this.vCinc_ClutchPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.vCinc_ClutchPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_ClutchPanel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.vCinc_ClutchPanel1.KnobValueINIT = 0;
-            this.vCinc_ClutchPanel1.KnovValue = 0;
-            this.vCinc_ClutchPanel1.Location = new System.Drawing.Point(908, 13);
-            this.vCinc_ClutchPanel1.Name = "vCinc_ClutchPanel1";
-            this.vCinc_ClutchPanel1.Size = new System.Drawing.Size(341, 200);
-            this.vCinc_ClutchPanel1.TabIndex = 604;
-            this.vCinc_ClutchPanel1.VerticalSwitch1Button0InitialState = false;
-            this.vCinc_ClutchPanel1.VerticalSwitchButton1InitialState = false;
-            this.vCinc_ClutchPanel1.VerticalSwitchButton2InitialState = false;
-            this.vCinc_ClutchPanel1.VerticalSwitchButton3InitialState = false;
-            // 
-            // vCinc_BackupPanelEng1
-            // 
-            this.vCinc_BackupPanelEng1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vCinc_BackupPanelEng1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_BackupPanelEng1.KnobPortValue = 0;
-            this.vCinc_BackupPanelEng1.KnobPortValueINIT = 0;
-            this.vCinc_BackupPanelEng1.KnobStbdValueINIT = 0;
-            this.vCinc_BackupPanelEng1.Location = new System.Drawing.Point(1557, 14);
-            this.vCinc_BackupPanelEng1.Margin = new System.Windows.Forms.Padding(1);
-            this.vCinc_BackupPanelEng1.Name = "vCinc_BackupPanelEng1";
-            this.vCinc_BackupPanelEng1.Size = new System.Drawing.Size(280, 199);
-            this.vCinc_BackupPanelEng1.StbdKnobValue = 0;
-            this.vCinc_BackupPanelEng1.TabIndex = 603;
-            this.vCinc_BackupPanelEng1.VerticalSwitch1Button1InitialState = false;
-            this.vCinc_BackupPanelEng1.VerticalSwitch2Button1InitialState = false;
-            // 
-            // vCinc_BackupPanelWJ1
-            // 
-            this.vCinc_BackupPanelWJ1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vCinc_BackupPanelWJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_BackupPanelWJ1.Location = new System.Drawing.Point(1254, 13);
-            this.vCinc_BackupPanelWJ1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_BackupPanelWJ1.Name = "vCinc_BackupPanelWJ1";
-            this.vCinc_BackupPanelWJ1.Size = new System.Drawing.Size(300, 200);
-            this.vCinc_BackupPanelWJ1.TabIndex = 602;
-            this.vCinc_BackupPanelWJ1.VerticalSwitch1Button1InitialState = false;
-            this.vCinc_BackupPanelWJ1.VerticalSwitch2Button1InitialState = false;
-            // 
-            // vCinc_dualLevers1
-            // 
-            this.vCinc_dualLevers1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.vCinc_dualLevers1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.vCinc_dualLevers1.Location = new System.Drawing.Point(559, 12);
-            this.vCinc_dualLevers1.Name = "vCinc_dualLevers1";
-            this.vCinc_dualLevers1.Size = new System.Drawing.Size(206, 240);
-            this.vCinc_dualLevers1.TabIndex = 609;
-            // 
-            // vCinc_joy1
-            // 
-            this.vCinc_joy1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.vCinc_joy1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_joy1.Location = new System.Drawing.Point(188, 12);
-            this.vCinc_joy1.Name = "vCinc_joy1";
-            this.vCinc_joy1.Size = new System.Drawing.Size(188, 242);
-            this.vCinc_joy1.TabIndex = 608;
-            // 
-            // vCinc_Tiller2
-            // 
-            this.vCinc_Tiller2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.vCinc_Tiller2.Location = new System.Drawing.Point(380, 12);
-            this.vCinc_Tiller2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_Tiller2.Name = "vCinc_Tiller2";
-            this.vCinc_Tiller2.Size = new System.Drawing.Size(174, 209);
-            this.vCinc_Tiller2.TabIndex = 607;
-            // 
-            // vCinc_Tiller1
-            // 
-            this.vCinc_Tiller1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.vCinc_Tiller1.Location = new System.Drawing.Point(4, 12);
-            this.vCinc_Tiller1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_Tiller1.Name = "vCinc_Tiller1";
-            this.vCinc_Tiller1.Size = new System.Drawing.Size(179, 211);
-            this.vCinc_Tiller1.TabIndex = 606;
-            // 
-            // vCinc_StaCtrlMaster1
-            // 
-            this.vCinc_StaCtrlMaster1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vCinc_StaCtrlMaster1.Font = new System.Drawing.Font("Arial Narrow", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_StaCtrlMaster1.Location = new System.Drawing.Point(770, 14);
-            this.vCinc_StaCtrlMaster1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_StaCtrlMaster1.Name = "vCinc_StaCtrlMaster1";
-            this.vCinc_StaCtrlMaster1.Size = new System.Drawing.Size(119, 238);
-            this.vCinc_StaCtrlMaster1.TabIndex = 605;
-            // 
-            // vCinc_StaCtrlAft1
-            // 
-            this.vCinc_StaCtrlAft1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vCinc_StaCtrlAft1.Font = new System.Drawing.Font("Arial Narrow", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_StaCtrlAft1.Location = new System.Drawing.Point(1296, 257);
-            this.vCinc_StaCtrlAft1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_StaCtrlAft1.Name = "vCinc_StaCtrlAft1";
-            this.vCinc_StaCtrlAft1.Size = new System.Drawing.Size(117, 235);
-            this.vCinc_StaCtrlAft1.TabIndex = 613;
-            // 
-            // vCinc_dualLevers2
-            // 
-            this.vCinc_dualLevers2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.vCinc_dualLevers2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.vCinc_dualLevers2.Location = new System.Drawing.Point(1418, 257);
-            this.vCinc_dualLevers2.Name = "vCinc_dualLevers2";
-            this.vCinc_dualLevers2.Size = new System.Drawing.Size(206, 240);
-            this.vCinc_dualLevers2.TabIndex = 612;
-            // 
-            // vCinc_joy2
-            // 
-            this.vCinc_joy2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.vCinc_joy2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_joy2.Location = new System.Drawing.Point(1091, 257);
-            this.vCinc_joy2.Name = "vCinc_joy2";
-            this.vCinc_joy2.Size = new System.Drawing.Size(210, 240);
-            this.vCinc_joy2.TabIndex = 611;
-            // 
-            // vCinc_Tiller3
-            // 
-            this.vCinc_Tiller3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.vCinc_Tiller3.Location = new System.Drawing.Point(925, 257);
-            this.vCinc_Tiller3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.vCinc_Tiller3.Name = "vCinc_Tiller3";
-            this.vCinc_Tiller3.Size = new System.Drawing.Size(161, 227);
-            this.vCinc_Tiller3.TabIndex = 610;
-            // 
-            // vCinc_ClutchPanel2
-            // 
-            this.vCinc_ClutchPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.vCinc_ClutchPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vCinc_ClutchPanel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.vCinc_ClutchPanel2.KnobValueINIT = 0;
-            this.vCinc_ClutchPanel2.KnovValue = 0;
-            this.vCinc_ClutchPanel2.Location = new System.Drawing.Point(1630, 257);
-            this.vCinc_ClutchPanel2.Name = "vCinc_ClutchPanel2";
-            this.vCinc_ClutchPanel2.Size = new System.Drawing.Size(341, 227);
-            this.vCinc_ClutchPanel2.TabIndex = 614;
-            this.vCinc_ClutchPanel2.VerticalSwitch1Button0InitialState = false;
-            this.vCinc_ClutchPanel2.VerticalSwitchButton1InitialState = false;
-            this.vCinc_ClutchPanel2.VerticalSwitchButton2InitialState = false;
-            this.vCinc_ClutchPanel2.VerticalSwitchButton3InitialState = false;
-            // 
-            // cbShowGps
-            // 
-            this.cbShowGps.AutoSize = true;
-            this.cbShowGps.Location = new System.Drawing.Point(3207, 15);
-            this.cbShowGps.Margin = new System.Windows.Forms.Padding(6);
-            this.cbShowGps.Name = "cbShowGps";
-            this.cbShowGps.Size = new System.Drawing.Size(124, 28);
-            this.cbShowGps.TabIndex = 615;
-            this.cbShowGps.Text = "ShowGps";
-            this.cbShowGps.UseVisualStyleBackColor = true;
-            // 
-            // lbl_allFound
-            // 
-            this.lbl_allFound.Location = new System.Drawing.Point(3205, 209);
-            this.lbl_allFound.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbl_allFound.Name = "lbl_allFound";
-            this.lbl_allFound.Size = new System.Drawing.Size(126, 36);
-            this.lbl_allFound.TabIndex = 616;
-            this.lbl_allFound.Text = "AllFound";
-            this.lbl_allFound.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // BirdonSLick
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(3374, 2079);
+            this.Controls.Add(this.vCinc_testuc);
+            this.Controls.Add(this.vCinc_ClutchPanel1);
             this.Controls.Add(this.lbl_allFound);
             this.Controls.Add(this.cbShowGps);
             this.Controls.Add(this.vCinc_ClutchPanel2);
@@ -1644,7 +1671,6 @@
             this.Controls.Add(this.vCinc_Tiller2);
             this.Controls.Add(this.vCinc_Tiller1);
             this.Controls.Add(this.vCinc_StaCtrlMaster1);
-            this.Controls.Add(this.vCinc_ClutchPanel1);
             this.Controls.Add(this.vCinc_BackupPanelEng1);
             this.Controls.Add(this.vCinc_BackupPanelWJ1);
             this.Controls.Add(this.cbShowSpns);
@@ -1670,7 +1696,7 @@
             this.Controls.Add(this.vCinc_FF41Sta2Xdir_uc19);
             this.Controls.Add(this.vCinc_FF41St1Xpos_uc16);
             this.Controls.Add(this.vCinc_FF41St1Xdir_uc10);
-            this.Controls.Add(this.vCinc_uc9);
+            this.Controls.Add(this.vCinc_FF3134_B0_clutch);
             this.Controls.Add(this.vCinc_uc19);
             this.Controls.Add(this.vCinc_uc20);
             this.Controls.Add(this.vCinc_uc21);
@@ -1742,7 +1768,7 @@
         private VCI_Forms_LIB.VCinc_uc vCinc_FF41Sta2Xdir_uc19;
         private VCI_Forms_LIB.VCinc_uc vCinc_FF41St1Xpos_uc16;
         private VCI_Forms_LIB.VCinc_uc vCinc_FF41St1Xdir_uc10;
-        private VCI_Forms_LIB.VCinc_uc vCinc_uc9;
+        private VCI_Forms_LIB.VCinc_uc vCinc_FF3134_B0_clutch;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc19;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc20;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc21;
@@ -1799,7 +1825,6 @@
         private System.Windows.Forms.CheckBox cbShowUcs;
         private System.Windows.Forms.CheckBox cb_LinkControls;
         private System.Windows.Forms.CheckBox cbShowSpns;
-        private VCI_Forms_LIB.vCinc_ClutchPanel vCinc_ClutchPanel1;
         private VCI_Forms_LIB.vCinc_BackupPanelEng vCinc_BackupPanelEng1;
         private VCI_Forms_LIB.vCinc_BackupPanelWJ vCinc_BackupPanelWJ1;
         private VCI_Forms_LIB.vCinc_dualLevers vCinc_dualLevers1;
@@ -1814,5 +1839,7 @@
         private VCI_Forms_LIB.vCinc_ClutchPanel vCinc_ClutchPanel2;
         private System.Windows.Forms.CheckBox cbShowGps;
         private System.Windows.Forms.Label lbl_allFound;
+        private VCI_Forms_LIB.vCinc_ClutchPanel vCinc_ClutchPanel1;
+        private VCI_Forms_LIB.VCinc_uc vCinc_testuc;
     }
 }

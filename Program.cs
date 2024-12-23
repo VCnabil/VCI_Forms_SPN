@@ -42,14 +42,14 @@ namespace VCI_Forms_SPN
             //  Application.Run(new pdf_2_read());
             // Application.Run(new BirdonRawPgn());
             // Application.Run(new Form1());
-            //  Application.Run(new SVeeSearchForm()); 
-            //  Application.Run(new SSRSk12_234BKG()); //CANnalyzerSSRS
+            // Application.Run(new SSRSk12_234BKG()); //CANnalyzerSSRS
             //  Application.Run(new CANnalyzerSSRS());
-           // Application.Run(new BirdonSLick());  
-           // Application.Run(new STEML_HSLC_Slick()); //PalmTextCleanerForm
+            //   Application.Run(new BirdonSLick());
+            //  Application.Run(new STEML_HSLC_Slick()); 
 
-            Application.Run(new PalmTextCleanerForm());
-
+            // Application.Run(new PalmTextCleanerForm()); //MuphyXMLToAngelScriptFilemaker.cs
+          //  Application.Run(new MuphyXMLToAngelScriptFilemaker());
+            Application.Run(new SSRS12K234Slick());
         }
     }
 }
