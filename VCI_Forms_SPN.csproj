@@ -88,6 +88,9 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="OCV_LIB">
+      <HintPath>..\..\VCI_OCV_LIB\OCV_LIB\bin\x64\Debug\OCV_LIB.dll</HintPath>
+    </Reference>
     <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
       <HintPath>packages\OpenCvSharp4.4.10.0.20241108\lib\netstandard2.0\OpenCvSharp.dll</HintPath>
     </Reference>
@@ -165,11 +168,29 @@
     <Compile Include="MyForms\BKGFroms\STEML_HSLC_Slick.Designer.cs">
       <DependentUpon>STEML_HSLC_Slick.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForms\DirSearchForms\Form_FileLinker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\DirSearchForms\Form_FileLinker.Designer.cs">
+      <DependentUpon>Form_FileLinker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\DirSearchForms\Form_ParamsExtractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\DirSearchForms\Form_ParamsExtractor.Designer.cs">
+      <DependentUpon>Form_ParamsExtractor.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\DirSearchForms\SVeeSearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyForms\DirSearchForms\SVeeSearchForm.Designer.cs">
       <DependentUpon>SVeeSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\DirSearchForms\SVeeSearchFormV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\DirSearchForms\SVeeSearchFormV2.Designer.cs">
+      <DependentUpon>SVeeSearchFormV2.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForms\pdfFormSysdiag\DEBUGER_StandaloneForm.cs">
       <SubType>Form</SubType>
@@ -328,7 +349,10 @@
     <Compile Include="_BackEndDataOBJs\DocReaders\Ocv_Stripper.cs" />
     <Compile Include="_BackEndDataOBJs\DocReaders\OCV_TBLfinder.cs" />
     <Compile Include="_BackEndDataOBJs\DocReaders\PalmMenuOutputCleaner.cs" />
+    <Compile Include="_BackEndDataOBJs\OBJ_defs\Firmvci2Searcher.cs" />
     <Compile Include="_BackEndDataOBJs\OBJ_defs\FirmwareParameters.cs" />
+    <Compile Include="_BackEndDataOBJs\OBJ_defs\FirmwareParamExtractor.cs" />
+    <Compile Include="_BackEndDataOBJs\OBJ_defs\FirmwareSearcher.cs" />
     <Compile Include="_BackEndDataOBJs\OCVObjs\MyPDF_toInnerFrameMat.cs" />
     <Compile Include="_BackEndDataOBJs\OCVObjs\OCV_filterObj.cs" />
     <Compile Include="_BackEndDataOBJs\OCVObjs\OCV_TempDataObj.cs" />
@@ -360,8 +384,17 @@
     <EmbeddedResource Include="MyForms\BKGFroms\STEML_HSLC_Slick.resx">
       <DependentUpon>STEML_HSLC_Slick.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\DirSearchForms\Form_FileLinker.resx">
+      <DependentUpon>Form_FileLinker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\DirSearchForms\Form_ParamsExtractor.resx">
+      <DependentUpon>Form_ParamsExtractor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForms\DirSearchForms\SVeeSearchForm.resx">
       <DependentUpon>SVeeSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\DirSearchForms\SVeeSearchFormV2.resx">
+      <DependentUpon>SVeeSearchFormV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\pdfFormSysdiag\DEBUGER_StandaloneForm.resx">
       <DependentUpon>DEBUGER_StandaloneForm.cs</DependentUpon>

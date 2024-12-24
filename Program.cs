@@ -38,18 +38,23 @@ namespace VCI_Forms_SPN
             //Application.Run(new SSRSk12WithBKG());
             // Application.Run(new BirdonFirboatWithBkg());
             // Application.Run(new TesseractWinForms());
-            // Application.Run(new img_2_Analyze());
+            //  Application.Run(new img_2_Analyze());
             //  Application.Run(new pdf_2_read());
             // Application.Run(new BirdonRawPgn());
             // Application.Run(new Form1());
+            //    Application.Run(new SVeeSearchForm());
+          //  Application.Run(new SVeeSearchFormV2()); //
+            Application.Run(new Form_ParamsExtractor());
+            //  Application.Run(new Form_FileLinker());
+
             // Application.Run(new SSRSk12_234BKG()); //CANnalyzerSSRS
             //  Application.Run(new CANnalyzerSSRS());
             //   Application.Run(new BirdonSLick());
             //  Application.Run(new STEML_HSLC_Slick()); 
 
             // Application.Run(new PalmTextCleanerForm()); //MuphyXMLToAngelScriptFilemaker.cs
-          //  Application.Run(new MuphyXMLToAngelScriptFilemaker());
-            Application.Run(new SSRS12K234Slick());
+            //  Application.Run(new MuphyXMLToAngelScriptFilemaker());
+            // Application.Run(new SSRS12K234Slick());
         }
     }
 }

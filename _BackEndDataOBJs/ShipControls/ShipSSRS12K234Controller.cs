@@ -19,6 +19,7 @@ namespace VCI_Forms_SPN._BackEndDataOBJs.ShipControls
         vCinc_Tiller STA1_Tiller1; //vCinc_Tiller1
         vCinc_StaCtrlButton vCinc_StaCtrlButton; //vCinc_Sta1ctrl
         vCinc_StaCtrlButton vCinc_StaCtrlButton2; //vCinc_Sta2ctrl
+        VCINC_AutoPilot AutoPilot_Panel; // vcinC_AutoPilot1
 
         VCinc_uc uc_ActiveStation;      //ucname:vCinc_FF53_B1_StationInCtrl  SPNName:activeSTATION
         VCinc_uc uc_SwitchAUTOPILOTControlBits;   //ucname:vCinc_FF59_B6_ctrlbits  SPNName:SwitchControlBits
@@ -77,6 +78,7 @@ namespace VCI_Forms_SPN._BackEndDataOBJs.ShipControls
             if (vCinc_3AxisJoy == null) missingControls.Add("vCinc_3AxisJoy (vCinc_3AxisJoy1)");
             if (STA1_DualLevers == null) missingControls.Add("STA1_DualLevers (vCinc_dualLevers1)");
             if (STA1_Tiller1 == null) missingControls.Add("STA1_Tiller1 (vCinc_Tiller1)");
+            if (AutoPilot_Panel == null) missingControls.Add("AutoPilotPanel (vcinC_AutoPilot1)");
             if (vCinc_StaCtrlButton == null) missingControls.Add("vCinc_StaCtrlButton (vCinc_Sta1ctrl)");
             if (vCinc_StaCtrlButton2 == null) missingControls.Add("vCinc_StaCtrlButton2 (vCinc_Sta2ctrl)");
             if (uc_ActiveStation == null) missingControls.Add("uc_ActiveStation (vCinc_FF53_B1_StationInCtrl)");
@@ -120,6 +122,7 @@ namespace VCI_Forms_SPN._BackEndDataOBJs.ShipControls
             STA1_Tiller1 = argListOfHardControls.OfType<vCinc_Tiller>().FirstOrDefault(x => x.Name == "vCinc_Tiller1");
             vCinc_StaCtrlButton = argListOfHardControls.OfType<vCinc_StaCtrlButton>().FirstOrDefault(x => x.Name == "vCinc_Sta1ctrl");
             vCinc_StaCtrlButton2 = argListOfHardControls.OfType<vCinc_StaCtrlButton>().FirstOrDefault(x => x.Name == "vCinc_Sta2ctrl");
+            AutoPilot_Panel = argListOfHardControls.OfType<VCINC_AutoPilot>().FirstOrDefault(x => x.Name == "vcinC_AutoPilot1");
             uc_ActiveStation = argListOfCCinc_Ucs.FirstOrDefault(x => x.Name == "vCinc_FF53_B1_StationInCtrl");
             uc_SwitchAUTOPILOTControlBits = argListOfCCinc_Ucs.FirstOrDefault(x => x.Name == "vCinc_FF59_B6_ctrlbits");
             uc_ClutchState = argListOfCCinc_Ucs.FirstOrDefault(x => x.Name == "vCinc_FF3134_B0_clutch");
@@ -144,6 +147,7 @@ namespace VCI_Forms_SPN._BackEndDataOBJs.ShipControls
             uc_Sbuk = argListOfCCinc_Ucs.FirstOrDefault(x => x.Name == "vCinc_sbuk_uc");
             uc_Seng = argListOfCCinc_Ucs.FirstOrDefault(x => x.Name == "vCinc_seng_uc");
             uc_test = argListOfCCinc_Ucs.FirstOrDefault(x => x.Name == "vCinc_TEST_uc");
+
 
 
             vCinc_StaCtrlButton.Set_MainButtonState(true);
@@ -187,6 +191,7 @@ namespace VCI_Forms_SPN._BackEndDataOBJs.ShipControls
              
              if(_SomeNullRefs) return;
     
+            
 
             STA1_PORT_CLUTCH_State = STA1_CLUTCHpanel.ClutchCurrentState_Port();
             STA1_STBD_CLUTCH_State = STA1_CLUTCHpanel.ClutchCurrentState_Stbd();
@@ -257,7 +262,26 @@ namespace VCI_Forms_SPN._BackEndDataOBJs.ShipControls
            // uc_test.Value = BackupWaterJet_Port_inControl;
 
             if (argLinkOnOff)
-            {                 
+            {
+                if (AutoPilot_Panel.Get_Btn1Bit_AP())
+                {
+                    uc_SwitchAUTOPILOTControlBits.SetSingleBit(0, true);
+                }
+                else
+                {
+                    uc_SwitchAUTOPILOTControlBits.SetSingleBit(0, false);
+                }
+
+                if (AutoPilot_Panel.Get_Btn1Bit_APOVR())
+                {
+                    uc_SwitchAUTOPILOTControlBits.SetSingleBit(6, true);
+                }
+                else
+                {
+                    uc_SwitchAUTOPILOTControlBits.SetSingleBit(6, false);
+                }
+
+
                 //Waterjetbackups
                 if (BackupWaterJet_Port_inControl == 1)
                 {

@@ -251,7 +251,7 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             #endregion
 
             cbShowHardCtrls.Checked = true;
-            cbShowUcs.Checked = true;
+            cbShowUcs.Checked = false;
             cbShowGps.Checked = false;
             cb_LinkControls.Checked = true;
             myShipUiController = new ShipSSRS12K234Controller();

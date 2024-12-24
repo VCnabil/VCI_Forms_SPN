@@ -26,6 +26,8 @@ namespace VCI_Forms_SPN._BackEndDataOBJs.ShipControls
 
         vCinc_BackupPanelWJ BKP_PanelWJ; //vCinc_BackupPanelWJ1
         vCinc_BackupPanelEng BKP_PanelEng; //vCinc_BackupPanelEng1
+        VCINC_AutoPilot AutoPilot_Panel; //vCinc_AutoPilot1
+
 
         VCinc_uc uc_ActiveStation;      //ucname:vCinc_FF53_B1_StationInCtrl  SPNName:activeSTATION   
         VCinc_uc uc_OpMode;              //ucname:vCinc_FF53_B4_OpMode  SPNName:OpMode   
@@ -43,40 +45,29 @@ namespace VCI_Forms_SPN._BackEndDataOBJs.ShipControls
         {
             VCinttest = argListOfCCinc_Ucs.OfType<VCinc_uc>().FirstOrDefault(x => x.Name == "vCinc_testuc");
 
-            HARD_STA1_buttons = argListOfHardControls.OfType<vCinc_StaCtrlMaster>()
-                                .FirstOrDefault(x => x.Name == "vCinc_StaCtrlMaster1");
-            STA1_Joy = argListOfHardControls.OfType<vCinc_joy>()
-                       .FirstOrDefault(x => x.Name == "vCinc_joy1");
-            STA1_DualLevers = argListOfHardControls.OfType<vCinc_dualLevers>()
-                             .FirstOrDefault(x => x.Name == "vCinc_dualLevers1");
-            STA1_Tiller1 = argListOfHardControls.OfType<vCinc_Tiller>()
-                           .FirstOrDefault(x => x.Name == "vCinc_Tiller1");
-            STA1_Tiller2 = argListOfHardControls.OfType<vCinc_Tiller>()
-                           .FirstOrDefault(x => x.Name == "vCinc_Tiller2");
-            STA1_CLUTCHpanel = argListOfHardControls.OfType<vCinc_ClutchPanel>()
-                               .FirstOrDefault(x => x.Name == "vCinc_ClutchPanel1");
+            HARD_STA1_buttons = argListOfHardControls.OfType<vCinc_StaCtrlMaster>().FirstOrDefault(x => x.Name == "vCinc_StaCtrlMaster1");
+            STA1_Joy = argListOfHardControls.OfType<vCinc_joy>().FirstOrDefault(x => x.Name == "vCinc_joy1");
+            STA1_DualLevers = argListOfHardControls.OfType<vCinc_dualLevers>().FirstOrDefault(x => x.Name == "vCinc_dualLevers1");
+            STA1_Tiller1 = argListOfHardControls.OfType<vCinc_Tiller>().FirstOrDefault(x => x.Name == "vCinc_Tiller1");
+            STA1_Tiller2 = argListOfHardControls.OfType<vCinc_Tiller>().FirstOrDefault(x => x.Name == "vCinc_Tiller2");
+            STA1_CLUTCHpanel = argListOfHardControls.OfType<vCinc_ClutchPanel>().FirstOrDefault(x => x.Name == "vCinc_ClutchPanel1");
 
-            HARD_STA2_buttons = argListOfHardControls.OfType<vCinc_StaCtrlAft>()
-                                .FirstOrDefault(x => x.Name == "vCinc_StaCtrlAft1");
-            STA2_Joy = argListOfHardControls.OfType<vCinc_joy>()
-                       .FirstOrDefault(x => x.Name == "vCinc_joy2");
-            STA2_DualLevers = argListOfHardControls.OfType<vCinc_dualLevers>()
-                             .FirstOrDefault(x => x.Name == "vCinc_dualLevers2");
-            STA2_Tiller1 = argListOfHardControls.OfType<vCinc_Tiller>()
-                           .FirstOrDefault(x => x.Name == "vCinc_Tiller3");
-            STA2_CLUTCHpanel = argListOfHardControls.OfType<vCinc_ClutchPanel>()
-                               .FirstOrDefault(x => x.Name == "vCinc_ClutchPanel2");
+            HARD_STA2_buttons = argListOfHardControls.OfType<vCinc_StaCtrlAft>().FirstOrDefault(x => x.Name == "vCinc_StaCtrlAft1");
+            STA2_Joy = argListOfHardControls.OfType<vCinc_joy>().FirstOrDefault(x => x.Name == "vCinc_joy2");
+            STA2_DualLevers = argListOfHardControls.OfType<vCinc_dualLevers>().FirstOrDefault(x => x.Name == "vCinc_dualLevers2");
+            STA2_Tiller1 = argListOfHardControls.OfType<vCinc_Tiller>().FirstOrDefault(x => x.Name == "vCinc_Tiller3");
+            STA2_CLUTCHpanel = argListOfHardControls.OfType<vCinc_ClutchPanel>().FirstOrDefault(x => x.Name == "vCinc_ClutchPanel2");
 
-            BKP_PanelWJ = argListOfHardControls.OfType<vCinc_BackupPanelWJ>()
-                         .FirstOrDefault(x => x.Name == "vCinc_BackupPanelWJ1");
-            BKP_PanelEng = argListOfHardControls.OfType<vCinc_BackupPanelEng>()
-                          .FirstOrDefault(x => x.Name == "vCinc_BackupPanelEng1");
+            BKP_PanelWJ = argListOfHardControls.OfType<vCinc_BackupPanelWJ>().FirstOrDefault(x => x.Name == "vCinc_BackupPanelWJ1");
+            BKP_PanelEng = argListOfHardControls.OfType<vCinc_BackupPanelEng>().FirstOrDefault(x => x.Name == "vCinc_BackupPanelEng1");
+            AutoPilot_Panel = argListOfHardControls.OfType<VCINC_AutoPilot>().FirstOrDefault(x => x.Name == "vcinC_AutoPilot1");
 
             uc_ActiveStation = argListOfCCinc_Ucs.FirstOrDefault(x => x.Name == "vCinc_FF53_B1_StationInCtrl");
             uc_OpMode = argListOfCCinc_Ucs.FirstOrDefault(x => x.Name == "vCinc_FF53_B4_OpMode");
             uc_SwitchControlBits = argListOfCCinc_Ucs.FirstOrDefault(x => x.Name == "vCinc_FF59_B7_ctrlbits");
             uc_ClutchState = argListOfCCinc_Ucs.FirstOrDefault(x => x.Name == "vCinc_FF3134_B0_clutch");
             uc_DPcmdStats = argListOfCCinc_Ucs.FirstOrDefault(x => x.Name == "vCinc_DPcmd_FF65_B0");
+
 
             if (HARD_STA1_buttons != null && HARD_STA2_buttons != null)
             {
