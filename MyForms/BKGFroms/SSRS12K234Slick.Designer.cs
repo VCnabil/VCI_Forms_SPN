@@ -111,6 +111,7 @@
             this.vCinc_uc24 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc19 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_TEST_uc = new VCI_Forms_LIB.VCinc_uc();
+            this.vcinC_AutoPilot1 = new VCI_Forms_LIB.VCINC_AutoPilot();
             ((System.ComponentModel.ISupportInitialize)(this.tb_GPSmanualHEading)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1639,6 +1640,15 @@
             this.vCinc_TEST_uc.SPNName = "test";
             this.vCinc_TEST_uc.TabIndex = 662;
             // 
+            // vcinC_AutoPilot1
+            // 
+            this.vcinC_AutoPilot1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F);
+            this.vcinC_AutoPilot1.Location = new System.Drawing.Point(1287, 1096);
+            this.vcinC_AutoPilot1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vcinC_AutoPilot1.Name = "vcinC_AutoPilot1";
+            this.vcinC_AutoPilot1.Size = new System.Drawing.Size(110, 153);
+            this.vcinC_AutoPilot1.TabIndex = 663;
+            // 
             // SSRS12K234Slick
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -1646,6 +1656,7 @@
             this.BackgroundImage = global::VCI_Forms_SPN.Properties.Resources._3306_P1_3_SSRS_K12___no_DP___No2_thru_No4_SysDiag;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(3374, 2129);
+            this.Controls.Add(this.vcinC_AutoPilot1);
             this.Controls.Add(this.vCinc_TEST_uc);
             this.Controls.Add(this.vCinc_uc19);
             this.Controls.Add(this.vCinc_FF3134_B0_clutch);
@@ -1824,5 +1835,6 @@
         private VCI_Forms_LIB.VCinc_uc vCinc_uc24;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc19;
         private VCI_Forms_LIB.VCinc_uc vCinc_TEST_uc;
+        private VCI_Forms_LIB.VCINC_AutoPilot vcinC_AutoPilot1;
     }
 }

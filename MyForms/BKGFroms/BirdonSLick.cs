@@ -71,6 +71,7 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
         List<vCinc_StaCtrlButton> _OnscreenStaCtrlButtons = new List<vCinc_StaCtrlButton>();
         List<vCinc_StaCtrlMaster> _OnscreenStaCtrlMaster = new List<vCinc_StaCtrlMaster>();
         List<vCinc_StaCtrlAft> _OnscreenStaCtrlAft = new List<vCinc_StaCtrlAft>();
+        List<VCINC_AutoPilot> _AutoPilot1s = new List<VCINC_AutoPilot>();
         List<VCinc_uc> _OnsceenVcUcs = new List<VCinc_uc>();
         List<VCinc_SFversion> vCinc_SFversions = new List<VCinc_SFversion>();
         List<VCinc_SPNVAL_uc> OnscreenVcSpns = new List<VCinc_SPNVAL_uc>();
@@ -148,6 +149,12 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                     _OnscreenStaCtrlAft.Add(staCtrlAft);
                     _MasterCustomUcsList.Add(staCtrlAft);
                     _ALLHardControls.Add(staCtrlAft);
+                }
+                if (control is VCINC_AutoPilot autoPilot1)
+                {
+                    _AutoPilot1s.Add(autoPilot1);
+                    _MasterCustomUcsList.Add(autoPilot1);
+                    _ALLHardControls.Add(autoPilot1);
                 }
                 if (control is vCinc_BackupPanelClutch backupPanelClutch)
                 {

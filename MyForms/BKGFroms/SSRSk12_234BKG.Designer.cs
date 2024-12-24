@@ -95,6 +95,7 @@
             this.vCinc_uc20 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc21 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_uc19 = new VCI_Forms_LIB.VCinc_uc();
+            this.vcinC_AutoPilot1 = new VCI_Forms_LIB.VCINC_AutoPilot();
             this.SuspendLayout();
             // 
             // cb_uniqueOn
@@ -588,14 +589,15 @@
             this.vCinc_ClutchPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.vCinc_ClutchPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vCinc_ClutchPanel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.vCinc_ClutchPanel2.KNobPercentValue = 0F;
             this.vCinc_ClutchPanel2.KnobValueINIT = 50;
             this.vCinc_ClutchPanel2.KnovValue = 50;
             this.vCinc_ClutchPanel2.Location = new System.Drawing.Point(2553, 736);
             this.vCinc_ClutchPanel2.Name = "vCinc_ClutchPanel2";
             this.vCinc_ClutchPanel2.Size = new System.Drawing.Size(300, 200);
             this.vCinc_ClutchPanel2.TabIndex = 434;
-            this.vCinc_ClutchPanel2.VerticalSwitch_Port_EngageDisengageState = true;
             this.vCinc_ClutchPanel2.VerticalSwitch_Port_BkflshBright = false;
+            this.vCinc_ClutchPanel2.VerticalSwitch_Port_EngageDisengageState = true;
             this.vCinc_ClutchPanel2.VerticalSwitch_Stbd_BkflshDimm = false;
             this.vCinc_ClutchPanel2.VerticalSwitch_Stbd_EngageDisengageState = true;
             // 
@@ -604,14 +606,15 @@
             this.vCinc_ClutchPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.vCinc_ClutchPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vCinc_ClutchPanel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.vCinc_ClutchPanel1.KNobPercentValue = 0F;
             this.vCinc_ClutchPanel1.KnobValueINIT = 30;
             this.vCinc_ClutchPanel1.KnovValue = 30;
             this.vCinc_ClutchPanel1.Location = new System.Drawing.Point(1746, 236);
             this.vCinc_ClutchPanel1.Name = "vCinc_ClutchPanel1";
             this.vCinc_ClutchPanel1.Size = new System.Drawing.Size(300, 200);
             this.vCinc_ClutchPanel1.TabIndex = 433;
-            this.vCinc_ClutchPanel1.VerticalSwitch_Port_EngageDisengageState = true;
             this.vCinc_ClutchPanel1.VerticalSwitch_Port_BkflshBright = false;
+            this.vCinc_ClutchPanel1.VerticalSwitch_Port_EngageDisengageState = true;
             this.vCinc_ClutchPanel1.VerticalSwitch_Stbd_BkflshDimm = false;
             this.vCinc_ClutchPanel1.VerticalSwitch_Stbd_EngageDisengageState = true;
             // 
@@ -1401,6 +1404,15 @@
             this.vCinc_uc19.TabIndex = 464;
             this.vCinc_uc19.Value = 6211;
             // 
+            // vcinC_AutoPilot1
+            // 
+            this.vcinC_AutoPilot1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F);
+            this.vcinC_AutoPilot1.Location = new System.Drawing.Point(1517, 1453);
+            this.vcinC_AutoPilot1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vcinC_AutoPilot1.Name = "vcinC_AutoPilot1";
+            this.vcinC_AutoPilot1.Size = new System.Drawing.Size(110, 153);
+            this.vcinC_AutoPilot1.TabIndex = 465;
+            // 
             // SSRSk12_234BKG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -1408,6 +1420,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(3374, 2129);
+            this.Controls.Add(this.vcinC_AutoPilot1);
             this.Controls.Add(this.vCinc_uc19);
             this.Controls.Add(this.vCinc_uc16);
             this.Controls.Add(this.vCinc_uc12);
@@ -1552,5 +1565,6 @@
         private VCI_Forms_LIB.VCinc_uc vCinc_uc20;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc21;
         private VCI_Forms_LIB.VCinc_uc vCinc_uc19;
+        private VCI_Forms_LIB.VCINC_AutoPilot vcinC_AutoPilot1;
     }
 }
