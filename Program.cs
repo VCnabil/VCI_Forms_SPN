@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VCI_Forms_SPN.MyForms;
+using VCI_Forms_SPN.MyForms.AmazingForms;
 using VCI_Forms_SPN.MyForms.BKGFroms;
 using VCI_Forms_SPN.MyForms.DirSearchForms;
 using VCI_Forms_SPN.MyForms.pdfFormSysdiag;
@@ -38,13 +39,13 @@ namespace VCI_Forms_SPN
             //Application.Run(new SSRSk12WithBKG());
             // Application.Run(new BirdonFirboatWithBkg());
             // Application.Run(new TesseractWinForms());
-            //  Application.Run(new img_2_Analyze());
+          //    Application.Run(new img_2_Analyze());
             //  Application.Run(new pdf_2_read());
             // Application.Run(new BirdonRawPgn());
             // Application.Run(new Form1());
             //    Application.Run(new SVeeSearchForm());
-          //  Application.Run(new SVeeSearchFormV2()); //
-            Application.Run(new Form_ParamsExtractor());
+            //  Application.Run(new SVeeSearchFormV2()); //
+               Application.Run(new Form_ParamsExtractor());
             //  Application.Run(new Form_FileLinker());
 
             // Application.Run(new SSRSk12_234BKG()); //CANnalyzerSSRS
@@ -55,6 +56,8 @@ namespace VCI_Forms_SPN
             // Application.Run(new PalmTextCleanerForm()); //MuphyXMLToAngelScriptFilemaker.cs
             //  Application.Run(new MuphyXMLToAngelScriptFilemaker());
             // Application.Run(new SSRS12K234Slick());
+
+          //  Application.Run(new AmazingForm01());
         }
     }
 }

@@ -34,6 +34,10 @@
             this.checkedListBoxPaths = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_01 = new System.Windows.Forms.Label();
+            this.pb_MAIN = new System.Windows.Forms.PictureBox();
+            this.lbl_path = new System.Windows.Forms.Label();
+            this.lbl_02 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_MAIN)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchBox
@@ -46,7 +50,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(465, 286);
+            this.buttonSearch.Location = new System.Drawing.Point(282, 286);
             this.buttonSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(186, 45);
@@ -61,7 +65,7 @@
             this.flowLayoutPanelResults.Location = new System.Drawing.Point(11, 337);
             this.flowLayoutPanelResults.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.flowLayoutPanelResults.Name = "flowLayoutPanelResults";
-            this.flowLayoutPanelResults.Size = new System.Drawing.Size(640, 1040);
+            this.flowLayoutPanelResults.Size = new System.Drawing.Size(457, 684);
             this.flowLayoutPanelResults.TabIndex = 18;
             // 
             // checkedListBoxPaths
@@ -70,7 +74,7 @@
             this.checkedListBoxPaths.Location = new System.Drawing.Point(11, 52);
             this.checkedListBoxPaths.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.checkedListBoxPaths.Name = "checkedListBoxPaths";
-            this.checkedListBoxPaths.Size = new System.Drawing.Size(640, 228);
+            this.checkedListBoxPaths.Size = new System.Drawing.Size(457, 228);
             this.checkedListBoxPaths.TabIndex = 17;
             // 
             // label1
@@ -86,25 +90,58 @@
             // lbl_01
             // 
             this.lbl_01.AutoSize = true;
-            this.lbl_01.Location = new System.Drawing.Point(1043, 134);
+            this.lbl_01.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.875F);
+            this.lbl_01.Location = new System.Drawing.Point(27, 1127);
             this.lbl_01.Name = "lbl_01";
-            this.lbl_01.Size = new System.Drawing.Size(70, 25);
+            this.lbl_01.Size = new System.Drawing.Size(51, 20);
             this.lbl_01.TabIndex = 21;
             this.lbl_01.Text = "label2";
+            // 
+            // pb_MAIN
+            // 
+            this.pb_MAIN.Location = new System.Drawing.Point(470, 12);
+            this.pb_MAIN.Name = "pb_MAIN";
+            this.pb_MAIN.Size = new System.Drawing.Size(1700, 1100);
+            this.pb_MAIN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_MAIN.TabIndex = 313;
+            this.pb_MAIN.TabStop = false;
+            // 
+            // lbl_path
+            // 
+            this.lbl_path.AutoSize = true;
+            this.lbl_path.Location = new System.Drawing.Point(398, 9);
+            this.lbl_path.Name = "lbl_path";
+            this.lbl_path.Size = new System.Drawing.Size(70, 25);
+            this.lbl_path.TabIndex = 314;
+            this.lbl_path.Text = "label2";
+            // 
+            // lbl_02
+            // 
+            this.lbl_02.AutoSize = true;
+            this.lbl_02.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.875F);
+            this.lbl_02.Location = new System.Drawing.Point(658, 1127);
+            this.lbl_02.Name = "lbl_02";
+            this.lbl_02.Size = new System.Drawing.Size(51, 20);
+            this.lbl_02.TabIndex = 315;
+            this.lbl_02.Text = "label2";
             // 
             // Form_ParamsExtractor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2271, 1389);
+            this.ClientSize = new System.Drawing.Size(3867, 2199);
+            this.Controls.Add(this.lbl_02);
+            this.Controls.Add(this.lbl_path);
             this.Controls.Add(this.lbl_01);
             this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.flowLayoutPanelResults);
             this.Controls.Add(this.checkedListBoxPaths);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pb_MAIN);
             this.Name = "Form_ParamsExtractor";
             this.Text = "Form_ParamsExtractor";
+            ((System.ComponentModel.ISupportInitialize)(this.pb_MAIN)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +155,8 @@
         private System.Windows.Forms.CheckedListBox checkedListBoxPaths;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_01;
+        private System.Windows.Forms.PictureBox pb_MAIN;
+        private System.Windows.Forms.Label lbl_path;
+        private System.Windows.Forms.Label lbl_02;
     }
 }

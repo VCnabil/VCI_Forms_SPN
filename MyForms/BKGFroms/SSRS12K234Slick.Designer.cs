@@ -112,6 +112,7 @@
             this.vCinc_uc19 = new VCI_Forms_LIB.VCinc_uc();
             this.vCinc_TEST_uc = new VCI_Forms_LIB.VCinc_uc();
             this.vcinC_AutoPilot1 = new VCI_Forms_LIB.VCINC_AutoPilot();
+            this.vCinc_TrimPanel1 = new VCI_Forms_LIB.vCinc_TrimPanel();
             ((System.ComponentModel.ISupportInitialize)(this.tb_GPSmanualHEading)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1649,6 +1650,18 @@
             this.vcinC_AutoPilot1.Size = new System.Drawing.Size(110, 153);
             this.vcinC_AutoPilot1.TabIndex = 663;
             // 
+            // vCinc_TrimPanel1
+            // 
+            this.vCinc_TrimPanel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vCinc_TrimPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F);
+            this.vCinc_TrimPanel1.Location = new System.Drawing.Point(1850, 1191);
+            this.vCinc_TrimPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.vCinc_TrimPanel1.Name = "vCinc_TrimPanel1";
+            this.vCinc_TrimPanel1.Size = new System.Drawing.Size(242, 155);
+            this.vCinc_TrimPanel1.TabIndex = 664;
+            this.vCinc_TrimPanel1.VerticalSwitch1Button1InitialState = false;
+            this.vCinc_TrimPanel1.VerticalSwitch2Button1InitialState = false;
+            // 
             // SSRS12K234Slick
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -1656,6 +1669,7 @@
             this.BackgroundImage = global::VCI_Forms_SPN.Properties.Resources._3306_P1_3_SSRS_K12___no_DP___No2_thru_No4_SysDiag;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(3374, 2129);
+            this.Controls.Add(this.vCinc_TrimPanel1);
             this.Controls.Add(this.vcinC_AutoPilot1);
             this.Controls.Add(this.vCinc_TEST_uc);
             this.Controls.Add(this.vCinc_uc19);
@@ -1836,5 +1850,6 @@
         private VCI_Forms_LIB.VCinc_uc vCinc_uc19;
         private VCI_Forms_LIB.VCinc_uc vCinc_TEST_uc;
         private VCI_Forms_LIB.VCINC_AutoPilot vcinC_AutoPilot1;
+        private VCI_Forms_LIB.vCinc_TrimPanel vCinc_TrimPanel1;
     }
 }

@@ -62,7 +62,7 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
         List<vCinc_BackupPanelWJ> _OnScreenBackupPanelWJs = new List<vCinc_BackupPanelWJ>();
         List<vCinc_BackupPanelEng> _OnScreenBackupPanelEng = new List<vCinc_BackupPanelEng>();
         List<vCinc_BackupPanelClutch> vCinc_BackupPanelClutches = new List<vCinc_BackupPanelClutch>();
-        List<vCinc_BackupPanel> vCinc_BackupPanels = new List<vCinc_BackupPanel>(); 
+        List<vCinc_BackupPanel> vCinc_BackupPanels = new List<vCinc_BackupPanel>();
         List<vCinc_steerWheel> vCinc_SteerWheels = new List<vCinc_steerWheel>();
         List<vCinc_Tiller> _OnscreenTillers = new List<vCinc_Tiller>();
         List<vCinc_dualLevers> _OnscreenDualLevers = new List<vCinc_dualLevers>();
@@ -178,7 +178,8 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                         _All_UCS.Add(vcUc);
                         _OnsceenVcUcs.Add(vcUc);
                     }
-                    else {
+                    else
+                    {
                         _All_GpsRelated.Add(vcUc);
                     }
                 }
@@ -192,7 +193,7 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                 {
                     OnscreenVcSpns.Add(spnVal);
                     _MasterCustomUcsList.Add(spnVal);
-                     //not part of ucs 
+                    //not part of ucs 
                 }
                 //gps
                 if (control is VCinc_DynPos dynPos)
@@ -209,23 +210,24 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
                 }
                 if (control is Button gpsButton)
                 {
-                    if (gpsButton.Name.Contains("btn_GPS")) { 
-                        _OnscreenGPSButtons.Add(gpsButton);                  
+                    if (gpsButton.Name.Contains("btn_GPS"))
+                    {
+                        _OnscreenGPSButtons.Add(gpsButton);
                     }
-                    
+
                 }
                 //if trackbar 
                 if (control is TrackBar trackBar)
                 {
-                    if (trackBar.Name.Contains("tb_GPS")) { 
+                    if (trackBar.Name.Contains("tb_GPS"))
+                    {
                         OnScreenTrakBarGPS.Add(trackBar);
                     }
                 }
             }
         }
-        #endregion
-
         IShipUiController myShipUiController;
+        #endregion
         public BirdonSLick()
         {
             InitializeComponent();
@@ -249,9 +251,10 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
             #endregion
 
             cbShowHardCtrls.Checked = true;
-            cbShowUcs.Checked = true;
+            cbShowUcs.Checked = false;
+            cbShowGps.Checked = false;
             cb_LinkControls.Checked = true;
-            myShipUiController = new ShipBirdonController();
+            myShipUiController = new ShipSSRS12K234Controller();
             myShipUiController.InitWithLists(_ALLHardControls, _OnsceenVcUcs);
             lbl_allFound.BackColor = myShipUiController.AreAllControlsFound() ? Color.Green : Color.Red;
 
@@ -575,12 +578,13 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
         }
         private void Looptimer_Tick(object sender, EventArgs e)
         {
-           
+
             lock (_syncLock)
             {
                 if (!_pipeIsOpen)
                 {
-                    if (vCinc_LatLon_mapCnter != null && VESSEL_LOC != null  ) {
+                    if (vCinc_LatLon_mapCnter != null && VESSEL_LOC != null)
+                    {
                         VESSEL_LOC = vCinc_LatLon_mapCnter.GetLatLon();
                         VESSEL_HEADING = (tb_GPSmanualHEading.Value / 100.00) % 360.00;
                     }
@@ -589,12 +593,12 @@ namespace VCI_Forms_SPN.MyForms.BKGFroms
 
                 ShowHideUiElements();
                 PGN_Controlled();
-                
-                if (vCinc_LatLon_mapCnter != null && VESSEL_LOC != null  && WAYPOINT_LOC != null)
+
+                if (vCinc_LatLon_mapCnter != null && VESSEL_LOC != null && WAYPOINT_LOC != null)
                 {
                     vCinc_DynPos1.Update_CenterMap_Heading(VESSEL_LOC, VESSEL_HEADING);
                     WAYPOINT_LOC = vCinc_DynPos1.Get_WayPointLOC();
-                    vCinc_LatLon_waypoint.SetLatLon(WAYPOINT_LOC);          
+                    vCinc_LatLon_waypoint.SetLatLon(WAYPOINT_LOC);
                 }
                 SendAllPgnMessages();
             }
